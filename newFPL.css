@@ -1,0 +1,528 @@
+*{
+	text-rendering: optimizeLegibility;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+
+.grid-container {
+/*	display: table-row-group; */
+	display: flow; 
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+	align-content: flex-start ;
+}
+
+.grid-item {
+/*	display: inline-grid; */
+	display: inline-grid; 
+	overflow-x: scroll;
+	margin-top: 5px;
+}
+
+.pageHeader {
+	width: 100%;
+}
+
+.pageFooter {
+	width: 100%;
+}
+
+.redLight {
+	width: 10px;
+	height: 10px;
+	background: #ff0000;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.orangeLight {
+	width: 11px;
+	height: 11px;
+	background: #FF5500;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.greenLight {
+	width: 12px;
+	height: 12px;
+	background: #00ff00;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.redLight ::after, .redLight ::before {
+	box-sizing: border-box;
+}
+
+.orangeLight ::after, .orangeLight ::before {
+	box-sizing: border-box;
+}
+
+.greenLight ::after, .greenLight ::before {
+	box-sizing: border-box;
+}
+
+.hide-item{
+	display: none;
+	border: 0px solid black;
+}
+
+.show-item{
+	border: 2px solid orange;
+	display: inline-flex;
+}
+
+button[enabled = "true"].evwndwTgl{
+	background-color: red !important;
+}
+
+button[enabled = "false"].evwndwTgl{
+	background-color: lime !important;
+}
+
+
+body{
+	background-color: #121212;
+	color: #FFFFF2;
+}
+
+.striped th:nth-of-type(odd){
+	background-color: #1a8cff  ;
+	color: #000000;
+	/* #99ccff #cc0058 */
+}
+
+.striped th:nth-of-type(even){
+	background-color: #0059b3 ;
+}
+
+.striped th:nth-of-type(1){
+	background-color: #185ee6;
+	color: #000000;
+}
+
+.striped th:nth-of-type(2){
+	background-color: #185ee6;
+	color: #000000;
+}
+
+.striped th:nth-of-type(3){
+	background-color: #185ee6;
+	color: #000000;
+}
+
+#tbl th:nth-of-type(2){
+	background-color: #00c0c0;
+	color: #000000;
+}
+
+#tbl th:nth-of-type(3){
+	background-color: #00c000;
+	color: #000000;
+}
+
+td{
+/*    color: transparent; */
+	padding:0px;
+	text-align: center;
+}
+
+td > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow:   auto;
+	vertical-align: middle;
+}
+
+tr.df_home td{
+	border-left: 2px solid lightcyan;
+}
+
+tr.df_away td{
+	border-left: 2px solid lightcyan;
+}
+
+tr.df_hdr th{
+	border-left: 2px solid slateblue;
+}
+
+td > span[ppgame='true']{
+	background-color: #ADADAD !important;
+	color: #000000 !important;
+	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 5px,#000000 15px,#000000 5px);
+}
+
+td[ppgame='true'] {
+	color: grey ;
+	background-color: #ADADAD;
+}
+
+
+td.ppgame > div:first-of-type{
+	/*
+		padding-top: 15px;
+		float: left;
+		border: 1px solid cyan;
+		display: table-cell;
+	*/
+	display: inline-block;
+	text-align: left;
+	width: 11.5%;
+	vertical-align: middle !important;
+	font-size: 1.25em;
+	margin-left: 0;
+}
+
+td.ppgame > div:last-of-type{
+	display: inline-block;
+	width: 80%;
+	float: right;
+}
+
+
+td.ppgame > div > span{
+	border: 1px solid #000000;
+}
+
+/*td[dblgw="true"]{
+	background-color: firebrick;
+}*/
+
+span[df="1"]{
+	background-color: #375523;;
+	color: #FFFFFF;
+}
+
+span[df="2"]{
+	background-color: #00ff86;
+	color: #000000;
+}
+
+span[df="3"]{
+	background-color: #ff8533;
+	color: #000000;
+}
+
+span[df="4"]{
+	background-color: #ff005a;
+	color: #ffff00;
+}
+
+span[df="5"]{
+	background-color: #861d46;
+	color: #FFFFFF;
+}
+
+.postponed{
+	background-color: #ADADAD !important;
+	color: #000000 !important;
+}
+
+td[df="1"]{
+	background-color: #375523;
+	color: #FFFFFF;
+}
+
+td[df="2"]{
+	background-color: #00ff86;
+	color: #000000;
+}
+
+td[df="3"]{
+	background-color: #ff8533;
+	color: #000000;
+}
+
+td[df="4"]{
+	background-color: #ff005a;
+	color: #ffff00;
+}
+
+td[df="5"]{
+	background-color: #861d46;
+	color: #FFFFFF;
+}
+
+span[loc="H"]{
+	font-weight: bold;
+}
+
+
+.tchide{
+	 display: none;
+}
+
+.clmnHide{
+	display: none;
+}
+
+.rowHide{
+	display: none;
+}
+
+
+.ppCont{
+	display: inline-block;
+}
+
+#gmwkDisplay{
+	color: #000000;
+	display: inline-flex;
+	z-index: 2;
+	width: 80%;
+}
+
+div.gameTile{
+	color: #000000;
+	background-color: #0fafbf;
+	width: 20%;
+}
+
+
+#ppOview{
+	border: 2px solid gold;
+	text-align: left !important;
+}
+
+
+#ppOviewBttnCnt{
+	display: table-row-group;
+}
+
+
+
+#ppOviewULCnt{
+	text-align: left !important ;
+}
+
+#ppGamesRePlanned{
+	background-color:  #0f0f0f;
+}
+
+#ppGamesUnPlanned{
+	background: repeating-linear-gradient( -45deg, grey, grey 5%, #000000 5%, #000000 10% );
+}
+
+
+#ppGamesAcc > li > span{
+	background-color: #FFFFFF;
+	opacity: 0.71;
+	color:  #000000;
+}
+
+
+#popUpDF{
+	opacity: 1;
+	height: auto;
+	background-color: darkslategrey;
+	position: absolute;
+	font-size: 14px;
+}
+
+.customDF{
+	border: 4px solid #FFFFFF;
+}
+
+#tooltip{
+			opacity: 0.1;
+			width: 95%;
+			height: auto;
+			color: darkslategrey;
+			position: relative;
+			left: 10%;
+			font-size: 16px;
+	}
+
+td.selGmBubbleCnt{
+			background-color: #d3d3d3 !important;
+}
+
+#mdl_gameTeamStats{
+	z-index: 9999;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 60%;
+	max-height: 80%;
+	overflow: scroll;
+}
+
+.modal{
+	display: flex;
+	flex-direction: row;
+}
+
+.notModal{
+	display: none;
+}
+
+
+li {
+	display: block;
+	list-style-type: square;
+}
+
+ul {
+/*  list-style-type: none; */
+	margin: 0;
+	padding: 0;
+}
+
+ol {
+	list-style-type: square  ;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+	padding: 8px;
+	background-color: #dddddd;
+}
+
+.tabHidden{
+	display: none;
+}
+
+.tabShow{
+	display: block;
+}
+
+#selectionsTbl tr th{
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+.gameBubble div{
+/*
+	color: #000000 !important;
+	background-color: transparent !important;
+*/
+}
+
+th.gameBubble{
+	background-color: transparent !important;
+}
+
+
+.intlBreak{
+	background-color: #fdef82 ;
+	color: #000000;
+}
+
+
+.df_h_hidden{
+	display: none !important;
+}
+
+.df_a_hidden{
+	display: none !important;
+}
+
+
+.df_green0{
+	background-color: #003300;
+}
+
+
+.df_green1{
+	background-color: #002200;
+}
+
+.df_green2{
+	background-color: #001100;
+}
+
+.df_green3{
+	background-color: #000000;
+}
+
+.df_green4{
+	background-color: #00aa00;
+}
+
+.df_green5{
+	background-color: #00bb00;
+}
+
+.df_green6{
+	background-color: #00cc00;
+}
+
+.df_green7{
+	background-color: #00dd00;
+}
+
+.df_green8{
+	background-color: #00ee00;
+}
+
+.df_green9{
+	background-color: #00ff00;
+}
+
+.strengths > td{
+	color: #000000 ;
+}
+
+
+tr{
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+
+	border-bottom-color: #FFFFFF;
+	-moz-border-bottom-color: #FFFFFF;
+
+	border-bottom-width: 2px;
+	-moz-border-bottom-width: 2px;
+}
+
+#df_home > th{
+	font-size: 1.25rem;
+}
+
+#df_away > th{
+	font-size: 1.25rem;
+}
+
+
+
+.fxtrspan{
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+.shaded{
+	opacity: 0.2;
+	text-decoration-line: line-through;
+}
+
+.unshaded{
+	opacity: 1;
+	text-decoration-line: initial;
+}
+
+.evHighLite{
+	animation-name: selectedborder;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+}
+
+
+@keyframes selectedborder {
+	0%   {border-color:#000000; border-width: 6px; border-style: solid;}
+	55%  {border-color:#FFFFFF;  border-width: 6px; border-style: solid;}
+	100% {border-color:#000000;  border-width: 4px; border-style: solid;}
+}
+

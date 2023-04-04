@@ -1,0 +1,2038 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+		<title>Jay's FPL 22/23 team schedules</title>
+
+		<!-- link rel="stylesheet"
+					type="text/css"
+					href="fpl.css"
+		-->
+		<!-- link rel="stylesheet"
+					type="text/css"
+					href="fpl_clubs.css"
+				-->
+
+		<!-- link rel="stylesheet"
+					type="text/css"
+					href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		-->
+
+		<link rel="stylesheet"
+					type="text/css"
+					href="newFPL.css"
+		>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/d3.min.js"></script>
+
+		<script src="js/github_FDL_CONSTANTS.js"></script>
+		<script src="js/github_FDL_DATA.js"></script>
+		<script src="js/github_FDL_UI.js"></script>
+
+		<!-- BETA script src="js/github_FDL_UI.js"></script -->
+
+	</head>
+
+	<body>
+
+		<nav class="pageHeader">
+			<h2>Jays FPL FDR</h2>
+			<button id="hdr-tggl-settings" 	onclick="toggleSettings()"	title="Show settings"				>Settings			</button>
+			<button id="hdr-tggl-df-fpl" 	onclick="toggleDFdisplay()" title="DF = Difficulty Factor"  	>Difficulty Factor (DF)</button>
+			<button id="hdr-tggl-ppnd" 		onclick="togglePPdisplay()"	title="List of unplanned fixtures" 	>Postponed/Unplanned</button>
+		</nav>
+
+		<div class="grid-container">
+
+			<div id="sttngs-cnt" class="grid-item" width=30% >
+
+				<div id="indicators">
+
+						<table>
+							<thead>
+								<tr>
+									<th> </th>
+									<th>Loaded</th>
+									<th colspan="2">Action</th>
+								</tr>
+							</thead>
+
+							<tbody style="text-align: left !important;">
+
+								<tr>
+									<td>EPL Fixtures</td>
+									<td >
+										<div id="fxtrsLdd-idc" class="" > </div>
+									</td>
+									<td colspan="2">
+										<div>
+											<span style="display: inline-block;" id="curRound"></span>										
+										</div>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>Postponed</td>
+									<td >
+										<div id="ppsLdd-idc" class="" ></div>
+									</td>
+									<td colspan="2" >
+										<button id="togglePostponed" onclick="togglePPdisplay()" >toggle Postponed details</button>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Which DF</td>
+									<td>
+										<button id="df-tggl" onclick="toggleDFdisplay()">
+											<div id="df-Ldd-idc" class="greenLight" ></div>
+											HIDE
+										</button>
+									</td>
+									<td colspan="1">
+										<button id="epl-df-viz" onclick="toggleDFuser()" >
+											<div id="epl-df-Ldd-idc" class="redLight" ></div>
+											FPL DF
+										</button>
+										<button id="usr-df-tggl" onclick="loadUserDF()">
+											<div id="usr-df-Ldd-idc" class="redLight" ></div>
+											Own DF
+										</button>
+									</td>
+
+								</tr>
+
+								<tr id="tr-strengths">
+									<td>EPL strenghts H/A</td>
+									<td>
+										<div id="epl-ha-Ldd-idc" class="redLight" > </div>
+									</td>
+									<td  colspan="2">
+										<button onclick="toggleStrengthContainer()" id="toggleHAstatsDet" >
+											toggle H/A strength
+										</button>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>Deadlines</td>
+									<td>
+										<div class="" ></div>									
+									</td>
+
+									<td  colspan="2">
+										<button id="toggleDdln" onclick="toggleDeadline()" >toggle deadlines</button>
+									</td>
+
+								</tr>	
+
+							</tbody>	
+
+						</table>
+
+				</div>
+
+			</div>
+
+
+			<div id="evw-cnt" class="grid-item" width=30% class="hide-item" >
+
+				<div id="selTblCnt">
+						
+					<table id="selectionsTbl">
+
+						<tr>
+							<th colspan="3">SELECTION</th>
+						</tr>
+
+						<tr>
+							<th colspan="1">SHOW</th>
+							<td colspan="2">select</td>
+						</tr>
+
+						<tr>
+							<th>
+								<span>First Round</span>
+							</th>
+							<td>
+								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
+							</td>
+							<td>
+								<form id="eventWndwStartForm" value=30 >
+									<select name="strtRnd"
+											id="strtRnd"
+											value=30
+											onselect="setEventWndwStart(value)" 
+											onchange="setEventWndwStart(value)"
+									>
+										<option value=30 active selected >30 (default)</option>
+										<option value=31 >31</option>
+										<option value=32 >32</option>
+										<option value=33 >33</option>
+										<option value=34 >34</option>
+										<option value=35 >35</option>
+										<option value=36 >36</option>
+										<option value=37 >37</option>
+										<option value=38 >38</option>
+										<option value=1 >1</option>
+										<option value=2 >2</option>
+										<option value=3 >3</option>
+										<option value=4 >4</option>
+										<option value=5 >5</option>
+										<option value=6 >6</option>
+										<option value=7 >7</option>
+										<option value=8 >8 IB 1 start</option>
+										<option value=9 >9 IB 1 end</option>
+										<option value=10 >10</option>
+										<option value=11 >11</option>
+										<option value=12 >12</option>
+										<option value=13 >13</option>
+										<option value=14 >14</option>
+										<option value=15 >15</option>
+										<option value=16 >16 WC start</option>
+										<option value=17 >17 WC end</option>
+										<option value=18 >18</option>
+										<option value=19 >19</option>
+										<option value=20 >20</option>
+										<option value=21 >21</option>
+										<option value=22 >22</option>
+										<option value=23 >23</option>
+										<option value=24 >24</option>
+										<option value=25 >25</option>
+										<option value=26 >26</option>
+										<option value=27 >27</option>
+										<option value=28 >28 IB 2 start</option>
+										<option value=29 >29 IB 2 end</option>
+									</select>
+								</form>
+							</td>
+						</tr>
+
+						<tr>
+							<th># of Rounds</th>
+							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
+							<td>
+								<form id="slctdRoundsForm" value=9 >
+									<select name="slctdRounds"
+											id="slctdRounds"
+											value=9
+											onselect="setRndsToShow(value)" 
+											onchange="setRndsToShow(value)"
+									>
+										<option value=1  >1  </option>
+										<option value=2  >2  </option>
+										<option value=3  >3  </option>
+										<option value=4  >4  </option>
+										<option value=5  >5  </option>
+										<option value=6  >6  </option>
+										<option value=7  >7	 </option>
+										<option value=8  >8  </option>
+										<option value=9 active selected >default (9)</option>
+										<option value=10 >10</option>
+										<option value=38 >All</option>
+										<option value=11 >11 </option>
+										<option value=12 >12 </option>
+										<option value=13 >13 </option>
+										<option value=14 >14 </option>
+										<option value=15 >15 </option>
+										<option value=16 >16 </option>
+										<option value=17 >17 </option>
+										<option value=18 >18 </option>
+										<option value=19 >19 </option>
+										<option value=20 >20 </option>
+										<option value=25 >25 </option>
+										<option value=30 >30 </option>
+										<option value=35 >35 </option>
+									</select>
+								</form>
+							</td>
+
+						</tr>
+
+						<tr>
+							<th>Last Round</th>
+							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
+							<td>
+								<form id="eventWndwEndForm" value=38 >
+									<select name="endRnd"
+											id="endRnd"
+											value=38
+											onselect="setEventWndwEnd(value)" 
+											onchange="setEventWndwEnd(value)" 
+									>
+										<option value=30 >30</option>
+										<option value=31 >31</option>
+										<option value=32 >32</option>
+										<option value=33 >33</option>
+										<option value=34 >34</option>
+										<option value=35 >35</option>
+										<option value=36 >36</option>
+										<option value=37 >37</option>
+										<option value=38 active selected >season end</option>
+										<option value=1 >1</option>
+										<option value=2 >2</option>
+										<option value=3 >3</option>
+										<option value=4 >4</option>
+										<option value=5 >5</option>
+										<option value=6 >6</option>
+										<option value=7 >7</option>
+										<option value=8 >8 IB 1 start</option>
+										<option value=9 >9 IB 1 end</option>
+										<option value=10 >10</option>
+										<option value=11 >11</option>
+										<option value=12 >12</option>
+										<option value=13 >13</option>
+										<option value=14 >14</option>
+										<option value=15 >15</option>
+										<option value=16 >16 WC start</option>
+										<option value=17 >17 WC end</option>
+										<option value=18 >18</option>
+										<option value=19 >19</option>
+										<option value=20 >20</option>
+										<option value=21 >21</option>
+										<option value=22 >22</option>
+										<option value=23 >23</option>
+										<option value=24 >24</option>
+										<option value=25 >25</option>
+										<option value=26 >26</option>
+										<option value=27 >27</option>
+										<option value=28 >28 IB 2 start</option>
+										<option value=29 >29 IB 2 end</option>
+									</select>
+								</form>
+							</td>
+						</tr>
+
+					</table>
+
+				</div>
+				
+			</div>
+
+
+			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
+
+				<div id="ppOview">
+	
+					<div id="ppOviewBttnCnt">
+						<button width=50% onclick="toggleReplanned()" >Postponed</button>
+						<button width=50% onclick="toggleReplanned()" >Replanned</button>	
+					</div>
+
+					<div id="ppOviewULCnt">
+
+						<div id="ppGamesRePlanned" class="hide-item">
+							<ul id="rpGamesAcc"></ul>
+						</div>
+
+						<div id="ppGamesUnPlanned" >
+							<ul id="ppGamesAcc"></ul>
+						</div>
+						
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div id="info-cnt_1" class="grid-item" width=30% >
+			</div>
+
+
+			<div id="teamDFCnt" class="grid-item" class="show-item" width=60%>
+				<table style="border: 2px solid limegreen;">
+					<thead>
+						<tr class="df_hdr">
+							<td>DF</td>
+							<th onclick="tmNmClick(1)" >ARS</th>
+							<th onclick="tmNmClick(2)" >AVL</th>
+							<th onclick="tmNmClick(3)" >BOU</th>
+							<th onclick="tmNmClick(4)" >BRE</th>
+							<th onclick="tmNmClick(5)" >BHA</th>
+							<th onclick="tmNmClick(6)" >CHE</th>
+							<th onclick="tmNmClick(7)" >CRY</th>
+							<th onclick="tmNmClick(8)" >EVE</th>
+							<th onclick="tmNmClick(9)" >FUL</th>
+							<th onclick="tmNmClick(10)" >LEI</th>
+							<th onclick="tmNmClick(11)" >LEE</th>
+							<th onclick="tmNmClick(12)" >LIV</th>
+							<th onclick="tmNmClick(13)" >MCI</th>
+							<th onclick="tmNmClick(14)" >MNU</th>
+							<th onclick="tmNmClick(15)" >NEW</th>
+							<th onclick="tmNmClick(16)" >NFO</th>
+							<th onclick="tmNmClick(17)" >SOU</th>
+							<th onclick="tmNmClick(18)" >TOT</th>
+							<th onclick="tmNmClick(19)" >WHU</th>
+							<th onclick="tmNmClick(20)" >WOL</th>
+						</tr>
+					</thead>
+		
+					<tbody>
+						<tr id="df_home">
+							<th><button onclick="toggleStrengthHome()">FOLD</button><br>HOME</th>
+							<td tmId=1  df=4 onclick="setCustomDF('H',1)" >4</td>
+							<td tmId=2  df=2 onclick="setCustomDF('H',2)">2</td>
+							<td tmId=3  df=2 onclick="setCustomDF('H',3)">2</td>
+							<td tmId=4  df=3 onclick="setCustomDF('H',4)">3</td>
+							<td tmId=5  df=3 onclick="setCustomDF('H',5)">3</td>
+							<td tmId=6  df=4 onclick="setCustomDF('H',6)">4</td>
+							<td tmId=7  df=2 onclick="setCustomDF('H',7)">2</td>
+							<td tmId=8  df=2 onclick="setCustomDF('H',8)">2</td>
+							<td tmId=9  df=2 onclick="setCustomDF('H',9)">2</td>
+							<td tmId=10 df=3 onclick="setCustomDF('H',10)">3</td>
+							<td tmId=11 df=2 onclick="setCustomDF('H',11)">2</td>
+							<td tmId=12 df=5 onclick="setCustomDF('H',12)">5</td>
+							<td tmId=13 df=5 onclick="setCustomDF('H',13)">5</td>
+							<td tmId=14 df=4 onclick="setCustomDF('H',14)">4</td>
+							<td tmId=15 df=4 onclick="setCustomDF('H',15)">4</td>
+							<td tmId=16 df=2 onclick="setCustomDF('H',16)">2</td>
+							<td tmId=17 df=2 onclick="setCustomDF('H',17)">2</td>
+							<td tmId=18 df=4 onclick="setCustomDF('H',18)">4</td>
+							<td tmId=19 df=3 onclick="setCustomDF('H',19)">3</td>
+							<td tmId=20 df=2 onclick="setCustomDF('H',20)">2</td>
+						</tr>
+
+						<tr id="tr_str_h_o" class="strengths s_overall s_home" >
+							<th>overall</th>
+							<td tmId=1  	str_h_o=0 >0</td>
+							<td tmId=2  	str_h_o=0 >0</td>
+							<td tmId=3  	str_h_o=0 >0</td>
+							<td tmId=4  	str_h_o=0 >0</td>
+							<td tmId=5  	str_h_o=0 >0</td>
+							<td tmId=6  	str_h_o=0 >0</td>
+							<td tmId=7  	str_h_o=0 >0</td>
+							<td tmId=8  	str_h_o=0 >0</td>
+							<td tmId=9  	str_h_o=0 >0</td>
+							<td tmId=10  	str_h_o=0 >0</td>
+							<td tmId=11  	str_h_o=0 >0</td>
+							<td tmId=12  	str_h_o=0 >0</td>
+							<td tmId=13  	str_h_o=0 >0</td>
+							<td tmId=14  	str_h_o=0 >0</td>
+							<td tmId=15  	str_h_o=0 >0</td>
+							<td tmId=16  	str_h_o=0 >0</td>
+							<td tmId=17  	str_h_o=0 >0</td>
+							<td tmId=18  	str_h_o=0 >0</td>
+							<td tmId=19  	str_h_o=0 >0</td>
+							<td tmId=20 	str_h_o=0 >0</td>
+						</tr>
+
+						<tr id="tr_str_h_a" class="strengths s_attack s_home" >
+							<th>attack</th>
+							<td tmId=1  	str_h_a=0 >0</td>
+							<td tmId=2  	str_h_a=0 >0</td>
+							<td tmId=3  	str_h_a=0 >0</td>
+							<td tmId=4  	str_h_a=0 >0</td>
+							<td tmId=5  	str_h_a=0 >0</td>
+							<td tmId=6  	str_h_a=0 >0</td>
+							<td tmId=7  	str_h_a=0 >0</td>
+							<td tmId=8  	str_h_a=0 >0</td>
+							<td tmId=9  	str_h_a=0 >0</td>
+							<td tmId=10  	str_h_a=0 >0</td>
+							<td tmId=11  	str_h_a=0 >0</td>
+							<td tmId=12  	str_h_a=0 >0</td>
+							<td tmId=13  	str_h_a=0 >0</td>
+							<td tmId=14  	str_h_a=0 >0</td>
+							<td tmId=15  	str_h_a=0 >0</td>
+							<td tmId=16  	str_h_a=0 >0</td>
+							<td tmId=17  	str_h_a=0 >0</td>
+							<td tmId=18  	str_h_a=0 >0</td>
+							<td tmId=19  	str_h_a=0 >0</td>
+							<td tmId=20 	str_h_a=0 >0</td>
+						</tr>
+
+						<tr id="tr_str_h_d" class="strengths s_defence s_home" >
+							<th>defence</th>
+							<td tmId=1  	str_h_d=0 >0</td>
+							<td tmId=2  	str_h_d=0 >0</td>
+							<td tmId=3  	str_h_d=0 >0</td>
+							<td tmId=4  	str_h_d=0 >0</td>
+							<td tmId=5  	str_h_d=0 >0</td>
+							<td tmId=6  	str_h_d=0 >0</td>
+							<td tmId=7  	str_h_d=0 >0</td>
+							<td tmId=8  	str_h_d=0 >0</td>
+							<td tmId=9  	str_h_d=0 >0</td>
+							<td tmId=10  	str_h_d=0 >0</td>
+							<td tmId=11  	str_h_d=0 >0</td>
+							<td tmId=12  	str_h_d=0 >0</td>
+							<td tmId=13  	str_h_d=0 >0</td>
+							<td tmId=14  	str_h_d=0 >0</td>
+							<td tmId=15  	str_h_d=0 >0</td>
+							<td tmId=16  	str_h_d=0 >0</td>
+							<td tmId=17  	str_h_d=0 >0</td>
+							<td tmId=18  	str_h_d=0 >0</td>
+							<td tmId=19  	str_h_d=0 >0</td>
+							<td tmId=20 	str_h_d=0 >0</td>
+						</tr>
+
+						<tr id="df_away">
+							<th><button onclick="toggleStrengthAway()">FOLD</button><br>AWAY</th>
+							<td tmId=1  df=4 onclick="setCustomDF('A',1)" >4</td>
+							<td tmId=2  df=2 onclick="setCustomDF('A',2)" >2</td>
+							<td tmId=3  df=2 onclick="setCustomDF('A',3)" >2</td>
+							<td tmId=4  df=2 onclick="setCustomDF('A',4)" >2</td>
+							<td tmId=5  df=3 onclick="setCustomDF('A',5)" >3</td>
+							<td tmId=6  df=4 onclick="setCustomDF('A',6)" >4</td>
+							<td tmId=7  df=2 onclick="setCustomDF('A',7)" >2</td>
+							<td tmId=8  df=2 onclick="setCustomDF('A',8)" >2</td>
+							<td tmId=9  df=2 onclick="setCustomDF('A',9)" >2</td>
+							<td tmId=10 df=2 onclick="setCustomDF('A',10)" >2</td>
+							<td tmId=11 df=2 onclick="setCustomDF('A',11)" >2</td>
+							<td tmId=12 df=4 onclick="setCustomDF('A',12)" >4</td>
+							<td tmId=13 df=5 onclick="setCustomDF('A',13)" >5</td>
+							<td tmId=14 df=4 onclick="setCustomDF('A',14)" >4</td>
+							<td tmId=15 df=4 onclick="setCustomDF('A',15)" >4</td>
+							<td tmId=16 df=2 onclick="setCustomDF('A',16)" >2</td>
+							<td tmId=17 df=2 onclick="setCustomDF('A',17)" >2</td>
+							<td tmId=18 df=4 onclick="setCustomDF('A',18)" >4</td>
+							<td tmId=19 df=3 onclick="setCustomDF('A',19)" >3</td>
+							<td tmId=20 df=2 onclick="setCustomDF('A',20)" >2</td>
+						</tr>
+
+						<tr id="tr_str_a_o" class="strengths s_overall s_away" >
+							<th>overall</th>
+							<td tmId=1  	str_a_o=0 >0</td>
+							<td tmId=2  	str_a_o=0 >0</td>
+							<td tmId=3  	str_a_o=0 >0</td>
+							<td tmId=4  	str_a_o=0 >0</td>
+							<td tmId=5  	str_a_o=0 >0</td>
+							<td tmId=6  	str_a_o=0 >0</td>
+							<td tmId=7  	str_a_o=0 >0</td>
+							<td tmId=8  	str_a_o=0 >0</td>
+							<td tmId=9  	str_a_o=0 >0</td>
+							<td tmId=10  	str_a_o=0 >0</td>
+							<td tmId=11  	str_a_o=0 >0</td>
+							<td tmId=12  	str_a_o=0 >0</td>
+							<td tmId=13  	str_a_o=0 >0</td>
+							<td tmId=14  	str_a_o=0 >0</td>
+							<td tmId=15  	str_a_o=0 >0</td>
+							<td tmId=16  	str_a_o=0 >0</td>
+							<td tmId=17  	str_a_o=0 >0</td>
+							<td tmId=18  	str_a_o=0 >0</td>
+							<td tmId=19  	str_a_o=0 >0</td>
+							<td tmId=20 	str_a_o=0 >0</td>
+						</tr>
+
+						<tr id="tr_str_a_a" class="strengths s_attack s_away" >
+							<th>attack</th>
+							<td tmId=1  	str_a_a=0 >0</td>
+							<td tmId=2  	str_a_a=0 >0</td>
+							<td tmId=3  	str_a_a=0 >0</td>
+							<td tmId=4  	str_a_a=0 >0</td>
+							<td tmId=5  	str_a_a=0 >0</td>
+							<td tmId=6  	str_a_a=0 >0</td>
+							<td tmId=7  	str_a_a=0 >0</td>
+							<td tmId=8  	str_a_a=0 >0</td>
+							<td tmId=9  	str_a_a=0 >0</td>
+							<td tmId=10  	str_a_a=0 >0</td>
+							<td tmId=11  	str_a_a=0 >0</td>
+							<td tmId=12  	str_a_a=0 >0</td>
+							<td tmId=13  	str_a_a=0 >0</td>
+							<td tmId=14  	str_a_a=0 >0</td>
+							<td tmId=15  	str_a_a=0 >0</td>
+							<td tmId=16  	str_a_a=0 >0</td>
+							<td tmId=17  	str_a_a=0 >0</td>
+							<td tmId=18  	str_a_a=0 >0</td>
+							<td tmId=19  	str_a_a=0 >0</td>
+							<td tmId=20 	str_a_a=0 >0</td>
+						</tr>
+
+						<tr id="tr_str_a_d" class="strengths s_defence s_away" >
+							<th>defence</th>
+							<td tmId=1  	str_a_d=0 >0</td>
+							<td tmId=2  	str_a_d=0 >0</td>
+							<td tmId=3  	str_a_d=0 >0</td>
+							<td tmId=4  	str_a_d=0 >0</td>
+							<td tmId=5  	str_a_d=0 >0</td>
+							<td tmId=6  	str_a_d=0 >0</td>
+							<td tmId=7  	str_a_d=0 >0</td>
+							<td tmId=8  	str_a_d=0 >0</td>
+							<td tmId=9  	str_a_d=0 >0</td>
+							<td tmId=10  	str_a_d=0 >0</td>
+							<td tmId=11  	str_a_d=0 >0</td>
+							<td tmId=12  	str_a_d=0 >0</td>
+							<td tmId=13  	str_a_d=0 >0</td>
+							<td tmId=14  	str_a_d=0 >0</td>
+							<td tmId=15  	str_a_d=0 >0</td>
+							<td tmId=16  	str_a_d=0 >0</td>
+							<td tmId=17  	str_a_d=0 >0</td>
+							<td tmId=18  	str_a_d=0 >0</td>
+							<td tmId=19  	str_a_d=0 >0</td>
+							<td tmId=20 	str_a_d=0 >0</td>
+						</tr>
+
+						<tr class="pp_count">
+							<th>postponed</th>
+							<td tmId=1 pg=0 >0</td>
+							<td tmId=2 pg=0 >0</td>
+							<td tmId=3 pg=0 >0</td>
+							<td tmId=4 pg=0 >0</td>
+							<td tmId=5 pg=0 >0</td>
+							<td tmId=6 pg=0 >0</td>
+							<td tmId=7 pg=0 >0</td>
+							<td tmId=8 pg=0 >0</td>
+							<td tmId=9 pg=0 >0</td>
+							<td tmId=10 pg=0 >0</td>
+							<td tmId=11 pg=0 >0</td>
+							<td tmId=12 pg=0 >0</td>
+							<td tmId=13 pg=0 >0</td>
+							<td tmId=14 pg=0 >0</td>
+							<td tmId=15 pg=0 >0</td>
+							<td tmId=16 pg=0 >0</td>
+							<td tmId=17 pg=0 >0</td>
+							<td tmId=18 pg=0 >0</td>
+							<td tmId=19 pg=0 >0</td>
+							<td tmId=20 pg=0 >0</td>
+						</tr>
+					</tbody>
+
+				</table>
+
+				<div id="popUpDF" class="pu_DF" tmId=0 hidden=True >
+					<div id="puDF_tmSNm" ><span>abr.</span></div>
+
+					<div id="puDF_Home">
+						<br>HOME<br>
+						<select name="puDFSelectH"
+								id="puDFSelectH"
+								value=1
+								onmouseup="updateCustomDF('H', value)"
+						>
+							<option value=1 selected >1</option>
+							<option value=2 >2</option>
+							<option value=3 >3</option>
+							<option value=4 >4</option>
+							<option value=5 >5</option>
+						</select>
+					</div>
+
+					<div id="puDF_Away"><br>AWAY<br>
+						<select name="puDFSelectA"
+								id="puDFSelectA"
+								value=1
+								onmouseup="updateCustomDF('A', value)"
+						>
+							<option value=1 selected >1</option>
+							<option value=2 >2</option>
+							<option value=3 >3</option>
+							<option value=4 >4</option>
+							<option value=5 >5</option>
+						</select>
+					</div>
+
+					<button onclick="clspuDF()">Close</button>
+
+				</div>
+
+			</div>
+
+
+			<div id="info-cnt_2" class="grid-item" width=auto >
+			</div>
+
+
+			<div id="fxtrs-cnt" class="grid-item" width=60%>
+				<table id="fxtrTbl">
+					<thead>
+						<tr class="striped fxtrHdr">
+							<th evrnd="999" >Team</th>
+							<th evrnd="999" >select</th>
+							<th evrnd="999" >
+								<button onclick="reverseSort()" ><span id="rvSortBttn">DESC</span></button>
+								<br>
+								<button onclick="changDFview()" ><span id="tmDFhdr">DF</span></button>
+							</th>
+							<th onclick="mk_matchDay_df_matchup(1)" evrnd="1">Round 01</th>
+							<th onclick="mk_matchDay_df_matchup(2)" evrnd="2">Round 02</th>
+							<th onclick="mk_matchDay_df_matchup(3)" evrnd="3">Round 03</th>
+							<th onclick="mk_matchDay_df_matchup(4)" evrnd="4">Round 04</th>
+							<th onclick="mk_matchDay_df_matchup(5)" evrnd="5">Round 05</th>
+							<th onclick="mk_matchDay_df_matchup(6)" evrnd="6">Round 06</th>
+							<th onclick="mk_matchDay_df_matchup(7)" evrnd="7">Round 07</th>
+
+							<th onclick="mk_matchDay_df_matchup(8)" evrnd="8">Round 08</th>
+
+							<th evrnd="8" ibreak="8" class="intlBreak" >Int'l<br>break 1</th>
+							<th evrnd="9" ibreak="9" class="intlBreak" >Int'l<br>break 1</th>
+							
+							<th onclick="mk_matchDay_df_matchup(9)" evrnd="9">Round 09</th>
+							<th onclick="mk_matchDay_df_matchup(10)" evrnd="10">Round 10</th>
+							<th onclick="mk_matchDay_df_matchup(11)" evrnd="11">Round 11</th>
+							<th onclick="mk_matchDay_df_matchup(12)" evrnd="12">Round 12</th>
+							<th onclick="mk_matchDay_df_matchup(13)" evrnd="13">Round 13</th>
+							<th onclick="mk_matchDay_df_matchup(14)" evrnd="14">Round 14</th>
+							<th onclick="mk_matchDay_df_matchup(15)" evrnd="15">Round 15</th>
+							<th onclick="mk_matchDay_df_matchup(16)" evrnd="16">Round 16</th>
+
+							<th evrnd="16" ibreak="16" class="intlBreak" >World Cup</th>
+							<th evrnd="17" ibreak="17" class="intlBreak" >World Cup</th>
+							
+							<th onclick="mk_matchDay_df_matchup(17)" evrnd="17">Round 17</th>
+
+							<th onclick="mk_matchDay_df_matchup(18)" evrnd="18">Round 18</th>
+							<th onclick="mk_matchDay_df_matchup(19)" evrnd="19">Round 19</th>
+							<th onclick="mk_matchDay_df_matchup(20)" evrnd="20">Round 20</th>
+							<th onclick="mk_matchDay_df_matchup(21)" evrnd="21">Round 21</th>
+							<th onclick="mk_matchDay_df_matchup(22)" evrnd="22">Round 22</th>
+							<th onclick="mk_matchDay_df_matchup(23)" evrnd="23">Round 23</th>
+							<th onclick="mk_matchDay_df_matchup(24)" evrnd="24">Round 24</th>
+							<th onclick="mk_matchDay_df_matchup(25)" evrnd="25">Round 25</th>
+							<th onclick="mk_matchDay_df_matchup(26)" evrnd="26">Round 26</th>
+							<th onclick="mk_matchDay_df_matchup(27)" evrnd="27">Round 27</th>
+
+							<th onclick="mk_matchDay_df_matchup(28)" evrnd="28">Round 28</th>
+
+							<th evrnd="28" ibreak="28" class="intlBreak" >Int'l<br>break 2</th>
+							<th evrnd="29" ibreak="29" class="intlBreak" >Int'l<br>break 2</th>									
+
+							<th onclick="mk_matchDay_df_matchup(29)" evrnd="29">Round 29</th>
+							<th onclick="mk_matchDay_df_matchup(30)" evrnd="30">Round 30</th>
+							<th onclick="mk_matchDay_df_matchup(31)" evrnd="31">Round 31</th>
+							<th onclick="mk_matchDay_df_matchup(32)" evrnd="32">Round 32</th>
+							<th onclick="mk_matchDay_df_matchup(33)" evrnd="33">Round 33</th>
+							<th onclick="mk_matchDay_df_matchup(34)" evrnd="34">Round 34</th>
+							<th onclick="mk_matchDay_df_matchup(35)" evrnd="35">Round 35</th>
+							<th onclick="mk_matchDay_df_matchup(36)" evrnd="36">Round 36</th>
+							<th onclick="mk_matchDay_df_matchup(37)" evrnd="37">Round 37</th>
+
+							<th onclick="mk_matchDay_df_matchup(38)" evrnd="38">Round 38</th>
+							<th evrnd="39" class="clmnHide ppgame">Postponed Games<br>(unplanned)</th>
+						</tr>
+					</thead>
+
+					<tbody 	class="DF_overview teamCntnr" id="eventTable">
+
+						<tr id="ARS" tmId="1">
+							<th>
+								<span onclick="highlightTeamEvents('ARS')">Arsenal</span>
+							</th>
+							<th>
+								<input
+										type="checkbox"
+										name="cbARS"
+										onclick="hideTeamRow('ARS')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="1"></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="11" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="21" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="31" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="41" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="56" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="61" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="72" ></td>
+
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+
+							<td class="evtTeamBlock" evrnd="9" fxtrid="81" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="91" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="104" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="111" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="127" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="131" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="142" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="160" ></td>
+
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+
+							<td class="evtTeamBlock" evrnd="17" fxtrid="161" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="172" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="181" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="199" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="201" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="215" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="221" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="231" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="246" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="251" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="264" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="271" ></td>
+
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+
+							<td class="evtTeamBlock" evrnd="29" fxtrid="281" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="296" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="309" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="311" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="329" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="331" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="346" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="351" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="367" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="371" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="AVL" tmId="2">
+							<th>
+								<span onclick="highlightTeamEvents('AVL')">Aston Villa</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbAVL"
+												onclick="hideTeamRow('AVL')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="2" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="12" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="22" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="32" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="41" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="51" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="66" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="71" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="85" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="99" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="101" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="116" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="121" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="140" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="141" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="152" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="162" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="178" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="182" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="191" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="209" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="211" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="228" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="231" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="243" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="252" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="270" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="272" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="284" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="291" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="301" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="313" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="321" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="339" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="350" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="352" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="364" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="372" ></td>
+
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="BOU" tmId="3">
+							<th>
+								<span onclick="highlightTeamEvents('BOU')">Bournemouth</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbBOU"
+												onclick="hideTeamRow('BOU')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="2" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="17" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="21" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="36" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="42" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="58" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="62" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="77" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="82" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="92" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="103" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="112" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="129" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="132" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="144" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="151" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="164" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="171" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="189" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="192" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="202" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="213" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="222" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="240" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="241" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="251" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="261" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="272" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="282" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="295" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="308" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="312" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="330" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="332" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="341" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="355" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="361" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="376" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="BRE" tmId="4">
+							<th>
+								<span onclick="highlightTeamEvents('BRE')">Brentford</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbBRE"
+												onclick="hideTeamRow('BRE')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="6" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="13" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="24" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="33" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="43" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="52" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="69" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="72" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="82" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="98" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="102" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="113" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="121" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="133" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="146" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="155" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="163" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="179" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="183" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="192" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="205" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="212" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="221" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="232" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="247" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="253" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="263" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="273" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="283" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="292" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="310" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="313" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="328" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="333" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="344" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="353" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="368" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="373" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="BHA" tmId="5">
+							<th>
+								<span onclick="highlightTeamEvents('BHA')">Brighton</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbBHA"
+												onclick="hideTeamRow('BHA')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="9" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="14" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="30" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="34" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="44" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="53" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="62" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="73" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="87" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="93" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="102" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="114" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="125" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="134" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="150" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="152" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="170" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="172" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="186" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="193" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="206" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="213" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="223" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="233" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="248" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="254" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="265" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="274" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="283" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="299" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="302" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="314" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="324" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="334" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="342" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="351" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="362" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="372" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="CHE" tmId="6">
+							<th>
+								<span onclick="highlightTeamEvents('CHE')">Chelsea</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbCHE" onclick="hideTeamRow('CHE')"/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="3" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="15" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="25" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="35" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="50" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="54" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="0" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="74" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="83" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="94" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="101" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="113" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="122" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="134" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="142" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="156" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="164" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="177" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="184" fxtrid=64 ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="194" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="207" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="214" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="230" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="234" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="249" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="255" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="266" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="275" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="284" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="300" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="302" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="319" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="328" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="331" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="341" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="354" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="365" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="374" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="CRY" tmId="7">
+							<th>
+								<span onclick="highlightTeamEvents('CRY')">Crystal Plc</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbCRY"
+												onclick="hideTeamRow('CRY')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="1" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="16" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="22" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="37" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="43" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="57" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="63" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="73" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="83" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="95" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="105" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="115" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="123" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="135" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="149" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="157" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="165" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="171" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="185" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="194" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="203" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="216" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="223" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="232" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="242" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="252" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="262" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="271" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="285" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="294" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="307" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="315" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="327" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="335" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="348" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="355" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="363" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="375" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="EVE" tmId="8">
+							<th>
+								<span onclick="highlightTeamEvents('EVE')">Everton</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbEVE"
+												onclick="hideTeamRow('EVE')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="3" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="12" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="23" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="33" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="45" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="55" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="61" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="75" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="89" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="96" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="109" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="120" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="123" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="136" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="143" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="151" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="166" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="175" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="186" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="195" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="210" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="215" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="227" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="235" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="243" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="258" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="263" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="275" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="286" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="297" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="303" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="315" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="322" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="337" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="342" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="356" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="370" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="376" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="FUL" tmId="9">
+							<th>
+								<span onclick="highlightTeamEvents('FUL')" >Fulham</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbFUL"
+												onclick="hideTeamRow('FUL')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="4" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="20" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="24" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="31" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="44" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="59" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="64" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="78" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="84" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="100" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="103" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="116" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="124" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="136" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="145" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="153" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="165" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="173" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="188" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="197" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="204" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="214" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="224" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="233" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="244" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="253" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="264" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="276" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="282" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="293" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="303" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="316" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="321" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="336" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="343" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="360" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="363" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="379" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="LEI" tmId="10">
+							<th>
+								<span onclick="highlightTeamEvents('LEI')">Leicester</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbLEI"
+												onclick="hideTeamRow('LEI')"
+								/>
+							</th>
+								<th class="dfc">100</td>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="6" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="11" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="26" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="35" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="46" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="53" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="66" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="79" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="86" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="92" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="105" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="117" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="130" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="137" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="143" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="159" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="168" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="174" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="188" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="198" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="206" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="211" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="226" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="236" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="246" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="259" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="266" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="273" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="285" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="295" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="305" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="317" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="323" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="337" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="343" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="358" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="366" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="378" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="LEE" tmId="11">
+							<th>
+								<span onclick="highlightTeamEvents('LEE')">Leeds</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbLEE"
+												onclick="hideTeamRow('LEE')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="5" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="19" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="25" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="34" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="45" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="52" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="65" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="76" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="85" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="95" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="104" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="117" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="124" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="138" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="144" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="158" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="167" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="176" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="187" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="191" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="205" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="218" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="225" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="235" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="245" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="255" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="265" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="280" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="281" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="294" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="304" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="316" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="323" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="332" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="345" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="357" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="369" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="377" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="LIV" tmId="12">
+							<th>
+								<span onclick="highlightTeamEvents('LIV')">Liverpool</span>
+							</th>
+							<th>
+								<input 	type="checkbox"
+												name="cbLIV"
+												onclick="hideTeamRow('LIV')"
+								>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="4" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="16" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="27" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="36" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="48" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="55" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="67" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="74" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="87" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="91" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="106" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="118" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="126" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="138" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="148" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="154" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="162" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="174" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="183" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="193" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="207" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="220" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="227" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="237" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="242" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="256" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="261" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="276" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="287" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="296" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="304" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="318" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="326" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="338" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="344" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="358" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="364" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="380" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="MCI" tmId="13">
+							<th>
+								<span onclick="highlightTeamEvents('MCI')" >Man City</span>
+							<th>
+								<input 	type="checkbox"
+												name="cbMCI"
+												onclick="hideTeamRow('MCI')"
+								>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="10" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="17" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="28" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="37" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="49" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="51" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="68" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="80" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="88" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="97" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="106" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="111" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="125" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="137" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="145" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="155" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="167" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="175" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="184" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="196" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="208" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="219" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="228" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="238" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="241" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="257" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="262" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="277" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="287" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="298" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="305" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="314" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="329" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="336" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="345" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="356" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="365" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="373" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="MUN" tmId="14">
+							<th>
+								<span onclick="highlightTeamEvents('MUN')">Man Utd</span>
+							</th>
+							<th>
+								<input 	type="checkbox"
+												name="cbMUN"
+												onclick="hideTeamRow('MUN')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="9" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="13" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="27" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="39" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="46" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="56" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="63" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="76" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="88" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="96" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="107" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="119" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="122" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="139" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="141" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="153" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="169" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="180" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="189" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="196" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="201" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="216" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="225" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="236" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="247" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="256" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="267" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="274" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="288" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="297" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="306" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="319" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="325" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="339" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="349" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="359" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="361" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="379" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="NEW" tmId="15">
+							<th>
+								<span onclick="highlightTeamEvents('NEW')">Newcastle</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbNEW"
+												onclick="hideTeamRow('NEW')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="7" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="14" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="28" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="40" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="48" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="57" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="70" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="77" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="84" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="98" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="107" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="120" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="128" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="140" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="147" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="156" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="168" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="176" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="181" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="197" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="203" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="217" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="222" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="237" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="248" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="257" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="268" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="278" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="288" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="292" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="301" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="320" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="322" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="340" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="346" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="357" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="366" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="374" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="NFO" tmId="16">
+							<th>
+								<span onclick="highlightTeamEvents('NFO')">Nott-m Forest</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbNFO"
+												onclick="hideTeamRow('NFO')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="7" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="18" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="23" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="38" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="49" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="58" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="65" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="78" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="86" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="99" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="110" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="114" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="126" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="131" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="146" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="157" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="169" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="177" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="190" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="198" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="202" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="218" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="224" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="238" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="250" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="258" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="269" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="278" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="289" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="291" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="306" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="318" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="324" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="333" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="347" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="354" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="367" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="375" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="SOU" tmId="17">
+							<th>
+								<span onclick="highlightTeamEvents('SOU')">Southampton</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbSOU"
+												onclick="hideTeamRow('SOU')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="8" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="19" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="26" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="39" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="50" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="60" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="69" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="71" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="89" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="97" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="108" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="112" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="127" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="135" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="147" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="154" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="170" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="173" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="190" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="195" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="209" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="212" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="229" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="234" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="245" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="259" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="267" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="279" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="290" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="298" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="307" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="311" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="330" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="340" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="347" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="360" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="362" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="380" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="TOT" tmId="18">
+							<th>
+								<span onclick="highlightTeamEvents('TOT')">Tottenham</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbTOT"
+												onclick="hideTeamRow('TOT')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="8" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="15" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="29" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="38" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="47" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="59" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="68" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="79" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="81" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="93" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="109" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="119" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="128" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="132" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="148" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="158" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="163" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="178" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="185" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="199" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="204" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="219" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="226" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="239" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="249" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="260" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="269" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="279" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="286" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="299" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="308" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="320" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="325" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="338" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="348" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="352" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="368" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="377" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="WHU" tmId="19">
+							<th>
+								<span onclick="highlightTeamEvents('WHU')">West Ham</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbWHU"
+												onclick="hideTeamRow('WHU')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="10" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="18" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="30" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="32" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="47" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="54" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="70" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="75" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="90" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="100" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="108" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="118" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="129" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="139" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="149" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="159" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="161" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="179" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="187" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="200" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="210" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="217" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="230" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="239" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="250" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="254" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="270" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="277" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="290" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="293" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="309" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="312" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="326" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="335" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="349" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="353" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="369" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="378" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+						<tr id="WOL" tmId="20">
+							<th>
+								<span onclick="highlightTeamEvents('WOL')">Wolves</span>
+							</th>
+							<th>
+								<input type="checkbox" name="cbWOL"
+												onclick="hideTeamRow('WOL')"
+								/>
+							</th>
+							<th class="dfc">100</th>
+
+							<td class="evtTeamBlock" evrnd="1" fxtrid="5" ></td>
+							<td class="evtTeamBlock" evrnd="2" fxtrid="20" ></td>
+							<td class="evtTeamBlock" evrnd="3" fxtrid="29" ></td>
+							<td class="evtTeamBlock" evrnd="4" fxtrid="40" ></td>
+							<td class="evtTeamBlock" evrnd="5" fxtrid="42" ></td>
+							<td class="evtTeamBlock" evrnd="6" fxtrid="60" ></td>
+							<td class="evtTeamBlock" evrnd="7" fxtrid="67" ></td>
+							<td class="evtTeamBlock" evrnd="8" fxtrid="80" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="8" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="9" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="9" fxtrid="90" ></td>
+							<td class="evtTeamBlock" evrnd="10" fxtrid="94" ></td>
+
+							<td class="evtTeamBlock" evrnd="11" fxtrid="110" ></td>
+							<td class="evtTeamBlock" evrnd="12" fxtrid="115" ></td>
+							<td class="evtTeamBlock" evrnd="13" fxtrid="130" ></td>
+							<td class="evtTeamBlock" evrnd="14" fxtrid="133" ></td>
+							<td class="evtTeamBlock" evrnd="15" fxtrid="150" ></td>
+							<td class="evtTeamBlock" evrnd="16" fxtrid="160" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="16" ibreak="16" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock intlBreak" evrnd="17" ibreak="17" fxtrid="999" >WC</td>
+							<td class="evtTeamBlock" evrnd="17" fxtrid="166" ></td>
+							<td class="evtTeamBlock" evrnd="18" fxtrid="180" ></td>
+							<td class="evtTeamBlock" evrnd="19" fxtrid="182" ></td>
+							<td class="evtTeamBlock" evrnd="20" fxtrid="200" ></td>
+
+							<td class="evtTeamBlock" evrnd="21" fxtrid="208" ></td>
+							<td class="evtTeamBlock" evrnd="22" fxtrid="220" ></td>
+							<td class="evtTeamBlock" evrnd="23" fxtrid="229" ></td>
+							<td class="evtTeamBlock" evrnd="24" fxtrid="240" ></td>
+							<td class="evtTeamBlock" evrnd="25" fxtrid="244" ></td>
+							<td class="evtTeamBlock" evrnd="26" fxtrid="260" ></td>
+							<td class="evtTeamBlock" evrnd="27" fxtrid="268" ></td>
+							<td class="evtTeamBlock" evrnd="28" fxtrid="280" ></td>
+							<td class="evtTeamBlock intlBreak" evrnd="28" ibreak="28" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="29" fxtrid="999" >IB</td>
+							<td class="evtTeamBlock" evrnd="29" fxtrid="289" ></td>
+							<td class="evtTeamBlock" evrnd="30" fxtrid="300" ></td>
+
+							<td class="evtTeamBlock" evrnd="31" fxtrid="310" ></td>
+							<td class="evtTeamBlock" evrnd="32" fxtrid="317" ></td>
+							<td class="evtTeamBlock" evrnd="33" fxtrid="327" ></td>
+							<td class="evtTeamBlock" evrnd="34" fxtrid="334" ></td>
+							<td class="evtTeamBlock" evrnd="35" fxtrid="350" ></td>
+							<td class="evtTeamBlock" evrnd="36" fxtrid="359" ></td>
+							<td class="evtTeamBlock" evrnd="37" fxtrid="370" ></td>
+							<td class="evtTeamBlock" evrnd="38" fxtrid="371" ></td>
+
+							<td class="clmnHide ppgame" evrnd="39">
+								<div class="fxtrPPcount"></div>
+								<div class="fxtrPPlist"></div>
+							</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+
+			<div id="seltbl-cnt" class="grid-item" width=100%>
+				<span>fxtrs-selected</span>
+			</div>
+
+
+		</div>
+
+	</body>
+
+	<footer><script type="text/javascript">showEventWindow(2);</script></footer>
+
+</html>

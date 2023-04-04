@@ -1,0 +1,179 @@
+
+/*
+
+TTTTTTTT		EEEEEEEE		   AA    		MMMMMMMM 		SSSSSSSS
+   TT   		EE      		  AAAA 			MM  M  M 	 	SS
+   TT   		EE      		  A  A 			MM  M  M 	 	SS
+   TT   		EEEEEEEE		  A  A 			MM  M  M 	 	SSSSSSSS
+   TT   		EEEEEEEE		 AAAAAA			MM  M  M  				SS
+   TT   		EE      		 AA  AA 		MM  M  M 	 				SS
+   TT   		EE      		AA    AA		MM  M  M 	 				SS
+   TT   		EEEEEEEE		AA    AA		MM  M  M 		SSSSSSSS
+*/
+
+
+.bgARS{
+	color: #FFFFFF;
+	background: repeating-linear-gradient(-45deg, red, red 10px, red 10px, red 20px);
+}
+
+
+
+.bgAVL{
+	color: #FFFFFF;
+	background: repeating-linear-gradient( -180deg, #95bfe5, #95bfe5 30px, #7d1142 60px, #7d1142 90px );
+}
+
+
+
+.bgBRE{
+	color: #000000;
+	background: repeating-linear-gradient(-90deg, #FFFFFF, #FFFFFF 15px, red 15px, red 25px);
+}
+
+th.bgBRE{
+		color:  #000000 !important;
+}
+
+
+
+.bgBHA{
+	color: #000000;
+	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,blue 10px,blue 20px);
+}
+
+th.bgBHA{
+		color:  #000000 !important;
+}
+
+
+
+.bgBOU{
+	color: #000000;
+	background: repeating-linear-gradient( -90deg, red, red 10px, #000000 10px, #000000 20px);
+}
+
+
+
+.bgCHE{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
+}
+
+
+
+.bgCRY{
+	color: #000000;
+	background: repeating-linear-gradient(90deg, #e91d12, #0055a5 20px, #e91d12 40px, #e91d12 60px );
+}
+
+
+
+.bgEVE{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
+}
+
+
+
+.bgFUL{
+	color: #000000;
+	background: repeating-linear-gradient(45deg,#FFFFFF,#FFFFFF 10px,#000000 10px,#000000 20px);
+	background-image: 	'https://www.fulhamfc.com/club/FFC-Heritage-Crest.png';
+}
+
+th.bgFUL{
+		color:  #000000 !important;
+}
+
+
+
+.bgLEE{
+	font-weight: bold;
+	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 10px,#FFFFFF 10px,#FFFFFF 20px);
+}
+
+th.bgLEE{
+		color:  #000000 !important;
+}
+
+
+
+.bgLEI{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
+}
+
+
+
+.bgLIV{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,red,red 10px,red 10px,red 20px);
+}
+
+
+
+.bgMCI{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,#0099cc,#0099cc 10px,#0099cc 10px,#0099cc 20px);
+}
+
+
+
+.bgMUN{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,red,red 10px,red 10px,red 20px);
+}
+
+
+
+.bgNEW{
+	color: #000000;
+	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,#000000 10px,#000000 20px);
+}
+
+
+
+.bgNFO{
+	color: #FFFFFF;
+	background: repeating-linear-gradient(-90deg,red,red 10px,#FFFFFF 10px,red 20px);
+}
+
+th.bgNFO{
+		color:  #000000 !important;
+}
+
+
+.bgSOU {
+	color: #000000;
+	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,red 10px,red 20px);
+}
+
+th.bgSOU{
+		color:  #000000 !important;
+}
+
+
+
+.bgTOT{
+	font-weight: bold;
+	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 10px,#FFFFFF 10px,#FFFFFF 20px);
+}
+
+th.bgTOT{
+		color:  #000000 !important;
+}
+
+
+
+.bgWHU{
+	color: #000000;
+	background: repeating-linear-gradient(-180deg, red ,red 10px, blue 10px, blue 20px);
+}
+
+
+
+.bgWOL{
+	color: #FFFFFF;
+	background: repeating-linear-gradient(-45deg, #fdb913, #fdb913 10px, #000000 10px, #000000 20px);
+}

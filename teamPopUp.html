@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Jay's FPL 22/23 team overview</title>
+		<meta charset="utf-8" lang="en">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/d3.min.js"></script>
+
+		<!-- link rel="stylesheet" type="text/css" href="fpl.css" -->
+		<link rel="stylesheet" type="text/css" href="fpl_clubs.css" >
+
+		<script src="js/github_FDL_CONSTANTS.js"></script>
+		<script src="js/github_FDL_DATA.js"></script>
+		<script src="js/github_FDL_UI.js"></script>
+		<script src="js/github_FDL_TmPopUp.js"></script>
+	</head>
+
+	<style type="text/css">
+		table{
+			text-align: center;
+			background-color: #000000;
+			color: #FFFFFF;
+		}
+
+		thead > tr:nth-child(2){
+			background-color: #ADADAD;
+			color: #FF00AA;
+		}
+
+		/* 
+		table{
+			color: #FFFFFF;
+		}
+		*/
+
+	</style>
+
+	<body style="width: 75%;">
+		<h1 id=tpu_TmNmLong >h1 Team</h1>
+		<h3 id=tpu_TmNmShort >h3 Team</h3>
+		<h3 id=tpu_TmNmAlt >h3 Team</h3>
+
+		<br>
+
+		<table id="tpu_tbl_fpl_df_H" style="width: 75%;" >
+			<thead>
+				<tr>
+					<th>HOME</th>
+					<th>OVERALL</th>
+					<th>ATTACK</th>
+					<th>DEFENCE</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<td>Rank:</td>
+				<td id="tpu_tbl_fpl_df_H_o"  ></td>
+				<td id="tpu_tbl_fpl_df_H_a"  ></td>
+				<td id="tpu_tbl_fpl_df_H_d"  ></td>
+			</tbody>
+
+		</table>
+
+		<br>
+
+		<table id="tpu_tbl_fpl_df_A" style="width: 75%;" >
+
+			<thead>
+				<tr>
+					<th>AWAY</th>
+					<th>OVERALL</th>
+					<th>ATTACK</th>
+					<th>DEFENCE</th>
+				</tr>
+			</thead>
+
+			<tbody id="tpu_tbl_fpl_df_A_data">
+				<td>Rank:</td>
+				<td id="tpu_tbl_fpl_df_A_o"  ></td>
+				<td id="tpu_tbl_fpl_df_A_a"  ></td>
+				<td id="tpu_tbl_fpl_df_A_d"  ></td>
+			</tbody>
+
+		</table>
+
+		<br>
+
+		<table id="tpu_tbl_GK" style="width: 75%;" >
+
+			<thead>
+				<tr>
+					<th width="40%">Totals</th>
+					<th id="tpu_gkp_ttl_min" >minutes</th>
+					<th id="tpu_gkp_ttl_inf" >influence</th>
+					<th id="tpu_gkp_ttl_cre" >creativity</th>
+					<th id="tpu_gkp_ttl_thr" >threat</th>
+				</tr>
+				<tr>
+					<th width="40%">Name</th>
+					<th>minutes</th>
+					<th>influence</th>
+					<th>creativity</th>
+					<th>threat</th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+
+			</tbody>
+
+		</table>
+
+		<br>
+
+		<table id="tpu_tbl_DEF" style="width: 75%;" >
+			<thead>
+				<tr>
+					<th width="40%">Totals</th>
+					<th id="tpu_def_ttl_min" >minutes</th>
+					<th id="tpu_def_ttl_inf" >influence</th>
+					<th id="tpu_def_ttl_cre" >creativity</th>
+					<th id="tpu_def_ttl_thr" >threat</th>
+				</tr>
+				<tr>
+					<th width="40%">Name</th>
+					<th>minutes</th>
+					<th>influence</th>
+					<th>creativity</th>
+					<th>threat</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+			</tbody>
+
+		</table>
+
+		<br>
+
+		<table id="tpu_tbl_MID" style="width: 75%;" >
+
+			<thead>
+				<tr>
+					<th width="40%">Totals</th>
+					<th id="tpu_mid_ttl_min" >minutes</th>
+					<th id="tpu_mid_ttl_inf" >influence</th>
+					<th id="tpu_mid_ttl_cre" >creativity</th>
+					<th id="tpu_mid_ttl_thr" >threat</th>
+				</tr>
+				<tr>
+					<th width="40%">Name</th>
+					<th>minutes</th>
+					<th>influence</th>
+					<th>creativity</th>
+					<th>threat</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+			</tbody>
+
+		</table>
+
+		<br>
+
+		<table id="tpu_tbl_FWD" style="width: 75%;" >
+			<thead>
+				<tr>
+					<th width="40%">Totals</th>
+					<th id="tpu_fwd_ttl_min" >minutes</th>
+					<th id="tpu_fwd_ttl_inf" >influence</th>
+					<th id="tpu_fwd_ttl_cre" >creativity</th>
+					<th id="tpu_fwd_ttl_thr" >threat</th>
+				</tr>
+				<tr>
+					<th width="40%">Name</th>
+					<th>minutes</th>
+					<th>influence</th>
+					<th>creativity</th>
+					<th>threat</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+			</tbody>
+
+		</table>
+
+	</body>
+
+</html>
