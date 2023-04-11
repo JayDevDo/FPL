@@ -306,16 +306,17 @@
 
 	{
 		"FA-cup": [
-					{ 	"IN": 	[ 5, 6, 13, 14 ]},
-					{	"OUT": 	[ 1, 2, 3, 4, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20 ] },
+					{ 	"IN": 	[ 5, 13, 14 ]},
+					{	"OUT": 	[ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20 ] },
 					{ 	"R2":	[ 	
+									{"team_h":0, "team_a":0, "gw": 38, "round": "FINAL" },
 									{"team_h":0, "team_a":0, "gw": 38, "round": "FINAL" }
 					 			]
 					},
 					{	
 						"R4":	[ 	
-									{"team_h":5, "team_a":13, "gw": 32, "round": "SEMI-FINAL" },
-									{"team_h":14, "team_a":6, "gw": 32, "round": "SEMI-FINAL" }
+									{"team_h":13, "team_a":0, "gw": 32, "round": "SEMI-FINAL" },
+									{"team_h":5, "team_a":14, "gw": 32, "round": "SEMI-FINAL" }
 						]
 					},
 					{	

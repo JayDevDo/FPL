@@ -8,18 +8,12 @@ table{
 
 
 .grid-container {
-/*	display: table-row-group; */
-	display: flow; 
-	grid-template-columns: subgrid;
-	grid-template-rows: subgrid;
-	align-content: flex-start ;
+	display: inline-block; 
 }
 
 .grid-item {
-/*	display: inline-grid; */
-	display: inline-grid; 
-	overflow-x: scroll;
-	margin-top: 5px;
+	display: inline-block; 
+	vertical-align: top;
 }
 
 .pageHeader {

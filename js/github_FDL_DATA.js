@@ -82,7 +82,12 @@ getPostponedData = async ()=> {
 					gamesOverview.replannedGamesIds.push( rpFxtrs[rp].ppid ) ;
 				}
 
+				setIndicator("ppsLdd-idc", "green") ; 
 				myPPResolve( [ gamesOverview.postponedGames, gamesOverview.replannedGames ] ) ; 
+
+			}else{
+
+				setIndicator("ppsLdd-idc", "red") ; 
 
 			}
 
@@ -112,8 +117,10 @@ getFixtureData = async ()=> {
 
 				let fxtrTableRaw = JSON.parse( fxtrXhttp.responseText ) ; 
 				fixtureArray = sortByGmID( fxtrTableRaw ) ; 
+				setIndicator("fxtrsLdd-idc", "green") ; 
 				myFxtrResolve( fixtureArray ) ;
-
+			}else{
+				setIndicator("fxtrsLdd-idc", "red") ; 
 			} 
 
 			/* 	else {console.log( getCI(), "getFixtureData fxtrXhttp resolve ELSE ", fxtrXhttp.readyState ) ; }	*/
@@ -442,8 +449,16 @@ allPromise.then(
 
 		} 
 
-		// console.log("FPLTeamsFull[1]:", JSON.stringify( FPLTeamsFull[1] ) ) ; 
+		gamesOverview.dfSource.loaded[0] = true ; 
+		setIndicator("epl-df-Ldd-idc", "green") ;
+		setIndicator("epl-ha-Ldd-idc", "green") ; 
+		console.log(getCI(), "allPromise.then(values) after TEAM LOOP -> hasUserStore", hasUserStore() ) ; 
+
 		// TEAM LOOP END 
+
+		if( hasUserStore() ){
+			setIndicator("usr-df-Ldd-idc", "orange") ; 
+		}
 
 		// PPgames START 
 		buidPPContainer( ppGames ) ; 
@@ -530,7 +545,7 @@ allPromise.then(
 		}
 
 		// FXTRS LOOP END
-
+		setIndicator("df-Ldd-idc", "green") ; 
 
 	}
 

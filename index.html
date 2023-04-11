@@ -48,7 +48,7 @@
 
 		<div class="grid-container">
 
-			<div id="sttngs-cnt" class="grid-item" width=30% >
+			<div id="sttngs-cnt" class="grid-item" width=30% class="show-item">
 
 				<div id="indicators">
 
@@ -70,7 +70,7 @@
 									</td>
 									<td colspan="2">
 										<div>
-											<span style="display: inline-block;" id="curRound"></span>										
+											<span style="display: inline-block;" id="curRound"></span>
 										</div>
 									</td>
 
@@ -95,7 +95,7 @@
 										</button>
 									</td>
 									<td colspan="1">
-										<button id="epl-df-viz" onclick="toggleDFuser()" >
+										<button id="epl-df-viz" onclick="loadFPLDF()" >
 											<div id="epl-df-Ldd-idc" class="redLight" ></div>
 											FPL DF
 										</button>
@@ -141,7 +141,7 @@
 			</div>
 
 
-			<div id="evw-cnt" class="grid-item" width=30% class="hide-item" >
+			<div id="evw-cnt" class="grid-item" width=30% class="show-item" >
 
 				<div id="selTblCnt">
 						
@@ -164,15 +164,14 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=30 >
+								<form id="eventWndwStartForm" value=31 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=30
+											value=31
 											onselect="setEventWndwStart(value)" 
 											onchange="setEventWndwStart(value)"
 									>
-										<option value=30 active selected >30 (default)</option>
-										<option value=31 >31</option>
+										<option value=31 active selected >31 (default)</option>
 										<option value=32 >32</option>
 										<option value=33 >33</option>
 										<option value=34 >34</option>
@@ -180,35 +179,36 @@
 										<option value=36 >36</option>
 										<option value=37 >37</option>
 										<option value=38 >38</option>
-										<option value=1 >1</option>
-										<option value=2 >2</option>
-										<option value=3 >3</option>
-										<option value=4 >4</option>
-										<option value=5 >5</option>
-										<option value=6 >6</option>
-										<option value=7 >7</option>
-										<option value=8 >8 IB 1 start</option>
-										<option value=9 >9 IB 1 end</option>
-										<option value=10 >10</option>
-										<option value=11 >11</option>
-										<option value=12 >12</option>
-										<option value=13 >13</option>
-										<option value=14 >14</option>
-										<option value=15 >15</option>
-										<option value=16 >16 WC start</option>
-										<option value=17 >17 WC end</option>
-										<option value=18 >18</option>
-										<option value=19 >19</option>
-										<option value=20 >20</option>
-										<option value=21 >21</option>
-										<option value=22 >22</option>
-										<option value=23 >23</option>
-										<option value=24 >24</option>
-										<option value=25 >25</option>
-										<option value=26 >26</option>
-										<option value=27 >27</option>
-										<option value=28 >28 IB 2 start</option>
+										<option value=30>30</option>
 										<option value=29 >29 IB 2 end</option>
+										<option value=28 >28 IB 2 start</option>
+										<option value=27 >27</option>
+										<option value=26 >26</option>
+										<option value=25 >25</option>
+										<option value=24 >24</option>
+										<option value=23 >23</option>
+										<option value=22 >22</option>
+										<option value=21 >21</option>
+										<option value=20 >20</option>
+										<option value=19 >19</option>
+										<option value=18 >18</option>
+										<option value=17 >17 WC end</option>
+										<option value=16 >16 WC start</option>
+										<option value=15 >15</option>
+										<option value=14 >14</option>
+										<option value=13 >13</option>
+										<option value=12 >12</option>
+										<option value=11 >11</option>
+										<option value=10 >10</option>
+										<option value=9 >9 IB 1 end</option>
+										<option value=8 >8 IB 1 start</option>
+										<option value=7 >7</option>
+										<option value=6 >6</option>
+										<option value=5 >5</option>
+										<option value=4 >4</option>
+										<option value=3 >3</option>
+										<option value=2 >2</option>
+										<option value=1 >1</option>
 									</select>
 								</form>
 							</td>
@@ -218,10 +218,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=9 >
+								<form id="slctdRoundsForm" value=8 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=9
+											value=8
 											onselect="setRndsToShow(value)" 
 											onchange="setRndsToShow(value)"
 									>
@@ -232,8 +232,8 @@
 										<option value=5  >5  </option>
 										<option value=6  >6  </option>
 										<option value=7  >7	 </option>
-										<option value=8  >8  </option>
-										<option value=9 active selected >default (9)</option>
+										<option value=8 active selected >default (8)</option>
+										<option value=9  >9  </option>
 										<option value=10 >10</option>
 										<option value=38 >All</option>
 										<option value=11 >11 </option>
@@ -316,7 +316,7 @@
 			</div>
 
 
-			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
+			<div id="ppOview-cnt" class="grid-item" width=30% class="show-item" >
 
 				<div id="ppOview">
 	
@@ -602,7 +602,7 @@
 						<select name="puDFSelectH"
 								id="puDFSelectH"
 								value=1
-								onmouseup="updateCustomDF('H', value)"
+								onmouseup="updateCustomDF('H', value )"
 						>
 							<option value=1 selected >1</option>
 							<option value=2 >2</option>

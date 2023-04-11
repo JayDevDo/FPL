@@ -229,31 +229,39 @@ showEventClmn = (rnd)=>{
 /* User DF functions */
 
 setCustomDF = (loc, tmId)=>{
-	// console.log("setCustomDF: loc:\t", loc, "\ttmId:\t" , tmId ,"\tshortNm:\t", FPLTeamsFull[ tmId].shortNm )
+	
 	$("#popUpDF").attr( 'tmId', tmId )
 	$("#puDF_tmSNm").first("span").text(FPLTeamsFull[ tmId].shortNm )
 
-	let offset = $("#df_away").offset();
+	let offset = $("#df_away td[tmId="+tmId + "]").offset();
 
 	$("#popUpDF").show()
 	// $("#popUpDF").offset({ top: ( offset.top - 75 ), left: ( offset.left + ( parseInt(tmId) * 45 ) +50 ) });
-	$("#popUpDF").offset({ top: ( offset.top - 75 ), left: ( offset.left + ( parseInt(tmId) * 45 ) ) });
+	$("#popUpDF").offset({ top: ( offset.top - 75 ), left: offset.left });
 }
 
 
 updateCustomDF = (loc,val)=>{
 	let tmId = $("#popUpDF").attr("tmId") ; 
+	// console.log("shortNm: ", FPLTeamsFull[ tmId ].shortNm, "updateCustomDF: loc: ", loc, "val: ", val ) ; 
+
 	let text = FPLTeamsFull[tmId].shortNm + " " + ((loc=="H")? "A":"H" ) + " (" + val + ")" ; 
 
 	if(loc=="H"){
+
 		crit 	= $(".fxtrspan[teamid_h="+tmId+"][loc='A']") ; 
 		$("#df_home td[tmId=" + tmId + "]").text(val) ;
 		$("#df_home td[tmId=" + tmId + "]").attr("df", val) ;
+	
 	}else{
+	
 		crit 	= $(".fxtrspan[teamid_a="+tmId+"][loc='H']") ; 
 		$("#df_away td[tmId=" + tmId + "]").text(val) ;
 		$("#df_away td[tmId=" + tmId + "]").attr("df", val) ;
+	
 	}
+
+	setUserDF() ; 
 
 	let tmgames = $(crit).get() ;
 	
@@ -261,15 +269,15 @@ updateCustomDF = (loc,val)=>{
 
 	$.each(
 		tmgames,
-		function(index,gm){
-			$(gm).attr("df", val);
-			$(gm).addClass("customDF")
-			$(gm).text(text)
+		(index, gm)=>{
+			$(gm).attr("df", val) ; 
+			$(gm).addClass("customDF") ; 
+			$(gm).text(text) ; 
 		}
 	);
 
-	/* changDFviewIdx from CONSTANTS */
-	updateTotalDF(changDFviewIdx);
+	// changDFviewIdx from CONSTANTS 
+	updateTotalDF(changDFviewIdx) ; 
 }
 
 
@@ -302,7 +310,7 @@ changDFview = ()=>{
 	}else{
 		changDFviewIdx += 1;
 	}
-	updateTotalDF(changDFviewIdx)
+	updateTotalDF(changDFviewIdx) ; 
 }
 
 
@@ -435,13 +443,11 @@ updateTotalDF = (dfType)=>{
 }
 
 
-
 reverseSort = ()=>{ 
 	gamesOverview.sort = gamesOverview.sort * -1 ; 
 	sortTable() ; 
 	$("#rvSortBttn").text( (gamesOverview.sort==1)? "DESC":"ASC"   ) ; 
 }
-
 
 
 sortTable = ()=>{
@@ -524,8 +530,7 @@ showAllTeams = ()=>{
 }
 
 
-/* Team highlighting */
-
+// Team highlighting 
 highLightTmStrengths = ( hTmId, aTmId )=>{
 
 	let tmHtds = $("td[str_h_a], td[str_h_d], td[str_h_o]" ).get() ; 
@@ -567,8 +572,9 @@ normalTmStrengthsHL = ()=>{
 	$(tmHtds).removeClass("shaded") ; 
 	$(tmHtds).removeClass("unShade") ; 
 }
-/* Fixture highligting */
 
+
+// Fixture highligting 
 highlightEvent = (fxtrid)=>{
 	//	console.log("('highlightEvent", fxtrid ,"$('td[fxtrid=' + fxtrid + ']').length",$('td[fxtrid=' + fxtrid + ']').length) ; 
 	$('td[fxtrid=' + fxtrid + ']').addClass("evHighLite") ;
@@ -626,9 +632,6 @@ highlightTeamEvents = (tmNm)=>{
 remBGClasses = ()=>{ for( let c=1; c<FPLTeamsFull.length;c++){clsNm="bg"+FPLTeamsFull[c].shortNm;$("." + clsNm ).removeClass(clsNm);}}
 
 
-saveDFuser = ()=>{ console.log("saveDFuser"); setUserDF(); }
-
-
 /* 
 
 ###### section togglers  ######
@@ -636,14 +639,14 @@ saveDFuser = ()=>{ console.log("saveDFuser"); setUserDF(); }
 */
 
 toggleDFdisplay = ()=>{
-	/* Toggle first */
+	// Toggle first 
 	gamesOverview.dfDisplay['containerViz'] = !gamesOverview.dfDisplay['containerViz'] ;
 	let dfViz = gamesOverview.dfDisplay['containerViz'] ; 
 	gamesOverview.dfDisplay['strengthsViz'] 	= dfViz ;
 	gamesOverview.dfDisplay['strengthsVizH'] 	= dfViz ;
 	gamesOverview.dfDisplay['strengthsVizA'] 	= dfViz ;
 
-	$("#toggleHAstatsDet").css("backgroundColor", ( gamesOverview.dfDisplay['strengthsViz'] )? "#53ac00":"#d91a00" );
+	$("#toggleHAstatsDet").css("backgroundColor", ( gamesOverview.dfDisplay['strengthsViz'] )? "#53ac00":"#d91a00" ) ; 
 
 	toggleDFContainer( gamesOverview.dfDisplay['containerViz'] ) ;
 }
@@ -727,8 +730,8 @@ toggleStrengthContainer = ()=>{
 
 
 toggleStrengthHome = ()=>{
-	/* set table rows visibilty to 'viz' */
-	/* toggle because this can be called by buttons seperately */
+	// set table rows visibilty to 'viz' 
+	// toggle because this can be called by buttons seperately 
 	gamesOverview.dfDisplay['strengthsVizH'] =  !gamesOverview.dfDisplay['strengthsVizH'] ;
 
 	if( gamesOverview.dfDisplay['strengthsVizH'] ){
@@ -748,8 +751,8 @@ toggleStrengthHome = ()=>{
 
 
 toggleStrengthAway = ()=>{
-	/* set table rows visibilty to 'viz' */
-	/* toggle because this can be called by buttons seperately */
+	// set table rows visibilty to 'viz' 
+	// toggle because this can be called by buttons seperately 
 	gamesOverview.dfDisplay['strengthsVizA'] =  !gamesOverview.dfDisplay['strengthsVizA'] ;
 
 	if( gamesOverview.dfDisplay['strengthsVizA'] ){
@@ -769,14 +772,15 @@ toggleStrengthAway = ()=>{
 
 
 toggleDFuser = ()=>{
-	console.log("toggleDFuser DF User: ", gamesOverview.dfSource['user'] );
+	console.log("toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
 	if( gamesOverview.dfSource['user'] ){
-		// now usinf FPL DF's, switch to user DF (if stored)
-		userDFStored = hasUserStore()
-		console.log("toggleDFuser - userDFStored: ", userDFStored );
+		// now using FPL DF's, switch to user DF (if stored)
+		console.log("toggleDFuser - now using USER DF " ) ; 
+		loadUserDF() ; 
 		
 	}else{
-		console.log("toggleDFuser ELSE thus swith to FPL defaults" );
+		console.log("toggleDFuser - now using FPL DF " ) ; 
+		loadFPLDF() ; 
 	}
 }
 
@@ -806,7 +810,6 @@ showDeadline = (blnSD)=>{
 		console.log("showDeadline no allStatsData['events'] available (yet?)");
 	}
 }
-
 
 
 toggleReplanned = ()=>{

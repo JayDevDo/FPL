@@ -17,9 +17,9 @@ let linearScale = d3.scaleLinear()
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 28,
-		currentRnd: 29,
-		evWndw: { 'direction': 1 , 'start': 30, 'rounds': 9, 'end': 38 },
+		finishedRounds: 30,
+		currentRnd: 31,
+		evWndw: { 'direction': 1 , 'start': 31, 'rounds': 8, 'end': 38 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -54,13 +54,13 @@ getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	}
 getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	} 
 hasUserStore = ()=>{ return ( localStorage.length > 0 ) ; }
 
-
 setUserDF = ()=>{
-	// console.log("saving user df. current user store exists?", hasUserStore() );
+	// Stores the current values in the DF container to localstorage and FPLTeamsFull
+	// Then updates view by calling 'loadUserDF()'
+
 	if( hasUserStore() ){ localStorage.clear(); }
 
-	let hdfArr = [] ;
-	let adfArr = [] ;
+	let lclStrgArr = [] ;
 	let h_df = $("#df_home > td[df]").get() ;
 	let a_df = $("#df_away > td[df]").get() ;
 	
@@ -68,33 +68,26 @@ setUserDF = ()=>{
 
 		$.each(
 			h_df,
-			function (i,t) {
-				// console.log("h_df", i, "\tt\t", t );
-				hdfArr.push({ 
-						'tmid': parseInt( $(t).attr('tmId')) ,
-						'h': parseInt( $(t).attr('df') ) 			
-				});
-			}
-		);
+			(i,t)=>{
+				FPLTeamsFull[ parseInt( $( t ).attr( 'tmId' ) )].usrDF = [ parseInt($( h_df[i] ).attr( 'df' )), parseInt($( a_df[i] ).attr( 'df' )) ] ; 
+				lclStrgArr.push(
+					{ 
+						'tmid': parseInt( $( t ).attr( 'tmId' ) ), 
+						'h': parseInt( $( h_df[i] ).attr( 'df' ) ),
+						'a': parseInt( $( a_df[i] ).attr( 'df' ) )				
+					}
+				) ; 
+		}) ; 
 
-		$.each(
-			a_df,
-			function (i,t) {
-				// console.log("a_df", i, "\tt\t", t );
-				adfArr.push({ 
-						'tmid': parseInt( $(t).attr('tmId')) ,
-						'a': parseInt( $(t).attr('df') ) 			
-				});
-			}
-		);
-
+		gamesOverview.dfSource.user = true ;
+		gamesOverview.dfSource.loaded[1] = true ; 
+		setIndicator( "usr-df-Ldd-idc", "green") ; 
 	}else{
 		console.log("something went wrong !") ;
 	}
 
-	localStorage.usrHdf = JSON.stringify( hdfArr ) ;
-	localStorage.usrAdf = JSON.stringify( adfArr ) ;
-	/* Now add the changed values to the FPLTeamsFull[team]['usrDF'] */
+	localStorage.usrHdf = JSON.stringify( lclStrgArr ) ;
+	// Apply the new values to the view
 	loadUserDF() ;
 }
 
@@ -106,16 +99,15 @@ delUserDF = ()=>{
 
 
 loadUserDF = ()=>{
-	/* Load values of the localstorage arrays into the FPLTeamsFull[team]['usrDF'] */
+	// Load values from the localstorage arrays into FPLTeamsFull, DFcontainer and fixtures 
 	let storedH = [] ; 
 	let storedA = [] ; 
 
 	if( hasUserStore() ){ 
 		storedH = JSON.parse( localStorage.usrHdf ) ;
-		storedA = JSON.parse( localStorage.usrAdf ) ;
-		// console.log("loadUserDF: localStorage exists. 'H' =", storedH.length , "'A' =", storedA.length ) ;		
+		// console.log("loadUserDF: localStorage exists. =", storedH.length ) ;		
 		
-		// if( storedH.length !=20 ){ setUserDF() ;}
+		if( storedH.length !=20 ){ setUserDF() ;}
 
 	}else{
 		console.log("loadUserDF: localStorage doesnt exist.") ;
@@ -125,16 +117,106 @@ loadUserDF = ()=>{
 
 	if( storedH.length == 20 ){
 
-		for(let t=0; t < storedH.length; t++){
-			FPLTeamsFull[t+1]['usrDF'][t] = [ storedH[t]['h'], storedA[t]['a'] ] ;
-			/* console.log( "loadUserDF [t(+1)] =", FPLTeamsFull[t+1].shortNm , " gets df[", FPLTeamsFull[t+1]['usrDF'][t] ); */
+		for( let t = 0; t < storedH.length; t++){
+
+			// Get the values from the localstore
+			// Update DF container attribs + text
+			// Update fixture DF's
+			// Update FPLTeamsFull[x]['usrDF'] = [homevalue, awayvalue ]
+			teamHval = parseInt( storedH[t]['h'] ) ;  
+			teamAval = parseInt( storedH[t]['a'] ) ;  
+
+			// console.log("loadUserDF: ", FPLTeamsFull[t+1].shortNm, "newDF H: : ",  teamHval, "newDF A: : ",  teamAval ) ; 
+
+			FPLTeamsFull[t+1]['usrDF'] = [ teamHval, teamAval ] ;
+
+			$("#df_home td[tmid="+ (t+1) + "]").attr( "df", teamHval) ; 
+			$("#df_home td[tmid="+ (t+1) + "]").text( teamHval.toString() ) ; 
+
+			let hteamOpps = $(".fxtrspan[teamid_h="+ (t+1) + "][loc='A']").get() ; 
+			// console.log("hteamOpps=", hteamOpps.length , teamHval.toString() ) ; 
+			$.each(
+				hteamOpps,
+				(index, oppFxtr)=>{
+					let hText = [ FPLTeamsFull[t+1].shortNm, " A (", teamHval.toString(), ")" ].join("") ; 
+					$(oppFxtr).addClass("customDF") ; 
+					$(oppFxtr).text( hText ) ; 
+					$(oppFxtr).attr( "df", teamHval) ; 
+			}) ; 
+
+
+			$("#df_away td[tmid="+ (t+1) + "]").attr( "df", teamAval) ; 
+			$("#df_away td[tmid="+ (t+1) + "]").text( teamAval.toString() ) ; 
+
+			let ateamOpps = $(".fxtrspan[teamid_a="+ (t+1) + "][loc='H']").get() ; 	
+			// console.log("ateamOpps=", ateamOpps.length ) ; 
+			$.each(
+				ateamOpps,
+				(index, oppFxtr)=>{
+					let aText = [ FPLTeamsFull[t+1].shortNm, " H (", teamAval.toString(), ")" ].join("") ; 
+					$(oppFxtr).addClass("customDF") ; 
+					$(oppFxtr).text( aText ) ; 
+					$(oppFxtr).attr( "df", teamAval) ; 
+			}) ; 
+
 		}
 
 		gamesOverview.dfSource['loaded'][1] = true ;
 		setIndicator("usr-df-Ldd-idc", "green") ;
-		setIndicator("epl-df-Ldd-idc", "red") ;		
+		setIndicator("epl-df-Ldd-idc", "red") ;
+
 	}
 
+}
+
+
+loadFPLDF = ()=>{
+	// Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] into the DFcontainer and fixtures. 
+
+	if( FPLTeamsFull.length == 21 ){
+
+		for( let t = 1; t < FPLTeamsFull.length; t++){
+
+			// Update DF container attribs + text
+			// Update fixture DF's
+			// Update FPLTeamsFull[x]['usrDF'] = [homevalue, awayvalue ]
+			teamHval = parseInt( FPLTeamsFull[t]['fplDF'][0] ) ;  
+			teamAval = parseInt( FPLTeamsFull[t]['fplDF'][1] ) ;  
+
+			$("#df_home td[tmid="+ (t) + "]").attr( "df", teamHval) ; 
+			$("#df_home td[tmid="+ (t) + "]").text( teamHval.toString() ) ; 
+
+			let hteamOpps = $(".fxtrspan[teamid_h="+ t + "][loc='A']").get() ; 
+			$.each(
+				hteamOpps,
+				(index, oppFxtr)=>{
+					let hText = [ FPLTeamsFull[t].shortNm, " A (", teamHval.toString(), ")" ].join("") ; 
+					$(oppFxtr).removeClass("customDF") ; 
+					$(oppFxtr).text( hText ) ; 
+					$(oppFxtr).attr( "df", teamHval) ; 
+			}) ; 
+
+
+			$("#df_away td[tmid="+ t + "]").attr( "df", teamAval ) ; 
+			$("#df_away td[tmid="+ t + "]").text( teamAval.toString() ) ; 
+
+			let ateamOpps = $(".fxtrspan[teamid_a="+ t + "][loc='H']").get() ; 	
+			// console.log("ateamOpps=", ateamOpps.length ) ; 
+			$.each(
+				ateamOpps,
+				(index, oppFxtr)=>{
+					let aText = [ FPLTeamsFull[t].shortNm, " H (", teamAval.toString(), ")" ].join("") ; 
+					$(oppFxtr).removeClass("customDF") ; 
+					$(oppFxtr).text( aText ) ; 
+					$(oppFxtr).attr( "df", teamAval) ; 
+			}) ; 
+
+		}
+
+		gamesOverview.dfSource['user'] = false ;
+		setIndicator("usr-df-Ldd-idc", "red" ) ;
+		setIndicator("epl-df-Ldd-idc", "green" ) ;
+	}
 }
 
 
@@ -154,7 +236,14 @@ setIndicator = (indctr,color)=>{
 
 resetIndics = ()=>{
 	$.each(
-		[ "fxtrsLdd-idc", "ppsLdd-idc", "epl-df-Ldd-idc", "usr-df-Ldd-idc", "epl-ha-Ldd-idc", "df-Ldd-idc" ],
+		[ 
+			"fxtrsLdd-idc", 	// 	Indicator for getFixtureData()
+			"ppsLdd-idc", 		// 	Indicator for getPostponedData() / buidPPContainer()
+			"epl-df-Ldd-idc", 	// 	epl-df-Ldd-idc 	Indicator for allPromise --> TEAM LOOP  
+			"usr-df-Ldd-idc", 	// 	usr-df-Ldd-idc 	Indicator for loadUserDF()
+			"epl-ha-Ldd-idc", 	// 	epl-ha-Ldd-idc 	Indicator for allPromise --> TEAM LOOP 
+			"df-Ldd-idc" 		// 	df-Ldd-idc 		Indicator for allPromise --> FXTRS LOOP 
+		],
 		function(idc){ 		
 			setIndicator(idc, "orange") ;
 		}
@@ -210,7 +299,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "BOU",
 		id: 3,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -225,7 +314,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "BRE",
 		id: 4,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
@@ -256,7 +345,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "CHE",
 		id: 6,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -286,7 +375,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "EVE",
 		id: 8,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -301,7 +390,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "FUL",
 		id: 9,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -316,7 +405,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "LEI",
 		id: 10,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -331,7 +420,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "LEE",
 		id: 11,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -361,7 +450,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "MCI",
 		id: 13,
-		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -376,7 +465,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "MUN",
 		id: 14,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -391,7 +480,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "NEW",
 		id: 15,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -436,7 +525,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "TOT",
 		id: 18,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -451,7 +540,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "WHU",
 		id: 19,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -466,7 +555,7 @@ let FPLTeamsFull = [
 	},
 	{       shortNm: "WOL",
 		id: 20,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF:[0,0],
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
