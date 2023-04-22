@@ -1,18 +1,6 @@
 [
 	{ 
 		"unplanned": [
-			{	"ppid": 248,
-				"nwRound": 39,
-				"ogGW": 25,
-				"added": false,
-				"team_h_nm": "NEW",
-				"team_h_id": 15,
-				"team_a_id": 5,
-				"team_a_nm": "BHA",
-				"status": "postponed",
-				"reason": "og 25: Carabao Cup Final for Newcastle"
-			},
-
 			{	"ppid": 314,
 				"nwRound": 39,
 				"ogGW": 32,
@@ -219,6 +207,18 @@
 				"reason": "Carabao Cup Final for Man Utd"
 			},
 
+			{	"ppid": 248,
+				"nwRound": 36,
+				"ogGW": 25,
+				"added": false,
+				"team_h_nm": "NEW",
+				"team_h_id": 15,
+				"team_a_id": 5,
+				"team_a_nm": "BHA",
+				"status": "re-planned",
+				"reason": "Carabao Cup Final for Newcastle"
+			},
+
 			{	"ppid": 274,
 				"nwRound": 34,
 				"ogGW": 28,
@@ -259,11 +259,11 @@
 	},
 
 	{ 
-		"ppRpIds":[  61, 62, 63, 64,65, 66, 67, 68, 69, 70, 73, 74, 76, 111, 247, 274, 276, 277 ] 
+		"ppRpIds":[  61, 62, 63, 64,65, 66, 67, 68, 69, 70, 73, 74, 76, 111, 247, 248, 274, 276, 277 ] 
 	},
 
 	{ 
-		"ppIds": [ 248, 314, 319 ]
+		"ppIds": [ 314, 319 ]
 	},
 
 	{ 
