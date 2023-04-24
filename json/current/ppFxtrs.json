@@ -1,31 +1,6 @@
 [
 	{ 
-		"unplanned": [
-			{	"ppid": 314,
-				"nwRound": 39,
-				"ogGW": 32,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 13,
-				"team_a_nm": "MCI",
-				"status": "postponed",
-				"reason": "og: 32: FA Cup SEMI Final for MCI and BHA"
-			},
-
-			{	"ppid": 319,
-				"nwRound": 39,
-				"ogGW": 32,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 6,
-				"team_a_nm": "CHE",
-				"status": "postponed",
-				"reason": "og: 32: FA Cup SEMI Final for MNU and CHE"
-			}
-
-		] 
+		"unplanned": [] 
 	},
 
 	{ 
@@ -42,7 +17,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
 			{   "ppid": 62,
 				"nwRound": 29,
 				"ogGW": 7,
@@ -54,7 +28,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
 			{   "ppid": 63,
 				"nwRound": 20,
 				"ogGW": 7,
@@ -99,7 +72,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
 			{   "ppid": 67,
 				"nwRound": 25,
 				"ogGW": 7,
@@ -122,7 +94,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
 			{   "ppid": 69,
 				"nwRound": 27,
 				"ogGW": 7,
@@ -134,7 +105,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
 			{   "ppid": 70,
 				"nwRound": 29,
 				"ogGW": 7,
@@ -146,8 +116,6 @@
 				"status": "re-planned",
 				"reason": "rip QE2"
 			},
-
-
 			{   "ppid": 73,
 				"nwRound": 27,
 				"ogGW": 8,
@@ -159,7 +127,6 @@
 				"status": "re-planned",
 				"reason": "No public transport available."
 			},
-
 			{	"ppid": 74,
 				"nwRound": 29,
 				"ogGW": 8,
@@ -170,8 +137,7 @@
 				"team_a_nm": "LIV",
 				"status": "re-planned",
 				"reason": "rip QE2"
-			},			
-
+			},
 			{	"ppid": 76,
 				"nwRound": 22,
 				"ogGW": 8,
@@ -194,7 +160,6 @@
 				"status": "re-planned",
 				"reason": "ARS plays recheduled Europa Lg. v PSV. Was postponed 15/9 for QE2 funeral."				
 			},
-
 			{   "ppid": 247,
 				"nwRound": 29,
 				"ogGW": 25,
@@ -206,7 +171,6 @@
 				"status": "re-planned",
 				"reason": "Carabao Cup Final for Man Utd"
 			},
-
 			{	"ppid": 248,
 				"nwRound": 36,
 				"ogGW": 25,
@@ -218,7 +182,6 @@
 				"status": "re-planned",
 				"reason": "Carabao Cup Final for Newcastle"
 			},
-
 			{	"ppid": 274,
 				"nwRound": 34,
 				"ogGW": 28,
@@ -230,7 +193,6 @@
 				"status": "re-planned",
 				"reason": "og 28: FA Cup Quarter Final for MNU"
 			},
-
 			{	"ppid": 276,
 				"nwRound": 34,
 				"ogGW": 28,
@@ -242,7 +204,6 @@
 				"status": "re-planned",
 				"reason": "og: 28: FA Cup Quarter Final for FUL"
 			},
-
 			{	"ppid": 277,
 				"nwRound": 34,
 				"ogGW": 28,
@@ -253,17 +214,38 @@
 				"team_a_nm": "WHU",
 				"status": "re-planned",
 				"reason": "og: 28: FA Cup Quarter Final for MCI"
+			},
+			{	"ppid": 314,
+				"nwRound": 37,
+				"ogGW": 32,
+				"added": false,
+				"team_h_nm": "BHA",
+				"team_h_id": 5,
+				"team_a_id": 13,
+				"team_a_nm": "MCI",
+				"status": "re-planned",
+				"reason": "og: 32: FA Cup SEMI Final for MCI and BHA"
+			},
+			{	"ppid": 319,
+				"nwRound": 37,
+				"ogGW": 32,
+				"added": false,
+				"team_h_nm": "MNU",
+				"team_h_id": 14,
+				"team_a_id": 6,
+				"team_a_nm": "CHE",
+				"status": "postponed",
+				"reason": "og: 32: FA Cup SEMI Final for MNU and CHE"
 			}
-			
 		]
 	},
 
 	{ 
-		"ppRpIds":[  61, 62, 63, 64,65, 66, 67, 68, 69, 70, 73, 74, 76, 111, 247, 248, 274, 276, 277 ] 
+		"ppRpIds":[  61, 62, 63, 64,65, 66, 67, 68, 69, 70, 73, 74, 76, 111, 247, 248, 274, 276, 277, 314, 319 ] 
 	},
 
 	{ 
-		"ppIds": [ 314, 319 ]
+		"ppIds": [ ]
 	},
 
 	{ 
