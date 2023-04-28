@@ -164,19 +164,19 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=33 >
+								<form id="eventWndwStartForm" value=34 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=33
+											value=34
 											onselect="setEventWndwStart(value)" 
 											onchange="setEventWndwStart(value)"
 									>
-										<option value=33 active selected >33 (default)</option>
-										<option value=34 >34</option>
+										<option value=34 active selected >34 (default)</option>
 										<option value=35 >35</option>
 										<option value=36 >36</option>
 										<option value=37 >37</option>
 										<option value=38 >38</option>
+										<option value=33 >33</option>
 										<option value=32 >32</option>
 										<option value=31 >31</option>
 										<option value=30>30</option>
@@ -218,10 +218,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=6 >
+								<form id="slctdRoundsForm" value=5 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=6
+											value=5
 											onselect="setRndsToShow(value)" 
 											onchange="setRndsToShow(value)"
 									>
@@ -229,8 +229,8 @@
 										<option value=2  >2  </option>
 										<option value=3  >3  </option>
 										<option value=4  >4  </option>
-										<option value=5  >5  </option>
-										<option value=6 active selected >default (6)</option>
+										<option value=5 active selected >default (5)</option>
+										<option value=6  >6  </option>
 										<option value=7  >7  </option>
 										<option value=8  >8	 </option>
 										<option value=9  >9  </option>
@@ -266,8 +266,6 @@
 											onselect="setEventWndwEnd(value)" 
 											onchange="setEventWndwEnd(value)" 
 									>
-										<option value=32 >32</option>
-										<option value=33 >33</option>
 										<option value=34 >34</option>
 										<option value=35 >35</option>
 										<option value=36 >36</option>
@@ -304,6 +302,8 @@
 										<option value=29 >29 IB 2 end</option>
 										<option value=30 >30</option>
 										<option value=31 >31</option>
+										<option value=32 >32</option>
+										<option value=33 >33</option>
 									</select>
 								</form>
 							</td>
@@ -316,7 +316,7 @@
 			</div>
 
 
-			<div id="ppOview-cnt" class="grid-item" width=30% class="show-item" >
+			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
 
 				<div id="ppOview">
 	
