@@ -10,6 +10,9 @@ let FPLballers = [];
 
 let fixtureArray = [];
 
+let allStatsData = [];
+
+
 let linearScale = d3.scaleLinear()
   .domain([1000, 1400])
   .range([ '#FFFF33', '#FF0033' ]);
@@ -17,9 +20,9 @@ let linearScale = d3.scaleLinear()
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 33,
-		currentRnd: 34,
-		evWndw: { 'direction': 1 , 'start': 35, 'rounds': 4, 'end': 38 },
+		finishedRounds: 35,
+		currentRnd: 36,
+		evWndw: { 'direction': 1 , 'start': 37, 'rounds': 2, 'end': 38 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {

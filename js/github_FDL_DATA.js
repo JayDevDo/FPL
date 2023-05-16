@@ -1,6 +1,7 @@
 
 let callIndexer = 0 ;
-let allStatsData = [];
+// let allStatsData = [];
+
 let curGW = 0 ;
 
 getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
@@ -155,15 +156,13 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 	}
 
 	let target_td, target_txt, target_fplDF, target_fcell
-	
-	/* ,
-		"\nfxtr:\t", fxtr 
-	*/
+
+	/* target_arr is a html element 'span' */
 	let target_arr = [	"<span", 
-						" teamId_h="+fxtr.team_h,
-						" teamId_a="+fxtr.team_a,
-						" fxtrid="+fxtr.id,
-						" evrnd="+lclRound,
+						" teamId_h=" + fxtr.team_h,
+						" teamId_a=" + fxtr.team_a,
+						" fxtrid=" + fxtr.id,
+						" evrnd=" + lclRound,
 						" class='fxtrspan'", 
 						" loc=", loc,
 						" str_h_o=", fxtr.str_h_o,
@@ -343,13 +342,19 @@ buidPPContainer = ( treatedPPData )=>{
 
 setDFTableStrength = ( eId, tmId, intStrength )=>{
 
-	// updates the value and attribute of table row '#str_h_overall'
-	// $( "#tr_str_h_o td[tmId=1]" ).get() 
-	// let crit = "#"+eId+" td[tmId="+tmId+"]" ; 
+	// 	updates the value and attribute of table rows
+	// 	eId = elementId of the table row 
+	// 	away-team: #tr_str_a_o ( strength-away-overall ), #tr_str_a_a ( strength-away-attack ), #tr_str_a_d ( strength-away-defence )
+	// 	home-team: #tr_str_h_o ( strength-home-overall ), #tr_str_h_a ( strength-home-attack ), #tr_str_h_d ( strength-home-defence ) 
+
 	let crit = [ "#"+eId , "td[tmId="+tmId+"]" ].join(" ") ; 
-	let tr_sel = $( crit ) ; // .get() ; 
+	let tr_sel = $( crit ) ;
+
+	// the 'td' element's attributes are named as their tr-parent's ID minus the prefix 'tr_'
+	// So the attribute-name of the td element 'tr_str_a_o' will be 'str_a_o' 
 	let attrNm = eId.replace("tr_", "" ) ;
 
+	// Only 1 element should meet the criteria
 	if( tr_sel.length == 1 ){
 
 		$( tr_sel ).attr( attrNm , intStrength.toString() ) ; 
@@ -428,7 +433,7 @@ allPromise.then(
 
 			// STEP 1
 			// The strength_overall values from FPL don't compute. 
-			// Therefore  we do int((attack+defence)/2) for both overall values )
+			// Therefore  we do int((attack+defence)/2) for both home- and away overall values )
 			jtf_tm.strength[0]['overall'] 	= parseInt( ( fpl_tm.strength_attack_home + fpl_tm.strength_defence_home ) / 2 ) ;   
 			jtf_tm.strength[0]['attack'] 	= parseInt( fpl_tm.strength_attack_home ) ;  
 			jtf_tm.strength[0]['defence'] 	= parseInt( fpl_tm.strength_defence_home ) ;  
@@ -438,11 +443,11 @@ allPromise.then(
 			jtf_tm.staticTmStrength 		= fpl_tm.strength ;
 
 			// STEP 2
-			// Change/Add strength values to html DF container
+			// Change/Add strength values to html DF container home team
 			setDFTableStrength( "tr_str_h_o", fpl_tmId, jtf_tm.strength[0]['overall'] ) ; 
 			setDFTableStrength( "tr_str_h_a", fpl_tmId, jtf_tm.strength[0]['attack']  ) ; 
 			setDFTableStrength( "tr_str_h_d", fpl_tmId, jtf_tm.strength[0]['defence']  ) ; 
-			// Change/Add strength values to html DF container
+			// Change/Add strength values to html DF container away team
 			setDFTableStrength( "tr_str_a_o", fpl_tmId, jtf_tm.strength[1]['overall'] ) ; 
 			setDFTableStrength( "tr_str_a_a", fpl_tmId, jtf_tm.strength[1]['attack']  ) ; 
 			setDFTableStrength( "tr_str_a_d", fpl_tmId, jtf_tm.strength[1]['defence']  ) ; 

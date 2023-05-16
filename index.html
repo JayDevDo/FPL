@@ -164,17 +164,17 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=35 >
+								<form id="eventWndwStartForm" value=37 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=35
+											value=37
 											onselect="setEventWndwStart(value)" 
 											onchange="setEventWndwStart(value)"
 									>
-										<option value=35 active selected >35 (default)</option>
-										<option value=36 >36</option>
-										<option value=37 >37</option>
 										<option value=38 >38</option>
+										<option value=37 active selected >37 (default)</option>
+										<option value=36 >36</option>
+										<option value=35 >35</option>
 										<option value=34 >34</option>
 										<option value=33 >33</option>
 										<option value=32 >32</option>
@@ -218,17 +218,17 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=4 >
+								<form id="slctdRoundsForm" value=2 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=4
+											value=2
 											onselect="setRndsToShow(value)" 
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1  </option>
-										<option value=2  >2  </option>
+										<option value=2 active selected >default (2)</option>
 										<option value=3  >3  </option>
-										<option value=4 active selected >default (4)</option>
+										<option value=4  >4  </option>
 										<option value=5  >5  </option>
 										<option value=6  >6  </option>
 										<option value=7  >7  </option>
@@ -266,8 +266,6 @@
 											onselect="setEventWndwEnd(value)" 
 											onchange="setEventWndwEnd(value)" 
 									>
-										<option value=34 >34</option>
-										<option value=35 >35</option>
 										<option value=36 >36</option>
 										<option value=37 >37</option>
 										<option value=38 active selected >season end</option>
@@ -304,6 +302,8 @@
 										<option value=31 >31</option>
 										<option value=32 >32</option>
 										<option value=33 >33</option>
+										<option value=34 >34</option>
+										<option value=35 >35</option>
 									</select>
 								</form>
 							</td>
@@ -331,7 +331,7 @@
 							<ul id="rpGamesAcc"></ul>
 						</div>
 
-						<div id="ppGamesUnPlanned" >
+						<div id="ppGamesUnPlanned"  class="hide-item" >
 							<ul id="ppGamesAcc"></ul>
 						</div>
 						
@@ -2024,10 +2024,9 @@
 			</div>
 
 
-			<div id="seltbl-cnt" class="grid-item" width=100%>
+			<div id="seltbl-cnt" class="grid-item" width=60%  class="hide-item">
 				<span>fxtrs-selected</span>
 			</div>
-
 
 		</div>
 
