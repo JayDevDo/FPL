@@ -1,6 +1,6 @@
 
 let callIndexer = 0 ;
-// let allStatsData = [];
+// let allStatsData = []; has moved to FPLConstants
 
 let curGW = 0 ;
 
@@ -108,7 +108,7 @@ getFixtureData = async ()=> {
 		// Only 1 subscriber awaiting this promise
 
 		let fxtrXhttp = new XMLHttpRequest();
-
+		/* "json/current/FPL_Events_current.json" */
 		fxtrXhttp.open("GET", "json/current/FPL_Events_current.json", true ) ; 
 		fxtrXhttp.send();
 
@@ -431,6 +431,14 @@ allPromise.then(
 			let jtf_tm 		= FPLTeamsFull[fpl_tmId] ; 
 			let jtf_tmId 	= jtf_tm.id ; 
 
+			// STEP 0
+			// I don't agree with the short names of the Machester teams. 13 = City, 14 = Utd.
+			if( fpl_tmId == 13 ){
+				teams[t].short_name = "MNC"
+			}else if( fpl_tmId == 14 ){
+				teams[t].short_name = "MNU"
+			}
+
 			// STEP 1
 			// The strength_overall values from FPL don't compute. 
 			// Therefore  we do int((attack+defence)/2) for both home- and away overall values )
@@ -485,7 +493,7 @@ allPromise.then(
 				fxtr.reason 	= getOrigPPRsn( fxtr.id ) ; 
 				fxtr.finished 	= false ; 
 				fxtr.finished_provisional = false ; 
-				fxtr.kickoff_time = "2023-06-30T15:00:00Z" ; 
+				fxtr.kickoff_time = "2024-06-30T15:00:00Z" ; 
 				fxtr.minutes 	= 0 ; 
 				fxtr.provisional_start_time = false ; 
 				fxtr.started 	= false ; 

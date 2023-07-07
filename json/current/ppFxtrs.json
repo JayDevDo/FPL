@@ -4,292 +4,81 @@
 	},
 
 	{ 
-		"re-planned": [
-
-			{   "ppid": 61,
-				"nwRound": 25,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "ARS",
-				"team_h_id": 1,
-				"team_a_id": 8,
-				"team_a_nm": "EVE",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 62,
-				"nwRound": 29,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "BOU",
-				"team_h_id": 3,
-				"team_a_id": 5,
-				"team_a_nm": "BHA",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 63,
-				"nwRound": 20,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "CRY",
-				"team_h_id": 7,
-				"team_a_id": 14,
-				"team_a_nm": "MNU",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 64,
-				"nwRound": 19,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "FUL",
-				"team_h_id": 9,
-				"team_a_id": 6,
-				"team_a_nm": "CHE",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{  	"ppid": 65,
-				"nwRound": 29,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "LEE",
-				"team_h_id": 11,
-				"team_a_id": 16,
-				"team_a_nm": "NFO",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 66,
-				"nwRound": 29,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "LEI",
-				"team_h_id": 10,
-				"team_a_id": 2,
-				"team_a_nm": "AVL",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 67,
-				"nwRound": 25,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "LIV",
-				"team_h_id": 12,
-				"team_a_id": 20,
-				"team_a_nm": "WOL",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 68,
-				"nwRound": 20,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "MCI",
-				"team_h_id": 13,
-				"team_a_id": 18,
-				"team_a_nm": "TOT",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 69,
-				"nwRound": 27,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "SOU",
-				"team_h_id": 17,
-				"team_a_id": 4,
-				"team_a_nm": "BRE",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 70,
-				"nwRound": 29,
-				"ogGW": 7,
-				"added": false,
-				"team_h_nm": "WHU",
-				"team_h_id": 19,
-				"team_a_id": 15,
-				"team_a_nm": "NEW",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{   "ppid": 73,
-				"nwRound": 27,
-				"ogGW": 8,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 7,
-				"team_a_nm": "CRY",
-				"status": "re-planned",
-				"reason": "No public transport available."
-			},
-			{	"ppid": 74,
-				"nwRound": 29,
-				"ogGW": 8,
-				"added": false,
-				"team_h_nm": "CHE",
-				"team_h_id": 6,
-				"team_a_id": 12,
-				"team_a_nm": "LIV",
-				"status": "re-planned",
-				"reason": "rip QE2"
-			},
-			{	"ppid": 76,
-				"nwRound": 22,
-				"ogGW": 8,
-				"added": false,
-				"team_h_nm": "MUN",
-				"team_h_id": 14,
-				"team_a_id": 11,
-				"team_a_nm": "LEE",
-				"status": "re-planned",
-				"reason": "rip QE2"				
-			},	
-			{	"ppid": 111,
-				"nwRound": 23,
-				"ogGW": 12,
-				"added": false,
-				"team_h_nm": "ARS",
-				"team_h_id": 1,
-				"team_a_id": 13,
-				"team_a_nm": "MCI",
-				"status": "re-planned",
-				"reason": "ARS plays recheduled Europa Lg. v PSV. Was postponed 15/9 for QE2 funeral."				
-			},
-			{   "ppid": 247,
-				"nwRound": 29,
-				"ogGW": 25,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 4,
-				"team_a_nm": "BRE",
-				"status": "re-planned",
-				"reason": "Carabao Cup Final for Man Utd"
-			},
-			{	"ppid": 248,
-				"nwRound": 36,
-				"ogGW": 25,
-				"added": false,
-				"team_h_nm": "NEW",
-				"team_h_id": 15,
-				"team_a_id": 5,
-				"team_a_nm": "BHA",
-				"status": "re-planned",
-				"reason": "Carabao Cup Final for Newcastle"
-			},
-			{	"ppid": 274,
-				"nwRound": 34,
-				"ogGW": 28,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 14,
-				"team_a_nm": "MNU",
-				"status": "re-planned",
-				"reason": "og 28: FA Cup Quarter Final for MNU"
-			},
-			{	"ppid": 276,
-				"nwRound": 34,
-				"ogGW": 28,
-				"added": false,
-				"team_h_nm": "LIV",
-				"team_h_id": 12,
-				"team_a_id": 9,
-				"team_a_nm": "FUL",
-				"status": "re-planned",
-				"reason": "og: 28: FA Cup Quarter Final for FUL"
-			},
-			{	"ppid": 277,
-				"nwRound": 34,
-				"ogGW": 28,
-				"added": false,
-				"team_h_nm": "MCI",
-				"team_h_id": 13,
-				"team_a_id": 19,
-				"team_a_nm": "WHU",
-				"status": "re-planned",
-				"reason": "og: 28: FA Cup Quarter Final for MCI"
-			},
-			{	"ppid": 314,
-				"nwRound": 37,
-				"ogGW": 32,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 13,
-				"team_a_nm": "MCI",
-				"status": "re-planned",
-				"reason": "og: 32: FA Cup SEMI Final for MCI and BHA"
-			},
-			{	"ppid": 319,
-				"nwRound": 37,
-				"ogGW": 32,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 6,
-				"team_a_nm": "CHE",
-				"status": "postponed",
-				"reason": "og: 32: FA Cup SEMI Final for MNU and CHE"
-			}
-		]
+		"re-planned": []
 	},
 
 	{ 
-		"ppRpIds":[  61, 62, 63, 64,65, 66, 67, 68, 69, 70, 73, 74, 76, 111, 247, 248, 274, 276, 277, 314, 319 ] 
+		"ppRpIds":[] 
 	},
 
 	{ 
-		"ppIds": [ ]
+		"ppIds": []
 	},
 
 	{ 
 		"intlBreaks": 	[
-							{	"wkNr": 38,
-								"iBreakId": 0,
-								"prevGW": 8,
-								"prevGWDate": "2022-09-19",
-								"nextGW": 9,
-								"nextGWDate": "2022-10-01",
-								"brkDuration": 2,
-								"brkTitle": "EC Qual 1",
-								"passed": 1,
-								"toCome": 1
-							},
-							{	"wkNr": 45,
-								"iBreakId": 1,
-								"prevGW": 16,
-								"prevGWDate": "2022-11-12",
-								"nextGW": 17,
-								"nextGWDate": "2022-12-26",
-								"brkDuration": 6,
-								"brkTitle": "World Cup",
-								"passed": 1,
-								"toCome": 1
-							},
-							{	"wkNr": 11,
-								"iBreakId": 2,
-								"prevGW": 28,
-								"prevGWDate": "2023-03-18",
-								"nextGW": 29,
-								"nextGWDate": "2023-04-01",
-								"brkDuration": 2,
-								"brkTitle": "EC Qual 2",
-								"passed": 0,
-								"toCome": 1
-							}
-						]
+			{	"iBreakId": 0,
+				"wkNr": 41,
+				"prevGW": 8,
+				"prevGWDate": "2023-10-07",
+				"nextGW": 9,
+				"nextGWDate": "2023-10-21",
+				"brkDuration": 2,
+				"brkTitle": "IntlBreak 1",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 1,
+				"wkNr": 46,
+				"prevGW": 12,
+				"prevGWDate": "2023-11-11",
+				"nextGW": 13,
+				"nextGWDate": "2023-11-25",
+				"brkDuration": 1,
+				"brkTitle": "IntlBreak 2",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 2,
+				"wkNr": 1,
+				"prevGW": 20,
+				"prevGWDate": "2023-12-30",
+				"nextGW": 21,
+				"nextGWDate": "2024-01-13",
+				"brkDuration": 1,
+				"brkTitle": "FA weekend 1",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 3,
+				"wkNr": 3,
+				"prevGW": 21,
+				"prevGWDate": "2024-01-13",
+				"nextGW": 22,
+				"nextGWDate": "2024-01-30",
+				"brkDuration": 1,
+				"brkTitle": "FA weekend 2",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 4,
+				"wkNr": 11,
+				"prevGW": 29,
+				"prevGWDate": "2024-03-16",
+				"nextGW": 30,
+				"nextGWDate": "2024-03-30",
+				"brkDuration": 2,
+				"brkTitle": "IntlBreak 3",
+				"passed": 0,
+				"toCome": 1
+			}
+		]
 	},
 
 	{
 		"FA-cup": [
-					{ 	"IN": 	[ 5, 13, 14 ]},
-					{	"OUT": 	[ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20 ] },
+					{ 	"IN": 	[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+					{	"OUT": 	[] },
 					{ 	"R2":	[ 	
 									{"team_h":0, "team_a":0, "gw": 38, "round": "FINAL" },
 									{"team_h":0, "team_a":0, "gw": 38, "round": "FINAL" }
@@ -297,27 +86,27 @@
 					},
 					{	
 						"R4":	[ 	
-									{"team_h":13, "team_a":0, "gw": 32, "round": "SEMI-FINAL" },
-									{"team_h":5, "team_a":14, "gw": 32, "round": "SEMI-FINAL" }
+									{"team_h":0, "team_a":0, "gw": 32, "round": "SEMI-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 32, "round": "SEMI-FINAL" }
 						]
 					},
 					{	
 						"R8":	[
-									{"team_h":5, "team_a":0, "gw": 28, "round": "Q-FINAL" },
-									{"team_h":13, "team_a":0, "gw": 28, "round": "Q-FINAL" },
-									{"team_h":14, "team_a":9, "gw": 28, "round": "Q-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 28, "round": "Q-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 28, "round": "Q-FINAL" },
+									{"team_h":0, "team_a":9, "gw": 28, "round": "Q-FINAL" },
 									{"team_h":0, "team_a":0, "gw": 28, "round": "Q-FINAL" }
 						]
 					},
 					{	"R16":	[
 									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":5, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":9, 	"team_a":11, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":10, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":13, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":14, 	"team_a":19, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":17, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":18, 	"team_a":0, 	"gw": 25, "round": "lAST 16" }
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" }
 						]
 					}
 		]
@@ -325,24 +114,28 @@
 
 	{
 		"EFL-cup":[
-					{ 	"IN": 	[ 14,15 ]},
-					{	"OUT": 	[ 1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,19,20 ]},
-					{ 	"R2":	[ {"team_h":14, "team_a":15, "gw": 25, "round": "FINAL" } ]}
+					{ 	"IN": 	[] },
+					{	"OUT": 	[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+					{ 	"R2":	[ {"team_h":0, "team_a":0, "gw": 25, "round": "FINAL" } ] },
+					{ 	"R4":	[ 
+									{"team_h":0, "team_a":0, "gw": 25, "round": "FINAL" },
+									{"team_h":0, "team_a":0, "gw": 25, "round": "FINAL" }
+					 			]
+					}
 				]
 	},
 
-	{	"example": {   
-					"ppid": 124,
-					"nwRound": 26,
-					"ogGW": 13,
-					"added": false,
-					"team_h_nm": "BHA",
-					"team_h_id": 5,
-					"team_a_id": 17,
-					"team_a_nm": "TOT",
-					"status": "re-planned",
-					"reason": "weather conditions"
-				}
+	{	"example": {	
+			"ppid": 319,
+			"nwRound": 37,
+			"ogGW": 32,
+			"added": false,
+			"team_h_nm": "MNU",
+			"team_h_id": 14,
+			"team_a_id": 6,
+			"team_a_nm": "CHE",
+			"status": "postponed",
+			"reason": "og: 32: FA Cup SEMI Final for MNU and CHE"
+		}
 	}
-
 ]

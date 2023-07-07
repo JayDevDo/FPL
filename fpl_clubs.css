@@ -18,12 +18,10 @@ TTTTTTTT		EEEEEEEE		   AA    		MMMMMMMM 		SSSSSSSS
 }
 
 
-
 .bgAVL{
 	color: #FFFFFF;
 	background: repeating-linear-gradient( -180deg, #95bfe5, #95bfe5 30px, #7d1142 60px, #7d1142 90px );
 }
-
 
 
 .bgBRE{
@@ -36,7 +34,6 @@ th.bgBRE{
 }
 
 
-
 .bgBHA{
 	color: #000000;
 	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,blue 10px,blue 20px);
@@ -47,12 +44,15 @@ th.bgBHA{
 }
 
 
-
 .bgBOU{
 	color: #000000;
 	background: repeating-linear-gradient( -90deg, red, red 10px, #000000 10px, #000000 20px);
 }
 
+.bgBUR{
+	color: #000000;
+	background: repeating-linear-gradient(-180deg, red ,red 15px, blue 15px, blue 20px);
+}
 
 
 .bgCHE{
@@ -60,20 +60,15 @@ th.bgBHA{
 	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
 }
 
-
-
 .bgCRY{
 	color: #000000;
 	background: repeating-linear-gradient(90deg, #e91d12, #0055a5 20px, #e91d12 40px, #e91d12 60px );
 }
 
-
-
 .bgEVE{
 	color: #000000;
 	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
 }
-
 
 
 .bgFUL{
@@ -86,52 +81,32 @@ th.bgFUL{
 		color:  #000000 !important;
 }
 
-
-
-.bgLEE{
-	font-weight: bold;
-	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 10px,#FFFFFF 10px,#FFFFFF 20px);
-}
-
-th.bgLEE{
-		color:  #000000 !important;
-}
-
-
-
-.bgLEI{
-	color: #000000;
-	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
-}
-
-
-
 .bgLIV{
 	color: #000000;
 	background: repeating-linear-gradient(-45deg,red,red 10px,red 10px,red 20px);
 }
 
+.bgLUT{
+	color: #000000;
+	background: repeating-linear-gradient(-180deg, orange ,orange 10px, blue 10px, blue 20px);
+}
 
-
-.bgMCI{
+.bgMNC{
 	color: #000000;
 	background: repeating-linear-gradient(-45deg,#0099cc,#0099cc 10px,#0099cc 10px,#0099cc 20px);
 }
 
 
-
-.bgMUN{
+.bgMNU{
 	color: #000000;
 	background: repeating-linear-gradient(-45deg,red,red 10px,red 10px,red 20px);
 }
-
 
 
 .bgNEW{
 	color: #000000;
 	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,#000000 10px,#000000 20px);
 }
-
 
 
 .bgNFO{
@@ -143,17 +118,10 @@ th.bgNFO{
 		color:  #000000 !important;
 }
 
-
-.bgSOU {
+.bgSHU{
 	color: #000000;
-	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,red 10px,red 20px);
+	background: repeating-linear-gradient(-180deg, red ,red 10px, white 10px, white 20px);
 }
-
-th.bgSOU{
-		color:  #000000 !important;
-}
-
-
 
 .bgTOT{
 	font-weight: bold;
@@ -165,15 +133,44 @@ th.bgTOT{
 }
 
 
-
 .bgWHU{
 	color: #000000;
 	background: repeating-linear-gradient(-180deg, red ,red 10px, blue 10px, blue 20px);
 }
 
 
-
 .bgWOL{
 	color: #FFFFFF;
 	background: repeating-linear-gradient(-45deg, #fdb913, #fdb913 10px, #000000 10px, #000000 20px);
 }
+
+
+
+/*
+from 22/23
+
+.bgLEE{
+	font-weight: bold;
+	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 10px,#FFFFFF 10px,#FFFFFF 20px);
+}
+
+th.bgLEE{
+		color:  #000000 !important;
+}
+
+.bgLEI{
+	color: #000000;
+	background: repeating-linear-gradient(-45deg,blue,blue 10px,blue 10px,blue 20px);
+}
+
+.bgSOU {
+	color: #000000;
+	background: repeating-linear-gradient(-90deg,#FFFFFF,#FFFFFF 10px,red 10px,red 20px);
+}
+
+th.bgSOU{
+		color:  #000000 !important;
+}
+
+
+*/

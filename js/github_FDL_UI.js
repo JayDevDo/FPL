@@ -812,28 +812,44 @@ showDeadline = (blnSD)=>{
 }
 
 
-toggleReplanned = ()=>{
+toggleReplanned = (i)=>{
 	// toggle first. og state is true
-	gamesOverview.showRP  = !gamesOverview.showRP ;
+	if( i == 0){
+		gamesOverview.showRP  = false;
+	}else{
+		gamesOverview.showRP  = true;
+	}
 	
+	let bttnArr = $("#ppOviewBttnCnt").children("button").get() ;
+
+	$(".shaded").removeClass("shaded") ;
+	$(".unshaded").removeClass("unshaded") ;
+
+	$("#ppGamesRePlanned").removeClass( "hide-item" ) ;
+	$("#ppGamesUnPlanned").removeClass( "hide-item" ) ;
+
+	$("#ppGamesRePlanned").removeClass( "show-item" ) ;
+	$("#ppGamesUnPlanned").removeClass( "show-item" ) ;
 
 	if( gamesOverview.showRP ){
 		console.log("toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
-		$("#ppGamesRePlanned").removeClass( "hide-item" ) ;
-		$("#ppGamesUnPlanned").removeClass( "show-item" ) ;
-
 		$("#ppGamesRePlanned").addClass( "show-item" ) ;
 		$("#ppGamesUnPlanned").addClass( "hide-item" ) ;	
+
+		$(bttnArr[0]).addClass("shaded") ;
+		$(bttnArr[1]).addClass("unshaded") ;
+
 	
 	}else{
 		console.log("toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
-		$("#ppGamesUnPlanned").removeClass( "hide-item" ) ;
-		$("#ppGamesRePlanned").removeClass( "show-item" ) ;
 
 		$("#ppGamesUnPlanned").addClass( "show-item" ) ;	
 		$("#ppGamesRePlanned").addClass( "hide-item" ) ;
+
+		$(bttnArr[1]).addClass("shaded") ;
+		$(bttnArr[0]).addClass("unshaded") ;
 		
 	}
 
