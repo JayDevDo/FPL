@@ -1,6 +1,31 @@
 [
 	{ 
-		"unplanned": [] 
+		"unplanned": [
+						 {	
+							"ppid": 15,
+							"nwRound": 39,
+							"ogGW": 2,
+							"added": false,
+							"team_h_nm": "LUT",
+							"team_h_id": 12,
+							"team_a_id": 6,
+							"team_a_nm": "BUR",
+							"status": "postponed",
+							"reason": "og = 2: Luton not ready for Home game"
+						},{
+							"ppid": 176,
+							"nwRound": 39,
+							"ogGW": 18,
+							"added": false,
+							"team_h_nm": "MNC",
+							"team_h_id": 13,
+							"team_a_id": 4,
+							"team_a_nm": "BRE",
+							"status": "postponed",
+							"reason": "og: 18 Man City plays World Cup of teams."
+						}
+
+		] 
 	},
 
 	{ 
@@ -12,34 +37,48 @@
 	},
 
 	{ 
-		"ppIds": []
+		"ppIds": [15,176]
 	},
 
 	{ 
 		"intlBreaks": 	[
+
 			{	"iBreakId": 0,
+				"wkNr": 41,
+				"prevGW": 4,
+				"prevGWDate": "2023-09-01",
+				"nextGW": 5,
+				"nextGWDate": "2023-09-16",
+				"brkDuration": 2,
+				"brkTitle": "IntlBreak 1",
+				"passed": 0,
+				"toCome": 1
+			},
+
+
+			{	"iBreakId": 1,
 				"wkNr": 41,
 				"prevGW": 8,
 				"prevGWDate": "2023-10-07",
 				"nextGW": 9,
 				"nextGWDate": "2023-10-21",
 				"brkDuration": 2,
-				"brkTitle": "IntlBreak 1",
+				"brkTitle": "IntlBreak 2",
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 1,
+			{	"iBreakId": 2,
 				"wkNr": 46,
 				"prevGW": 12,
 				"prevGWDate": "2023-11-11",
 				"nextGW": 13,
 				"nextGWDate": "2023-11-25",
 				"brkDuration": 1,
-				"brkTitle": "IntlBreak 2",
+				"brkTitle": "IntlBreak 3",
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 2,
+			{	"iBreakId": 3,
 				"wkNr": 1,
 				"prevGW": 20,
 				"prevGWDate": "2023-12-30",
@@ -50,7 +89,7 @@
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 3,
+			{	"iBreakId": 4,
 				"wkNr": 3,
 				"prevGW": 21,
 				"prevGWDate": "2024-01-13",
@@ -61,14 +100,14 @@
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 4,
+			{	"iBreakId": 5,
 				"wkNr": 11,
 				"prevGW": 29,
 				"prevGWDate": "2024-03-16",
 				"nextGW": 30,
 				"nextGWDate": "2024-03-30",
 				"brkDuration": 2,
-				"brkTitle": "IntlBreak 3",
+				"brkTitle": "IntlBreak 4",
 				"passed": 0,
 				"toCome": 1
 			}

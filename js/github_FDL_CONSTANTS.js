@@ -27,7 +27,7 @@ let gamesOverview = {
 		locked: false,
 		dfDisplay: {
 			containerViz: 	false,
-			strengthsViz: 	true,
+			strengthsViz: 	false,
 			strengthsVizA: 	true,
 			strengthsVizH: 	true
 		},
@@ -37,18 +37,18 @@ let gamesOverview = {
 		},
 		showSttng: true ,
 		showDdln: false ,
-		hasPP: false ,		
-		showPP: false ,
-		showRP: false,
+		hasPP: true ,		
+		showPP: true ,
+		showRP: false ,
 		postponedGameIds: [] ,
 		postponedGames: [] ,
 		replannedGamesIds: [] ,
 		replannedGames: [] ,
 		iBreaks:[] ,
 		iBreaksShow: false ,
-		selectedTeamId: 12 ,
+		selectedTeamId: 11 ,
 		sort: 1 ,
-		fontSize: 12
+		fontSize: 10
 }
 
 
