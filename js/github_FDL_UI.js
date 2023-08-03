@@ -1,11 +1,11 @@
 
-clspuDF =()=>{ $("#popUpDF").hide(); }
-tmNmClick = (tmId)=>{  gamesOverview.selectedTeamId = tmId;  window.open("teamPopUp.html?tmId=" +tmId.toString() ,{'tmId':12 } ); }
-showEvent = (id)=>{ for(let e=0; e < fixtures.length; e++){ if( fixtures[e].id == id ){ return fixtures[e]; }}}
+clspuDF =()=>{ $("#popUpDF").hide() ; }
+tmNmClick = (tmId)=>{  gamesOverview.selectedTeamId = tmId;  window.open("teamPopUp.html?tmId=" +tmId.toString() ,{'tmId':12 } ) ; }
+showEvent = (id)=>{ for(let e=0; e < fixtures.length; e++){ if( fixtures[e].id == id ){ return fixtures[e] ; }}}
 
-locked = ()=>{ return gamesOverview.locks.includes(true); }
-isLocked = (l)=>{ return gamesOverview.locks[l] == true || false; }
-let evchanges = [ "start", "round", "end" ];
+locked = ()=>{ return gamesOverview.locks.includes( true ) ; }
+isLocked = (l)=>{ return gamesOverview.locks[l] == true || false ; }
+let evchanges = [ "start", "round", "end" ] ;
 
 
 /* Event window toggles */
@@ -78,11 +78,14 @@ setEventWndwEnd = (ewe)=>{
 showEventWindow = (l)=>{
 	//	@param(l) = last changed selection item. identifies which evWndw item was changed( 0 = start, 1 = rounds, 2 = end ) 
 	
-	let evWndw 		= gamesOverview.evWndw;
-	let lockId 		= gamesOverview.locks.indexOf(true)	;
-	let direction 	= parseInt(evWndw['direction'])		;
+	let evWndw 		= gamesOverview.evWndw ;
+	let lockId 		= gamesOverview.locks.indexOf( true ) || 0;
+	let direction 	= parseInt(evWndw['direction']) ;
+	
 
 	if ( locked() ){
+
+		console.log( "showEventWindow (if locked)", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 		if( direction == 1 ){
 
@@ -144,20 +147,22 @@ showEventWindow = (l)=>{
 
 	}else{ 
 
+		console.log( "showEventWindow (not locked)", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
+
 		switch( l ){
 			case 0: 
 				// No lock start round has changed 
-				evWndw['end']	= ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] - 1 ) );
+				evWndw['end']	= ( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 );
 				break;
 
 			case 1: 
 				// No lock # of rounds has changed 
-				evWndw['end']	= ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] - 1 ) );
+				evWndw['end']	= ( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 ) ;
 				break;
 
 			case 2:
 				// No lock end round has changed 
-				evWndw['rounds']= parseInt( evWndw['end'] - evWndw['start'] ) + 0 ;
+				evWndw['rounds']= parseInt( evWndw['end'] - evWndw['start'] ) + 1 ;
 				break;
 
 			default:
@@ -165,6 +170,8 @@ showEventWindow = (l)=>{
 		}
 
 	}
+
+	console.log( "showEventWindow after locked", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 	$("#strtRnd > option.active").removeClass("active") ;
 	$("#slctdRounds > option.active").removeClass("active") ;
@@ -196,13 +203,26 @@ showEventWindow = (l)=>{
 	for(let s = st; s <= en ; s++){showEventClmn(s);}
 	for(let f = (en+1) ; f <= 39 ; f++){hideEventClmn(f); }
 
-	if( gamesOverview.hasPP ){ $("#ppOview").show(); }else{ $("#ppOview").hide(); $("tr.pp_count").hide();}
+	if( gamesOverview.showPP ){ $("#ppOview").show(); }else{ $("#ppOview").hide(); $("tr.pp_count").hide();}
 
 	if(gamesOverview.postponedGames.length>0){ showEventClmn(39); }else{ hideEventClmn(39);}
 	updateTotalDF(changDFviewIdx) ;
-	showHiddenTable() ;
 	// console.log( "showEventWindow:", evWndw ," changed", evchanges[l], "to: ", [st,rnds,en][l].toString() ) ;
 
+}
+
+
+hideTmRow = (tmId)=>{
+	let crit = "tr[tmId='" + tmId + "']" ;
+	let tm  = $(crit).get() ;
+	$.each( tm, function(index,tmr){ $(tmr).addClass("rowHide"); } ) ;
+}
+
+
+showTmRow = (tmId)=>{
+	let crit = "tr[tmId='" + tmId + "']" ;
+	let tm  = $(crit).get() ;
+	$.each( tm, function(index,tmr){ $(tmr).removeClass("rowHide"); } ) ;
 }
 
 
@@ -210,9 +230,9 @@ hideEventClmn = (rnd)=>{
 	let crit = "td[evrnd=" + rnd + "]" ;
 	let gms  = $(crit).get() ;
 	let hdr  = $("th[evrnd=" + rnd + "]" ) ;
-	$.each( hdr, function(index,gm){ $(gm).addClass("clmnHide"); } );
-	$.each( gms, function(index,gm){ $(gm).addClass("clmnHide"); } );
-	hideIbreaks(rnd)
+	$.each( hdr, function(index,gm){ $(gm).addClass("clmnHide"); } ) ;
+	$.each( gms, function(index,gm){ $(gm).addClass("clmnHide"); } ) ;
+	hideIbreaks(rnd) ;
 }
 
 
@@ -220,9 +240,9 @@ showEventClmn = (rnd)=>{
 	let crit 	= "td[evrnd=" + rnd + "]" ;
 	let gms  	= $(crit).get() ;
 	let hdr  	= $("th[evrnd=" + rnd + "]" ) ;
-	$.each( hdr, function(index,gmh){ $(gmh).removeClass("clmnHide"); } );
-	$.each( gms, function(index,gm){ $(gm).removeClass("clmnHide"); } );
-	showIbreaks(rnd)
+	$.each( hdr, function(index,gmh){ $(gmh).removeClass("clmnHide"); } ) ;
+	$.each( gms, function(index,gm){ $(gm).removeClass("clmnHide"); } ) ;
+	showIbreaks(rnd) ;
 }
 
 
@@ -491,35 +511,91 @@ sortTable = ()=>{
 
 
 /* selected teams functionality */
-showHiddenTable = ()=>{
-	let hasHidden = $('#hiddenTbl tbody tr').length;
-	if( hasHidden > 0 ){
-		$("#hiddenTblCnt tbody").show()
-		$("#hiddenTbl tbody").show()
-		$("#hiddenTbl thead").show()
-	}else{
-		$("#hiddenTblCnt tbody").hide()
-		$("#hiddenTbl tbody").hide()
-		$("#hiddenTbl thead").hide()
+rowFilter = (rf_option)=>{
+
+	let selectedArray = gamesOverview.teamFilter ;
+
+	// console.log( getCI(), "rowFilter\trf_option\t", rf_option ) ; 
+	// console.log( getCI(), "rowFilter\tselected\t",	selectedArray.length ) ; 
+
+	switch(rf_option){
+
+		case "a": 	
+					// console.log("rowFilter A: Show all teams" )
+
+					for( let t=1; t<=20; t++){ 
+						showTeamRow( t ) ; 
+					}
+					break;
+
+		case "s": 
+					// console.log("rowFilter S: Show selected teams" ) ;
+					for( let t=1; t<=20; t++ ){ 
+						if( selectedArray[t] ){
+							showTeamRow( t ) ; 
+						}else{
+							hideTeamRow( t ) ; 
+						}
+					}
+					break;
+
+		case "h": 
+					// console.log("rowFilter H: Hide selected teams" )
+					for( let t=1; t<=20; t++ ){ 
+						if( selectedArray[t] ){
+							hideTeamRow( t ) ; 
+						}else{
+							showTeamRow( t ) ; 
+						}
+					}
+					break;
+
+		default:
+			// console.log("rowFilter: rf_option default? =", rf_option ) ;	
 	}
-	sortTable()
 }
 
+hideTeamRow = (tmId)=>{
+	let row = $('#eventTable tr[tmId=' + tmId + ']').get();
+	$(row).removeClass("rowShow") ; 
+	$(row).addClass("rowHide") ; 
+}
 
-hideTeamRow = (tmNm)=>{
-	let row = $('#eventTable tr[id='+tmNm+ ']').get();
-	if( $('#eventTable tr[id='+tmNm+ ']').length == 0 ){
-		$('#hiddenTbl tr[id='+tmNm+ ']')
-			.detach()
-			.appendTo("#eventTable");
-			$('#eventTable tr[id='+tmNm+ '] > input').prop("unchecked")
-	}else{
-		$('#eventTable tr[id='+tmNm+ ']')
-			.detach()
-			.appendTo("#hiddenTbl tbody");
-			$('#hiddenTbl tr[id='+tmNm+ '] > input').prop("checked")
+showTeamRow = (tmId)=>{
+	let row = $('#eventTable tr[tmId=' + tmId + ']').get();
+	$(row).removeClass("rowHide") ; 
+	$(row).addClass("rowShow") ; 
+}
+
+tmSelectToggle = (tmId)=>{
+
+	gamesOverview.teamFilter[tmId] = !gamesOverview.teamFilter[tmId] ;
+	// console.log("tmSelectToggle ", tmId, gamesOverview.teamFilter[tmId] ) ;
+
+	let tmBttn  = $( "#eventTable tr[tmId=" + tmId + "] ").get() ; 
+	let tmIndic = $( "#eventTable tr[tmId=" + tmId + "] div.tm-idc").get() ; 
+	let fltrOp  = $( "#slctdTeams" ).val() ; 
+
+	if( ($(tmBttn).length==1) && ($(tmIndic).length==1) ){
+
+		$( tmIndic ).removeClass( "yellowLight" ) ;
+		$( tmIndic ).removeClass( "redLight" 	) ;
+		$( tmIndic ).removeClass( "greenLight"  ) ; 
+		$( tmIndic ).removeClass( "orangeLight" ) ; 
+		$( tmBttn ).removeClass( "tmUnselected" ) ; 
+		$( tmBttn ).removeClass( "tmSelected"   ) ; 
+
+		if( gamesOverview.teamFilter[tmId] ){
+			$(tmBttn).addClass("tmSelected") ; 
+			$(tmIndic).addClass("greenLight") ; 
+		}else{
+			$(tmBttn).addClass("tmUnselected") ; 
+			$(tmIndic).addClass("redLight") ; 
+		}
+
 	}
-	showHiddenTable()
+
+	rowFilter( fltrOp ) ;
 }
 
 
@@ -661,7 +737,7 @@ toggleDeadline = ()=>{
 
 
 togglePPdisplay = ()=>{
-	gamesOverview.showPP = !gamesOverview.showPP ;
+	gamesOverview.showPP = !gamesOverview.showPP;
 	let isviz = gamesOverview.showPP ;
 	$("#ppOview-cnt").removeClass( "show-item" ) ;
 	$("#ppOview-cnt").removeClass( "hide-item" ) ;
@@ -787,7 +863,7 @@ toggleDFuser = ()=>{
 
 showDeadline = (blnSD)=>{	
 
-	console.log("allStatsData?", allStatsData.length ) ; 
+	console.log("allStatsData?", allStatsData['events'].length ) ; 
 
 	if( allStatsData['events'].length > 0 ){
 
@@ -856,3 +932,5 @@ toggleReplanned = (i)=>{
 }
 
 showEventWindow(2);
+toggleDFdisplay() ;
+toggleStrengthContainer() ;

@@ -28,8 +28,8 @@ let gamesOverview = {
 		dfDisplay: {
 			containerViz: 	false,
 			strengthsViz: 	false,
-			strengthsVizA: 	true,
-			strengthsVizH: 	true
+			strengthsVizA: 	false,
+			strengthsVizH: 	false
 		},
 		dfSource: {
 			user: false,
@@ -47,6 +47,7 @@ let gamesOverview = {
 		iBreaks:[] ,
 		iBreaksShow: false ,
 		selectedTeamId: 11 ,
+		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
 		fontSize: 10
 }
@@ -252,6 +253,13 @@ resetIndics = ()=>{
 		}
 	);
 }
+
+
+tmFilterReset = ()=>{
+	gamesOverview.teamFilter =[ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ] ;
+	$( "#slctdTeams" ).val( "a" ) ;
+}
+
 
 let FPLTeamsFull = [
 	{       shortNm: "NPL",

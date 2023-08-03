@@ -4,9 +4,11 @@ let typeCount = [0,0,0,0,0];
 
 console.log( "loading teamPopUp.js " );
 
-console.log( 	"FPLTeamsFull:\t", FPLTeamsFull.length ,  
-			"FPLballers:\t", FPLballers.length , 
-			"selectedTeamId:\t", gamesOverview.selectedTeamId 
+console.log( 	
+	"FPLTeamsFull:\t", FPLTeamsFull.length ,  
+	"FPLballers:\t", FPLballers.length , 
+	"selectedTeamId:\t", gamesOverview.selectedTeamId ,
+	"totalMins",   ( gamesOverview.currentRnd * 90 ).toFixed(2) 
 );
 
 let bgClsNm = "bg" + FPLTeamsFull[gamesOverview.selectedTeamId].shortNm;
@@ -81,7 +83,7 @@ function loadElements(){
 
 				let tmPlayer = FPLTeamsFull[gamesOverview.selectedTeamId].players[p];
 
-				if( parseInt(tmPlayer.minutes) < 1 ){
+				if( (parseInt(tmPlayer.minutes) < 1) && (gamesOverview.currentRnd > 1) ){
 					console.log( tmPlayer.web_name, "\thas notplayed (yet).")
 				}else{
 
@@ -92,7 +94,7 @@ function loadElements(){
 								let gk_row = [
 									"<tr class='tpu_gkp_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( (tmPlayer.minutes / 3420) * 100 ).toFixed(2) ," % </td>",
+									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -110,7 +112,7 @@ function loadElements(){
 								let def_row = [
 									"<tr class='tpu_def_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( (tmPlayer.minutes / 3420) * 100 ).toFixed(2) ," % </td>",
+									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -127,7 +129,7 @@ function loadElements(){
 								let mid_row = [
 									"<tr class='tpu_mid_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( (tmPlayer.minutes / 3420) * 100 ).toFixed(2) ," % </td>",
+									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -144,7 +146,7 @@ function loadElements(){
 								let fwd_row = [
 									"<tr class='tpu_fwd_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( (tmPlayer.minutes / 3420) * 100 ).toFixed(2) ," % </td>",
+									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
