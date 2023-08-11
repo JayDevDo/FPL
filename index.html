@@ -27,7 +27,7 @@
 			<h2>Jays FPL FDR</h2>
 			<button id="hdr-tggl-settings" 	onclick="toggleSettings()"	title="Show settings"				>Settings			</button>
 			<button id="hdr-tggl-df-fpl" 	onclick="toggleDFdisplay()" title="DF = Difficulty Factor"  	>Difficulty Factor (DF)</button>
-			<button id="hdr-tggl-ppnd" 		onclick="togglePPdisplay()"	title="List of unplanned fixtures" 	>Postponed/Unplanned</button>
+			<button id="hdr-tggl-ppnd" 		onclick="togglePPdisplay('toggle','HTML -button 1')"	title="List of unplanned fixtures" 	>Postponed/Unplanned</button>
 		</nav>
 
 		<div class="grid-container">
@@ -63,10 +63,10 @@
 								<tr>
 									<td>Postponed</td>
 									<td >
-										<div id="ppsLdd-idc" class="" ></div>
+										<div id="ppsLdd-idc" class="redLight" ></div>
 									</td>
 									<td colspan="2" >
-										<button id="togglePostponed" onclick="togglePPdisplay()" >toggle Postponed details</button>
+										<button id="togglePostponed" onclick="togglePPdisplay('toggle','HTML -button 2')" >toggle Postponed details</button>
 									</td>
 								</tr>
 
@@ -157,41 +157,33 @@
 										<option value=1 active selected >1 (default)</option>
 										<option value=2 >2</option>
 										<option value=3 >3</option>
-										<option value=4 >4</option>
 										<option value=4 >4 IB 1 start</option>
 										<option value=5 >5 IB 1 end</option>										
-										<option value=5 >5</option>
 										<option value=6 >6</option>
 										<option value=7 >7</option>
 										<option value=8 >8 IB 2 start</option>
 										<option value=9 >9 IB 2 end</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
-										<option value=12 >12</option>
 										<option value=12 >12 IB 3 start</option>
 										<option value=13 >13 IB 3 end</option>
-										<option value=13 >13</option>
 										<option value=14 >14</option>
 										<option value=15 >15</option>
+										<option value=16 >16</option>
+										<option value=17 >17</option>
 										<option value=18 >18</option>
 										<option value=19 >19</option>
-										<option value=20 >20</option>
 										<option value=20 >20 FA 1 start</option>
-										<option value=21 >21 FA 1 end</option>
-										<option value=21 >21</option>
-										<option value=21 >21 FA 2 start</option>
+										<option value=21 >21 FA 1 mid</option>
 										<option value=22 >22 FA 2 end</option>
-										<option value=22 >22</option>
 										<option value=23 >23</option>
 										<option value=24 >24</option>
 										<option value=25 >25</option>
 										<option value=26 >26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
-										<option value=29 >29</option>
 										<option value=29 >29 IB 4 start</option>
 										<option value=30 >30 IB 4 end</option>
-										<option value=30>30</option>
 										<option value=31 >31</option>
 										<option value=32 >32</option>
 										<option value=33 >33</option>
@@ -305,7 +297,7 @@
 			</div>
 
 
-			<div id="ppOview-cnt" class="grid-item" width=30% class="show-item">
+			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" visible=false>
 
 				<div id="ppOview">
 	
@@ -331,7 +323,61 @@
 			</div>
 
 
-			<div id="info-cnt_1" class="grid-item" width=30% >
+			<div id="eventTypes-cnt" class="grid-item" width=30% >
+
+				<form id="eventTypes" name="eventTypes" >
+
+					<fieldset>
+						<legend>Select visible competitions:</legend>
+
+						<div>
+							<input type="checkbox" id="evtp-EPL" name="evtp-EPL" enabled="false" checked  />
+							<label for="evtp-EPL">Premier League</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-FAC" name="evtp-FAC" unchecked />
+							<label for="evtp-FAC">FA Cup</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-EFL" name="evtp-EFL" unchecked />
+							<label for="evtp-EFL">Caraboa Cup (EFL)</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-UIL" name="evtp-UIL" checked />
+							<label for="evtp-UIL">Uefa Int'l break</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-AFC" name="evtp-AFC" unchecked />
+							<label for="evtp-AFC">Fifa/Afcon Int'l break</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" unchecked />
+							<label for="evtp-ECL">UEFA:</label>
+							<label for="evtp-ECL" style="padding-left: 10px;"><br>    - Champions Lg<br>    - Europa Lg<br>    - Conference Lg</label>
+						</div>
+
+					</fieldset>
+
+					</form>
+
+					<!--   
+						complete team row including all league rounds as columns
+						leagues: 
+							EPL, 
+							FA Cup,
+							EFL (carabao) Cup, 
+							UEFA Champions Lg., 
+							UEFA Europa Lg.,
+							UEFA Conference Lg.,
+							UEFA/FIFA int'l Quals, 
+							AFCON,.
+					-->
+
 			</div>
 
 
@@ -630,14 +676,16 @@
 				<table id="fxtrTbl">
 					<thead>
 						<tr class="striped fxtrHdr">
+
 							<th evrnd="999" >Team</th>
+
 							<th evrnd="999" >filter<br>
 								<form id="slctdTeamsForm" value="a" >
 									<select name="slctdTeams"
 											id="slctdTeams"
 											value="a"
 											onchange="rowFilter(value)"
-											onsubmit="rowFilter(value)" 
+											onmouseup="rowFilter(value)"
 									>
 										<option value="a" active selected >show All</option>
 										<option value="s" >Show Sel.</option>
@@ -645,11 +693,13 @@
 									</select>
 								</form>
 							</th>
+
 							<th evrnd="999" >
 								<button onclick="reverseSort()" ><span id="rvSortBttn">DESC</span></button>
 								<br>
 								<button onclick="changDFview()" ><span id="tmDFhdr">DF</span></button>
 							</th>
+
 							<th onclick="mk_matchDay_df_matchup(1)" evrnd="1">Round 01</th>
 							<th onclick="mk_matchDay_df_matchup(2)" evrnd="2">Round 02</th>
 							<th onclick="mk_matchDay_df_matchup(3)" evrnd="3">Round 03</th>
@@ -715,14 +765,16 @@
 						</tr>
 					</thead>
 
-					<tbody 	class="DF_overview teamCntnr" id="eventTable">
+					<tbody id="eventTable" class="DF_overview teamCntnr" >
 
-						<tr id="ARS" tmId="1" class="tmSelected">
+						<tr id="ARS" tmId="1" class="tmSelected rowShow" >
+
 							<th>
 								<span onclick="highlightTeamEvents('ARS')">Arsenal</span>
 							</th>
+
 							<th onclick="tmSelectToggle(1)">
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -801,13 +853,13 @@
 							</td>
 						</tr>
 
-						<tr id="AVL" tmId="2" class="tmSelected">
+						<tr id="AVL" tmId="2" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('AVL')">Aston Villa</span>
 							</th>
 							<th onclick="tmSelectToggle(2)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -886,14 +938,14 @@
 							</td>
 						</tr>
 
-						<tr id="BOU" tmId="3" class="tmSelected">
+						<tr id="BOU" tmId="3" class="tmSelected" class="rowShow" >
 							
 							<th>
 								<span onclick="highlightTeamEvents('BOU')">Bournemouth</span>
 							</th>
 							
 							<th onclick="tmSelectToggle(3)">
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 							
 							<th class="dfc">100</th>
@@ -972,12 +1024,12 @@
 							</td>
 						</tr>
 
-						<tr id="BRE" tmId="4" class="tmSelected">
+						<tr id="BRE" tmId="4" class="tmSelected" class="rowShow" >
 							<th>
 								<span onclick="highlightTeamEvents('BRE')">Brentford</span>
 							</th>
 							<th onclick="tmSelectToggle(4)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
 
@@ -1055,12 +1107,12 @@
 							</td>
 						</tr>
 
-						<tr id="BHA" tmId="5" class="tmSelected">
+						<tr id="BHA" tmId="5" class="tmSelected" class="rowShow" >
 							<th>
 								<span onclick="highlightTeamEvents('BHA')">Brighton</span>
 							</th>
 							<th onclick="tmSelectToggle(5)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1140,14 +1192,14 @@
 
 						</tr>
 
-						<tr id="BUR" tmId="6" class="tmSelected">
+						<tr id="BUR" tmId="6" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('BUR')">Burnley</span>
 							</th>
 
 							<th onclick="tmSelectToggle(6)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1227,14 +1279,14 @@
 
 						</tr>
 
-						<tr id="CHE" tmId="7" class="tmSelected">
+						<tr id="CHE" tmId="7" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('CHE')">Chelsea</span>
 							</th>
 
 							<th onclick="tmSelectToggle(7)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1314,14 +1366,14 @@
 
 						</tr>
 
-						<tr id="CRY" tmId="8" class="tmSelected">
+						<tr id="CRY" tmId="8" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('CRY')">Crystal Plc</span>
 							</th>
 
 							<th onclick="tmSelectToggle(8)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1401,14 +1453,14 @@
 
 						</tr>
 
-						<tr id="EVE" tmId="9" class="tmSelected">
+						<tr id="EVE" tmId="9" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('EVE')">Everton</span>
 							</th>
 
 							<th onclick="tmSelectToggle(9)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1487,14 +1539,14 @@
 							</td>
 						</tr>
 
-						<tr id="FUL" tmId="10" class="tmSelected">
+						<tr id="FUL" tmId="10" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('FUL')" >Fulham</span>
 							</th>
 
 							<th onclick="tmSelectToggle(10)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1574,14 +1626,14 @@
 
 						</tr>
 
-						<tr id="LIV" tmId="11" class="tmSelected">
+						<tr id="LIV" tmId="11" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('LIV')">Liverpool</span>
 							</th>
 
 							<th onclick="tmSelectToggle(11)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1661,14 +1713,14 @@
 
 						</tr>
 
-						<tr id="LUT" tmId="12" class="tmSelected">
+						<tr id="LUT" tmId="12" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('LUT')">Luton</span>
 							</th>
 
 							<th onclick="tmSelectToggle(12)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</td>
@@ -1748,12 +1800,12 @@
 
 						</tr>
 
-						<tr id="MNC" tmId="13" class="tmSelected">
+						<tr id="MNC" tmId="13" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('MNC')" >Man City</span>
 							<th onclick="tmSelectToggle(13)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1834,14 +1886,14 @@
 							</td>
 						</tr>
 
-						<tr id="MNU" tmId="14" class="tmSelected">
+						<tr id="MNU" tmId="14" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('MNU')">Man Utd</span>
 							</th>
 
 							<th onclick="tmSelectToggle(14)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -1921,14 +1973,14 @@
 
 						</tr>
 
-						<tr id="NEW" tmId="15" class="tmSelected">
+						<tr id="NEW" tmId="15" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('NEW')">Newcastle</span>
 							</th>
 
 							<th onclick="tmSelectToggle(15)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2008,14 +2060,14 @@
 
 						</tr>
 
-						<tr id="NFO" tmId="16" class="tmSelected">
+						<tr id="NFO" tmId="16" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('NFO')">Nott-m Forest</span>
 							</th>
 
 							<th onclick="tmSelectToggle(16)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2095,14 +2147,14 @@
 
 						</tr>
 
-						<tr id="SHU" tmId="17" class="tmSelected">
+						<tr id="SHU" tmId="17" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('SHU')">Sheffield Utd</span>
 							</th>
 
 							<th onclick="tmSelectToggle(17)">
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2182,14 +2234,14 @@
 
 						</tr>
 
-						<tr id="TOT" tmId="18" class="tmSelected">
+						<tr id="TOT" tmId="18" class="tmSelected" class="rowShow" >
 
 							<th>
 								<span onclick="highlightTeamEvents('TOT')">Tottenham</span>
 							</th>
 
 							<th onclick="tmSelectToggle(18)">
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2269,14 +2321,14 @@
 
 						</tr>
 
-						<tr id="WHU" tmId="19" class="tmSelected" >
+						<tr id="WHU" tmId="19" class="tmSelected" class="rowShow"  >
 							
 							<th>
 								<span onclick="highlightTeamEvents('WHU')">West Ham</span>
 							</th>
 							
 							<th onclick="tmSelectToggle(19)" >
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2356,14 +2408,14 @@
 
 						</tr>
 
-						<tr id="WOL" tmId="20" class="tmSelected" >
+						<tr id="WOL" tmId="20" class="tmSelected" class="rowShow"  >
 
 							<th>
 								<span onclick="highlightTeamEvents('WOL')">Wolves</span>
 							</th>
 
 							<th onclick="tmSelectToggle(20)">
-								<div class="tm-idc" class="yellowLight" > </div>
+								<div class="tm-idc greenLight" > </div>
 							</th>
 
 							<th class="dfc">100</th>
@@ -2458,6 +2510,9 @@
 
 	</body>
 
-	<footer><script type="text/javascript">showEventWindow(2);</script></footer>
+	<footer>
+		<!-- script type="text/javascript">showEventWindow(2,"HTML init");</script -->
+		<script type="text/javascript">togglePPdisplay(false,"HTML init");</script >
+	</footer>
 
 </html>

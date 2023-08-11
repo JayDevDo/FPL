@@ -12,6 +12,8 @@ let fixtureArray = [];
 
 let allStatsData = [];
 
+getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
+
 
 let linearScale = d3.scaleLinear()
   .domain([1000, 1400])
@@ -37,15 +39,17 @@ let gamesOverview = {
 		},
 		showSttng: true ,
 		showDdln: false ,
-		hasPP: true ,		
-		showPP: true ,
+		hasPP: false ,		
+		showPP: false ,
 		showRP: false ,
-		postponedGameIds: [] ,
-		postponedGames: [] ,
-		replannedGamesIds: [] ,
-		replannedGames: [] ,
+		postponedGameIds: 	[] ,
+		postponedGames: 	[] ,
+		replannedGamesIds: 	[] ,
+		replannedGames: 	[] ,
 		iBreaks:[] ,
-		iBreaksShow: false ,
+		iBreaksShow: 	false ,
+		evTypes: 	[	"evtp-EPL","evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIL",	"evtp-AFC"	],
+		evTypesViz: [	true,		false,		false,		false,		false,		false,		true,		false	],
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
@@ -226,7 +230,7 @@ loadFPLDF = ()=>{
 
 clearIndicator = (indctr)=>{
 	$.each(
-		[ "greenLight", "orangeLight", "redLight" ],
+		[ "greenLight", "orangeLight", "redLight", "yellowLight" ],
 		function(i,c){ $( "#"+ indctr ).removeClass(c); }
 	);
 }
@@ -258,6 +262,18 @@ resetIndics = ()=>{
 tmFilterReset = ()=>{
 	gamesOverview.teamFilter =[ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ] ;
 	$( "#slctdTeams" ).val( "a" ) ;
+	let tmIndics = $("#eventTable > tr > div.tm-idc").get() ; 
+	
+	$.each(
+		tmIndics ,
+		( index, indic )=>{
+			
+			console.log("tmFilterReset i:", index, "indic: ", indic ) ;
+			$( indic ).addClass( "yellowLight" ) ;
+		}
+
+	) ;
+
 }
 
 

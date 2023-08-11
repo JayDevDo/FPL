@@ -31,6 +31,17 @@ table{ border-collapse: collapse; }
 	margin-right: auto;
 }
 
+div.tm-idc.tmSelected{ 
+	width: 25px;
+	min-height: 12px;
+	background: #00ff00;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	content: "Show";
+}
+
+
 .orangeLight {
 	width: 11px;
 	height: 11px;
@@ -323,7 +334,6 @@ a {
 .rowHide{ display: none;   }
 .rowShow{ display: table-row; }
 
-div.tm-idc{ min-height: 12px; border: 1px solid orange; }
 
 #selectionsTbl tr th{
 	background-color: #000000 !important;

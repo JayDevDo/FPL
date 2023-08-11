@@ -40,7 +40,7 @@ toggleLocks = (l)=>{
 			break;
 
 		default: 
-			console.log("toggleLocks l = ", l );
+			console.log( getCI(), "toggleLocks l = ", l );
 	}
 
 	let lckBttns = $("button.evwndwTgl").get() ;
@@ -56,27 +56,28 @@ toggleLocks = (l)=>{
 
 setEventWndwStart = (ews)=>{
 	gamesOverview.evWndw['start'] = parseInt(ews);
-	showEventWindow(0);
+	showEventWindow(0,"setEventWndwStart");
 	return gamesOverview.evWndw['start'];
 } ;
 
 
 setRndsToShow = (rts)=>{
 	gamesOverview.evWndw['rounds'] = parseInt(rts);
-	showEventWindow(1);
+	showEventWindow(1,"setRndsToShow");
 	return gamesOverview.evWndw['rounds'];
 };
 
 
 setEventWndwEnd = (ewe)=>{
 	gamesOverview.evWndw['end'] = parseInt(ewe);
-	showEventWindow(2);
+	showEventWindow(2,"setEventWndwEnd");
 	return gamesOverview.evWndw['end'];
 }
 
 
-showEventWindow = (l)=>{
+showEventWindow = (l,f)=>{
 	//	@param(l) = last changed selection item. identifies which evWndw item was changed( 0 = start, 1 = rounds, 2 = end ) 
+	//  @param(f) = function that calls this funtion
 	
 	let evWndw 		= gamesOverview.evWndw ;
 	let lockId 		= gamesOverview.locks.indexOf( true ) || 0;
@@ -85,7 +86,7 @@ showEventWindow = (l)=>{
 
 	if ( locked() ){
 
-		console.log( "showEventWindow (if locked)", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
+		// console.log(  getCI(), "called by", f,"\tshowEventWindow (if locked)", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 		if( direction == 1 ){
 
@@ -113,7 +114,7 @@ showEventWindow = (l)=>{
 					break;
 
 				default:
-					console.log("showEventWindow: dir= 1. switch changed item > 2 = \t", l ) ;	
+					console.log( getCI(), "showEventWindow: dir= 1. switch changed item > 2 = \t", l ) ;	
 			}
 
 		}else if( direction == -1  ){
@@ -135,19 +136,19 @@ showEventWindow = (l)=>{
 					break;
 
 				default:
-					console.log("showEventWindow: dir= -1. switch changed item > 2 =\t", l ) ;
+					console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l ) ;
 			}
 
 		}else{
 
-			console.log("showEventWindow --> direction should be 1 or -1. not:\t", direction );	
+			console.log( getCI(), "showEventWindow --> direction should be 1 or -1. not:\t", direction );	
 
 		}
 
 
 	}else{ 
 
-		console.log( "showEventWindow (not locked)", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
+		// console.log(  getCI(), "called by", f,"\tshowEventWindow (not locked)","\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 		switch( l ){
 			case 0: 
@@ -166,12 +167,12 @@ showEventWindow = (l)=>{
 				break;
 
 			default:
-				console.log("showEventWindow: dir= -1. switch changed item > 2 =\t", l );	
+				console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l );	
 		}
 
 	}
 
-	console.log( "showEventWindow after locked", getCI() ,"\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
+	console.log( getCI(), "called by", f, "\tshowEventWindow after locked", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 	$("#strtRnd > option.active").removeClass("active") ;
 	$("#slctdRounds > option.active").removeClass("active") ;
@@ -203,26 +204,20 @@ showEventWindow = (l)=>{
 	for(let s = st; s <= en ; s++){showEventClmn(s);}
 	for(let f = (en+1) ; f <= 39 ; f++){hideEventClmn(f); }
 
-	if( gamesOverview.showPP ){ $("#ppOview").show(); }else{ $("#ppOview").hide(); $("tr.pp_count").hide();}
+	/*
+		if( gamesOverview.showPP ){ 
+			togglePPdisplay(true, "showEventWindow true");
+			showEventClmn(39) ; 
+		}else{ 
+			$("tr.pp_count").hide() ;
+			togglePPdisplay(false, "showEventWindow false");
+			hideEventClmn(39) ;
+		}
+	*/
 
-	if(gamesOverview.postponedGames.length>0){ showEventClmn(39); }else{ hideEventClmn(39);}
-	updateTotalDF(changDFviewIdx) ;
-	// console.log( "showEventWindow:", evWndw ," changed", evchanges[l], "to: ", [st,rnds,en][l].toString() ) ;
+	updateTotalDF( changDFviewIdx ) ;
+	// console.log( getCI(), "showEventWindow:", evWndw ," changed", evchanges[l], "to: ", [st,rnds,en][l].toString() ) ;
 
-}
-
-
-hideTmRow = (tmId)=>{
-	let crit = "tr[tmId='" + tmId + "']" ;
-	let tm  = $(crit).get() ;
-	$.each( tm, function(index,tmr){ $(tmr).addClass("rowHide"); } ) ;
-}
-
-
-showTmRow = (tmId)=>{
-	let crit = "tr[tmId='" + tmId + "']" ;
-	let tm  = $(crit).get() ;
-	$.each( tm, function(index,tmr){ $(tmr).removeClass("rowHide"); } ) ;
 }
 
 
@@ -511,6 +506,7 @@ sortTable = ()=>{
 
 
 /* selected teams functionality */
+
 rowFilter = (rf_option)=>{
 
 	let selectedArray = gamesOverview.teamFilter ;
@@ -599,13 +595,6 @@ tmSelectToggle = (tmId)=>{
 }
 
 
-showAllTeams = ()=>{
-	let mvRow = $("#hiddenTbl tbody tr" ).get() ;
-	$.each( mvRow, (i, row)=>{ hideTeamRow( $(row).attr("id") ) }) ;
-	showHiddenTable() ;
-}
-
-
 // Team highlighting 
 highLightTmStrengths = ( hTmId, aTmId )=>{
 
@@ -666,7 +655,7 @@ shadeNotHL = ()=>{
 		shadeArr,
 		function(i, gm){
 			if( $(gm).hasClass("evHighLite") ){
-				console.log("shadeNotHL-- fxtr #", gm.fxtrid, " is highlighted.") ; 
+				// console.log("shadeNotHL-- fxtr #", gm.fxtrid, " is highlighted.") ; 
 			}else{
 				$(gm).addClass("shaded") ; 
 			}
@@ -736,15 +725,44 @@ toggleDeadline = ()=>{
 }
 
 
-togglePPdisplay = ()=>{
-	gamesOverview.showPP = !gamesOverview.showPP;
-	let isviz = gamesOverview.showPP ;
-	$("#ppOview-cnt").removeClass( "show-item" ) ;
-	$("#ppOview-cnt").removeClass( "hide-item" ) ;
-	$("#togglePostponed").text( ( isviz )? "Show":"Hide" ) ;
-	$("#hdr-tggl-ppnd").css("backgroundColor",  ( isviz )? "#D91A00":"#53AC00" ) ;
-	$("#ppOview-cnt").addClass( ( isviz )? "hide-item":"show-item" ) ;
-	setIndicator("ppsLdd-viz-idc", ( isviz )? "green":"red" ) ;
+togglePPdisplay = (viz, f )=>{
+
+	if( viz == 'toggle' ){
+		gamesOverview.showPP = !gamesOverview.showPP ;
+		console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, viz ) ;
+
+	}else{
+		gamesOverview.showPP = Boolean( viz ) ;
+		console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, Boolean( viz )  ) ;
+	}
+	
+	console.log( getCI(), f, "togglePPdisplay: viz=", viz, " Boolean(viz)=" , Boolean(viz), "gamesOverview.showPP=", gamesOverview.showPP )
+	
+	if(  gamesOverview.showPP  ){
+
+		$("#ppOview-cnt").removeClass( "hide-item" ) ;
+		$("#ppOview-cnt").addClass( "show-item" ) ;
+
+		$("#ppOview").show(); 
+
+		$("#hdr-tggl-ppnd").css("backgroundColor", "#53AC00" ) ;
+		$("#togglePostponed").text( "Hide" ) ;
+
+		setIndicator("ppsLdd-idc", "green" ) ;
+
+	}else{
+
+		$("#ppOview-cnt").removeClass( "show-item" ) ;
+		$("#ppOview-cnt").addClass( "hide-item" ) ;
+
+		$("#ppOview").hide(); 
+
+		$("#hdr-tggl-ppnd").css("backgroundColor", "#D91A00" ) ;
+		$("#togglePostponed").text( "Show" ) ;
+
+		setIndicator("ppsLdd-idc", "red" ) ;
+	}
+	
 }
 
 
@@ -815,11 +833,13 @@ toggleStrengthHome = ()=>{
 		$("#tr_str_h_o").removeClass("df_h_hidden") ;
 		$("#tr_str_h_a").removeClass("df_h_hidden") ;
 		$("#tr_str_h_d").removeClass("df_h_hidden") ;
+		setIndicator("epl-ha-Ldd-idc", "green") ; 
 	}else{
 		// console.log("toggleStrengthHome viz=false. " ) ;
 		$("#tr_str_h_o").addClass("df_h_hidden") ;
 		$("#tr_str_h_a").addClass("df_h_hidden") ;
 		$("#tr_str_h_d").addClass("df_h_hidden") ;
+		setIndicator("epl-ha-Ldd-idc", "red") ; 
 	}
 
 	$("#df_home button").text( ( gamesOverview.dfDisplay['strengthsVizH'] )? "Fold":"Expand" );
@@ -848,14 +868,14 @@ toggleStrengthAway = ()=>{
 
 
 toggleDFuser = ()=>{
-	console.log("toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
+	console.log( getCI(), "toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
 	if( gamesOverview.dfSource['user'] ){
 		// now using FPL DF's, switch to user DF (if stored)
-		console.log("toggleDFuser - now using USER DF " ) ; 
+		console.log( getCI(), "toggleDFuser - now using USER DF " ) ; 
 		loadUserDF() ; 
 		
 	}else{
-		console.log("toggleDFuser - now using FPL DF " ) ; 
+		console.log( getCI(), "toggleDFuser - now using FPL DF " ) ; 
 		loadFPLDF() ; 
 	}
 }
@@ -863,7 +883,7 @@ toggleDFuser = ()=>{
 
 showDeadline = (blnSD)=>{	
 
-	console.log("allStatsData?", allStatsData['events'].length ) ; 
+	console.log( getCI(), "allStatsData?", allStatsData['events'].length ) ; 
 
 	if( allStatsData['events'].length > 0 ){
 
@@ -883,7 +903,7 @@ showDeadline = (blnSD)=>{
 		}
 
 	}else{
-		console.log("showDeadline no allStatsData['events'] available (yet?)");
+		console.log( getCI(), "showDeadline no allStatsData['events'] available (yet?)");
 	}
 }
 
@@ -908,7 +928,7 @@ toggleReplanned = (i)=>{
 	$("#ppGamesUnPlanned").removeClass( "show-item" ) ;
 
 	if( gamesOverview.showRP ){
-		console.log("toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
+		console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
 		$("#ppGamesRePlanned").addClass( "show-item" ) ;
 		$("#ppGamesUnPlanned").addClass( "hide-item" ) ;	
@@ -918,7 +938,7 @@ toggleReplanned = (i)=>{
 
 	
 	}else{
-		console.log("toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
+		console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
 
 		$("#ppGamesUnPlanned").addClass( "show-item" ) ;	
@@ -931,6 +951,5 @@ toggleReplanned = (i)=>{
 
 }
 
-showEventWindow(2);
-toggleDFdisplay() ;
-toggleStrengthContainer() ;
+showEventWindow(2, "FDL_UI init");
+
