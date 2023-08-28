@@ -194,27 +194,26 @@ showEventWindow = (l,f)=>{
 	$("#slctdRounds > option[value='"+ evWndw['start'] + "']").addClass("selected");
 	$("#endRnd > option[value='"+ evWndw['end'] + "']").addClass("selected");
 
-	showIbreaks() ;
-
 	let st 			= parseInt(evWndw['start'])	;
 	let en 			= parseInt(evWndw['end']) 	;
 	let rnds 		= parseInt(evWndw['rounds']);
 
-	for(let p = 1; p < st ; p++){hideEventClmn(p);}
-	for(let s = st; s <= en ; s++){showEventClmn(s);}
-	for(let f = (en+1) ; f <= 39 ; f++){hideEventClmn(f); }
+	eventTypeSelectionChanged() ; 
 
-	/*
-		if( gamesOverview.showPP ){ 
-			togglePPdisplay(true, "showEventWindow true");
-			showEventClmn(39) ; 
-		}else{ 
-			$("tr.pp_count").hide() ;
-			togglePPdisplay(false, "showEventWindow false");
-			hideEventClmn(39) ;
-		}
-	*/
+	for(let p = 1; 		p < st 	; p++){	hideEventClmn(p) ; }
+	for(let s = st; 	s <= en ; s++){ showEventClmn(s) ; }
+	for(let f =(en+1); 	f <= 39 ; f++){ hideEventClmn(f) ; }
 
+	
+	if( gamesOverview.showPP ){ 
+		togglePPdisplay(true, "showEventWindow true");
+		showEventClmn(39) ; 
+	}else{ 
+		$("tr.pp_count").hide() ;
+		togglePPdisplay(false, "showEventWindow false");
+		hideEventClmn(39) ;
+	}
+	
 	updateTotalDF( changDFviewIdx ) ;
 	// console.log( getCI(), "showEventWindow:", evWndw ," changed", evchanges[l], "to: ", [st,rnds,en][l].toString() ) ;
 
@@ -222,24 +221,66 @@ showEventWindow = (l,f)=>{
 
 
 hideEventClmn = (rnd)=>{
+	/* 	Hides the GW columns */
 	let crit = "td[evrnd=" + rnd + "]" ;
 	let gms  = $(crit).get() ;
-	let hdr  = $("th[evrnd=" + rnd + "]" ) ;
+	let hdr  	= $("th[evrnd=" + rnd + "]" ) ;
 	$.each( hdr, function(index,gm){ $(gm).addClass("clmnHide"); } ) ;
 	$.each( gms, function(index,gm){ $(gm).addClass("clmnHide"); } ) ;
-	hideIbreaks(rnd) ;
 }
 
 
 showEventClmn = (rnd)=>{
-	let crit 	= "td[evrnd=" + rnd + "]" ;
-	let gms  	= $(crit).get() ;
+	/* 	Shows the GW columns */
+	let crit = "td[evrnd=" + rnd + "]" ;
+	let gms  = $(crit).get() ;
 	let hdr  	= $("th[evrnd=" + rnd + "]" ) ;
-	$.each( hdr, function(index,gmh){ $(gmh).removeClass("clmnHide"); } ) ;
-	$.each( gms, function(index,gm){ $(gm).removeClass("clmnHide"); } ) ;
-	showIbreaks(rnd) ;
+	$.each( hdr, function(index,gmh){ 	$(gmh).removeClass("clmnHide"); } ) ;
+	$.each( gms, function(index,gm){ 	$(gm).removeClass("clmnHide"); 	} ) ;
 }
 
+
+
+showEventType = (evtClass)=>{
+	let critTD = "td." + evtClass ;
+	let critTH = "th." + evtClass ;
+	let evTypeCells  = $(critTD).get() ;
+	let evTypeHeads  = $(critTH).get() ;
+	console.log("showEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	$.each( evTypeHeads, function(index, hdr){ $(hdr).removeClass("evtypeHide"); } );
+	$.each( evTypeCells, function(index, cll){ $(cll).removeClass("evtypeHide"); } );
+}
+
+
+hideEventType = (evtClass)=>{
+	let critTD = "td." + evtClass ;
+	let critTH = "th." + evtClass ;
+	let evTypeCells  = $(critTD).get() ;
+	let evTypeHeads  = $(critTH).get() ;
+	console.log("hideEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	$.each( evTypeHeads, function(index, hds){ $(hds).addClass("evtypeHide"); } );
+	$.each( evTypeCells, function(index, cll){ $(cll).addClass("evtypeHide"); } );
+}
+
+
+
+eventTypeSelectionChanged = ()=>{
+	let evTypes = $("#evntTpsCont input").get() ;
+	console.log("eventTypeSelectionChanged", evTypes.length )
+
+	$.each( 
+		evTypes,
+		function(index,evtType){ 
+			console.log("evtType", evtType.id , evtType.checked ) ;
+			if(evtType.checked){
+				showEventType( evtType.id ) ;	
+			}else{
+				hideEventType( evtType.id ) ;	
+			}
+		}
+	);
+
+}
 
 /* User DF functions */
 
@@ -293,28 +334,6 @@ updateCustomDF = (loc,val)=>{
 
 	// changDFviewIdx from CONSTANTS 
 	updateTotalDF(changDFviewIdx) ; 
-}
-
-
-hideIbreaks = (rnd)=>{
-	let critTD = "td [ibreak=" + rnd + "]" ;
-	let critTH = "th [ibreak=" + rnd + "]" ;
-	let ibrkCells  = $(critTD).get() ;
-	let ibrkHeads  = $(critTH).get() ;
-	// console.log("hideIbreaks: ibrkCells:\t", ibrkCells.length , "ibrkHeads:\t", ibrkHeads.length )
-	$.each( ibrkHeads, function(index, hds){ $(hds).addClass("clmnHide"); } );
-	$.each( ibrkCells, function(index, cll){ $(cll).addClass("clmnHide"); } );
-}
-
-
-showIbreaks = (rnd)=>{
-	let critTD = "td [ibreak=" + rnd + "]" ;
-	let critTH = "th [ibreak=" + rnd + "]" ;
-	let ibrkCells  = $(critTD).get() ;
-	let ibrkHeads  = $(critTH).get() ;
-	// console.log("showIbreaks: ibrkCells:\t", ibrkCells.length , "ibrkHeads:\t", ibrkHeads.length )
-	$.each( ibrkHeads, function(index, hdr){ $(hdr).removeClass("clmnHide"); } );
-	$.each( ibrkCells, function(index, cll){ $(cll).removeClass("clmnHide"); } );
 }
 
 

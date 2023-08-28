@@ -148,16 +148,16 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=1 >
+								<form id="eventWndwStartForm" value=4 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=1
+											value=4
 											onchange="setEventWndwStart(value)"
 									>
-										<option value=1 active selected >1 (default)</option>
+										<option value=1 >1</option>
 										<option value=2 >2</option>
 										<option value=3 >3</option>
-										<option value=4 >4 IB 1 start</option>
+										<option value=4 active selected >4 IB 1 start</option>
 										<option value=5 >5 IB 1 end</option>										
 										<option value=6 >6</option>
 										<option value=7 >7</option>
@@ -173,8 +173,8 @@
 										<option value=17 >17</option>
 										<option value=18 >18</option>
 										<option value=19 >19</option>
-										<option value=20 >20 FA 1 start</option>
-										<option value=21 >21 FA 1 mid</option>
+										<option value=20 >20 FA Cup start</option>
+										<option value=21 >21 FA Cup mid</option>
 										<option value=22 >22 FA 2 end</option>
 										<option value=23 >23</option>
 										<option value=24 >24</option>
@@ -201,10 +201,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=8 >
+								<form id="slctdRoundsForm" value=9 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=8
+											value=9
 											onchange="setRndsToShow(value)"
 									>
 										<option value=38 >All</option>
@@ -215,8 +215,8 @@
 										<option value=5  >5  </option>
 										<option value=6  >6  </option>
 										<option value=7  >7  </option>
-										<option value=8 active selected >default (8)</option>
-										<option value=9  >9  </option>
+										<option value=8 >default (8)</option>
+										<option value=9  active selected >9  </option>
 										<option value=10 >10</option>
 										<option value=11 >11 </option>
 										<option value=12 >12 </option>
@@ -241,10 +241,10 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=8 >
+								<form id="eventWndwEndForm" value=12 >
 									<select name="endRnd"
 											id="endRnd"
-											value=8
+											value=12
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=1 >1</option>
@@ -254,11 +254,11 @@
 										<option value=5 >5</option>
 										<option value=6 >6</option>
 										<option value=7 >7</option>
-										<option value=8 active selected >8 (default)</option>
+										<option value=8 >8 (default)</option>
 										<option value=9 >9 IB 2 end</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
-										<option value=12 >12</option>
+										<option value=12 active selected >12</option>
 										<option value=13 >13 IB 3 end</option>
 										<option value=14 >14</option>
 										<option value=15 >15</option>
@@ -327,7 +327,7 @@
 
 				<form id="eventTypes" name="eventTypes" >
 
-					<fieldset>
+					<fieldset id="evntTpsCont" onchange="setEventWndwStart()">
 						<legend>Select visible competitions:</legend>
 
 						<div>
@@ -347,19 +347,14 @@
 
 						<div>
 							<input type="checkbox" id="evtp-UIL" name="evtp-UIL" checked />
-							<label for="evtp-UIL">Uefa Int'l break</label>
+							<label for="evtp-UIL">Uefa Int'l break (UIB)</label>
 						</div>
 
-						<div>
-							<input type="checkbox" id="evtp-AFC" name="evtp-AFC" unchecked />
-							<label for="evtp-AFC">Fifa/Afcon Int'l break</label>
-						</div>
-
-						<div>
+						<!-- div>
 							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" unchecked />
-							<label for="evtp-ECL">UEFA:</label>
+							<label for="evtp-ECL">UEFA Cups:</label>
 							<label for="evtp-ECL" style="padding-left: 10px;"><br>    - Champions Lg<br>    - Europa Lg<br>    - Conference Lg</label>
-						</div>
+						</div -->
 
 					</fieldset>
 
@@ -374,8 +369,7 @@
 							UEFA Champions Lg., 
 							UEFA Europa Lg.,
 							UEFA Conference Lg.,
-							UEFA/FIFA int'l Quals, 
-							AFCON,.
+							UEFA/FIFA int'l Quals
 					-->
 
 			</div>
@@ -700,66 +694,102 @@
 								<button onclick="changDFview()" ><span id="tmDFhdr">DF</span></button>
 							</th>
 
-							<th onclick="mk_matchDay_df_matchup(1)" evrnd="1">Round 01</th>
-							<th onclick="mk_matchDay_df_matchup(2)" evrnd="2">Round 02</th>
-							<th onclick="mk_matchDay_df_matchup(3)" evrnd="3">Round 03</th>
-							<th onclick="mk_matchDay_df_matchup(4)" evrnd="4">Round 04</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="1" >GW 01</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="2" >GW 02</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="3" >GW 03</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="4" >GW 04</th>
+							<th class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</th>
+
+							<th class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="5" >GW 05</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="6" >GW 06</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="7" >GW 07</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="8" >GW 08</th>
+							<th class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</th>
+
+							<th class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="9" >GW 09</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="10" >GW 10</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="11" >GW 11</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="12" >GW 12</th>
+							<th class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</th>
+
+							<th class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="13" >GW 13</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="14" >GW 14</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="15" >GW 15</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="16" >GW 16</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="17" >GW 17</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="18" >GW 18</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="19" >GW 19</th>
 							
-							<th evrnd="4" ibreak="4" class="intlBreak" >Int'l<br>break 1</th>
-							<th evrnd="5" ibreak="5" class="intlBreak" >Int'l<br>break 1</th>
-							
-							<th onclick="mk_matchDay_df_matchup(5)" evrnd="5">Round 05</th>
-							<th onclick="mk_matchDay_df_matchup(6)" evrnd="6">Round 06</th>
-							<th onclick="mk_matchDay_df_matchup(7)" evrnd="7">Round 07</th>
-							<th onclick="mk_matchDay_df_matchup(8)" evrnd="8">Round 08</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="20" >GW 20</th>
+							<th class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</th>
+							<th class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="21" >GW 21</th>
 
-							<th evrnd="8" ibreak="8" class="intlBreak" >Int'l<br>break 2</th>
-							<th evrnd="9" ibreak="9" class="intlBreak" >Int'l<br>break 2</th>
-							
-							<th onclick="mk_matchDay_df_matchup(9)" evrnd="9">Round 09</th>
-							<th onclick="mk_matchDay_df_matchup(10)" evrnd="10">Round 10</th>
-							<th onclick="mk_matchDay_df_matchup(11)" evrnd="11">Round 11</th>
-							<th onclick="mk_matchDay_df_matchup(12)" evrnd="12">Round 12</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="22" >GW 22</th>
 
-							<th evrnd="12" ibreak="12" class="intlBreak">Int'l<br>break 3</th>
-							<th evrnd="13" ibreak="13" class="intlBreak">Int'l<br>break 3</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="23" >GW 23</th>
 
-							<th onclick="mk_matchDay_df_matchup(13)" evrnd="13">Round 13</th>
-							<th onclick="mk_matchDay_df_matchup(14)" evrnd="14">Round 14</th>
-							<th onclick="mk_matchDay_df_matchup(15)" evrnd="15">Round 15</th>
-							<th onclick="mk_matchDay_df_matchup(16)" evrnd="16">Round 16</th>
-							<th onclick="mk_matchDay_df_matchup(17)" evrnd="17">Round 17</th>
-							<th onclick="mk_matchDay_df_matchup(18)" evrnd="18">Round 18</th>
-							<th onclick="mk_matchDay_df_matchup(19)" evrnd="19">Round 19</th>
-							<th onclick="mk_matchDay_df_matchup(20)" evrnd="20">Round 20</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="24" >GW 24</th>
 
-							<th evrnd="20" ibreak="20" class="intlBreak">FA break 1</th>
-							<th evrnd="21" ibreak="21" class="intlBreak">FA break 1</th>
-							<th onclick="mk_matchDay_df_matchup(21)" evrnd="21">Round 21</th>
-							<th evrnd="21" ibreak="21" class="intlBreak">FA break 2</th>
-							<th evrnd="22" ibreak="22" class="intlBreak">FA break 2</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="25" >GW 25</th>
 
-							<th onclick="mk_matchDay_df_matchup(22)" evrnd="22">Round 22</th>
-							<th onclick="mk_matchDay_df_matchup(23)" evrnd="23">Round 23</th>
-							<th onclick="mk_matchDay_df_matchup(24)" evrnd="24">Round 24</th>
-							<th onclick="mk_matchDay_df_matchup(25)" evrnd="25">Round 25</th>
-							<th onclick="mk_matchDay_df_matchup(26)" evrnd="26">Round 26</th>
-							<th onclick="mk_matchDay_df_matchup(27)" evrnd="27">Round 27</th>
-							<th onclick="mk_matchDay_df_matchup(28)" evrnd="28">Round 28</th>
-							<th onclick="mk_matchDay_df_matchup(29)" evrnd="29">Round 29</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="26" >GW 26</th>
+							<th class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</th>
+							<th class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</th>
 
-							<th evrnd="29" ibreak="29" class="intlBreak">Int'l<br>break 4</th>
-							<th evrnd="30" ibreak="30" class="intlBreak">Int'l<br>break 4</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="27" >GW 27</th>
 
-							<th onclick="mk_matchDay_df_matchup(30)" evrnd="30">Round 30</th>
-							<th onclick="mk_matchDay_df_matchup(31)" evrnd="31">Round 31</th>
-							<th onclick="mk_matchDay_df_matchup(32)" evrnd="32">Round 32</th>
-							<th onclick="mk_matchDay_df_matchup(33)" evrnd="33">Round 33</th>
-							<th onclick="mk_matchDay_df_matchup(34)" evrnd="34">Round 34</th>
-							<th onclick="mk_matchDay_df_matchup(35)" evrnd="35">Round 35</th>
-							<th onclick="mk_matchDay_df_matchup(36)" evrnd="36">Round 36</th>
-							<th onclick="mk_matchDay_df_matchup(37)" evrnd="37">Round 37</th>
-							<th onclick="mk_matchDay_df_matchup(38)" evrnd="38">Round 38</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="28" >GW 28</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="29" >GW 29</th>
+							<th class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</th>
+							<th class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</th>
+
+							<th class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="30" >GW 30</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="31" >GW 31</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="32" >GW 32</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="33" >GW 33</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="34" >GW 34</th>
+							<th class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="35" >GW 35</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="36" >GW 36</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="37" >GW 37</th>
+
+							<th class="evtTeamBlock evtp-EPL" evrnd="38" >GW 38</th>
+
+							<th class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</th>
 
 							<th evrnd="39" class="clmnHide ppgame">Postponed Games<br>(unplanned)</th>
 						</tr>
@@ -779,73 +809,102 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -864,73 +923,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -950,73 +1039,103 @@
 							
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1033,73 +1152,103 @@
 							</th>
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1117,73 +1266,102 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1204,73 +1382,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1291,73 +1499,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1378,73 +1616,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1465,73 +1733,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1551,73 +1849,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1638,73 +1966,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1725,73 +2083,103 @@
 
 							<th class="dfc">100</td>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1810,73 +2198,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1898,73 +2316,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1985,73 +2433,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -2072,73 +2550,103 @@
 
 							<th class="dfc">100</th>
 							
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -2159,73 +2667,104 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
 
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
-
-
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
-
-							<td class="evtTeamBlock" evrnd="21" ></td>
-
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
-
-
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
-
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
-
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -2246,73 +2785,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -2333,73 +2902,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -2420,73 +3019,103 @@
 
 							<th class="dfc">100</th>
 
-							<td class="evtTeamBlock" evrnd="1" ></td>
-							<td class="evtTeamBlock" evrnd="2" ></td>
-							<td class="evtTeamBlock" evrnd="3" ></td>
-							<td class="evtTeamBlock" evrnd="4" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="1" ></td>
 
-							<td class="evtTeamBlock" evrnd="5" ></td>
-							<td class="evtTeamBlock" evrnd="6" ></td>
-							<td class="evtTeamBlock" evrnd="7" ></td>
-							<td class="evtTeamBlock" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="2" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="3" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="3" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="9" ></td>
-							<td class="evtTeamBlock" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="4" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="4" ibreak="0" fxtrid="999" >IB 1</td>
 
-							<td class="evtTeamBlock" evrnd="11" ></td>
-							<td class="evtTeamBlock" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="5" ibreak="0" fxtrid="999" >IB 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="5" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="6" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="6" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock" evrnd="13" ></td>
-							<td class="evtTeamBlock" evrnd="14" ></td>
-							<td class="evtTeamBlock" evrnd="15" ></td>
-							<td class="evtTeamBlock" evrnd="16" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="7" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="8" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="8" ibreak="1" fxtrid="999" >IB 2</td>
 
-							<td class="evtTeamBlock" evrnd="17" ></td>
-							<td class="evtTeamBlock" evrnd="18" ></td>
-							<td class="evtTeamBlock" evrnd="19" ></td>
-							<td class="evtTeamBlock" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="9" ibreak="1" fxtrid="999" >IB 2</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="9" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="10" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="10" ibreak="0" fxtrid="999" >EFL Cup</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="20" ibreak="3" fxtrid="999" >FA 1</td>
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="3" fxtrid="999" >FA 1</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="11" ></td>
 
-							<td class="evtTeamBlock" evrnd="21" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="12" ></td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="12" ibreak="2" fxtrid="999" >IB 3</td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="21" ibreak="4" fxtrid="999" >FA 2</td>
-							<td class="evtTeamBlock intlBreak" evrnd="22" ibreak="4" fxtrid="999" >FA 2</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="13" ibreak="2" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="13" ></td>
 
+							<td class="evtTeamBlock evtp-EPL" evrnd="14" ></td>
 
-							<td class="evtTeamBlock" evrnd="22" ></td>
-							<td class="evtTeamBlock" evrnd="23" ></td>
-							<td class="evtTeamBlock" evrnd="24" ></td>
-							<td class="evtTeamBlock" evrnd="25" ></td>
-							<td class="evtTeamBlock" evrnd="26" ></td>
-							<td class="evtTeamBlock" evrnd="27" ></td>
-							<td class="evtTeamBlock" evrnd="28" ></td>
-							<td class="evtTeamBlock" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="15" ></td>
 
-							<td class="evtTeamBlock intlBreak" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
-							<td class="evtTeamBlock intlBreak" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="16" ></td>
 
-							<td class="evtTeamBlock" evrnd="30" ></td>
-							<td class="evtTeamBlock" evrnd="31" ></td>
-							<td class="evtTeamBlock" evrnd="32" ></td>
-							<td class="evtTeamBlock" evrnd="33" ></td>
-							<td class="evtTeamBlock" evrnd="34" ></td>
-							<td class="evtTeamBlock" evrnd="35" ></td>
-							<td class="evtTeamBlock" evrnd="36" ></td>
-							<td class="evtTeamBlock" evrnd="37" ></td>
-							<td class="evtTeamBlock" evrnd="38" ></td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="17" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="17" ibreak="0" fxtrid="999" >EFL Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="18" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="19" ></td>
+							
+							<td class="evtTeamBlock evtp-EPL" evrnd="20" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="20" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="20" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="21" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="21" ibreak="3" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="21" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="22" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="23" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="24" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="25" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="26" ></td>
+							<td class="evtTeamBlock evtp-EFL" evrnd="26" ibreak="0" fxtrid="999" >EFL Cup</td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="26" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="27" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="28" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="29" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="29" ibreak="0" fxtrid="999" >FA Cup</td>
+							<td class="evtTeamBlock evtp-UIL" evrnd="29" ibreak="5" fxtrid="999" >IB 3</td>
+
+							<td class="evtTeamBlock evtp-UIL" evrnd="30" ibreak="5" fxtrid="999" >IB 3</td>
+							<td class="evtTeamBlock evtp-EPL" evrnd="30" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="31" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="32" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="33" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="34" ></td>
+							<td class="evtTeamBlock evtp-FAC" evrnd="34" ibreak="0" fxtrid="999" >FA Cup</td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="35" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="36" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="37" ></td>
+
+							<td class="evtTeamBlock evtp-EPL" evrnd="38" ></td>
+
+							<td class="evtTeamBlock evtp-FAC" evrnd="38" ibreak="0" fxtrid="999" >FA Cup</td>
 
 							<td class="clmnHide ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>

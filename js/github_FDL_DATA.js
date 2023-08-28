@@ -2,9 +2,7 @@
 let callIndexer = 0 ;
 // let allStatsData = []; has moved to FPLConstants
 
-let curGW = 0 ;
-
-getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
+let curGW = 4 ;
 
 
 /*

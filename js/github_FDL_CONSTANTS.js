@@ -22,9 +22,9 @@ let linearScale = d3.scaleLinear()
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 0,
-		currentRnd: 1,
-		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 8, 'end': 8 },
+		finishedRounds: 2,
+		currentRnd: 3,
+		evWndw: { 'direction': 1 , 'start': 4, 'rounds': 9, 'end': 12 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -39,8 +39,8 @@ let gamesOverview = {
 		},
 		showSttng: true ,
 		showDdln: false ,
-		hasPP: false ,		
-		showPP: false ,
+		hasPP: true ,		
+		showPP: true ,
 		showRP: false ,
 		postponedGameIds: 	[] ,
 		postponedGames: 	[] ,
@@ -48,7 +48,7 @@ let gamesOverview = {
 		replannedGames: 	[] ,
 		iBreaks:[] ,
 		iBreaksShow: 	false ,
-		evTypes: 	[	"evtp-EPL","evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIL",	"evtp-AFC"	],
+		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIL" ],
 		evTypesViz: [	true,		false,		false,		false,		false,		false,		true,		false	],
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
@@ -295,7 +295,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "ARS",
 		id: 1,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from events

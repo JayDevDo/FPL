@@ -235,6 +235,7 @@ span[loc="H"]{ font-weight: bold; }
 .tchide{ display: none; }
 .clmnHide{ display: none; }
 .rowHide{ display: none; }
+.evtypeHide{ display: none; }
 .ppCont{ display: inline-block; }
 
 #gmwkDisplay{
@@ -350,8 +351,18 @@ a {
 th.gameBubble{ background-color: transparent !important; }
 
 
-.intlBreak{
-	background-color: #fdef82 ;
+.evtp-UIL{
+	background-color: #FDEF82 ;
+	color: #000000;
+}
+
+.evtp-EFL{
+	background-color: #ECEF82 ;
+	color: #000000;
+}
+
+.evtp-FAC{
+	background-color: #DBEF82 ;
 	color: #000000;
 }
 
