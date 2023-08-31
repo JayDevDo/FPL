@@ -22,13 +22,13 @@ let linearScale = d3.scaleLinear()
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 2,
-		currentRnd: 3,
+		finishedRounds: 3,
+		currentRnd: 4,
 		evWndw: { 'direction': 1 , 'start': 4, 'rounds': 9, 'end': 12 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
-			containerViz: 	false,
+			containerViz: 	true,
 			strengthsViz: 	false,
 			strengthsVizA: 	false,
 			strengthsVizH: 	false
@@ -49,7 +49,6 @@ let gamesOverview = {
 		iBreaks:[] ,
 		iBreaksShow: 	false ,
 		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIL" ],
-		evTypesViz: [	true,		false,		false,		false,		false,		false,		true,		false	],
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,

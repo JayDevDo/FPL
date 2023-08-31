@@ -231,6 +231,11 @@ td[df="5"]{
 
 span[loc="H"]{ font-weight: bold; }
 
+#teamDFCnt tr.pp_count{
+	background-color: #0A1B3C;
+}
+
+
 
 .tchide{ display: none; }
 .clmnHide{ display: none; }

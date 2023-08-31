@@ -42,6 +42,17 @@ getStaticData = async ()=> {
 
 
 getPostponedData = async ()=> {
+	/*
+		gamesOverview.evTypes: [	
+			"evtp-EPL", Premier league
+			"evtp-FAC",	FA Cup
+			"evtp-EFL",	EFL (Carabao) Cup
+			"evtp-ECL",	Uefa Conference League
+			"evtp-EUL",	Uefa Europa League
+			"evtp-CLE",	Uefa Champions League
+			"evtp-UIL"	Uefa International breaks
+		]
+	*/
 
 	let postpndPrms = new Promise( ( myPPResolve )=> {
 
@@ -55,16 +66,22 @@ getPostponedData = async ()=> {
 			if ( (postpXhttp.readyState == 4) && (postpXhttp.status == 200) ){
 
 				let tmpArr = JSON.parse( postpXhttp.responseText ) ; 
+
 				let ppFxtrs = tmpArr[0]['unplanned'] ; 
 				let rpFxtrs = tmpArr[1]['re-planned'] ; 
-				let iBreaks = tmpArr[4]['intlBreaks'] ; 
+				let iBreaks = tmpArr[4]['evtp-UIL'] ; 
+				let evTpFAC = tmpArr[5]['evtp-FAC'] ;
+				let evTpEFL = tmpArr[6]['evtp-EFL'] ;
+
+				console.log(getCI(), "getPostponedData evTpFAC:", evTpFAC.length );
+
 				gamesOverview.postponedGames 	= [] ; 
 				gamesOverview.postponedGameIds 	= [] ; 
 				gamesOverview.replannedGames 	= [] ; 
 				gamesOverview.replannedGamesIds = [] ; 
 				gamesOverview.iBreaks 			= [] ; 
 				
-				for(let br = 0; br < iBreaks.length; br++){ gamesOverview.iBreaks.push(iBreaks[br]); }
+				for(let br = 0; br < iBreaks.length; br++){ gamesOverview.iBreaks.push( iBreaks[br] ); }
 
 				for(let bl = 0; bl < ppFxtrs.length ; bl++ ){
 
@@ -82,7 +99,7 @@ getPostponedData = async ()=> {
 				}
 
 				setIndicator("ppsLdd-idc", "green") ; 
-				myPPResolve( [ gamesOverview.postponedGames, gamesOverview.replannedGames ] ) ; 
+				myPPResolve( [ gamesOverview.postponedGames, gamesOverview.replannedGames , iBreaks, evTpEFL, evTpFAC ] ) ; 
 
 			}else{
 
@@ -290,8 +307,7 @@ handlePostponed = (fxtr, loc)=>{
 
 
 buidPPContainer = ( treatedPPData )=>{ 
-
-	// adds li elements to the ul in the ppGamesAcc container (Unplanned) 
+	/* adds li elements to the ul in the ppGamesAcc container (Unplanned) */ 
 	let ptrgt 	= $( "#ppGamesAcc" ).get() ; 
 	let dsplc 	= $( "#ppGamesAcc" ).children("li").remove() ;
 	let ppArr 	= [] ; 
@@ -312,7 +328,7 @@ buidPPContainer = ( treatedPPData )=>{
 	}
 
 
-	// adds li elements to the ul in the ppGamesAcc container (Replanned) 
+	/* adds li elements to the ul in the ppGamesAcc container (Replanned) */
 	let rtrgt 	= $( "#rpGamesAcc" ).get() ; 
 	$( "#rpGamesAcc" ).children("li").remove() ;
 	let rpArr 	= [] ; 
@@ -332,7 +348,7 @@ buidPPContainer = ( treatedPPData )=>{
 
 	}
 	
-	// FPLTeamsFull[t].ppgames has been updated before getPostponedData was resolved
+	/* FPLTeamsFull[t].ppgames has been updated before getPostponedData was resolved */
 	for(let t=1; t<21; t++){ $("#teamDFCnt tr.pp_count td[tmId=" + t +"]").text( FPLTeamsFull[t].ppgames.length ); }
 
 }
@@ -367,6 +383,62 @@ setDFTableStrength = ( eId, tmId, intStrength )=>{
 }
 
 
+handleCups = (cupData)=>{
+	/* handleCups: 	Adds fixtures to team rows at the column of the cup 	*/
+	/* 				cupData contains teams still involved 			at index 0    	*/
+	/* 				cupData contains teams eliminated 				at index 1		*/
+	/* 				cupData contains cupfinal data 			(L2)	at index 2		*/
+	/* 				cupData contains cup semi-final data 	(L4) 	at index 3		*/
+	/* 				cupData contains cup Q-final data		(L8) 	at index 4		*/
+	/* 				cupData contains cup R16 data			(L16) 	at index 5		*/
+	/* 				cupData contains cup R32 data			(L32) 	at index 6		*/
+	/* 				cupData contains cup R64 data			(L64) 	at index 7		*/
+	/*			for evtp-EFL (carabao cup) L4=semi-finals has home/away fixtures 	*/
+
+	let cdl 	= cupData.length ; 
+	let cntndrs = cupData[0]["data"] ;
+	let elims 	= cupData[1]["data"] ;
+
+	teamCountCheck = (( cntndrs.length + elims.length ) == 20 ) ;
+	
+	console.log( getCI(), "handleCups length", cdl, "\tteamCountCheck", teamCountCheck, "\tcurGW: ", curGW  ) ;
+
+	for( let ck = (cdl-1);  ck > 1 ; ck--){
+		
+		console.log( 
+			getCI(), 
+			"handleCups", 	ck ,
+			"cupData:", 	cupData[ck]["title"] , 
+			"GW", 			cupData[ck]["gw"] , 
+			"data:", 		cupData[ck]["data"].length 
+		) ;
+
+		for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
+
+			let evFxtr = cupData[ck]["data"][evf] ;
+
+			console.log("evFxtr['team_h'] in cntndrs", evFxtr["team_h"], cntndrs.indexOf( evFxtr["team_h"]) ) ;
+			console.log("evFxtr['team_a'] in cntndrs", evFxtr["team_a"], cntndrs.indexOf( evFxtr["team_a"]) ) ;
+
+			if( evFxtr["team_h"] in cntndrs || evFxtr["team_a"] in cntndrs ){
+
+				console.log("treat this entry", evFxtr ) ;
+
+			}else{
+
+				console.log("NOT treating this entry", evFxtr ) ;
+
+			}
+
+
+		}
+		
+	}
+
+}
+
+
+
 getOrigPPRnd = ( fxtrId )=>{
 	if(gamesOverview.postponedGames.length>0){for( f=0; f<gamesOverview.postponedGames.length; f++){if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ return gamesOverview.postponedGames[f].ogGW;}}}
 }
@@ -388,6 +460,13 @@ sortByGmID = ( evArr )=>{
 }
 
 
+
+/*
+#####################
+#	 DATA READY		#	
+#####################	
+*/
+
 const allPromise = 	Promise.all( 
 						[ 	
 							getStaticData(), 
@@ -404,6 +483,10 @@ allPromise.then(
 		let teams 	= values[0]['teams'] ; 
 		let ppGames = values[1] ; 
 		let fxtrs 	= values[2] ;
+
+		let iBreaks = ppGames[2] ;
+		let eflCup 	= ppGames[3] ;
+		let faCup 	= ppGames[4] ;
 
 		console.log( getCI(), "values: events: ", events.length, "teams:", teams.length, "ppGames[0]:", ppGames[0].length, "fxtrs:", fxtrs.length ) ; 
 		// Step 2 : Add data from ppGames to fxtrs. 		( 	FXTR LOOP 	)	-origGw, -reason, -newGW(39), -postponed(true/false) 
@@ -475,7 +558,7 @@ allPromise.then(
 		buidPPContainer( ppGames ) ; 
 		// PPgames END 
 
-		// FXTRS LOOP START
+		// FXTRS (EPL) LOOP START
 		for(let f=0; f<fxtrs.length; f++){
 
 			let fxtr = fxtrs[f] ; 
@@ -555,8 +638,13 @@ allPromise.then(
 
 		}
 
-		// FXTRS LOOP END
+		// FXTRS (EPL) LOOP END
 		setIndicator("df-Ldd-idc", "green") ; 
+
+		// CUP FIXTURES LOOP START
+		console.log( getCI(), "CUP FIXTURES LOOP START iBreaks", iBreaks.length, "EFL", eflCup.length, "FAC", faCup.length ) ;
+		handleCups( eflCup ) ; 
+		// CUP FIXTURES LOOP END
 
 	}
 

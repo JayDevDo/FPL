@@ -29,7 +29,9 @@
 	},
 
 	{ 
-		"re-planned": []
+		"re-planned": [
+
+		]
 	},
 
 	{ 
@@ -41,9 +43,8 @@
 	},
 
 	{ 
-		"intlBreaks": 	[
-
-			{	"iBreakId": 0,
+		"evtp-UIL": 	[
+			{	"iBreakId": 1,
 				"wkNr": 41,
 				"prevGW": 4,
 				"prevGWDate": "2023-09-01",
@@ -54,9 +55,7 @@
 				"passed": 0,
 				"toCome": 1
 			},
-
-
-			{	"iBreakId": 1,
+			{	"iBreakId": 2,
 				"wkNr": 41,
 				"prevGW": 8,
 				"prevGWDate": "2023-10-07",
@@ -67,7 +66,7 @@
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 2,
+			{	"iBreakId": 3,
 				"wkNr": 46,
 				"prevGW": 12,
 				"prevGWDate": "2023-11-11",
@@ -78,29 +77,7 @@
 				"passed": 0,
 				"toCome": 1
 			},
-			{	"iBreakId": 3,
-				"wkNr": 1,
-				"prevGW": 20,
-				"prevGWDate": "2023-12-30",
-				"nextGW": 21,
-				"nextGWDate": "2024-01-13",
-				"brkDuration": 1,
-				"brkTitle": "FA weekend 1",
-				"passed": 0,
-				"toCome": 1
-			},
 			{	"iBreakId": 4,
-				"wkNr": 3,
-				"prevGW": 21,
-				"prevGWDate": "2024-01-13",
-				"nextGW": 22,
-				"nextGWDate": "2024-01-30",
-				"brkDuration": 1,
-				"brkTitle": "FA weekend 2",
-				"passed": 0,
-				"toCome": 1
-			},
-			{	"iBreakId": 5,
 				"wkNr": 11,
 				"prevGW": 29,
 				"prevGWDate": "2024-03-16",
@@ -115,7 +92,7 @@
 	},
 
 	{
-		"FA-cup": [
+		"evtp-FAC": [
 					{ 	"IN": 	[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
 					{	"OUT": 	[] },
 					{ 	"R2":	[ 	
@@ -138,59 +115,93 @@
 						]
 					},
 					{	"R16":	[
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" }
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" },
+									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "Last 16" }
 						]
 					},
 					{	"R32":	[
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" },
-									{"team_h":0, 	"team_a":0, 	"gw": 25, "round": "lAST 16" }
+									{"team_h":1, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":2, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":3, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":4, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":5, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":6, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":7, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":8, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":9, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":10, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":11, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":12, 	"team_a":0, 	"gw": 25, "round": "Last 32" },
+									{"team_h":13, 	"team_a":20, 	"gw": 25, "round": "Last 32" },
+									{"team_h":14, 	"team_a":19, 	"gw": 25, "round": "Last 32" },
+									{"team_h":15, 	"team_a":18, 	"gw": 25, "round": "Last 32" },
+									{"team_h":16, 	"team_a":17, 	"gw": 25, "round": "Last 32" }
+						]
+					},
+					{
+						"R64": [
+									{"team_h":1,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":2,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":3,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":4,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":5,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":6,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":7,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":8,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":9,  "team_a":0,  	"oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":10,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":11,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":12,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":13,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":14,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":15,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":16,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":17,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":18,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":19,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" },
+									{"team_h":20,  "team_a":0,  "oppNmH":"Exempt","gw": 20, "round": "L64" }
 						]
 					}
 		]
 	},
 
 	{
-		"EFL-cup":[
-					{	"breakdown": "prelim\t-> 1st Round: Aug. 8-9, Aug. 16\n\t\t\t\tL64\t-> 2nd Round: Aug. 29-30 (GW 3)\n\t\t\t\tL32\t-> 3rd Round (Rd of 32): Sept. 27-28 (GW 6)\n\t\t\t\tL16\t-> 4th Round (Rd of 16): Oct. 31 - Nov. 1 (GW 10)\n\t\t\t\tL8\t-> Quarter-finals: Dec. 20-21 (GW 17)\n\t\t\t\tL4\t-> Semi-finals: Jan. 9-10 (Leg 1), Jan. 23-24 (Leg 2) (GW 20+21)\n\t\t\t\tL2\t-> Final: Sun, Feb. 25 (GW 26)"},
-					{ 	"IN": 	[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
-					{	"OUT": 	[ ] },
-					{ 	"R2":	[ 	{"team_h":0, "team_a":0, "gw": 26, "round": "FINAL" } ] },
-					{ 	"R4":	[ 
-									{"team_h":0, "team_a":0, "gw": 20, "round": "S-FINAL" },
-									{"team_h":0, "team_a":0, "gw": 20, "round": "S-FINAL" },
-									{"team_h":0, "team_a":0, "gw": 21, "round": "S-FINAL" },
-									{"team_h":0, "team_a":0, "gw": 21, "round": "S-FINAL" }
-					 			]
+		"evtp-EFL":[
+					{ 	"title": "IN", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 19, 20 ] },
+					{	"title": "OUT", "data": [ 16, 17, 18 ] },
+					{ 	"title": "L2",	
+						"gw": 26,
+						"data": [ 	
+									{"team_h":0, "team_a":0, "gw": 26, "round": "FINAL" } 
+								] 
 					},
-					{ 	"R8":	[ 
+					{ 	"title": "L4",
+						"gw": 20,
+						"data": [ 
+									{"team_h":0, "team_a":0, "gw": 21, "round": "S-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 21, "round": "S-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 20, "round": "S-FINAL" },
+									{"team_h":0, "team_a":0, "gw": 20, "round": "S-FINAL" }
+								]
+					},
+					{ 	"title": "L8",
+						"gw": 17,
+						"data": [ 
 									{"team_h":0, "team_a":0, "gw": 17, "round": "Q-FINAL" },
 									{"team_h":0, "team_a":0, "gw": 17, "round": "Q-FINAL" },
 									{"team_h":0, "team_a":0, "gw": 17, "round": "Q-FINAL" },
 									{"team_h":0, "team_a":0, "gw": 17, "round": "Q-FINAL" }
 					 			]
 					},
-					{ 	"R16":	[ 
+					{ 	"title": "L16",
+						"gw": 10,
+						"data": [ 
 									{"team_h":0, "team_a":0, "gw": 10, "round": "L16" },
 									{"team_h":0, "team_a":0, "gw": 10, "round": "L16" },
 									{"team_h":0, "team_a":0, "gw": 10, "round": "L16" },
@@ -201,46 +212,44 @@
 									{"team_h":0, "team_a":0, "gw": 10, "round": "L16" }
 					 			]
 					},
-					{ 	"R32":	[ 
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" },
-									{"team_h":0, "team_a":0, "gw": 25, "round": "L32" }
+					{ 	"title": "L32",
+						"gw": 6,
+						"data": [ 
+									{"team_h":4, 	"team_a":1, 	"round": "L32" },
+									{"team_h":2, 	"team_a":9, 	"round": "L32" },
+									{"team_h":3, 	"team_a":0, 	"oppNmA":"Stoke", "round": "L32" },
+									{"team_h":7, 	"team_a":5, 	"round": "L32" },
+									{"team_h":0, 	"team_a":12, 	"oppNmH":"Exeter", "round": "L32" },
+									{"team_h":10, 	"team_a":0, 	"oppNmA":"Norwich", "round": "L32" },
+									{"team_h":0, 	"team_a":20, 	"oppNmH":"Ipswich", "round": "L32" },
+									{"team_h":0, 	"team_a":19, 	"oppNmH":"Lincoln", "round": "L32" },
+									{"team_h":11, 	"team_a":0, 	"oppNmA":"Leicester", "round": "L32" },
+									{"team_h":14, 	"team_a":8, 	"round": "L32" },
+									{"team_h":15, 	"team_a":13, 	"round": "L32" },
+									{"team_h":0, 	"team_a":6, 	"oppNmH":"Salford", "round": "L32" }
 					 			]
 					},
-					{ 	"R64":	[ 
-									{"team_h":10, "team_a":18, 	"gw": 3, "round": "L64" },
-									{"team_h":12, "team_a":0, 	"oppNmA":"Gillingham","gw": 3, "round": "L64" },
-									{"team_h":0,  "team_a":4,  	"oppNmH":"Newport","gw": 3, "round": "L64" },
-									{"team_h":16, "team_a":6,	"gw": 3, "round": "L64" },
-									{"team_h":0,  "team_a":8,  	"oppNmH":"Plymouth Arguile","gw": 3, "round": "L64" },
-									{"team_h":0,  "team_a":3,  	"oppNmH":"Swansea","gw": 3, "round": "L64" },
-									{"team_h":20, "team_a":0,  	"oppNmA":"Blackpool","gw": 3, "round": "L64" },
-									{"team_h":7,  "team_a":0,  	"oppNmA":"Wimbledon","gw": 3, "round": "L64" },
-									{"team_h":17, "team_a":0,  	"oppNmA":"Lincoln City","gw": 3, "round": "L64" },
-									{"team_h":0,  "team_a":9,  	"oppNmH":"Doncaster","gw": 3, "round": "L64" },
-									{"team_h":1,  "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":2,  "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":3,  "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":5,  "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":11, "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":13, "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":14, "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":15, "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":19, "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" },
-									{"team_h":0,  "team_a":0,  	"oppNmH":"Non FPL","gw": 3, "round": "L64" }
+					{ 	"title": "L64",
+						"gw": 4,
+						"data": [ 
+									{"team_h":1,  "team_a":0, 	"oppNmH":"Exempt" },
+									{"team_h":2,  "team_a":0, 	"oppNmH":"Hibs (UCL)" },
+									{"team_h":0,  "team_a":3, 	"oppNmH":"Swansea" },
+									{"team_h":0,  "team_a":4, 	"oppNmH":"Newport" },
+									{"team_h":5,  "team_a":0, 	"oppNmH":"Exempt" },
+									{"team_h":16, "team_a":6, 	"round": "L64" },
+									{"team_h":7,  "team_a":0, 	"oppNmA":"Wimbledon" },
+									{"team_h":0,  "team_a":8, 	"oppNmH":"Plymouth Arguile" },
+									{"team_h":0,  "team_a":9, 	"oppNmH":"Doncaster" },
+									{"team_h":10, "team_a":18, 	"round": "L64" },
+									{"team_h":11, "team_a":0,	"oppNmH":"Exempt" },
+									{"team_h":12, "team_a":0,	"oppNmA":"Gillingham" },
+									{"team_h":13, "team_a":0, 	"oppNmH":"Exempt" },
+									{"team_h":14, "team_a":0,  	"oppNmH":"Exempt" },
+									{"team_h":15, "team_a":0,  	"oppNmH":"Exempt" },
+									{"team_h":17, "team_a":0,  	"oppNmA":"Lincoln City" },
+									{"team_h":19, "team_a":0,  	"oppNmH":"Exempt" },
+									{"team_h":20, "team_a":0,  	"oppNmA":"Blackpool" }
 					 			]
 					}				
 		]

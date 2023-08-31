@@ -94,22 +94,22 @@ showEventWindow = (l,f)=>{
 			
 				case 0: 
 					// start round has changed while direction = 1 
-					evWndw['end']	=	parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] - 1 ) ;
+					evWndw['end']	=	parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				case 1: 
 					// # of rounds has changed while direction = 1 
-					evWndw['end']	=	parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] - 1 ) ;
+					evWndw['end']	=	parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				case 2:
 					// end round has changed while direction = 1 
 					if( lockId == 1 ){
 						// Rounds are locked so change start 
-						evWndw['start']= parseInt( evWndw['end'] - ( evWndw['rounds'] - 1 ) ) ;
+						evWndw['start']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['rounds'] ) - 1 ) ;
 					}else{
 						// End is locked so change rounds (direction should not be 1 ! )
-						evWndw['rounds']= parseInt( evWndw['end'] - evWndw['start'] ) + 1 ;
+						evWndw['rounds']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['start'] ) + 1 ) ;
 					}
 					break;
 
@@ -122,17 +122,17 @@ showEventWindow = (l,f)=>{
 			switch( l ){
 				case 0: 
 					// start round has changed while direction = -
-					evWndw['rounds']= parseInt( evWndw['end'] - evWndw['start'] ) - 0 ;
+					evWndw['rounds']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['start'] ) - 0 ) ;
 					break;
 
 				case 1: 
 					// # of rounds has changed while direction = -1  
-					evWndw['start']= parseInt( evWndw['end'] - ( evWndw['rounds'] - 1 ) ) ;
+					evWndw['start']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				case 2:
 					// end round has changed while direction = -1 
-					evWndw['start']= parseInt( evWndw['end'] - ( evWndw['rounds'] - 1 ) ) ;
+					evWndw['start']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				default:
@@ -153,17 +153,17 @@ showEventWindow = (l,f)=>{
 		switch( l ){
 			case 0: 
 				// No lock start round has changed 
-				evWndw['end']	= ( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 );
+				evWndw['end']	= parseInt( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 );
 				break;
 
 			case 1: 
 				// No lock # of rounds has changed 
-				evWndw['end']	= ( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 ) ;
+				evWndw['end']	= parseInt( ( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) ) - 1 ) ;
 				break;
 
 			case 2:
 				// No lock end round has changed 
-				evWndw['rounds']= parseInt( evWndw['end'] - evWndw['start'] ) + 1 ;
+				evWndw['rounds']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['start'] ) + 1 ) ;
 				break;
 
 			default:
@@ -175,23 +175,21 @@ showEventWindow = (l,f)=>{
 	console.log( getCI(), "called by", f, "\tshowEventWindow after locked", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 	$("#strtRnd > option.active").removeClass("active") ;
-	$("#slctdRounds > option.active").removeClass("active") ;
-	$("#endRnd > option.active").removeClass("active") ;
-
 	$("#strtRnd > option:selected").removeClass("selected") ;
-	$("#slctdRounds > option:selected").removeClass("selected") ;
-	$("#endRnd > option:selected").removeClass("selected") ;
-
-	$("#strtRnd").val( evWndw['start'] );
-	$("#slctdRounds").val( evWndw['rounds'] );
-	$("#endRnd").val( evWndw['end'] );
-
+	$("#strtRnd").val( parseInt(evWndw['start']) );
 	$("#strtRnd > option[value='"+ evWndw['start'] + "']").addClass("active");
-	$("#slctdRounds > option[value='"+ evWndw['rounds'] + "']").addClass("active");
-	$("#endRnd > option[value='"+ evWndw['end'] + "']").addClass("active");
-
 	$("#strtRnd > option[value='"+ evWndw['start'] + "']").addClass("selected");
+
+	$("#slctdRounds > option.active").removeClass("active") ;
+	$("#slctdRounds > option:selected").removeClass("selected") ;
+	$("#slctdRounds").val( parseInt(evWndw['rounds']) );
+	$("#slctdRounds > option[value='"+ evWndw['rounds'] + "']").addClass("active");
 	$("#slctdRounds > option[value='"+ evWndw['start'] + "']").addClass("selected");
+
+	$("#endRnd > option.active").removeClass("active") ;
+	$("#endRnd > option:selected").removeClass("selected") ;
+	$("#endRnd").val( parseInt(evWndw['end']) );
+	$("#endRnd > option[value='"+ evWndw['end'] + "']").addClass("active");
 	$("#endRnd > option[value='"+ evWndw['end'] + "']").addClass("selected");
 
 	let st 			= parseInt(evWndw['start'])	;
@@ -366,8 +364,10 @@ updateTotalDF = (dfType)=>{
 			// Define which GW's will be counted
 			let strtRnd 	= gamesOverview.evWndw['start'] ; 
 			let endRnd 		= gamesOverview.evWndw['end'] ; 
-			let rowFixtures = $(rw).children(".evtTeamBlock") ; 
+			let rowFixtures = $(rw).children(".evtp-EPL") ; 
 			let tmId 		= parseInt( $(rw).attr("tmid") ); 
+
+			console.log( getCI(), "updateTotalDF len rowFixtures  ", rowFixtures.length ) ;
 
 			// Loop thru the fixtures of this team.
 			$.each(
@@ -915,9 +915,9 @@ showDeadline = (blnSD)=>{
 				let hdr = $("th[evrnd=" + gmwk["id"] + "]" ) ;
 				$(hdr).text("");
 					if(blnSD){
-						$(hdr).append("<span>" + "Round: " + gmwk["id"] + "</br><time>" + gwDdlnDate + " " + gwDdlnHr + "</time></span>" );
+						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</br><time>" + gwDdlnDate + " " + gwDdlnHr + "</time></span>" );
 					}else{
-						$(hdr).append("<span>" + "Round: " + gmwk["id"] + "</span>" );
+						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</span>" );
 					}
 		}
 
