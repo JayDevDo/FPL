@@ -1,18 +1,6 @@
 [
 	{ 
-		"unplanned": [
-						 {	
-							"ppid": 15,
-							"nwRound": 39,
-							"ogGW": 2,
-							"added": false,
-							"team_h_nm": "LUT",
-							"team_h_id": 12,
-							"team_a_id": 6,
-							"team_a_nm": "BUR",
-							"status": "postponed",
-							"reason": "og = 2: Luton not ready for Home game"
-						},{
+		"unplanned": [{
 							"ppid": 176,
 							"nwRound": 39,
 							"ogGW": 18,
@@ -30,16 +18,27 @@
 
 	{ 
 		"re-planned": [
-
+						 {	
+							"ppid": 15,
+							"nwRound": 7,
+							"ogGW": 2,
+							"added": false,
+							"team_h_nm": "LUT",
+							"team_h_id": 12,
+							"team_a_id": 6,
+							"team_a_nm": "BUR",
+							"status": "replanned",
+							"reason": "og = 2: Luton not ready for Home game"
+						}
 		]
 	},
 
 	{ 
-		"ppRpIds":[] 
+		"ppRpIds":[15] 
 	},
 
 	{ 
-		"ppIds": [15,176]
+		"ppIds": [176]
 	},
 
 	{ 

@@ -367,7 +367,7 @@ updateTotalDF = (dfType)=>{
 			let rowFixtures = $(rw).children(".evtp-EPL") ; 
 			let tmId 		= parseInt( $(rw).attr("tmid") ); 
 
-			console.log( getCI(), "updateTotalDF len rowFixtures  ", rowFixtures.length ) ;
+			/* console.log( getCI(), "updateTotalDF len rowFixtures  ", rowFixtures.length ) ; */
 
 			// Loop thru the fixtures of this team.
 			$.each(
