@@ -8,7 +8,7 @@ console.log(
 	"FPLTeamsFull:\t", FPLTeamsFull.length ,  
 	"FPLballers:\t", FPLballers.length , 
 	"selectedTeamId:\t", gamesOverview.selectedTeamId ,
-	"totalMins",   ( gamesOverview.currentRnd * 90 ).toFixed(2) 
+	"totalMins",  parseInt( gamesOverview.currentRnd * 90 )
 );
 
 let bgClsNm = "bg" + FPLTeamsFull[gamesOverview.selectedTeamId].shortNm;
@@ -26,10 +26,19 @@ console.log(
 	"shortNm:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].shortNm ,
 	"\nlongNm:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].longNm ,
 	"\naltNm:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].altNm ,
-	"\nplayers:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].players.length ,
-	"\nlocDF:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].locDF.toString() ,
+	"\nplayers:\t", FPLTeamsFull[gamesOverview.selectedTeamId].players.length ,
+	"\nlocDF:\t", 	FPLTeamsFull[gamesOverview.selectedTeamId].fplDF.toString() ,
 	"\ncls:\t",		bgClsNm
 )
+
+
+function minuteDisplay(m,r){
+	console.log("minuteDisplay -m: ", m, "\t-r:",r );
+	let mdRetVal = (( m / parseInt(r * 90) ) * 100).toFixed(2) ;
+	console.log("minuteDisplay returns:\t", mdRetVal ) ;
+	return m.toString() + " (" +  mdRetVal.toString()  + "%)" ;
+}
+
 
 
 function loadElements(){
@@ -94,7 +103,7 @@ function loadElements(){
 								let gk_row = [
 									"<tr class='tpu_gkp_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
+									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -112,7 +121,7 @@ function loadElements(){
 								let def_row = [
 									"<tr class='tpu_def_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
+									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -129,7 +138,7 @@ function loadElements(){
 								let mid_row = [
 									"<tr class='tpu_mid_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
+									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -146,7 +155,7 @@ function loadElements(){
 								let fwd_row = [
 									"<tr class='tpu_fwd_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>",  ( tmPlayer.minutes / ( gamesOverview.currentRnd * 90 ) ).toFixed(2) ," % </td>",
+									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
@@ -170,25 +179,25 @@ function loadElements(){
 			$("#tpu_TmNmShort").text( FPLTeamsFull[gamesOverview.selectedTeamId].shortNm );
 			$("#tpu_TmNmAlt").text(   FPLTeamsFull[gamesOverview.selectedTeamId].altNm );
 
-			$("#tpu_gkp_ttl_min").text( gk_stats[0].toFixed(2).toString() )
-			$("#tpu_gkp_ttl_inf").text( gk_stats[1].toFixed(2).toString() )
-			$("#tpu_gkp_ttl_cre").text( gk_stats[2].toFixed(2).toString() )
-			$("#tpu_gkp_ttl_thr").text( gk_stats[3].toFixed(2).toString() )
+			$("#tpu_gkp_ttl_min").text( minuteDisplay( gk_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_gkp_ttl_inf").text( gk_stats[1].toFixed(2).toString() );
+			$("#tpu_gkp_ttl_cre").text( gk_stats[2].toFixed(2).toString() );
+			$("#tpu_gkp_ttl_thr").text( gk_stats[3].toFixed(2).toString() );
 
-			$("#tpu_def_ttl_min").text( def_stats[0].toFixed(2).toString() )
-			$("#tpu_def_ttl_inf").text( def_stats[1].toFixed(2).toString() )
-			$("#tpu_def_ttl_cre").text( def_stats[2].toFixed(2).toString() )
-			$("#tpu_def_ttl_thr").text( def_stats[3].toFixed(2).toString() )
+			$("#tpu_def_ttl_min").text( minuteDisplay( def_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_def_ttl_inf").text( def_stats[1].toFixed(2).toString() );
+			$("#tpu_def_ttl_cre").text( def_stats[2].toFixed(2).toString() );
+			$("#tpu_def_ttl_thr").text( def_stats[3].toFixed(2).toString() );
 
-			$("#tpu_mid_ttl_min").text( mid_stats[0].toFixed(2).toString() )
-			$("#tpu_mid_ttl_inf").text( mid_stats[1].toFixed(2).toString() )
-			$("#tpu_mid_ttl_cre").text( mid_stats[2].toFixed(2).toString() )
-			$("#tpu_mid_ttl_thr").text( mid_stats[3].toFixed(2).toString() )
+			$("#tpu_mid_ttl_min").text( minuteDisplay( mid_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_mid_ttl_inf").text( mid_stats[1].toFixed(2).toString() );
+			$("#tpu_mid_ttl_cre").text( mid_stats[2].toFixed(2).toString() );
+			$("#tpu_mid_ttl_thr").text( mid_stats[3].toFixed(2).toString() );
 
-			$("#tpu_fwd_ttl_min").text( fwd_stats[0].toFixed(2).toString() )
-			$("#tpu_fwd_ttl_inf").text( fwd_stats[1].toFixed(2).toString() )
-			$("#tpu_fwd_ttl_cre").text( fwd_stats[2].toFixed(2).toString() )
-			$("#tpu_fwd_ttl_thr").text( fwd_stats[3].toFixed(2).toString() )
+			$("#tpu_fwd_ttl_min").text( minuteDisplay( fwd_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_fwd_ttl_inf").text( fwd_stats[1].toFixed(2).toString() );
+			$("#tpu_fwd_ttl_cre").text( fwd_stats[2].toFixed(2).toString() );
+			$("#tpu_fwd_ttl_thr").text( fwd_stats[3].toFixed(2).toString() );
 
 		}
 	}

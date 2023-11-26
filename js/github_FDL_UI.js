@@ -914,11 +914,31 @@ showDeadline = (blnSD)=>{
 				let gwDdlnHr = gwDdln.toLocaleTimeString().split(".")[0] + ":" + gwDdln.toLocaleTimeString().split(".")[1] ;
 				let hdr = $("th[evrnd=" + gmwk["id"] + "]" ) ;
 				$(hdr).text("");
-					if(blnSD){
-						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</br><time>" + gwDdlnDate + " " + gwDdlnHr + "</time></span>" );
-					}else{
-						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</span>" );
-					}
+			
+				if(blnSD){
+
+					if( $(hdr).attr("round") ){
+						console.log(
+									"date: ",
+									$(hdr).attr("date"),
+									"round: ",
+									$(hdr).attr("round")
+						) ;
+
+						$(hdr).append("<span>" + $(hdr).attr("round") + "</br></span>" ) ;
+
+					 }else{
+
+						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</br><time>" + gwDdlnDate + " " + gwDdlnHr + "</time></span>" ) ;
+
+					 } ;
+
+				}else{
+
+					$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</span>" );
+
+				}
+
 		}
 
 	}else{

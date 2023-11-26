@@ -22,9 +22,9 @@ let linearScale = d3.scaleLinear()
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 4,
-		currentRnd: 5,
-		evWndw: { 'direction': 1 , 'start': 5, 'rounds': 8, 'end': 12 },
+		finishedRounds: 12,
+		currentRnd: 13,
+		evWndw: { 'direction': 1 , 'start': 13, 'rounds': 8, 'end': 20 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {

@@ -355,23 +355,6 @@ a {
 
 th.gameBubble{ background-color: transparent !important; }
 
-
-.evtp-UIL{
-	background-color: #FDEF82 ;
-	color: #000000;
-}
-
-.evtp-EFL{
-	background-color: #ECEF82 ;
-	color: #000000;
-}
-
-.evtp-FAC{
-	background-color: #DBEF82 ;
-	color: #000000;
-}
-
-
 .df_h_hidden{ display: none !important; }
 .df_a_hidden{ display: none !important; }
 
@@ -418,6 +401,34 @@ tr{
 	opacity: 1;
 	text-decoration-line: initial;
 }
+
+
+.cupElim{
+	background-color: limegreen !important;
+}
+
+.cupCntndr{
+	background-color: #FF00FF !important;
+}
+
+.evtp-UIL{
+	background-color: #FDEF82 ;
+	color: #000000;
+}
+
+.evtp-EFL{
+	background-color: #ECEF82 ;
+	color: #000000;
+}
+
+.evtp-FAC{
+	background-color: #DBEF82 ;
+	color: #000000;
+}
+
+
+
+
 
 .evHighLite{
 	animation-name: selectedborder;
