@@ -12,23 +12,26 @@ let fixtureArray = [];
 
 let allStatsData = [];
 
-getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
-
-
 let linearScale = d3.scaleLinear()
   .domain([1000, 1400])
   .range([ '#FFFF33', '#FF0033' ]);
 
+// let splashCont = $("progress").get() ;
+
+// 	console.log("constants Init: updateTheSplash? ", updateTheSplash("opened constants....") )
+
+getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
+
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 12,
-		currentRnd: 13,
-		evWndw: { 'direction': 1 , 'start': 13, 'rounds': 8, 'end': 20 },
+		finishedRounds: 13,
+		currentRnd: 14,
+		evWndw: { 'direction': 1 , 'start': 14, 'rounds': 10, 'end': 24 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
-			containerViz: 	true,
+			containerViz: 	false,
 			strengthsViz: 	false,
 			strengthsVizA: 	false,
 			strengthsVizH: 	false
@@ -39,8 +42,8 @@ let gamesOverview = {
 		},
 		showSttng: true ,
 		showDdln: false ,
-		hasPP: true ,		
-		showPP: true ,
+		hasPP: true ,
+		showPP: false ,
 		showRP: false ,
 		postponedGameIds: 	[] ,
 		postponedGames: 	[] ,
@@ -48,13 +51,12 @@ let gamesOverview = {
 		replannedGames: 	[] ,
 		iBreaks:[] ,
 		iBreaksShow: 	false ,
-		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIL" ],
+		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIB" ],
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
 		fontSize: 10
 }
-
 
 getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
 getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	} 
@@ -274,6 +276,7 @@ tmFilterReset = ()=>{
 	) ;
 
 }
+
 
 
 let FPLTeamsFull = [
@@ -653,14 +656,15 @@ let celebLeagues = [
 
 ];
 
-
 console.log(
-	"FDL constants\n",
+	"\n--- FDL constants ---\n",
 	"changDFviewArr", changDFviewArr.length,
 	"myFPLTeamIds", myFPLTeamIds.length,
 	"FPLTeamsFull", FPLTeamsFull.length,
 	"celebTeams", celebTeams.length,
-	"celebLeagues", celebLeagues.length
+	"celebLeagues", celebLeagues.length,
+	"gamesOverview", gamesOverview.splash,
+	"\n--- FDL constants END ---\n"
 );
 
 

@@ -40,7 +40,7 @@ toggleLocks = (l)=>{
 			break;
 
 		default: 
-			console.log( getCI(), "toggleLocks l = ", l );
+			// console.log( getCI(), "toggleLocks l = ", l );
 	}
 
 	let lckBttns = $("button.evwndwTgl").get() ;
@@ -83,7 +83,6 @@ showEventWindow = (l,f)=>{
 	let lockId 		= gamesOverview.locks.indexOf( true ) || 0;
 	let direction 	= parseInt(evWndw['direction']) ;
 	
-
 	if ( locked() ){
 
 		// console.log(  getCI(), "called by", f,"\tshowEventWindow (if locked)", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
@@ -114,7 +113,7 @@ showEventWindow = (l,f)=>{
 					break;
 
 				default:
-					console.log( getCI(), "showEventWindow: dir= 1. switch changed item > 2 = \t", l ) ;	
+					// console.log( getCI(), "showEventWindow: dir= 1. switch changed item > 2 = \t", l ) ;	
 			}
 
 		}else if( direction == -1  ){
@@ -136,12 +135,12 @@ showEventWindow = (l,f)=>{
 					break;
 
 				default:
-					console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l ) ;
+					// console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l ) ;
 			}
 
 		}else{
 
-			console.log( getCI(), "showEventWindow --> direction should be 1 or -1. not:\t", direction );	
+			// console.log( getCI(), "showEventWindow --> direction should be 1 or -1. not:\t", direction );	
 
 		}
 
@@ -167,12 +166,12 @@ showEventWindow = (l,f)=>{
 				break;
 
 			default:
-				console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l );	
+				// console.log( getCI(), "showEventWindow: dir= -1. switch changed item > 2 =\t", l );	
 		}
 
 	}
 
-	console.log( getCI(), "called by", f, "\tshowEventWindow after locked", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
+	// console.log( getCI(), "called by", f, "\tshowEventWindow after locked", "\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
 
 	$("#strtRnd > option.active").removeClass("active") ;
 	$("#strtRnd > option:selected").removeClass("selected") ;
@@ -196,8 +195,6 @@ showEventWindow = (l,f)=>{
 	let en 			= parseInt(evWndw['end']) 	;
 	let rnds 		= parseInt(evWndw['rounds']);
 
-	eventTypeSelectionChanged() ; 
-
 	for(let p = 1; 		p < st 	; p++){	hideEventClmn(p) ; }
 	for(let s = st; 	s <= en ; s++){ showEventClmn(s) ; }
 	for(let f =(en+1); 	f <= 39 ; f++){ hideEventClmn(f) ; }
@@ -213,6 +210,8 @@ showEventWindow = (l,f)=>{
 	}
 	
 	updateTotalDF( changDFviewIdx ) ;
+	eventTypeSelectionChanged() ; 
+
 	// console.log( getCI(), "showEventWindow:", evWndw ," changed", evchanges[l], "to: ", [st,rnds,en][l].toString() ) ;
 
 }
@@ -244,7 +243,7 @@ showEventType = (evtClass)=>{
 	let critTH = "th." + evtClass ;
 	let evTypeCells  = $(critTD).get() ;
 	let evTypeHeads  = $(critTH).get() ;
-	console.log("showEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	// console.log("showEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
 	$.each( evTypeHeads, function(index, hdr){ $(hdr).removeClass("evtypeHide"); } );
 	$.each( evTypeCells, function(index, cll){ $(cll).removeClass("evtypeHide"); } );
 }
@@ -255,7 +254,7 @@ hideEventType = (evtClass)=>{
 	let critTH = "th." + evtClass ;
 	let evTypeCells  = $(critTD).get() ;
 	let evTypeHeads  = $(critTH).get() ;
-	console.log("hideEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	// console.log("hideEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
 	$.each( evTypeHeads, function(index, hds){ $(hds).addClass("evtypeHide"); } );
 	$.each( evTypeCells, function(index, cll){ $(cll).addClass("evtypeHide"); } );
 }
@@ -264,12 +263,12 @@ hideEventType = (evtClass)=>{
 
 eventTypeSelectionChanged = ()=>{
 	let evTypes = $("#evntTpsCont input").get() ;
-	console.log("eventTypeSelectionChanged", evTypes.length )
+	// console.log("eventTypeSelectionChanged", evTypes.length )
 
 	$.each( 
 		evTypes,
 		function(index,evtType){ 
-			console.log("evtType", evtType.id , evtType.checked ) ;
+			// console.log("evtType", evtType.id , evtType.checked ) ;
 			if(evtType.checked){
 				showEventType( evtType.id ) ;	
 			}else{
@@ -391,13 +390,13 @@ updateTotalDF = (dfType)=>{
 
 									if( tmId==0 ){
 
-										console.log( 
+										/* console.log( 
 											getCI(), "\t", FPLTeamsFull[tmId].shortNm , 
 											"\nfxtrId:", $(spdf).attr("fxtrid") , "at home:", (tmId==parseInt( $(spdf).attr("teamid_h"))), 
 											"each rowfixture --> \tstr_h_saldo: ", $(spdf).attr("str_h_saldo") ,
 											"\tstr_a_saldo: ", $(spdf).attr("str_a_saldo") 
 										) ; 
-
+										*/
 									}
 
 									// The DF sum
@@ -748,14 +747,14 @@ togglePPdisplay = (viz, f )=>{
 
 	if( viz == 'toggle' ){
 		gamesOverview.showPP = !gamesOverview.showPP ;
-		console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, viz ) ;
+		// console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, viz ) ;
 
 	}else{
 		gamesOverview.showPP = Boolean( viz ) ;
-		console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, Boolean( viz )  ) ;
+		// console.log( getCI(), f, "togglePPdisplay", gamesOverview.showPP, Boolean( viz )  ) ;
 	}
 	
-	console.log( getCI(), f, "togglePPdisplay: viz=", viz, " Boolean(viz)=" , Boolean(viz), "gamesOverview.showPP=", gamesOverview.showPP )
+	//console.log( getCI(), f, "togglePPdisplay: viz=", viz, " Boolean(viz)=" , Boolean(viz), "gamesOverview.showPP=", gamesOverview.showPP )
 	
 	if(  gamesOverview.showPP  ){
 
@@ -766,9 +765,8 @@ togglePPdisplay = (viz, f )=>{
 
 		$("#hdr-tggl-ppnd").css("backgroundColor", "#53AC00" ) ;
 		$("#togglePostponed").text( "Hide" ) ;
-
+		showEventClmn(39) ;
 		setIndicator("ppsLdd-idc", "green" ) ;
-
 	}else{
 
 		$("#ppOview-cnt").removeClass( "show-item" ) ;
@@ -778,10 +776,10 @@ togglePPdisplay = (viz, f )=>{
 
 		$("#hdr-tggl-ppnd").css("backgroundColor", "#D91A00" ) ;
 		$("#togglePostponed").text( "Show" ) ;
-
+		hideEventClmn(39) ;
 		setIndicator("ppsLdd-idc", "red" ) ;
 	}
-	
+
 }
 
 
@@ -887,65 +885,56 @@ toggleStrengthAway = ()=>{
 
 
 toggleDFuser = ()=>{
-	console.log( getCI(), "toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
+	// console.log( getCI(), "toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
 	if( gamesOverview.dfSource['user'] ){
 		// now using FPL DF's, switch to user DF (if stored)
-		console.log( getCI(), "toggleDFuser - now using USER DF " ) ; 
+		// console.log( getCI(), "toggleDFuser - now using USER DF " ) ; 
 		loadUserDF() ; 
 		
 	}else{
-		console.log( getCI(), "toggleDFuser - now using FPL DF " ) ; 
+		// console.log( getCI(), "toggleDFuser - now using FPL DF " ) ; 
 		loadFPLDF() ; 
 	}
 }
 
 
+hasCup = (el, evtype)=>{ return $(el).hasClass(evtype) ; } 
+
 showDeadline = (blnSD)=>{	
 
-	console.log( getCI(), "allStatsData?", allStatsData['events'].length ) ; 
+	let evcps 		= ["evtp-EFL", "evtp-FAC"] ;
+	let allEvCups 	= gamesOverview.evTypes ;
 
-	if( allStatsData['events'].length > 0 ){
+	for(let gw=1; gw < 39 ; gw++){
 
-		for(let gw=0; gw < allStatsData['events'].length ; gw++){
-		
-				gmwk = allStatsData['events'][gw];
-				let gwDdln = new Date( gmwk.deadline_time );
-				let gwDdlnDate = gwDdln.toDateString() ;
-				let gwDdlnHr = gwDdln.toLocaleTimeString().split(".")[0] + ":" + gwDdln.toLocaleTimeString().split(".")[1] ;
-				let hdr = $("th[evrnd=" + gmwk["id"] + "]" ) ;
-				$(hdr).text("");
-			
-				if(blnSD){
+		let hdr = $("th[evrnd=" + gw + "]" ).get() ;
+		let hdrCupStr 	= "" ;
+		let hdrTxtStr 	= [] ;
+		let hdrDateStr 	= [] ;
 
-					if( $(hdr).attr("round") ){
-						console.log(
-									"date: ",
-									$(hdr).attr("date"),
-									"round: ",
-									$(hdr).attr("round")
-						) ;
+		for( let gwc=0; gwc< $(hdr).length; gwc++ ){
 
-						$(hdr).append("<span>" + $(hdr).attr("round") + "</br></span>" ) ;
+			fxtrHdr = $(hdr)[gwc] ;
 
-					 }else{
+			let evType = $(fxtrHdr).prop("classList") ;
+			// console.log( "showDeadline gw: ", gw, " has ", evType[1].split("-")[1], " as class #2. And ", $(fxtrHdr).attr("round"), " as round" ) ;
 
-						$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</br><time>" + gwDdlnDate + " " + gwDdlnHr + "</time></span>" ) ;
+			$(fxtrHdr).empty() ; 
+ 			hdrCupStr	= [	"<span>", evType[1].split("-")[1], "</span>" ].join("") ;
+			hdrTxtStr 	= [	"<br>",	"<span>", $(fxtrHdr).attr("round"),	"</span>" ].join("") ;
+			hdrDateStr 	= [ "<br>",	"<span>", $(fxtrHdr).attr("date"),	"</span>" ].join("") ;
 
-					 } ;
+			let newHdrCup 	= $(hdrCupStr) 	;
+			let newHdrTxt 	= $(hdrTxtStr) 	;
+			let hdrDate 	= $(hdrDateStr) ;
 
-				}else{
+			$(newHdrCup).appendTo( $(fxtrHdr) ) ;
+			$(newHdrTxt).appendTo( $(fxtrHdr) ) ;
+			(blnSD)? $(hdrDate).appendTo( $(fxtrHdr) ):" " 	;
 
-					$(hdr).append("<span>" + "GW: " + gmwk["id"] + "</span>" );
-
-				}
-
-		}
-
-	}else{
-		console.log( getCI(), "showDeadline no allStatsData['events'] available (yet?)");
-	}
+		} // End For gwc
+	} // End For gw
 }
-
 
 toggleReplanned = (i)=>{
 	// toggle first. og state is true
@@ -967,7 +956,7 @@ toggleReplanned = (i)=>{
 	$("#ppGamesUnPlanned").removeClass( "show-item" ) ;
 
 	if( gamesOverview.showRP ){
-		console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
+		// console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
 		$("#ppGamesRePlanned").addClass( "show-item" ) ;
 		$("#ppGamesUnPlanned").addClass( "hide-item" ) ;	
@@ -977,7 +966,7 @@ toggleReplanned = (i)=>{
 
 	
 	}else{
-		console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
+		// console.log( getCI(), "toggleReplanned rpIsViz now is" , gamesOverview.showRP ) ;
 
 
 		$("#ppGamesUnPlanned").addClass( "show-item" ) ;	
@@ -990,5 +979,4 @@ toggleReplanned = (i)=>{
 
 }
 
-showEventWindow(2, "FDL_UI init");
 

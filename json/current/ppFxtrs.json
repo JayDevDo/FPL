@@ -1,6 +1,7 @@
 [
 	{ 
-		"unplanned": [{
+		"unplanned": [
+						{
 							"ppid": 176,
 							"nwRound": 39,
 							"ogGW": 18,
@@ -14,6 +15,7 @@
 						}
 
 		] 
+	
 	},
 
 	{ 
@@ -42,7 +44,7 @@
 	},
 
 	{ 
-		"evtp-UIL": 	[
+		"evtp-UIB": 	[
 			{	"iBreakId": 1,
 				"wkNr": 41,
 				"prevGW": 4,
@@ -123,7 +125,7 @@
 									{"team_h":0, "team_a":0 }
 						]
 					},
-					{	"title": "L16 5th Rnd. Feb 28",
+					{	"title": "L16 5th Rnd",
 						"gw": 26,
 						"elim": [ ],
 						"drawn": false,
@@ -146,7 +148,7 @@
 									{"team_h":0, 	"team_a":0 }
 						]
 					},
-					{	"title": "L32 4th Rnd. Jan 27",
+					{	"title": "L32 4th Rnd",
 						"gw": 21,
 						"elim": [ ],
 						"drawn": false,
@@ -169,14 +171,14 @@
 									{"team_h":0, 	"team_a":0 }
 						]
 					},
-					{	"title": "L64 3rd Rnd. Jan. 6",
+					{	"title": "L64 3rd Rnd",
 						"gw": 20,
 						"elim": [],
 						"drawn": false,
 						"data": [
 									{"team_h":1,  "team_a":0,  	"oppNmA":"Exempt" },
 									{"team_h":2,  "team_a":0,  	"oppNmA":"Exempt" },
-									{"team_h":0,  "team_a":0,  	"oppNmA":"Exempt" },
+									{"team_h":3,  "team_a":0,  	"oppNmA":"Exempt" },
 									{"team_h":4,  "team_a":0,  	"oppNmA":"Exempt" },
 									{"team_h":5,  "team_a":0,  	"oppNmA":"Exempt" },
 									{"team_h":6,  "team_a":0,  	"oppNmA":"Exempt" },
@@ -204,7 +206,7 @@
 					{ 	"title": "IN", 		"data": [  7, 9, 10, 11, 15, 19 ] },
 					{	"title": "OUT", 	"data": [  1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
-					{ 	"title": "FINAL",	
+					{ 	"title": "FINAL",
 						"gw": 26,
 						"elim": [ 1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ],
 						"drawn": false,
@@ -212,7 +214,7 @@
 									{"team_h":0, "team_a":0 } 
 								] 
 					},
-					{ 	"title": "S-FINAL returns",
+					{ 	"title": "S-FINAL 2 ",
 						"gw": 21,
 						"elim": [ 1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ],
 						"drawn": false,
@@ -221,7 +223,7 @@
 									{"team_h":0, "team_a":0}
 						]
 					},
-					{ 	"title": "S-FINAL first",
+					{ 	"title": "S-FINAL 1",
 						"gw": 20,
 						"elim": [ 1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ],
 						"drawn": false,
@@ -231,7 +233,7 @@
 						]
 					},
 					{ 	"title": "Q-FINAL",
-						"gw": 17,
+						"gw": 17,	
 						"elim": [ 1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ],
 						"drawn": true,
 						"data": [ 

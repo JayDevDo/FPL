@@ -50,7 +50,7 @@ getPostponedData = async ()=> {
 			"evtp-ECL",	Uefa Conference League
 			"evtp-EUL",	Uefa Europa League
 			"evtp-CLE",	Uefa Champions League
-			"evtp-UIL"	Uefa International breaks
+			"evtp-UIB"	Uefa International breaks
 		]
 	*/
 
@@ -65,11 +65,12 @@ getPostponedData = async ()=> {
 
 			if ( (postpXhttp.readyState == 4) && (postpXhttp.status == 200) ){
 
+				// updateSplash(2, 2 ) ;
 				let tmpArr = JSON.parse( postpXhttp.responseText ) ; 
 
 				let ppFxtrs = tmpArr[0]['unplanned'] ; 
 				let rpFxtrs = tmpArr[1]['re-planned'] ; 
-				let iBreaks = tmpArr[4]['evtp-UIL'] ; 
+				let iBreaks = tmpArr[4]['evtp-UIB'] ; 
 				let evTpFAC = tmpArr[5]['evtp-FAC'] ;
 				let evTpEFL = tmpArr[6]['evtp-EFL'] ;
 
@@ -136,7 +137,6 @@ getFixtureData = async ()=> {
 		fxtrXhttp.onreadystatechange = ()=>{
 
 			if ( (fxtrXhttp.readyState == 4) && (fxtrXhttp.status == 200) ){
-
 				let fxtrTableRaw = JSON.parse( fxtrXhttp.responseText ) ; 
 				fixtureArray = sortByGmID( fxtrTableRaw ) ; 
 				setIndicator("fxtrsLdd-idc", "green") ; 
@@ -329,8 +329,7 @@ buidPPContainer = ( treatedPPData )=>{
 				].join("") ; 
 
 		let ppFxtrLi = $( ppArr ) ; 
-		$( ppFxtrLi ).appendTo( $( ptrgt ) ) ; 
-	
+		$( ppFxtrLi ).appendTo( $( ptrgt ) ) ; 	
 	}
 
 
@@ -339,9 +338,9 @@ buidPPContainer = ( treatedPPData )=>{
 	$( "#rpGamesAcc" ).children("li").remove() ;
 	let rpArr 	= [] ; 
 
-	for( let f = 0; f < treatedPPData[1].length; f++ ){
+	for( let r = 0; r < treatedPPData[1].length; r++ ){
 
-		fxtr = treatedPPData[1][f] ; 
+		fxtr = treatedPPData[1][r] ; 
 
 		rpArr = [	"<li title='", fxtr.ppid ,
 					"'><span>GW: ", fxtr.nwRound,
@@ -355,7 +354,9 @@ buidPPContainer = ( treatedPPData )=>{
 	}
 	
 	/* FPLTeamsFull[t].ppgames has been updated before getPostponedData was resolved */
-	for(let t=1; t<21; t++){ $("#teamDFCnt tr.pp_count td[tmId=" + t +"]").text( FPLTeamsFull[t].ppgames.length ); }
+	for(let t=1; t<21; t++){ 
+		$("#teamDFCnt tr.pp_count td[tmId=" + t +"]").text( FPLTeamsFull[t].ppgames.length ); 
+	}
 
 }
 
@@ -515,9 +516,6 @@ handleCups = ( cupData, evtClass )=>{
 }
 
 
-
-
-
 getOrigPPRnd = ( fxtrId )=>{
 	if(gamesOverview.postponedGames.length>0){for( f=0; f<gamesOverview.postponedGames.length; f++){if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ return gamesOverview.postponedGames[f].ogGW;}}}
 }
@@ -558,6 +556,8 @@ allPromise.then(
 
 	(values) => {
 
+		console.log( getCI(),"allPromise.then -->" ) ;
+
 		let events 	= values[0]['events'] ; 
 		let teams 	= values[0]['teams'] ; 
 		let ppGames = values[1] ; 
@@ -585,12 +585,14 @@ allPromise.then(
 		// Set the curGW at the earliest possibility
 
 		// EVENT LOOP START
+		// Add dates + rounds for cups in fxtr table th
 		curGW = getCurGW( events ) ;
 		console.log( getCI(), "allPromise.then(values) curGw(events)", curGW ) ; 
 		$("#curRound").text("GW: " + curGW.toString() ) ;
 		// EVENT LOOP END
 
 		// TEAM LOOP START 
+
 		for (let t=0; t<teams.length; t++){
 			// 2 sources for 1 array:
 			// FPL data
@@ -630,14 +632,18 @@ allPromise.then(
 			setDFTableStrength( "tr_str_a_a", fpl_tmId, jtf_tm.strength[1]['attack']  ) ; 
 			setDFTableStrength( "tr_str_a_d", fpl_tmId, jtf_tm.strength[1]['defence']  ) ; 
 
+			// (t>0)? updateSplash(0, (t*5) ):updateSplash(0, 5 ) ;
 		} 
 
 		gamesOverview.dfSource.loaded[0] = true ; 
 		setIndicator("epl-df-Ldd-idc", "green") ;
 		setIndicator("epl-ha-Ldd-idc", "green") ; 
-		console.log(getCI(), "allPromise.then(values) after TEAM LOOP -> hasUserStore", hasUserStore() ) ; 
+		// updateSplash(0, 100 ) ;
 
 		// TEAM LOOP END 
+
+		console.log(getCI(), "allPromise.then(values) after TEAM LOOP -> hasUserStore", hasUserStore() ) ; 
+
 
 		if( hasUserStore() ){
 			setIndicator("usr-df-Ldd-idc", "orange") ; 
@@ -734,6 +740,7 @@ allPromise.then(
 		console.log( getCI(), "CUP FIXTURES LOOP START iBreaks", iBreaks.length, "EFL", eflCup.length, "FAC", faCup.length ) ;
 		handleCups( eflCup ,"evtp-EFL") ; 
 		handleCups( faCup ,"evtp-FAC") ; 
+
 		// CUP FIXTURES LOOP END
 
 	}
@@ -744,5 +751,4 @@ allPromise.then(
 		console.log(error); // rejectReason of any first rejected promise
 	}
 );
-
 
