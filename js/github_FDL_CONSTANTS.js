@@ -25,9 +25,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 13,
-		currentRnd: 14,
-		evWndw: { 'direction': 1 , 'start': 14, 'rounds': 10, 'end': 24 },
+		finishedRounds: 16,
+		currentRnd: 17,
+		evWndw: { 'direction': 1 , 'start': 17, 'rounds': 8, 'end': 24 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -41,7 +41,7 @@ let gamesOverview = {
 			loaded:[ false, false ] 	/* 	DF data available (from FPL constants FPLTeamsFull /fixtures/teams or user) */
 		},
 		showSttng: true ,
-		showDdln: false ,
+		showDdln: true ,
 		hasPP: true ,
 		showPP: false ,
 		showRP: false ,
@@ -180,7 +180,12 @@ loadUserDF = ()=>{
 
 
 loadFPLDF = ()=>{
-	// Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] into the DFcontainer and fixtures. 
+	/* 
+		Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] situated below into the DFcontainer and fixtures. 
+		These are/were the values set by the developer of this at the start of the season.
+		To load the most recent values, run update_FPLDF(Gameweek).
+
+	*/
 
 	if( FPLTeamsFull.length == 21 ){
 
@@ -226,6 +231,64 @@ loadFPLDF = ()=>{
 		setIndicator("usr-df-Ldd-idc", "red" ) ;
 		setIndicator("epl-df-Ldd-idc", "green" ) ;
 	}
+}
+
+
+update_FPLDF = (gw)=>{
+	/*
+		This function changes the FPLDF values in FPLTeamsFull, based on the values in static.events.
+		The function loops through the gw events in reverse, starting from variable 'gw' (gameweek).
+		It stops as soon as all teams have been attributed a home and away DF.
+		The it loops through all teams applying the new values.
+	*/
+	let newFPL_DF_H = [ 0,
+											0, 0, 0, 0, 0, 
+											0, 0, 0, 0, 0,
+											0, 0, 0, 0, 0,
+											0, 0, 0, 0, 5 
+										] ;
+	let newFPL_DF_A = [ 0,
+											0, 0, 0, 0, 0, 
+											0, 0, 0, 0, 0,
+											0, 0, 0, 0, 0,
+											0, 0, 0, 0, 5 
+										] ;
+	let staticEventsExists = false ;
+
+	const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ; 
+	const allDone 	= ()=>{  return (( newFPL_DF_H.lastIndexOf(0) == 0 ) && ( newFPL_DF_A.lastIndexOf(0) == 0 )) } ; 
+
+	const updateTm 	= ( tmId, loc, df )=>{ 
+		if( loc == "H" ){ 
+			newFPL_DF_H[tmId] = df ;
+		}else{
+			newFPL_DF_A[tmId] = df ;
+		}
+	}
+
+	const setAll = (df)=>{ 
+		for( let t=1; t<21; t++ ){ 
+			newFPL_DF_H[t] = df; 
+			newFPL_DF_A[t] = df; 
+		} 
+	}
+
+	console.log( 
+		getCI(), 
+		"update_FPLDF gw: ", gw , 
+		"\nlen(newFPL_DF_H): ", newFPL_DF_H.length ,
+		"\tlen(newFPL_DF_A): ", newFPL_DF_A.length ,
+		"\ntest allDone (should be false): ", allDone() ,
+	//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
+		"\ttest teamDone(1)(should be false): ", teamDone(1) , 
+		"\ttest teamDone(0)(should be false): ", teamDone(0) , 
+		"\ttest teamDone(20)(should be true): ", teamDone(20) , 
+		"\ntest settingAll(3)", setAll(3) ,
+	//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
+		"\ntest allDone(should be true): ", allDone() ,
+		"\ntest teamDone(0)(should be false): ", teamDone(0) 
+	) ;
+
 }
 
 
@@ -297,7 +360,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "ARS",
 		id: 1,
-		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from events
@@ -663,7 +726,6 @@ console.log(
 	"FPLTeamsFull", FPLTeamsFull.length,
 	"celebTeams", celebTeams.length,
 	"celebLeagues", celebLeagues.length,
-	"gamesOverview", gamesOverview.splash,
 	"\n--- FDL constants END ---\n"
 );
 

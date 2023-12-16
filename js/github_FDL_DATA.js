@@ -428,12 +428,18 @@ handleCups = ( cupData, evtClass )=>{
 
 	teamCountCheck = (( cntndrs.length + elims.length ) == 20 ) ;
 
+	console.log(
+			getCI(), 
+			"handleCups -> cupData len:", cupData.length,
+			"\tevtClass: ", 	evtClass
+	)
+
 	for( let ck = (cdl-1);  ck > 2 ; ck--){
 		
 		let pastGW = (curGW >= cupData[ck]["gw"] ) ;
 		let cupDraw = cupData[ck]["drawn"] ;
 
-		/*
+		/* 
 		console.log( "\n",
 			getCI(), 
 			"handleCups looping: ", ck , 
@@ -445,6 +451,7 @@ handleCups = ( cupData, evtClass )=>{
 			"drawn: ", 		cupDraw,
 			"pastGW: ", 	pastGW
 		) ;
+
 		*/
 
 		for ( let elmntd = 0; elmntd < cupData[ck]["elim"].length; elmntd++ ){
@@ -738,7 +745,9 @@ allPromise.then(
 
 		// CUP FIXTURES LOOP START
 		console.log( getCI(), "CUP FIXTURES LOOP START iBreaks", iBreaks.length, "EFL", eflCup.length, "FAC", faCup.length ) ;
+		console.log("starting handleCups( eflCup )" ) ;
 		handleCups( eflCup ,"evtp-EFL") ; 
+		console.log("starting handleCups( faCup )" ) ;
 		handleCups( faCup ,"evtp-FAC") ; 
 
 		// CUP FIXTURES LOOP END
