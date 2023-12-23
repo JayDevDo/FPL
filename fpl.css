@@ -1,0 +1,336 @@
+/*  
+	css for index.html
+*/
+
+/* 	Body 							*/
+*{ text-rendering: optimizeLegibility; }
+body{background-color: #121212;color: #FFFFF2; }
+
+.pageHeader { width: 100%; }
+.pageFooter { width: 100%; }
+
+.modal{
+	display: flex;
+	flex-direction: row;
+}
+
+.notModal{ display: none; }
+
+
+
+li {
+	display: block;
+	list-style-type: square;
+}
+
+ul {
+/*  list-style-type: none; */
+	margin: 0;
+	padding: 0;
+}
+
+ol {
+	list-style-type: square  ;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+	padding: 8px;
+	background-color: #dddddd;
+}
+
+table{ border-collapse: collapse; }
+
+td{ padding:0px;text-align: center;}
+
+
+/* 	Nav 							*/
+
+
+/* 	Gridcontainer 					*/
+
+.grid-container { display: inline-block; }
+.grid-item {display: inline-block; vertical-align: top;}
+
+.hide-item{ display: none; border: 0px solid black; }
+.show-item{ border: 2px solid orange; display: inline-flex; }
+
+span[df="1"]{background-color: #375523;color: #FFFFFF;}
+span[df="2"]{background-color: #00ff86;color: #000000;}
+span[df="3"]{background-color: #ff8533;color: #000000;}
+span[df="4"]{background-color: #ff005a;color: #000000;}
+span[df="5"]{background-color: #861d46;color: #FFFFFF;}
+
+
+
+
+/*  Settings container 				*/
+
+button[enabled = "true"].evwndwTgl{ background-color: red !important; }
+button[enabled = "false"].evwndwTgl{ background-color: lime !important; }
+
+
+.redLight ::after, .redLight ::before { box-sizing: border-box; }
+.redLight {
+	width: 10px;
+	height: 10px;
+	background: #ff0000;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.yellowLight ::after, .yellowLight ::before { box-sizing: border-box; }
+.yellowLight {
+	width: 9px;
+	height: 9px;
+	background: #00ff00;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.orangeLight ::after, .orangeLight ::before { box-sizing: border-box; }
+.orangeLight {
+	width: 11px;
+	height: 11px;
+	background: #FF5500;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.greenLight ::after, .greenLight ::before { box-sizing: border-box; }
+.greenLight {
+	width: 12px;
+	height: 12px;
+	background: #00ff00;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*  Event (GW) window container		*/
+
+#selectionsTbl tr th{
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+
+/*  Event (Cups) container			*/
+
+
+
+/*	postponed overview container 	*/
+
+#ppOview{border: 2px solid gold;text-align: left !important;}
+
+#ppOviewBttnCnt{ display: table-row-group; }
+#ppOviewULCnt{ text-align: left !important ; }
+#ppGamesRePlanned{ background-color:  #0f0f0f; }
+#ppGamesUnPlanned{ background: repeating-linear-gradient( -45deg, grey, grey 5%, #000000 5%, #000000 10% ); }
+
+#ppGamesAcc > li > span{
+	background-color: #FFFFFF;
+	opacity: 0.71;
+	color:  #000000;
+}
+
+
+/*  Team Difficulty container 		*/
+
+/*  Team Difficulty container strengths */
+
+
+#teamDFCnt tr.pp_count{background-color: #0A1B3C; }
+#df_home > th{ font-size: 1.25rem; }
+#df_away > th{ font-size: 1.25rem; }
+
+.df_h_hidden{ display: none !important; }
+.df_a_hidden{ display: none !important; }
+.df_green0{	background-color: #003300; }
+.df_green1{ background-color: #002200; }
+.df_green2{ background-color: #001100; }
+.df_green3{ background-color: #000000; }
+.df_green4{ background-color: #00aa00; }
+.df_green5{ background-color: #00bb00; }
+.df_green6{ background-color: #00cc00; }
+.df_green7{ background-color: #00dd00; }
+.df_green8{ background-color: #00ee00; }
+.df_green9{ background-color: #00ff00; }
+.strengths > td{ color: #000000 ; }
+
+tr.df_home td{ border-left: 2px solid lightcyan; }
+tr.df_away td{ border-left: 2px solid lightcyan; }
+tr.df_hdr th{ border-left: 2px solid slateblue; }
+
+.shaded{
+	opacity: 0.2;
+	text-decoration-line: line-through;
+}
+
+.unshaded{
+	opacity: 1;
+	text-decoration-line: initial;
+}
+
+
+
+/*  Team Difficulty container pop up 	*/
+
+#popUpDF{
+	opacity: 1;
+	height: auto;
+	background-color: darkslategrey;
+	position: absolute;
+	font-size: 14px;
+}
+
+
+
+
+
+
+/*  Info container (unused)			*/
+
+
+/*  Fixtures container 				*/
+tr{
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+
+	border-bottom-color: #FFFFFF;
+	-moz-border-bottom-color: #FFFFFF;
+
+	border-bottom-width: 2px;
+	-moz-border-bottom-width: 2px;
+}
+
+
+/*  Fixtures container row headers (columns 1,2,3)	*/
+
+.striped{ 	background-color: #f2f2f2; 	color: #000000; }
+.unstriped{ background-color: #808080; }
+
+.striped th:nth-of-type(1){background-color: #185ee6;color: #000000; }
+.striped th:nth-of-type(2){background-color: #185ee6;color: #000000; }
+.striped th:nth-of-type(3){background-color: #185ee6;color: #000000; }
+
+
+/*  Fixtures container fixtures normal (columns gw 01/38) */
+
+#eventTable th:nth-of-type(3){ background-color: #185ee6; color: #000000; }
+
+.fxtrspan{
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+td > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow:   auto;
+	vertical-align: middle;
+}
+
+span[loc="H"]{ font-weight: bold; }
+
+
+
+td[df="1"]{background-color: #375523;color: #FFFFFF;}
+td[df="2"]{background-color: #00ff86;color: #000000;}
+td[df="3"]{background-color: #ff8533;color: #000000;}
+td[df="4"]{background-color: #ff005a;color: #000000;}
+td[df="5"]{background-color: #861d46;color: #FFFFFF;}
+
+.customDF{ border: 4px solid #FFFFFF; }
+
+
+
+
+/*  Fixtures container fixtures (postponed) (columns gw 01/38)	*/
+
+td[ppgame='true'] {
+	color: grey ;
+	background-color: #ADADAD;
+}
+
+
+td > span[ppgame='true']{
+	background-color: #ADADAD !important;
+	color: #000000 !important;
+	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 5px,#000000 15px,#000000 5px);
+}
+
+
+
+
+
+/*  Fixtures container posponed	fixtures (columns gw 39 )	*/
+
+td.ppgame > div > span{ border: 1px solid #000000; }
+
+td.ppgame > div:first-of-type{
+	display: inline-block;
+	text-align: left;
+	width: 11.5%;
+	vertical-align: middle !important;
+	font-size: 1.25em;
+	margin-left: 0;
+}
+
+td.ppgame > div:last-of-type{display: inline-block;width: 80%;float: right;}
+
+/*
+	.postponed{ background-color: #ADADAD !important; color: #000000 !important;}
+*/
+
+
+
+/*  Fixtures container fixtures hiding	*/
+
+.clmnHide{ display: none; }
+.rowHide{ display: none; }
+.rowShow{ display: table-row; }
+.evtypeHide{ display: none; }
+
+
+/*  Fixtures container fixtures showing */
+
+
+
+/*  Fixtures container rows	*/
+
+div.tm-idc.tmSelected{ 
+	width: 25px;
+	min-height: 12px;
+	background: #00ff00;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	content: "Show";
+}
+
+
+
+
+/*  animations 				*/
+
+.evHighLite{
+	animation-name: selectedborder;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+}
+
+
+@keyframes selectedborder {
+	0%   {border-color:#000000; border-width: 6px; border-style: solid;}
+	55%  {border-color:#FFFFFF;  border-width: 6px; border-style: solid;}
+	100% {border-color:#000000;  border-width: 4px; border-style: solid;}
+}

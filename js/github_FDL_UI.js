@@ -268,12 +268,32 @@ eventTypeSelectionChanged = ()=>{
 	$.each( 
 		evTypes,
 		function(index,evtType){ 
-			// console.log("evtType", evtType.id , evtType.checked ) ;
 			if(evtType.checked){
-				showEventType( evtType.id ) ;	
+				showEventType( evtType.id ) ;
+				$("#evtp-ECL > ul").show()
 			}else{
 				hideEventType( evtType.id ) ;	
+				console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
+				( evtType.id == "evtp-ECL")?  $("#evtp-ECL-ul").hide():$("#evtp-ECL-ul").show() ;
 			}
+		}
+	);
+
+	let fxtrHdrs 	= $(".striped th.evtp-EPL").get() ;
+	let fxtrHdrsH 	= $(".striped th.evtp-EPL clmnHide").get() ;
+	console.log("counting headers .striped:", fxtrHdrs.length , "\tth.evtp-EPL", fxtrHdrsH.length )
+	// .striped th.evtp-EPL:nth-of-type(odd)
+
+	$.each(
+		fxtrHdrs,
+		function(index, fxtrHdr){
+			if( $(fxtrHdr).hasClass("clmnHide") ){
+				$(fxtrHdr).removeClass("unstriped") ;
+				$(fxtrHdr).removeClass("striped") ;
+			}else{
+				(index%2==0)? $(fxtrHdr).addClass("striped"):$(fxtrHdr).addClass("unstriped") ;				
+			}
+			console.log( index, "fxtrHdr: ", fxtrHdr , "\tishidden: ", $(fxtrHdr).hasClass("clmnHide") ) ; 
 		}
 	);
 

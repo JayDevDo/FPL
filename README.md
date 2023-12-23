@@ -1,4 +1,4 @@
-# FPL 22/23
+# FPL 23/24
 
 Fantasy Premier League team calendar.
 Choose which rounds to show, how many rounds to show, change difficulty per team for future fixtures.

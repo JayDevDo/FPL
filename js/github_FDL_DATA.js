@@ -71,8 +71,9 @@ getPostponedData = async ()=> {
 				let ppFxtrs = tmpArr[0]['unplanned'] ; 
 				let rpFxtrs = tmpArr[1]['re-planned'] ; 
 				let iBreaks = tmpArr[4]['evtp-UIB'] ; 
-				let evTpFAC = tmpArr[5]['evtp-FAC'] ;
 				let evTpEFL = tmpArr[6]['evtp-EFL'] ;
+				let evTpFAC = tmpArr[5]['evtp-FAC'] ;
+				let evTpECL = tmpArr[7]["evtp-ECL"]
 
 				console.log(getCI(), "getPostponedData evTpFAC:", evTpFAC.length );
 
@@ -105,7 +106,8 @@ getPostponedData = async ()=> {
 					gamesOverview.replannedGames , 
 					iBreaks, 
 					evTpEFL, 
-					evTpFAC 
+					evTpFAC,
+					evTpECL 
 				]) ; 
 
 			}else{
@@ -397,7 +399,16 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 
 	let tmHcellCrit = "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + evtClass ;
 	let tmHCell = $( tmHcellCrit ).get() ;
-	if( tmHCell.length == 1 ){  $(tmHCell).text( cellText ); 
+
+	if( ( gw == 20 ) && ( evtClass == "evtp-FAC" ) ){
+		console.log("updateCupCell gw: ", gw, "cup: ", evtClass, "tmId: ", tmId,"tmHCell.length: ", tmHCell.length, "oppname: ", cellText )
+	}
+
+	if( tmHCell.length == 1 ){  
+	
+		$(tmHCell).text( cellText ); 
+		$(tmHCell).removeClass("cupElim");
+		$(tmHCell).removeClass("cupCntndr");
 
 		if( cellText == "Elim" || cellText == "Exempt" ){ 
 			$(tmHCell).addClass("cupElim"); 
@@ -410,16 +421,27 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 }
 
 handleCups = ( cupData, evtClass )=>{
-	/* handleCups: 	Adds fixtures to team rows at the column of the cup 	*/
-	/* 				cupData contains teams still involved 			at index 0    	*/
-	/* 				cupData contains teams eliminated 				at index 1		*/
-	/* 				cupData contains cupfinal data 			(L2)	at index 2		*/
-	/* 				cupData contains cup semi-final data 	(L4) 	at index 3		*/
-	/* 				cupData contains cup Q-final data		(L8) 	at index 4		*/
-	/* 				cupData contains cup R16 data			(L16) 	at index 5		*/
-	/* 				cupData contains cup R32 data			(L32) 	at index 6		*/
-	/* 				cupData contains cup R64 data			(L64) 	at index 7		*/
-	/*			for evtp-EFL (carabao cup) L4=semi-finals has home/away fixtures 	*/
+	/* handleCups: 	Adds cup fixtures to team rows at the column of the cup 				
+					From json data it loops through a given cup(event type) in REVERSE
+					Each cup data entry holds cup related variables in keys 0,1,2
+					--	Event type EPL is handled in handleFixtures earlier in the script as it's obligatory
+					--	Event type UIB (International Breaks) is hard coded because 
+						the program doesn't keep track of those fixtures.
+					--	For the moment all European cups are aggregated under evtp-ECL.
+	*/
+
+	/*
+		cupData contains teams still involved 	('IN','contenders')		at index 0
+		cupData contains teams eliminated 		('OUT')		at index 1
+		cupData contains eventType data 		('evntTp') 	at index 2		
+	*/
+
+	/*
+		cupData contains cup final data 		(L 2 h+a)	at index 3
+		cupData contains cup semi-final data 	(L 4 h+a) 	at index 4
+		cupData contains cup Q-final data		(L 8 h+a) 	at index 5
+		cupData contains etc								at index +1 	
+	*/
 
 	let cdl 	 = cupData.length ; 
 	let cntndrs  = cupData[0]["data"] ;
@@ -439,7 +461,7 @@ handleCups = ( cupData, evtClass )=>{
 		let pastGW = (curGW >= cupData[ck]["gw"] ) ;
 		let cupDraw = cupData[ck]["drawn"] ;
 
-		/* 
+		/*
 		console.log( "\n",
 			getCI(), 
 			"handleCups looping: ", ck , 
@@ -451,7 +473,6 @@ handleCups = ( cupData, evtClass )=>{
 			"drawn: ", 		cupDraw,
 			"pastGW: ", 	pastGW
 		) ;
-
 		*/
 
 		for ( let elmntd = 0; elmntd < cupData[ck]["elim"].length; elmntd++ ){
@@ -462,30 +483,43 @@ handleCups = ( cupData, evtClass )=>{
 		for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
 
 			let evFxtr = cupData[ck]["data"][evf] ;
-			let oppName = "Elim" ;
+			let oppName = "unset" ;
+			let tmHisFPL = isFPL( parseInt(evFxtr["team_h"] )) ;
+			let tmAisFPL = isFPL( parseInt(evFxtr["team_a"] )) ;
 
-			let tmHisFPL = isFPL( evFxtr["team_h"]) ;
-			let tmHName = ( tmHisFPL )? FPLTeamsFull[evFxtr["team_h"]]["shortNm"]:"Non FPL" ;
+			if( tmHisFPL ){
+				tmHName = FPLTeamsFull[ evFxtr["team_h"] ]["shortNm"];
+			}else{
+				tmHName = evFxtr["oppNmH"] ;
+			}
 
-			let tmAisFPL = isFPL( evFxtr["team_a"])  ;
-			let tmAName = ( tmAisFPL )? FPLTeamsFull[evFxtr["team_a"]]["shortNm"]:"Non FPL" ;
+			if( tmAisFPL ){
+				tmAName = FPLTeamsFull[ evFxtr["team_a"] ]["shortNm"];
+			}else{
+				tmAName = evFxtr["oppNmA"] ;
+			}
 
-			if( evFxtr["oppNmH"] ){ oppName = tmHName = evFxtr["oppNmH"] ; }
-			if( evFxtr["oppNmA"] ){ oppName = tmAName = evFxtr["oppNmA"] ; }
+			if( ( cupData[ck]["gw"] == 20 ) && ( evtClass == "evtp-FAC" ) ){
+				console.log( evFxtr)
+				console.log("event fac gw 20 tm H: ", evFxtr["team_h"], tmHName )
+				console.log("event fac gw 20 tm A: ", evFxtr["team_a"], tmAName )
+			}
+
 
 			/*
-			console.log( 
-				getCI(), "handleCups-- fxtr: ", evf,
-				"\ntm H: ", 		evFxtr["team_h"], 
-				"\ttm H nm: ", 		tmHName,
-				"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
-				"\tBoolean indexOf H: ", Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ),
-				"\ntm A: ", 		evFxtr["team_a"], 
-				"\ttm A nm: ", 		tmAName,
-				"\tindexOf A: ",	cntndrs.indexOf( evFxtr["team_a"]),
-				"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
-				"\toppName: ", 		oppName
-			) ;
+				console.log( 
+					getCI(), "handleCups-- fxtr: ", evf,
+					"\ntm H: ", 		evFxtr["team_h"], 
+					"\ttm H nm: ", 		tmHName,
+					"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
+					"\tBoolean indexOf H: ", Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ),
+					"\ntm A: ", 		evFxtr["team_a"], 
+					"\ttm A nm: ", 		tmAName,
+					"\tindexOf A: ",	cntndrs.indexOf( evFxtr["team_a"]),
+					"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
+					"\toppName: ", 		oppName
+				) ;
+
 			*/
 
 			// Fixtures in the past will be added with info available from cupsData
@@ -499,13 +533,26 @@ handleCups = ( cupData, evtClass )=>{
 
 			}else{
 				/* This fixture is in the future */
-				let tmHisContender = Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ) ;
-				let tmAisContender = Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ) ;
+				let tmHisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_h"]) ) > -1 ) ;
+				let tmAisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_a"]) ) > -1 ) ;
 
 				if( cupDraw ){
 					/* A draw has been made for ths round */
-					( evFxtr["team_h"] != 0 )?	updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ):console.log("cup is drawn but tmH not in fpl") ;
-					( evFxtr["team_a"] != 0 )?	updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ):console.log("cup is drawn but tmA not in fpl") ;
+
+					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ) ; }
+					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ) ; }
+
+					/*
+						if( evFxtr["team_h"] != 0 ){
+							updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName )
+						}else if( evFxtr["team_a"] != 0 ){
+							updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName )
+						}
+					*/
+					/* 
+						( evFxtr["team_h"] != 0 )?	updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ):console.log("cup is drawn but tmH not in fpl") ;
+						( evFxtr["team_a"] != 0 )?	updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ):console.log("cup is drawn but tmA not in fpl") ;
+					*/
 
 				}else{
 					/* No draw has been made for ths round */
@@ -576,13 +623,15 @@ allPromise.then(
 					gamesOverview.replannedGames , 
 					iBreaks, 
 					evTpEFL, 
-					evTpFAC 
+					evTpFAC,
+					evTpECL 
 				]) ; 
 		*/
 
 		let iBreaks = ppGames[2] ;
 		let eflCup 	= ppGames[3] ; 
 		let faCup 	= ppGames[4] ; 
+		let uefa 	= ppGames[5] ;
 
 		console.log( getCI(), "values: events: ", events.length, "teams:", teams.length, "ppGames[0]:", ppGames[0].length, "fxtrs:", fxtrs.length ) ; 
 		// Step 2 : Add data from ppGames to fxtrs. 		( 	FXTR LOOP 	)	-origGw, -reason, -newGW(39), -postponed(true/false) 
@@ -744,11 +793,20 @@ allPromise.then(
 		setIndicator("df-Ldd-idc", "green") ; 
 
 		// CUP FIXTURES LOOP START
+		for( cup in gamesOverview.evTypes){
+			console.log("cup in gamesOverview.evTypes:", gamesOverview.evTypes[cup] ) ;
+		}
+
 		console.log( getCI(), "CUP FIXTURES LOOP START iBreaks", iBreaks.length, "EFL", eflCup.length, "FAC", faCup.length ) ;
-		console.log("starting handleCups( eflCup )" ) ;
+		
+		//console.log("starting handleCups( eflCup )" ) ;
 		handleCups( eflCup ,"evtp-EFL") ; 
-		console.log("starting handleCups( faCup )" ) ;
+		
+		//console.log("starting handleCups( faCup )" ) ;
 		handleCups( faCup ,"evtp-FAC") ; 
+		
+		//console.log("starting handleCups( Uefa )" ) ;
+		handleCups( uefa ,"evtp-ECL") ; 
 
 		// CUP FIXTURES LOOP END
 

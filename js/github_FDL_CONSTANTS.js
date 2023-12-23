@@ -51,7 +51,7 @@ let gamesOverview = {
 		replannedGames: 	[] ,
 		iBreaks:[] ,
 		iBreaksShow: 	false ,
-		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIB" ],
+		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL" ], /* ,"evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
