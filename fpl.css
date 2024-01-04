@@ -223,7 +223,7 @@ tr{
 
 /*  Fixtures container fixtures normal (columns gw 01/38) */
 
-#eventTable th:nth-of-type(3){ background-color: #185ee6; color: #000000; }
+#eventTable th.dfc{ background-color: #185ee6; color: #FFFFFF; }
 
 .fxtrspan{
 	display: block;

@@ -2,13 +2,18 @@
 <html lang="en">
 
 	<head>
-		<title>Jay's FPL 22/23 team overview</title>
+		<title>Jay's FPL 23/24 team overview</title>
 		<meta charset="utf-8" lang="en">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="fpl_clubs.css" >
+		<script src="js/d3.min.js"></script>
+		<link 	rel="stylesheet" type="text/css" href="fpl_clubs.css" >
 		<script src="js/github_FDL_CONSTANTS.js"></script>
 		<script src="js/github_FDL_TmPopUp.js"></script>
+		<script type="text/javascript">
+			let tmpu_gamesOverview = gamesOverview ; 
+			console.log("teamPopUp tmpu_gamesOverview.length: ", tmpu_gamesOverview.length ) ;
+		</script>
 	</head>
 
 	<style type="text/css">
@@ -32,9 +37,57 @@
 	</style>
 
 	<body style="width: 75%;">
-		<h1 id=tpu_TmNmLong >h1 Team</h1>
-		<h3 id=tpu_TmNmShort >h3 Team</h3>
-		<h3 id=tpu_TmNmAlt >h3 Team</h3>
+
+		<table id="teamGlobals">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Short Name</th>
+					<th>Nickname</th>
+					<th>Strength Home</th>
+					<th>Strength Away</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="tpu_TmNmLong" 	></td>
+					<td id="tpu_TmNmShort" 	></td>
+					<td id="tpu_TmNmAlt" 	></td>
+					<td id="tpu_TmHStr" 	></td>
+					<td id="tpu_TmAStr" 	></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table id="teamMinutes" >
+			<thead>
+				<tr>
+					<th>Total Team</th>
+					<th>Total Players</th>
+					<th>DEF</th>
+					<th>MID</th>
+					<th>FWD</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td id="tmMinTmTotal" 	></td>
+					<td id="tmMinPlTotal" 	></td>
+					<td id="tmMinDefTotal" 	></td>
+					<td id="tmMinMidTotal" 	></td>
+					<td id="tmMinFwdTotal" 	></td>
+				</tr>
+				<tr>
+					<td id="tmMinTmPerc" 	></td>
+					<td id="tmMinPlPerc" 	></td>
+					<td id="tmMinDefPerc" 	></td>
+					<td id="tmMinMidPerc" 	></td>
+					<td id="tmMinFwdPerc" 	></td>
+				</tr>
+			</tbody>
+		</table>
 
 		<br>
 

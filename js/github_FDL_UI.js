@@ -1,6 +1,11 @@
 
-clspuDF =()=>{ $("#popUpDF").hide() ; }
-tmNmClick = (tmId)=>{  gamesOverview.selectedTeamId = tmId;  window.open("teamPopUp.html?tmId=" +tmId.toString() ,{'tmId':12 } ) ; }
+
+tmNmClick = (tmId)=>{  
+	gamesOverview.selectedTeamId = tmId ;
+	console.log("tmNmClick tmId", tmId , FPLTeamsFull[tmId]["altNm"] ) ;
+	/* window.open("teamPopUp.html?tmId="+tmId.toString(), FPLTeamsFull[tmId]["altNm"]  ) ;  */
+}
+
 showEvent = (id)=>{ for(let e=0; e < fixtures.length; e++){ if( fixtures[e].id == id ){ return fixtures[e] ; }}}
 
 locked = ()=>{ return gamesOverview.locks.includes( true ) ; }
@@ -280,9 +285,6 @@ eventTypeSelectionChanged = ()=>{
 	);
 
 	let fxtrHdrs 	= $(".striped th.evtp-EPL").get() ;
-	let fxtrHdrsH 	= $(".striped th.evtp-EPL clmnHide").get() ;
-	console.log("counting headers .striped:", fxtrHdrs.length , "\tth.evtp-EPL", fxtrHdrsH.length )
-	// .striped th.evtp-EPL:nth-of-type(odd)
 
 	$.each(
 		fxtrHdrs,
@@ -293,10 +295,8 @@ eventTypeSelectionChanged = ()=>{
 			}else{
 				(index%2==0)? $(fxtrHdr).addClass("striped"):$(fxtrHdr).addClass("unstriped") ;				
 			}
-			console.log( index, "fxtrHdr: ", fxtrHdr , "\tishidden: ", $(fxtrHdr).hasClass("clmnHide") ) ; 
 		}
 	);
-
 }
 
 /* User DF functions */
@@ -920,6 +920,7 @@ toggleDFuser = ()=>{
 
 hasCup = (el, evtype)=>{ return $(el).hasClass(evtype) ; } 
 
+
 showDeadline = (blnSD)=>{	
 
 	let evcps 		= ["evtp-EFL", "evtp-FAC"] ;
@@ -955,6 +956,7 @@ showDeadline = (blnSD)=>{
 		} // End For gwc
 	} // End For gw
 }
+
 
 toggleReplanned = (i)=>{
 	// toggle first. og state is true
@@ -999,4 +1001,5 @@ toggleReplanned = (i)=>{
 
 }
 
+clspuDF =()=>{ $("#popUpDF").hide() ; }
 

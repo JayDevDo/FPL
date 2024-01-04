@@ -3,22 +3,27 @@
 
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="splash.css" >
 		<title>Jay's FPL 23/24 team schedules</title>
-
+		<link rel="stylesheet" type="text/css" href="splash.css" >
 		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script rel="preconnect" type="text/javascript" src="js/jquery-ui.min.js"></script>
-		<script src="js/d3.min.js"></script>
-
-		<div id="splash" class="spinner spinner-2" ><span>Loading</span></div>
-		
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>		
 		<link rel="stylesheet" type="text/css" href="fpl.css" >
 		<link rel="stylesheet" type="text/css" href="cups.css" >
+		<script type="text/javascript" src="js/d3.min.js"></script>		
 	</head>
-	<!-- #splash style="position:absolute; display: block;left: 20%;width: 75vh;height: 70vh;background-color: #000000;margin: 20px;border: 5px solid orange; border-radius: 50%;opacity: 1; text-align: center; padding: 5%;" -->
 
 	<body>
-
+		<section id="pulser" class="section--red">
+			<div class="row" style="display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;text-align: center !important;" 
+			>
+				<div class="col-4" style="-webkit-box-flex: 0;-ms-flex: 0 0 25%;flex: 0 0 25%;max-width: 25%;">
+					<div class="loader--ripple">
+						<div></div>
+						<div></div>
+					</div>          
+				</div>
+			</div>
+		</section>
 		<nav class="pageHeader">
 			<h2>Jays FPL FDR</h2>
 			<button id="hdr-tggl-settings" 	onclick="toggleSettings()"	title="Show settings"				>Settings			</button>
@@ -145,10 +150,10 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=18 >
+								<form id="eventWndwStartForm" value=21 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=18
+											value=21
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1  >1</option>
@@ -168,10 +173,10 @@
 										<option value=15 >15</option>
 										<option value=16 >16</option>
 										<option value=17 >17</option>
-										<option value=18 active selected >18</option>
+										<option value=18 >18</option>
 										<option value=19 >19</option>
 										<option value=20 >20</option>
-										<option value=21 >21</option>
+										<option value=21 active selected >21</option>
 										<option value=22 >22</option>
 										<option value=23 >23</option>
 										<option value=24 >24</option>
@@ -198,10 +203,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=7 >
+								<form id="slctdRoundsForm" value=8 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=7
+											value=8
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -210,8 +215,8 @@
 										<option value=4  >4</option>
 										<option value=5  >5</option>
 										<option value=6  >6</option>
-										<option value=7  active selected>7</option>
-										<option value=8  >8</option>
+										<option value=7  >7</option>
+										<option value=8  active selected>8</option>
 										<option value=9  >9</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
@@ -238,10 +243,10 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=24 >
+								<form id="eventWndwEndForm" value=28 >
 									<select name="endRnd"
 											id="endRnd"
-											value=24
+											value=28
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=1 >1</option>
@@ -267,11 +272,11 @@
 										<option value=21 >21</option>
 										<option value=22 >22</option>
 										<option value=23 >23</option>
-										<option value=24 active selected >24</option>
+										<option value=24 >24</option>
 										<option value=25 >25</option>
 										<option value=26 >26</option>
 										<option value=27 >27</option>
-										<option value=28 >28</option>
+										<option value=28 active selected >28</option>
 										<option value=29 >29</option>
 										<option value=30 >30</option>
 										<option value=31 >31</option>
@@ -354,6 +359,7 @@
 					-->
 
 			</div>
+
 
 			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
 

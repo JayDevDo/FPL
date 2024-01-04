@@ -15,7 +15,7 @@ let allStatsData = [];
 let linearScale = d3.scaleLinear()
   .domain([1000, 1400])
   .range([ '#FFFF33', '#FF0033' ]);
-
+  
 // let splashCont = $("progress").get() ;
 
 // 	console.log("constants Init: updateTheSplash? ", updateTheSplash("opened constants....") )
@@ -25,9 +25,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 17,
-		currentRnd: 18,
-		evWndw: { 'direction': 1 , 'start': 18, 'rounds': 7, 'end': 24 },
+		finishedRounds: 20,
+		currentRnd: 21,
+		evWndw: { 'direction': 1 , 'start': 21, 'rounds': 8, 'end': 28 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -51,11 +51,12 @@ let gamesOverview = {
 		replannedGames: 	[] ,
 		iBreaks:[] ,
 		iBreaksShow: 	false ,
-		evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL" ], /* ,"evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
+		evTypes: 	[	"evtp-EFL", "evtp-FAC",	"evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 11 ,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
-		fontSize: 10
+		fontSize: 10,
+		manId: 371654
 }
 
 getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
@@ -109,6 +110,7 @@ delUserDF = ()=>{
 
 loadUserDF = ()=>{
 	// Load values from the localstorage arrays into FPLTeamsFull, DFcontainer and fixtures 
+	// localStorage.usrHdf = JSON.stringify( lclStrgArr ) ;
 	let storedH = [] ; 
 	let storedA = [] ; 
 
@@ -341,6 +343,13 @@ tmFilterReset = ()=>{
 }
 
 
+exportGmsOvrvw = ()=>{
+	return gamesOverview ;
+}
+
+exportFTbl = ()=>{
+	return FPLTeamsFull;
+}
 
 let FPLTeamsFull = [
 	{       shortNm: "NPL",

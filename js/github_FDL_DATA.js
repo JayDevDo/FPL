@@ -2,7 +2,7 @@
 let callIndexer = 0 ;
 // let allStatsData = []; has moved to FPLConstants
 
-let curGW = 13 ;
+let curGW = 21;
 
 
 /*
@@ -157,6 +157,49 @@ getFixtureData = async ()=> {
 
 }
 
+
+getManagerData = async ()=> {
+
+	let FPLid = 0 ;
+
+	if( parseInt(gamesOverview.manId) > 0 ){
+		FPLid = gamesOverview.manId
+	}else{
+		FPLid = 371654
+	}
+
+
+
+	let picksPrms = new Promise( ( myPicksResolve )=> {
+
+		let picksXhttp = new XMLHttpRequest();
+		// 	https://fantasy.premierleague.com/api/entry/371654/event/18/picks/
+		// console.log("getManagerData url:\t", "https://fantasy.premierleague.com/api/entry/" + str(manId) + "/"  )
+		
+		let urlStr = "https://fantasy.premierleague.com/api/entry/" + FPLid ; 
+
+		picksXhttp.open("GET", urlStr, true ) ; 
+		picksXhttp.send() ; 
+
+		picksXhttp.onreadystatechange = ()=>{
+
+			if ( ( picksXhttp.readyState == 4) && (picksXhttp.status == 200) ){
+
+				let picksResponse = JSON.parse( picksXhttp.responseText ) ; 
+				picksData = picksResponse ;
+
+				if( picksData["entered_events"] ){
+					// get last entered event ( just length ??)
+				}
+
+				myPicksResolve( picksResponse ) ; 
+			}
+		} 
+	});
+
+	return await picksPrms ;
+
+}
 
 
 /*
@@ -400,10 +443,6 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 	let tmHcellCrit = "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + evtClass ;
 	let tmHCell = $( tmHcellCrit ).get() ;
 
-	if( ( gw == 20 ) && ( evtClass == "evtp-FAC" ) ){
-		console.log("updateCupCell gw: ", gw, "cup: ", evtClass, "tmId: ", tmId,"tmHCell.length: ", tmHCell.length, "oppname: ", cellText )
-	}
-
 	if( tmHCell.length == 1 ){  
 	
 		$(tmHCell).text( cellText ); 
@@ -448,14 +487,16 @@ handleCups = ( cupData, evtClass )=>{
 	let elims 	 = cupData[1]["data"] ;
 	let whichCup = cupData[2]["data"] ;
 
-	teamCountCheck = (( cntndrs.length + elims.length ) == 20 ) ;
-
+	;
+	/*
 	console.log(
 			getCI(), 
 			"handleCups -> cupData len:", cupData.length,
-			"\tevtClass: ", 	evtClass
-	)
-
+			"\tevtClass: ", 	evtClass,
+			"teamCountCheck", (( cntndrs.length + elims.length ) == 20 ) 
+		)
+	*/
+	
 	for( let ck = (cdl-1);  ck > 2 ; ck--){
 		
 		let pastGW = (curGW >= cupData[ck]["gw"] ) ;
@@ -499,13 +540,6 @@ handleCups = ( cupData, evtClass )=>{
 				tmAName = evFxtr["oppNmA"] ;
 			}
 
-			if( ( cupData[ck]["gw"] == 20 ) && ( evtClass == "evtp-FAC" ) ){
-				console.log( evFxtr)
-				console.log("event fac gw 20 tm H: ", evFxtr["team_h"], tmHName )
-				console.log("event fac gw 20 tm A: ", evFxtr["team_a"], tmAName )
-			}
-
-
 			/*
 				console.log( 
 					getCI(), "handleCups-- fxtr: ", evf,
@@ -541,18 +575,6 @@ handleCups = ( cupData, evtClass )=>{
 
 					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ) ; }
 					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ) ; }
-
-					/*
-						if( evFxtr["team_h"] != 0 ){
-							updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName )
-						}else if( evFxtr["team_a"] != 0 ){
-							updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName )
-						}
-					*/
-					/* 
-						( evFxtr["team_h"] != 0 )?	updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ):console.log("cup is drawn but tmH not in fpl") ;
-						( evFxtr["team_a"] != 0 )?	updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ):console.log("cup is drawn but tmA not in fpl") ;
-					*/
 
 				}else{
 					/* No draw has been made for ths round */
@@ -602,7 +624,7 @@ const allPromise = 	Promise.all(
 						[ 	
 							getStaticData(), 
 							getPostponedData(), 
-							getFixtureData() 
+							getFixtureData() // , getManagerData()
 						] 
 					) ; 
 
@@ -616,6 +638,7 @@ allPromise.then(
 		let teams 	= values[0]['teams'] ; 
 		let ppGames = values[1] ; 
 		let fxtrs 	= values[2] ;
+		// let mngrData= values[3] ;
 
 		/*
 				myPPResolve( [ 	
@@ -627,6 +650,7 @@ allPromise.then(
 					evTpECL 
 				]) ; 
 		*/
+		// console.log("mngrTm:" , mngrData ) ;
 
 		let iBreaks = ppGames[2] ;
 		let eflCup 	= ppGames[3] ; 
@@ -809,7 +833,7 @@ allPromise.then(
 		handleCups( uefa ,"evtp-ECL") ; 
 
 		// CUP FIXTURES LOOP END
-
+		$("#pulser").remove() ;
 	}
 
 )

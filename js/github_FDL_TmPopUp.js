@@ -1,17 +1,32 @@
 
+
+console.log( "loading teamPopUp.js " ) ;
+console.log( "loading teamPopUp.js -> gamesOverview at start", 	gamesOverview.selectedTeamId ) ;
+console.log( "loading teamPopUp.js -> tmId from url: ", 		parseInt(location.href.split("=")[1]) )
+
 gamesOverview.selectedTeamId = parseInt(location.href.split("=")[1]);
+
 let typeCount = [0,0,0,0,0];
 
-console.log( "loading teamPopUp.js " );
+let teamCopy = exportFTbl() ;
+console.log("teamcopy calling->", 	exportFTbl() 				) ;
+console.log("teamcopy result->", 	teamCopy[11]['strength'] 	) ;
+
 
 console.log( 	
 	"FPLTeamsFull:\t", FPLTeamsFull.length ,  
 	"FPLballers:\t", FPLballers.length , 
 	"selectedTeamId:\t", gamesOverview.selectedTeamId ,
-	"totalMins",  parseInt( gamesOverview.currentRnd * 90 )
+	"go.currentRnd ", gamesOverview.currentRnd ,
+	"totalMins",  parseInt( gamesOverview.currentRnd * 90 ),
+	"strengths", FPLTeamsFull[gamesOverview.selectedTeamId]["strength"]
 );
 
-let bgClsNm = "bg" + FPLTeamsFull[gamesOverview.selectedTeamId].shortNm;
+let bgClsNm 	= "bg" + FPLTeamsFull[gamesOverview.selectedTeamId].shortNm;
+let ttlMins 	= parseInt( gamesOverview.currentRnd * 90 ) ;
+let ttlTmMins 	= ttlMins * 11 ;
+
+$("#tmMinTmTotal").text( ttlTmMins.toString() )
 
 if(FPLballers.length < 500 ){
 	console.log("before loading elements", Date.now() )
@@ -32,13 +47,15 @@ console.log(
 )
 
 
-function minuteDisplay(m,r){
-	console.log("minuteDisplay -m: ", m, "\t-r:",r );
-	let mdRetVal = (( m / parseInt(r * 90) ) * 100).toFixed(2) ;
-	console.log("minuteDisplay returns:\t", mdRetVal ) ;
+function minuteDisplay(m){
+	let mdRetVal = (( m / ttlMins ) * 100).toFixed(2) ;
 	return m.toString() + " (" +  mdRetVal.toString()  + "%)" ;
 }
 
+function teamMinDisplay(m){
+	let mdRetVal = (( m / ttlTmMins ) * 100).toFixed(2) ;
+	return m.toString() + " (" +  mdRetVal.toString()  + "%)" ;
+}
 
 
 function loadElements(){
@@ -49,6 +66,7 @@ function loadElements(){
 	ballersXhttp.send();
 
 	ballersXhttp.onreadystatechange = function(){
+		
 
 		if( this.readyState == 4 && this.status == 200 ){
 
@@ -72,7 +90,7 @@ function loadElements(){
 
 			}
 
-			console.log("typeCount", typeCount );
+			// console.log("typeCount", typeCount );
 
 
 			$("#tpu_tbl_fpl_df_H_o").text( FPLTeamsFull[gamesOverview.selectedTeamId].strength[0]['overall'] ) ;
@@ -103,17 +121,17 @@ function loadElements(){
 								let gk_row = [
 									"<tr class='tpu_gkp_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
+									"<td>", minuteDisplay(tmPlayer.minutes) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
 									"</tr>" ].join("")
 									$("#tpu_tbl_GK tbody").append(gk_row);
 
-									gk_stats[0] += parseFloat(tmPlayer.minutes)
-									gk_stats[1] += parseFloat(tmPlayer.influence)
-									gk_stats[2] += parseFloat(tmPlayer.creativity)
-									gk_stats[3] += parseFloat(tmPlayer.threat)
+									gk_stats[0] += parseInt(tmPlayer.minutes)
+									gk_stats[1] += parseInt(tmPlayer.influence)
+									gk_stats[2] += parseInt(tmPlayer.creativity)
+									gk_stats[3] += parseInt(tmPlayer.threat)
 								break; 
 
 						case 2:
@@ -121,16 +139,16 @@ function loadElements(){
 								let def_row = [
 									"<tr class='tpu_def_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
+									"<td>", minuteDisplay(tmPlayer.minutes) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
 									"</tr>" ].join("")
 									$("#tpu_tbl_DEF tbody").append(def_row);
-									def_stats[0] += parseFloat(tmPlayer.minutes)
-									def_stats[1] += parseFloat(tmPlayer.influence)
-									def_stats[2] += parseFloat(tmPlayer.creativity)
-									def_stats[3] += parseFloat(tmPlayer.threat)
+									def_stats[0] += parseInt(tmPlayer.minutes)
+									def_stats[1] += parseInt(tmPlayer.influence)
+									def_stats[2] += parseInt(tmPlayer.creativity)
+									def_stats[3] += parseInt(tmPlayer.threat)
 								break; 
 
 						case 3:  
@@ -138,16 +156,16 @@ function loadElements(){
 								let mid_row = [
 									"<tr class='tpu_mid_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
+									"<td>", minuteDisplay(tmPlayer.minutes) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
 									"</tr>" ].join("")
 									$("#tpu_tbl_MID tbody").append(mid_row);
-									mid_stats[0] += parseFloat(tmPlayer.minutes)
-									mid_stats[1] += parseFloat(tmPlayer.influence)
-									mid_stats[2] += parseFloat(tmPlayer.creativity)
-									mid_stats[3] += parseFloat(tmPlayer.threat)
+									mid_stats[0] += parseInt(tmPlayer.minutes)
+									mid_stats[1] += parseInt(tmPlayer.influence)
+									mid_stats[2] += parseInt(tmPlayer.creativity)
+									mid_stats[3] += parseInt(tmPlayer.threat)
 								break; 
 
 						case 4:
@@ -155,16 +173,16 @@ function loadElements(){
 								let fwd_row = [
 									"<tr class='tpu_fwd_rw' id=' ", tmPlayer.id, "' >", 
 									"<th>",	tmPlayer.web_name, "</th>",
-									"<td>", minuteDisplay(tmPlayer.minutes,gamesOverview.currentRnd) ,"</td>",
+									"<td>", minuteDisplay(tmPlayer.minutes) ,"</td>",
 									"<td>", tmPlayer.influence, " ( ",tmPlayer.influence_rank_type ,")</td>",
 									"<td>", tmPlayer.creativity, " ( ",tmPlayer.creativity_rank_type ,")</td>",
 									"<td>", tmPlayer.threat, " ( ",tmPlayer.threat_rank_type ,")</td>",
 									"</tr>" ].join("")
 									$("#tpu_tbl_FWD tbody").append(fwd_row);
-									fwd_stats[0] += parseFloat(tmPlayer.minutes)
-									fwd_stats[1] += parseFloat(tmPlayer.influence)
-									fwd_stats[2] += parseFloat(tmPlayer.creativity)
-									fwd_stats[3] += parseFloat(tmPlayer.threat)
+									fwd_stats[0] += parseInt(tmPlayer.minutes)
+									fwd_stats[1] += parseInt(tmPlayer.influence)
+									fwd_stats[2] += parseInt(tmPlayer.creativity)
+									fwd_stats[3] += parseInt(tmPlayer.threat)
 								break;
 
 						default:
@@ -178,23 +196,24 @@ function loadElements(){
 			$("#tpu_TmNmLong").text(  FPLTeamsFull[gamesOverview.selectedTeamId].longNm );
 			$("#tpu_TmNmShort").text( FPLTeamsFull[gamesOverview.selectedTeamId].shortNm );
 			$("#tpu_TmNmAlt").text(   FPLTeamsFull[gamesOverview.selectedTeamId].altNm );
+			$("#tpu_TmMinutes").text( "Total Team minutes: " + gamesOverview.currentRnd.toString() + "x 90 = " + ttlMins.toString() + "\t( x 11 ) = " + (ttlMins*11).toString() ) ;
 
-			$("#tpu_gkp_ttl_min").text( minuteDisplay( gk_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_gkp_ttl_min").text( teamMinDisplay( gk_stats[0]) );
 			$("#tpu_gkp_ttl_inf").text( gk_stats[1].toFixed(2).toString() );
 			$("#tpu_gkp_ttl_cre").text( gk_stats[2].toFixed(2).toString() );
 			$("#tpu_gkp_ttl_thr").text( gk_stats[3].toFixed(2).toString() );
 
-			$("#tpu_def_ttl_min").text( minuteDisplay( def_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_def_ttl_min").text( teamMinDisplay( def_stats[0]) );
 			$("#tpu_def_ttl_inf").text( def_stats[1].toFixed(2).toString() );
 			$("#tpu_def_ttl_cre").text( def_stats[2].toFixed(2).toString() );
 			$("#tpu_def_ttl_thr").text( def_stats[3].toFixed(2).toString() );
 
-			$("#tpu_mid_ttl_min").text( minuteDisplay( mid_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_mid_ttl_min").text( teamMinDisplay( mid_stats[0]) );
 			$("#tpu_mid_ttl_inf").text( mid_stats[1].toFixed(2).toString() );
 			$("#tpu_mid_ttl_cre").text( mid_stats[2].toFixed(2).toString() );
 			$("#tpu_mid_ttl_thr").text( mid_stats[3].toFixed(2).toString() );
 
-			$("#tpu_fwd_ttl_min").text( minuteDisplay( fwd_stats[0], gamesOverview.currentRnd) );
+			$("#tpu_fwd_ttl_min").text( teamMinDisplay( fwd_stats[0]) );
 			$("#tpu_fwd_ttl_inf").text( fwd_stats[1].toFixed(2).toString() );
 			$("#tpu_fwd_ttl_cre").text( fwd_stats[2].toFixed(2).toString() );
 			$("#tpu_fwd_ttl_thr").text( fwd_stats[3].toFixed(2).toString() );
@@ -202,8 +221,6 @@ function loadElements(){
 		}
 	}
 }
-
-
 
 
 
