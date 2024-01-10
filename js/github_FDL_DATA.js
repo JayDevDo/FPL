@@ -8,7 +8,7 @@ let curGW = 21;
 /*
 ##########################################################################################################################
   
-	ASYNCS:
+	ASYNCS: 
 
 ##########################################################################################################################
 */
@@ -440,26 +440,51 @@ isFPL = ( tmNr )=>{
 
 updateCupCell = (tmId, gw, evtClass, cellText )=>{
 
-	let tmHcellCrit = "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + evtClass ;
-	let tmHCell = $( tmHcellCrit ).get() ;
+	let cupCellCrit = "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + evtClass ;
+	let cupCelltd = $( cupCellCrit ).get() ;
 
-	if( tmHCell.length == 1 ){  
-	
-		$(tmHCell).text( cellText ); 
-		$(tmHCell).removeClass("cupElim");
-		$(tmHCell).removeClass("cupCntndr");
+	if( evtClass == "nocheck" ){
+		console.log( 
+			getCI(),
+			"updateCupCell", evtClass,
+			"gw", gw,
+			"tmId", tmId,
+			"text", cellText,
+			"cupCelltd len", cupCelltd.length
+		) ;
+	}
+
+	if( cupCelltd.length == 1 ){ 
+		// All cupties have difficulty factor 4 !
+		let cupTieArr = [	"<span", 
+							" tmId=", 	tmId,
+							" df=4",
+							" evrnd=", 	gw,
+							" class='fxtrspan'", 
+							" >", cellText ,"</span>"
+							].join("") ; 
+
+		let cupTie_jq = $( cupTieArr ) ;
+
+		// $(cupCelltd).text( cellText ); 
+		$( cupCelltd ).removeClass("cupElim") ; 
+		$( cupCelltd ).removeClass("cupCntndr") ; 
 
 		if( cellText == "Elim" || cellText == "Exempt" ){ 
-			$(tmHCell).addClass("cupElim"); 
+			$( cupCelltd ).addClass( "cupElim" ) ; 
+			$( cupTie_jq ).addClass( "cupElim" ) ;
 		}else{
-			$(tmHCell).addClass("cupCntndr");
+			$( cupCelltd ).addClass( "cupCntndr" ) ;
+			$( cupTie_jq ).addClass( "cupCntndr" ) ;
 		}
+
+		$(cupCelltd).append( cupTie_jq ) ;
 
 	}
 
 }
 
-handleCups = ( cupData, evtClass )=>{
+handleCups = ( cupData )=>{
 	/* handleCups: 	Adds cup fixtures to team rows at the column of the cup 				
 					From json data it loops through a given cup(event type) in REVERSE
 					Each cup data entry holds cup related variables in keys 0,1,2
@@ -487,22 +512,21 @@ handleCups = ( cupData, evtClass )=>{
 	let elims 	 = cupData[1]["data"] ;
 	let whichCup = cupData[2]["data"] ;
 
-	;
 	/*
 	console.log(
 			getCI(), 
 			"handleCups -> cupData len:", cupData.length,
-			"\tevtClass: ", 	evtClass,
-			"teamCountCheck", (( cntndrs.length + elims.length ) == 20 ) 
-		)
+			"whichCup:\t", whichCup,
+			"teamCountCheck", ( ( cntndrs.length + elims.length ) == 20 ) 
+	) ;
 	*/
-	
+
 	for( let ck = (cdl-1);  ck > 2 ; ck--){
 		
-		let pastGW = (curGW >= cupData[ck]["gw"] ) ;
-		let cupDraw = cupData[ck]["drawn"] ;
+		let pastGW = ( cupData[ck]["gw"] < curGW ) ;
+		let cupDrawn = cupData[ck]["drawn"] ;
 
-		/*
+		/* 
 		console.log( "\n",
 			getCI(), 
 			"handleCups looping: ", ck , 
@@ -511,15 +535,14 @@ handleCups = ( cupData, evtClass )=>{
 			"GW: ", 		cupData[ck]["gw"] , 
 			"data: ", 		cupData[ck]["data"].length,
 			"elim: ", 		cupData[ck]["elim"].length,
-			"drawn: ", 		cupDraw,
+			"drawn: ", 		cupDrawn,
 			"pastGW: ", 	pastGW
 		) ;
 		*/
 
 		for ( let elmntd = 0; elmntd < cupData[ck]["elim"].length; elmntd++ ){
-			updateCupCell( cupData[ck]["elim"][elmntd], cupData[ck]["gw"], evtClass, "Elim" ) ;
+			updateCupCell( cupData[ck]["elim"][elmntd], cupData[ck]["gw"], whichCup, "Elim" ) ;
 		}
-
 
 		for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
 
@@ -540,9 +563,11 @@ handleCups = ( cupData, evtClass )=>{
 				tmAName = evFxtr["oppNmA"] ;
 			}
 
-			/*
+			if( whichCup == "nocheck" ){
 				console.log( 
-					getCI(), "handleCups-- fxtr: ", evf,
+					getCI(), 
+					"handleCups ", cupData[ck]["title"],
+					" -- fxtr: ", 		evf,
 					"\ntm H: ", 		evFxtr["team_h"], 
 					"\ttm H nm: ", 		tmHName,
 					"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
@@ -553,34 +578,37 @@ handleCups = ( cupData, evtClass )=>{
 					"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
 					"\toppName: ", 		oppName
 				) ;
-
-			*/
-
+			}
 			// Fixtures in the past will be added with info available from cupsData
 			// Fixtures in the future will only be added as cupRound Nr if team is still a contender
 			// Future rounds for non-contenders will display as "FREE"
 			
 			if( pastGW ){
 
-				updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ) ;
-				updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ) ;
+				updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ;
+				updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ;
 
 			}else{
 				/* This fixture is in the future */
 				let tmHisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_h"]) ) > -1 ) ;
 				let tmAisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_a"]) ) > -1 ) ;
 
-				if( cupDraw ){
+				if( cupDrawn ){
 					/* A draw has been made for ths round */
 
-					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], evtClass, tmAName ) ; }
-					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], evtClass, tmHName ) ; }
+					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ; }
+					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ; }
 
 				}else{
 					/* No draw has been made for ths round */
-					for ( let cntndr = 0; cntndr < cntndrs.length; cntndr++ ){					
-						( cntndrs[cntndr]  != 0 )?	updateCupCell( cntndrs[cntndr] , cupData[ck]["gw"], evtClass, cupData[ck]["title"] ):console.log("cup not drawn showing cup Round") ;
+
+					if( tmHisContender ){
+						updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, cupData[ck]["title"] ) ;
 					}
+					if( tmAisContender ){
+						updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, cupData[ck]["title"] ) ;
+					}
+
 				}
 	
 			}

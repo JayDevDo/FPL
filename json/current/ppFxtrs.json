@@ -104,12 +104,12 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]  },
-					{	"title": "OUT", 	"data": [ ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]  },
+					{	"title": "OUT", 	"data": [ 1, 6 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	"title": "FINAL",
 						"gw": 38,
-						"elim": [ ],
+						"elim": [ 1, 6 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -117,7 +117,7 @@
 					},
 					{	"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ ],
+						"elim": [ 1, 6 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -126,18 +126,18 @@
 					},
 					{	"title": "Q-FINAL",
 						"gw": 29,
-						"elim": [ ],
+						"elim": [ 1, 6 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
 									{"team_h":0, "team_a":0 },
-									{"team_h":0, "team_a":9 },
+									{"team_h":0, "team_a":0 },
 									{"team_h":0, "team_a":0 }
 						]
 					},
 					{	"title": "L16 5th Rnd",
 						"gw": 26,
-						"elim": [ ],
+						"elim": [ 1, 6 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, 	"team_a":0 },
@@ -160,25 +160,31 @@
 					},
 					{	"title": "L32 4th Rnd",
 						"gw": 21,
-						"elim": [ ],
-						"drawn": false,
+						"elim": [ 1, 6 ],
+						"drawn": true,
 						"data":	[
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 }
+							{"team_h": 20, "team_a": 4 	},
+							{"team_h": 9, "team_a": 8 	},
+							{"team_h": 0, "team_a": 16, 	"oppNmH":"Blackpool" 				},
+							{"team_h": 0, "team_a": 12, 	"oppNmH":"Bolton" 					},
+							{"team_h": 0, "team_a": 19, 	"oppNmH":"Bristol City" 			},
+							{"team_h": 0,	"team_a": 4,	"oppNmH":"West Brom" 				},
+							{"team_h": 0,	"team_a": 20,	"oppNmH":"West Brom" 				},
+							{"team_h": 19,	"team_a": 16 	},
+							{"team_h": 19,	"team_a": 0,	"oppNmA":"Blackpool" 				},
+							{"team_h": 0,	"team_a": 16,	"oppNmH":"Bristol City" 			},
+							{"team_h": 8,	"team_a": 12 	},
+							{"team_h": 9,	"team_a": 12 	},
+							{"team_h": 8,	"team_a": 0,	"oppNmA":"Bolton" 					},
+							{"team_h": 9,	"team_a": 0,	"oppNmA":"Bolton" 					},
+							{"team_h": 7, 	"team_a": 2 	},
+							{"team_h": 3, 	"team_a": 0, 	"oppNmA":"Swansea City" 			},
+							{"team_h": 17, "team_a": 5 	},
+							{"team_h": 10, 	"team_a": 15 	},
+							{"team_h": 11, 	"team_a": 0, 	"oppNmA":"Norwich/Bristol Rovers" 	},
+							{"team_h": 18, 	"team_a": 13 	},
+							{"team_h": 0, 	"team_a": 14,	"oppNmH":"Newport/Eastleigh" 		},
+							{"team_h": 0,	"team_a": 16,	"oppNmH":"Blackpool" 				}
 						]
 					},
 					{	"title": "L64 3rd Rnd",
@@ -428,7 +434,7 @@
 	},
 
 
-	{	"example": {	
+	{	"example pp": {	
 			"ppid": 319,
 			"nwRound": 37,
 			"ogGW": 32,
