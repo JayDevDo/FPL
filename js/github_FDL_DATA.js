@@ -544,75 +544,71 @@ handleCups = ( cupData )=>{
 			updateCupCell( cupData[ck]["elim"][elmntd], cupData[ck]["gw"], whichCup, "Elim" ) ;
 		}
 
-		for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
+		if( cupDrawn ){
 
-			let evFxtr = cupData[ck]["data"][evf] ;
-			let oppName = "unset" ;
-			let tmHisFPL = isFPL( parseInt(evFxtr["team_h"] )) ;
-			let tmAisFPL = isFPL( parseInt(evFxtr["team_a"] )) ;
+			/* A draw has been made for ths round */
 
-			if( tmHisFPL ){
-				tmHName = FPLTeamsFull[ evFxtr["team_h"] ]["shortNm"];
-			}else{
-				tmHName = evFxtr["oppNmH"] ;
-			}
+			for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
 
-			if( tmAisFPL ){
-				tmAName = FPLTeamsFull[ evFxtr["team_a"] ]["shortNm"];
-			}else{
-				tmAName = evFxtr["oppNmA"] ;
-			}
+				let evFxtr = cupData[ck]["data"][evf] ;
+				let oppName = "unset" ;
+				let tmHisFPL = isFPL( parseInt(evFxtr["team_h"] )) ;
+				let tmAisFPL = isFPL( parseInt(evFxtr["team_a"] )) ;
 
-			if( whichCup == "nocheck" ){
-				console.log( 
-					getCI(), 
-					"handleCups ", cupData[ck]["title"],
-					" -- fxtr: ", 		evf,
-					"\ntm H: ", 		evFxtr["team_h"], 
-					"\ttm H nm: ", 		tmHName,
-					"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
-					"\tBoolean indexOf H: ", Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ),
-					"\ntm A: ", 		evFxtr["team_a"], 
-					"\ttm A nm: ", 		tmAName,
-					"\tindexOf A: ",	cntndrs.indexOf( evFxtr["team_a"]),
-					"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
-					"\toppName: ", 		oppName
-				) ;
-			}
-			// Fixtures in the past will be added with info available from cupsData
-			// Fixtures in the future will only be added as cupRound Nr if team is still a contender
-			// Future rounds for non-contenders will display as "FREE"
-			
-			if( pastGW ){
+				if( tmHisFPL ){
+					tmHName = FPLTeamsFull[ evFxtr["team_h"] ]["shortNm"];
+				}else{
+					tmHName = evFxtr["oppNmH"] ;
+				}
 
-				updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ;
-				updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ;
+				if( tmAisFPL ){
+					tmAName = FPLTeamsFull[ evFxtr["team_a"] ]["shortNm"];
+				}else{
+					tmAName = evFxtr["oppNmA"] ;
+				}
 
-			}else{
-				/* This fixture is in the future */
-				let tmHisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_h"]) ) > -1 ) ;
-				let tmAisContender = Boolean( cntndrs.indexOf( parseInt(evFxtr["team_a"]) ) > -1 ) ;
+				if( whichCup == "nocheck" ){
+					console.log( 
+						getCI(), 
+						"handleCups ", cupData[ck]["title"],
+						" -- fxtr: ", 		evf,
+						"\ntm H: ", 		evFxtr["team_h"], 
+						"\ttm H nm: ", 		tmHName,
+						"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
+						"\tBoolean indexOf H: ", Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ),
+						"\ntm A: ", 		evFxtr["team_a"], 
+						"\ttm A nm: ", 		tmAName,
+						"\tindexOf A: ",	cntndrs.indexOf( evFxtr["team_a"]),
+						"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
+						"\toppName: ", 		oppName
+					) ;
+				}
+				// Fixtures in the past will be added with info available from cupsData
+				// Fixtures in the future will only be added as cupRound Nr if team is still a contender
+				// Future rounds for non-contenders will display as "FREE"
+				
+				if( pastGW ){
 
-				if( cupDrawn ){
-					/* A draw has been made for ths round */
-
-					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ; }
-					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ; }
+					/* This fixture has been played */
+					updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ;
+					updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ;
 
 				}else{
-					/* No draw has been made for ths round */
 
-					if( tmHisContender ){
-						updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, cupData[ck]["title"] ) ;
-					}
-					if( tmAisContender ){
-						updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, cupData[ck]["title"] ) ;
-					}
-
+					/* This fixture is in the future */
+					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ; }
+					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ; }
 				}
-	
+		
 			}
 
+		}else{
+			
+			/* No draw has been made for ths round */
+			
+			for( let cntndr = 0; cntndr<cntndrs.length; cntndr++ ){
+				updateCupCell( cntndrs[cntndr], cupData[ck]["gw"], whichCup, cupData[ck]["title"] ) ;
+			}	
 		}
 
 	}

@@ -273,13 +273,25 @@ eventTypeSelectionChanged = ()=>{
 	$.each( 
 		evTypes,
 		function(index,evtType){ 
+
 			if(evtType.checked){
+
+				if( evtType.id == "evtp-ECL" ){  
+					console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
+					$("#evtp-ECL-ul").show() ; 
+				}
+
 				showEventType( evtType.id ) ;
-				$("#evtp-ECL > ul").show()
+
 			}else{
+
+				if( evtType.id == "evtp-ECL" ){  
+					console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
+					$("#evtp-ECL-ul").hide() ;
+				}
+
 				hideEventType( evtType.id ) ;	
-				console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
-				( evtType.id == "evtp-ECL")?  $("#evtp-ECL-ul").hide():$("#evtp-ECL-ul").show() ;
+
 			}
 		}
 	);
