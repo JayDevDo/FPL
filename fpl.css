@@ -121,10 +121,6 @@ button[enabled = "false"].evwndwTgl{ background-color: lime !important; }
 }
 
 
-/*  Event (Cups) container			*/
-
-
-
 /*	postponed overview container 	*/
 
 #ppOview{border: 2px solid gold;text-align: left !important;}
@@ -189,11 +185,6 @@ tr.df_hdr th{ border-left: 2px solid slateblue; }
 	position: absolute;
 	font-size: 14px;
 }
-
-
-
-
-
 
 /*  Info container (unused)			*/
 

@@ -59,10 +59,10 @@ let gamesOverview = {
 		manId: 371654
 }
 
-getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
+getEventWndwStart = ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
 getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	} 
 getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	} 
-hasUserStore = ()=>{ return ( localStorage.length > 0 ) ; }
+hasUserStore 			= ()=>{ return ( localStorage.length > 0 ) ; }
 
 setUserDF = ()=>{
 	// Stores the current values in the DF container to localstorage and FPLTeamsFull
@@ -235,14 +235,12 @@ loadFPLDF = ()=>{
 	}
 }
 
-
+/*
 update_FPLDF = (gw)=>{
-	/*
-		This function changes the FPLDF values in FPLTeamsFull, based on the values in static.events.
-		The function loops through the gw events in reverse, starting from variable 'gw' (gameweek).
-		It stops as soon as all teams have been attributed a home and away DF.
-		The it loops through all teams applying the new values.
-	*/
+	//This function changes the FPLDF values in FPLTeamsFull, based on the values in static.events.
+	//The function loops through the gw events in reverse, starting from variable 'gw' (gameweek).
+	//It stops as soon as all teams have been attributed a home- and away DF.
+	//Then it loops through all teams applying the new values.
 	let newFPL_DF_H = [ 0,
 											0, 0, 0, 0, 0, 
 											0, 0, 0, 0, 0,
@@ -255,6 +253,7 @@ update_FPLDF = (gw)=>{
 											0, 0, 0, 0, 0,
 											0, 0, 0, 0, 5 
 										] ;
+
 	let staticEventsExists = false ;
 
 	const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ; 
@@ -290,9 +289,31 @@ update_FPLDF = (gw)=>{
 		"\ntest allDone(should be true): ", allDone() ,
 		"\ntest teamDone(0)(should be false): ", teamDone(0) 
 	) ;
+	let tst_allDone = false;
+	let tst_tmDone 	= false;
+	
+	while( !tst_allDone ){
+		console.log("While-Loop for tst_allDone; still false -> ", tst_allDone ) ;
+
+		while( !tst_tmDone ){
+			console.log("While-Loop for tst_tmDone; still false -> ", tst_tmDone ) ;
+
+			for(let tmId=1; tmId<21; tmId++){
+				console.log("For-Loop for tmId<21; still true -> ", tmId ) ;
+
+				for(let gwr = gw; gwr>0; gwr--){
+					console.log("For-Loop (reverse) for gw>0; still true -> ", gwr ) ;
+
+				}
+
+			}
+
+		}
+
+	}
 
 }
-
+*/
 
 clearIndicator = (indctr)=>{
 	$.each(
@@ -347,12 +368,13 @@ exportGmsOvrvw = ()=>{
 	return gamesOverview ;
 }
 
+
 exportFTbl = ()=>{
 	return FPLTeamsFull;
 }
 
 let FPLTeamsFull = [
-	{       shortNm: "NPL",
+	{   shortNm: "NPL",
 		id: 0,
 		fplDF: [ 1, 1 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 1, 1 ] , 	/* [HOME,AWAY] */
@@ -370,10 +392,10 @@ let FPLTeamsFull = [
 	{   shortNm: "ARS",
 		id: 1,
 		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from events
-		longNm: "Arsenal",
+		longNm: "Arsenal",	
 		altNm: "Gunners",
 		players: [],
 		strength: [
@@ -384,8 +406,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "AVL",
 		id: 2,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Aston Villa",
@@ -400,7 +422,7 @@ let FPLTeamsFull = [
 	{   shortNm: "BOU",
 		id: 3,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Bournemouth",
@@ -446,7 +468,7 @@ let FPLTeamsFull = [
 	{   shortNm: "BUR",
 		id: 6,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Burnley",
@@ -492,7 +514,7 @@ let FPLTeamsFull = [
 	{   shortNm: "EVE",
 		id: 9,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Everton",
@@ -507,7 +529,7 @@ let FPLTeamsFull = [
 	{   shortNm: "FUL",
 		id: 10,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Fulham",
@@ -521,7 +543,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "LIV",
 		id: 11,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -567,7 +589,7 @@ let FPLTeamsFull = [
 	{   shortNm: "MNU",
 		id: 14,
 		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Man utd",
@@ -581,7 +603,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "NEW",
 		id: 15,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -597,7 +619,7 @@ let FPLTeamsFull = [
 	{   shortNm: "NFO",
 		id: 16,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Nott-m Forest",
@@ -612,7 +634,7 @@ let FPLTeamsFull = [
 	{   shortNm: "SHU",
 		id: 17,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Sheffield Utd",

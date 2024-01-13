@@ -405,6 +405,33 @@ buidPPContainer = ( treatedPPData )=>{
 
 }
 
+setDFTeam = (tmId, df )=>{
+	let tmDFCritH = "#df_home td[tmId="+tmId+"]" ;
+	let tmDFCritA = "#df_away td[tmId="+tmId+"]" ;
+	let cellJQH = $( tmDFCritH ).get() ;
+	let cellJQA = $( tmDFCritA ).get() ;
+	
+	console.log(
+		"setDFTeam tmId: ", tmId, 
+		"df H: ", df[0],
+		"df A: ", df[1],
+		"cellJQH.length", cellJQH.length,
+		"cellJQA.length", cellJQA.length
+	) ;
+
+	if( cellJQH.length == 1 ){
+		$(cellJQH).attr( "df", df[0] ) ;
+		$(cellJQH).text( df[0] ) ;
+	}
+
+	if( cellJQA.length == 1 ){
+		$(cellJQA).attr( "df", df[1] ) ;
+		$(cellJQA).text( df[1] ) ;
+	}
+}
+
+
+// $("#df_home td[ tmId = 1 ]").length
 
 setDFTableStrength = ( eId, tmId, intStrength )=>{
 
@@ -637,7 +664,6 @@ sortByGmID = ( evArr )=>{
 }
 
 
-
 /*
 #####################
 #	 DATA READY		#	
@@ -735,8 +761,9 @@ allPromise.then(
 			setDFTableStrength( "tr_str_a_o", fpl_tmId, jtf_tm.strength[1]['overall'] ) ; 
 			setDFTableStrength( "tr_str_a_a", fpl_tmId, jtf_tm.strength[1]['attack']  ) ; 
 			setDFTableStrength( "tr_str_a_d", fpl_tmId, jtf_tm.strength[1]['defence']  ) ; 
+	
+			setDFTeam( fpl_tmId, FPLTeamsFull[fpl_tmId]["fplDF"] ) ;
 
-			// (t>0)? updateSplash(0, (t*5) ):updateSplash(0, 5 ) ;
 		} 
 
 		gamesOverview.dfSource.loaded[0] = true ; 
@@ -749,9 +776,7 @@ allPromise.then(
 		console.log(getCI(), "allPromise.then(values) after TEAM LOOP -> hasUserStore", hasUserStore() ) ; 
 
 
-		if( hasUserStore() ){
-			setIndicator("usr-df-Ldd-idc", "orange") ; 
-		}
+		if( hasUserStore() ){ setIndicator("usr-df-Ldd-idc", "orange") ; }
 
 		// PPgames START 
 		buidPPContainer( ppGames ) ; 

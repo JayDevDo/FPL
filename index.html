@@ -5,18 +5,20 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>Jay's FPL 23/24 team schedules</title>
 		<link rel="stylesheet" type="text/css" href="splash.css" >
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui.min.js"></script>		
+		<script type="text/javascript" src="js/ext/jquery.min.js"></script>
+		<script type="text/javascript" src="js/ext/jquery-ui.min.js"></script>		
+		<script type="text/javascript" src="js/ext/d3.min.js"></script>		
 		<link rel="stylesheet" type="text/css" href="fpl.css" >
 		<link rel="stylesheet" type="text/css" href="cups.css" >
-		<script type="text/javascript" src="js/d3.min.js"></script>		
 	</head>
 
 	<body>
+
 		<section id="pulser" class="section--red">
-			<div class="row" style="display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;text-align: center !important;" 
+			<div 	class="row" style="display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: 
+					wrap;flex-wrap: wrap;text-align: center !important;" 
 			>
-				<div class="col-4" style="-webkit-box-flex: 0;-ms-flex: 0 0 25%;flex: 0 0 25%;max-width: 25%;">
+				<div 	class="col-4" style="-webkit-box-flex: 0;-ms-flex: 0 0 25%;flex: 0 0 25%;max-width: 25%;">
 					<div class="loader--ripple">
 						<div></div>
 						<div></div>
@@ -24,11 +26,29 @@
 				</div>
 			</div>
 		</section>
+
 		<nav class="pageHeader">
-			<h2>Jays FPL FDR</h2>
-			<button id="hdr-tggl-settings" 	onclick="toggleSettings()"	title="Show settings"				>Settings			</button>
-			<button id="hdr-tggl-df-fpl" 	onclick="toggleDFdisplay()" title="DF = Difficulty Factor"  	>Difficulty Factor (DF)</button>
-			<button id="hdr-tggl-ppnd" 		onclick="togglePPdisplay('toggle','HTML -button 1')"	title="List of unplanned fixtures" 	>Postponed/Unplanned</button>
+			<button style="border: 2px solid orange;">
+				<h2>Jays FPL FDR</h2>			
+			</button>
+			<button id="hdr-tggl-settings" 	
+					onclick="toggleSettings()"	
+					title="Show settings"				
+			><h3>Settings</h3></button>
+			</button>
+			
+			<button id="hdr-tggl-df-fpl" 	
+					onclick="toggleDFdisplay()" 
+					title="DF = Difficulty Factor"  	
+			><h3>Difficulty Factor (DF)</h3>
+			</button>
+			
+			<button id="hdr-tggl-ppnd" 		
+					onclick="togglePPdisplay('toggle','HTML -button 1')"	
+					title="List of unplanned fixtures" 	
+			><h3>Postponed/Unplanned</h3>
+			</button>
+
 		</nav>
 
 
@@ -418,26 +438,26 @@
 					<tbody>
 						<tr id="df_home" >
 							<th><button onclick="toggleStrengthHome()">EXPAND</button><br>HOME<br></th>
-							<td tmId=1  df=4 onclick="setCustomDF('H',1)">4</td>
-							<td tmId=2  df=3 onclick="setCustomDF('H',2)">3</td>
-							<td tmId=3  df=2 onclick="setCustomDF('H',3)">2</td>
-							<td tmId=4  df=3 onclick="setCustomDF('H',4)">3</td>
-							<td tmId=5  df=3 onclick="setCustomDF('H',5)">3</td>
-							<td tmId=6  df=3 onclick="setCustomDF('H',6)">3</td>
-							<td tmId=7  df=4 onclick="setCustomDF('H',7)">4</td>
-							<td tmId=8  df=2 onclick="setCustomDF('H',8)">2</td>
-							<td tmId=9  df=2 onclick="setCustomDF('H',9)">2</td>
-							<td tmId=10 df=3 onclick="setCustomDF('H',10)">3</td>
-							<td tmId=11 df=5 onclick="setCustomDF('H',11)">5</td>
-							<td tmId=12 df=2 onclick="setCustomDF('H',12)">2</td>
-							<td tmId=13 df=5 onclick="setCustomDF('H',13)">5</td>
-							<td tmId=14 df=4 onclick="setCustomDF('H',14)">4</td>
-							<td tmId=15 df=4 onclick="setCustomDF('H',15)">4</td>
-							<td tmId=16 df=3 onclick="setCustomDF('H',16)">3</td>
-							<td tmId=17 df=2 onclick="setCustomDF('H',17)">2</td>
-							<td tmId=18 df=4 onclick="setCustomDF('H',18)">4</td>
-							<td tmId=19 df=3 onclick="setCustomDF('H',19)">3</td>
-							<td tmId=20 df=3 onclick="setCustomDF('H',20)">3</td>
+							<td tmId=1  df=1 onclick="setCustomDF('H',1)"></td>
+							<td tmId=2  df=1 onclick="setCustomDF('H',2)"></td>
+							<td tmId=3  df=1 onclick="setCustomDF('H',3)"></td>
+							<td tmId=4  df=1 onclick="setCustomDF('H',4)"></td>
+							<td tmId=5  df=1 onclick="setCustomDF('H',5)"></td>
+							<td tmId=6  df=1 onclick="setCustomDF('H',6)"></td>
+							<td tmId=7  df=1 onclick="setCustomDF('H',7)"></td>
+							<td tmId=8  df=1 onclick="setCustomDF('H',8)"></td>
+							<td tmId=9  df=1 onclick="setCustomDF('H',9)"></td>
+							<td tmId=10 df=1 onclick="setCustomDF('H',10)"></td>
+							<td tmId=11 df=1 onclick="setCustomDF('H',11)"></td>
+							<td tmId=12 df=1 onclick="setCustomDF('H',12)"></td>
+							<td tmId=13 df=1 onclick="setCustomDF('H',13)"></td>
+							<td tmId=14 df=1 onclick="setCustomDF('H',14)"></td>
+							<td tmId=15 df=1 onclick="setCustomDF('H',15)"></td>
+							<td tmId=16 df=1 onclick="setCustomDF('H',16)"></td>
+							<td tmId=17 df=1 onclick="setCustomDF('H',17)"></td>
+							<td tmId=18 df=1 onclick="setCustomDF('H',18)"></td>
+							<td tmId=19 df=1 onclick="setCustomDF('H',19)"></td>
+							<td tmId=20 df=1 onclick="setCustomDF('H',20)"></td>
 						</tr>
 
 						<tr id="tr_str_h_o" class="strengths s_overall s_home df_h_hidden" >
@@ -514,26 +534,26 @@
 
 						<tr id="df_away">
 							<th><button onclick="toggleStrengthAway()">EXPAND</button><br>AWAY</th>
-							<td tmId=1  df=4 onclick="setCustomDF('A',1)" >4</td>
-							<td tmId=2  df=2 onclick="setCustomDF('A',2)" >2</td>
-							<td tmId=3  df=2 onclick="setCustomDF('A',3)" >2</td>
-							<td tmId=4  df=3 onclick="setCustomDF('A',4)" >3</td>
-							<td tmId=5  df=3 onclick="setCustomDF('A',5)" >3</td>
-							<td tmId=6  df=2 onclick="setCustomDF('A',6)" >2</td>
-							<td tmId=7  df=3 onclick="setCustomDF('A',7)" >3</td>
-							<td tmId=8  df=2 onclick="setCustomDF('A',8)" >2</td>
-							<td tmId=9  df=2 onclick="setCustomDF('A',9)" >2</td>
-							<td tmId=10 df=2 onclick="setCustomDF('A',10)" >2</td>
-							<td tmId=11 df=4 onclick="setCustomDF('A',11)" >4</td>
-							<td tmId=12 df=1 onclick="setCustomDF('A',12)" >1</td>
-							<td tmId=13 df=5 onclick="setCustomDF('A',13)" >5</td>
-							<td tmId=14 df=4 onclick="setCustomDF('A',14)" >4</td>
-							<td tmId=15 df=4 onclick="setCustomDF('A',15)" >4</td>
-							<td tmId=16 df=2 onclick="setCustomDF('A',16)" >2</td>
-							<td tmId=17 df=2 onclick="setCustomDF('A',17)" >2</td>
-							<td tmId=18 df=3 onclick="setCustomDF('A',18)" >3</td>
-							<td tmId=19 df=2 onclick="setCustomDF('A',19)" >2</td>
-							<td tmId=20 df=2 onclick="setCustomDF('A',20)" >2</td>
+							<td tmId=1  df=1 onclick="setCustomDF('A',1)"></td>
+							<td tmId=2  df=1 onclick="setCustomDF('A',2)"></td>
+							<td tmId=3  df=1 onclick="setCustomDF('A',3)"></td>
+							<td tmId=4  df=1 onclick="setCustomDF('A',4)"></td>
+							<td tmId=5  df=1 onclick="setCustomDF('A',5)"></td>
+							<td tmId=6  df=1 onclick="setCustomDF('A',6)"></td>
+							<td tmId=7  df=1 onclick="setCustomDF('A',7)"></td>
+							<td tmId=8  df=1 onclick="setCustomDF('A',8)"></td>
+							<td tmId=9  df=1 onclick="setCustomDF('A',9)"></td>
+							<td tmId=10 df=1 onclick="setCustomDF('A',10)"></td>
+							<td tmId=11 df=1 onclick="setCustomDF('A',11)"></td>
+							<td tmId=12 df=1 onclick="setCustomDF('A',12)"></td>
+							<td tmId=13 df=1 onclick="setCustomDF('A',13)"></td>
+							<td tmId=14 df=1 onclick="setCustomDF('A',14)"></td>
+							<td tmId=15 df=1 onclick="setCustomDF('A',15)"></td>
+							<td tmId=16 df=1 onclick="setCustomDF('A',16)"></td>
+							<td tmId=17 df=1 onclick="setCustomDF('A',17)"></td>
+							<td tmId=18 df=1 onclick="setCustomDF('A',18)"></td>
+							<td tmId=19 df=1 onclick="setCustomDF('A',19)"></td>
+							<td tmId=20 df=1 onclick="setCustomDF('A',20)"></td>
 						</tr>
 
 						<tr id="tr_str_a_o" class="strengths s_overall s_away df_a_hidden" >

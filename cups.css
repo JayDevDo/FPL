@@ -58,6 +58,11 @@ th.evtp-ECL{
 	color: #000000;
 }
 
+td > span.cupCntndr{
+	background-color: #ff8080;
+}
+
+
 .cupElim{
 	background-color: #000000 !important;
 	color: #FFFFFF !important;	
