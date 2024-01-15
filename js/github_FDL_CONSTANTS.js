@@ -79,7 +79,11 @@ setUserDF = ()=>{
 		$.each(
 			h_df,
 			(i,t)=>{
-				FPLTeamsFull[ parseInt( $( t ).attr( 'tmId' ) )].usrDF = [ parseInt($( h_df[i] ).attr( 'df' )), parseInt($( a_df[i] ).attr( 'df' )) ] ; 
+				FPLTeamsFull[ 
+					parseInt( $( t ).attr( 'tmId' ) )].usrDF = [ 
+						parseInt($( h_df[i] ).attr( 'df' )), 
+						parseInt($( a_df[i] ).attr( 'df' )) 
+					] ; 
 				lclStrgArr.push(
 					{ 
 						'tmid': parseInt( $( t ).attr( 'tmId' ) ), 
@@ -96,7 +100,7 @@ setUserDF = ()=>{
 		console.log("something went wrong !") ;
 	}
 
-	localStorage.usrHdf = JSON.stringify( lclStrgArr ) ;
+	localStorage.usrdf = JSON.stringify( lclStrgArr ) ;
 	// Apply the new values to the view
 	loadUserDF() ;
 }
@@ -110,21 +114,22 @@ delUserDF = ()=>{
 
 loadUserDF = ()=>{
 	// Load values from the localstorage arrays into FPLTeamsFull, DFcontainer and fixtures 
-	// localStorage.usrHdf = JSON.stringify( lclStrgArr ) ;
+	// localStorage.usrdf = JSON.stringify( lclStrgArr ) ;
 	let storedH = [] ; 
 	let storedA = [] ; 
 
 	if( hasUserStore() ){ 
-		storedH = JSON.parse( localStorage.usrHdf ) ;
-		// console.log("loadUserDF: localStorage exists. =", storedH.length ) ;		
-		
+
+		// console.log( "loadUserDF: localStorage exists. =", localStorage.usrdf ) ;
+		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
+		storedH = JSON.parse( localStorage.usrdf ) ;
+
 		if( storedH.length !=20 ){ setUserDF() ;}
 
 	}else{
 		console.log("loadUserDF: localStorage doesnt exist.") ;
 		setUserDF() ;
 	}
-
 
 	if( storedH.length == 20 ){
 
@@ -179,7 +184,6 @@ loadUserDF = ()=>{
 	}
 
 }
-
 
 loadFPLDF = ()=>{
 	/* 

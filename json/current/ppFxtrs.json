@@ -1,34 +1,21 @@
 [
 	{ 
 		"unplanned": [
-						{
-							"ppid": 176,
-							"nwRound": 39,
-							"ogGW": 18,
-							"added": false,
-							"team_h_nm": "MNC",
-							"team_h_id": 13,
-							"team_a_id": 4,
-							"team_a_nm": "BRE",
-							"status": "postponed",
-							"reason": "og: 18 Man City plays World Cup of teams."
-						},
-						{ 
-							"ppid": 162,
-							"nwRound": 39,
-							"ogGW": 17,
-							"added": false,
-							"team_h_nm": "BOU",
-							"team_h_id": 3,
-							"team_a_id": 12,
-							"team_a_nm": "LUT",
-							"status": "postponed",
-							"reason": "og: 17 Postponed after Luton's Tom Lockyer collapsed."
-						}
-		] 	
-	},
+			{ 
+				"ppid": 162,
+				"nwRound": 39,
+				"ogGW": 17,
+				"added": false,
+				"team_h_nm": "BOU",
+				"team_h_id": 3,
+				"team_a_id": 12,
+				"team_a_nm": "LUT",
+				"status": "postponed",
+				"reason": "og: 17 Postponed after Luton's Tom Lockyer collapsed."
+			}
+		]
 
-	{ 
+	},{ 
 		"re-planned": [
 			 {	
 				"ppid": 15,
@@ -41,18 +28,26 @@
 				"team_a_nm": "BUR",
 				"status": "replanned",
 				"reason": "og = 2: Luton not ready for Home game"
+			},{
+				"ppid": 176,
+				"nwRound": 25,
+				"ogGW": 18,
+				"added": false,
+				"team_h_nm": "MNC",
+				"team_h_id": 13,
+				"team_a_id": 4,
+				"team_a_nm": "BRE",
+				"status": "replanned",
+				"reason": "og = 18: Man City played World Cup of teams."
 			}
 		]
 	},
-
 	{ 
-		"ppRpIds":[15] 
+		"ppRpIds":[ 15, 176 ] 
 	},
-
 	{ 
-		"ppIds": [176, 162]
+		"ppIds": [ 162 ]
 	},
-
 	{ 
 		"evtp-UIB": 	[
 			{	"iBreakId": 1,
@@ -155,6 +150,11 @@
 						"elim": [ 1, 6 ],
 						"drawn": true,
 						"data":	[
+							{"team_h": 20, 	"team_a": 4, 	"replay":true 	},
+							{"team_h": 9, 	"team_a": 8, 	"replay":true 	},
+							{"team_h": 0, 	"team_a": 16, 	"oppNmH":"Blackpool", 	"replay":true 	},
+							{"team_h": 0, 	"team_a": 12, 	"oppNmH":"Bolton" , 	"replay":true	},
+							{"team_h": 0, 	"team_a": 19, 	"oppNmH":"Bristol City","replay":true	},
 							{"team_h": 0,	"team_a": 4,	"oppNmH":"West Brom" },
 							{"team_h": 0,	"team_a": 20,	"oppNmH":"West Brom" },
 							{"team_h": 19,	"team_a": 16 	},
@@ -178,11 +178,6 @@
 						"elim": [],
 						"drawn": true,
 						"data": [
-									{"team_h": 20, 	"team_a": 4, 	"replay":true 	},
-									{"team_h": 9, 	"team_a": 8, 	"replay":true 	},
-									{"team_h": 0, 	"team_a": 16, 	"oppNmH":"Blackpool", 	"replay":true 	},
-									{"team_h": 0, 	"team_a": 12, 	"oppNmH":"Bolton" , 	"replay":true	},
-									{"team_h": 0, 	"team_a": 19, 	"oppNmH":"Bristol City","replay":true	},
 									{"team_h":1,  	"team_a":11 	},
 									{"team_h":0,  	"team_a":2,		"oppNmH":"Middlesbrough" },
 									{"team_h":0,  	"team_a":3,		"oppNmH":"QPR" },

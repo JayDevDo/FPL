@@ -410,14 +410,16 @@ setDFTeam = (tmId, df )=>{
 	let tmDFCritA = "#df_away td[tmId="+tmId+"]" ;
 	let cellJQH = $( tmDFCritH ).get() ;
 	let cellJQA = $( tmDFCritA ).get() ;
-	
-	console.log(
-		"setDFTeam tmId: ", tmId, 
-		"df H: ", df[0],
-		"df A: ", df[1],
-		"cellJQH.length", cellJQH.length,
-		"cellJQA.length", cellJQA.length
-	) ;
+
+	/*
+		console.log(
+			"setDFTeam tmId: ", tmId, 
+			"df H: ", df[0],
+			"df A: ", df[1],
+			"cellJQH.length", cellJQH.length,
+			"cellJQA.length", cellJQA.length
+		) ;
+	*/
 
 	if( cellJQH.length == 1 ){
 		$(cellJQH).attr( "df", df[0] ) ;
@@ -553,7 +555,7 @@ handleCups = ( cupData )=>{
 		let pastGW = ( cupData[ck]["gw"] < curGW ) ;
 		let cupDrawn = cupData[ck]["drawn"] ;
 
-		/* 
+		/* 		
 		console.log( "\n",
 			getCI(), 
 			"handleCups looping: ", ck , 
@@ -577,10 +579,11 @@ handleCups = ( cupData )=>{
 
 			for( let evf = 0; evf<cupData[ck]["data"].length; evf++ ){
 
-				let evFxtr = cupData[ck]["data"][evf] ;
-				let oppName = "unset" ;
-				let tmHisFPL = isFPL( parseInt(evFxtr["team_h"] )) ;
-				let tmAisFPL = isFPL( parseInt(evFxtr["team_a"] )) ;
+				let evFxtr 		= cupData[ck]["data"][evf] ;
+				let oppName 	= "unset" ;
+				let tmHisFPL 	= isFPL( parseInt(evFxtr["team_h"] )) ;
+				let tmAisFPL 	= isFPL( parseInt(evFxtr["team_a"] )) ;
+				let replay 		= evFxtr["replay"] || false ;
 
 				if( tmHisFPL ){
 					tmHName = FPLTeamsFull[ evFxtr["team_h"] ]["shortNm"];
@@ -594,11 +597,13 @@ handleCups = ( cupData )=>{
 					tmAName = evFxtr["oppNmA"] ;
 				}
 
-				if( whichCup == "nocheck" ){
+
+				if( whichCup == "evtp-FACorsomething" ){
 					console.log( 
 						getCI(), 
 						"handleCups ", cupData[ck]["title"],
 						" -- fxtr: ", 		evf,
+						"\nreplay: ",		replay,
 						"\ntm H: ", 		evFxtr["team_h"], 
 						"\ttm H nm: ", 		tmHName,
 						"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
