@@ -99,12 +99,12 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
-					{	"title": "OUT", 	"data": [ 1, 6 ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 6, 19 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	"title": "FINAL",
 						"gw": 38,
-						"elim": [ 1, 6 ],
+						"elim": [ 1, 4, 6, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -112,7 +112,7 @@
 					},
 					{	"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 6 ],
+						"elim": [ 1, 4, 6, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -121,7 +121,7 @@
 					},
 					{	"title": "Q-FINAL",
 						"gw": 29,
-						"elim": [ 1, 6 ],
+						"elim": [ 1, 4, 6, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -132,7 +132,7 @@
 					},
 					{	"title": "L16 5th Rnd",
 						"gw": 26,
-						"elim": [ 1, 6 ],
+						"elim": [ 1, 4, 6, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, 	"team_a":0 },
@@ -147,30 +147,24 @@
 					},
 					{	"title": "L32 4th Rnd",
 						"gw": 21,
-						"elim": [ 1, 6 ],
+						"elim": [ 1, 4, 6, 19 ],
 						"drawn": true,
 						"data":	[
 							{"team_h": 20, 	"team_a": 4, 	"replay":true 	},
 							{"team_h": 9, 	"team_a": 8, 	"replay":true 	},
 							{"team_h": 0, 	"team_a": 16, 	"oppNmH":"Blackpool", 	"replay":true 	},
 							{"team_h": 0, 	"team_a": 12, 	"oppNmH":"Bolton" , 	"replay":true	},
-							{"team_h": 0, 	"team_a": 19, 	"oppNmH":"Bristol City","replay":true	},
-							{"team_h": 0,	"team_a": 4,	"oppNmH":"West Brom" },
 							{"team_h": 0,	"team_a": 20,	"oppNmH":"West Brom" },
-							{"team_h": 19,	"team_a": 16 	},
-							{"team_h": 19,	"team_a": 0,	"oppNmA":"Blackpool" },
 							{"team_h": 0,	"team_a": 16,	"oppNmH":"Bristol City" },
 							{"team_h": 8,	"team_a": 12 	},
 							{"team_h": 9,	"team_a": 12 	},
-							{"team_h": 8,	"team_a": 0,	"oppNmA":"Bolton" },
-							{"team_h": 9,	"team_a": 0,	"oppNmA":"Bolton" },
 							{"team_h": 7, 	"team_a": 2 	},
 							{"team_h": 3, 	"team_a": 0, 	"oppNmA":"Swansea City" },
 							{"team_h": 17, 	"team_a": 5 	},
 							{"team_h": 10, 	"team_a": 15 	},
 							{"team_h": 11, 	"team_a": 0, 	"oppNmA":"Norwich or Bristol Rovers" },
 							{"team_h": 18, 	"team_a": 13 	},
-							{"team_h": 0, 	"team_a": 14,	"oppNmH":"Newport or Eastleigh" }
+							{"team_h": 0, 	"team_a": 14,	"oppNmH":"Newport" }
 						]
 					},
 					{	"title": "L64 3rd Rnd",
@@ -193,7 +187,7 @@
 									{"team_h":16,	"team_a":0,		"oppNmA":"Blackpool" },
 									{"team_h":0,	"team_a":17,	"oppNmH":"Gillingham" },
 									{"team_h":18,	"team_a":6 		},
-									{"team_h":19,	"team_a":0,		"oppNmA":"Bristol City" }
+									{"team_h":19,	"team_a":0,		"oppNmA":"Bristol City","replay":true  }
 						]
 					}
 		]

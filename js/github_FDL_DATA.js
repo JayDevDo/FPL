@@ -597,19 +597,21 @@ handleCups = ( cupData )=>{
 					tmAName = evFxtr["oppNmA"] ;
 				}
 
+				let rpl = (evFxtr["replay"])? " (replay)":"" ;
 
 				if( whichCup == "evtp-FACorsomething" ){
 					console.log( 
 						getCI(), 
 						"handleCups ", cupData[ck]["title"],
 						" -- fxtr: ", 		evf,
-						"\nreplay: ",		replay,
+						"\nreplay: ",		replay, 
+						"\nrpltxt", 		rpl,
 						"\ntm H: ", 		evFxtr["team_h"], 
-						"\ttm H nm: ", 		tmHName,
+						"\ttm H nm: ", 		tmHName + rpl ,
 						"\tindexOf H: ",	cntndrs.indexOf( evFxtr["team_h"]),
 						"\tBoolean indexOf H: ", Boolean( cntndrs.indexOf( evFxtr["team_h"]) > -1 ),
 						"\ntm A: ", 		evFxtr["team_a"], 
-						"\ttm A nm: ", 		tmAName,
+						"\ttm A nm: ", 		tmAName + rpl ,
 						"\tindexOf A: ",	cntndrs.indexOf( evFxtr["team_a"]),
 						"\tBoolean indexOf A: ", Boolean( cntndrs.indexOf( evFxtr["team_a"]) > -1 ),
 						"\toppName: ", 		oppName
@@ -622,14 +624,15 @@ handleCups = ( cupData )=>{
 				if( pastGW ){
 
 					/* This fixture has been played */
-					updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ;
-					updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ;
+
+					updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName + rpl ) ;
+					updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName + rpl ) ;
 
 				}else{
 
 					/* This fixture is in the future */
-					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName ) ; }
-					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName ) ; }
+					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName + rpl ) ; }
+					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName + rpl ) ; }
 				}
 		
 			}

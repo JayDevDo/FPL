@@ -16,9 +16,6 @@ let linearScale = d3.scaleLinear()
   .domain([1000, 1400])
   .range([ '#FFFF33', '#FF0033' ]);
   
-// let splashCont = $("progress").get() ;
-
-// 	console.log("constants Init: updateTheSplash? ", updateTheSplash("opened constants....") )
 
 getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
