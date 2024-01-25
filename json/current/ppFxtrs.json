@@ -12,7 +12,31 @@
 				"team_a_nm": "LUT",
 				"status": "postponed",
 				"reason": "og: 17 Postponed after Luton's Tom Lockyer collapsed."
+			},{
+				"ppid": 257,
+				"nwRound": 39,
+				"ogGW": 26,
+				"added": false,
+				"team_h_nm": "LIV",
+				"team_h_id": 11,
+				"team_a_id": 12,
+				"team_a_nm": "LUT",
+				"status": "postponed",
+				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."				
+
+			},{
+				"ppid": 255,
+				"nwRound": 39,
+				"ogGW": 26,
+				"added": false,
+				"team_h_nm": "CHE",
+				"team_h_id": 7,
+				"team_a_id": 18,
+				"team_a_nm": "TOT",
+				"status": "postponed",
+				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."				
 			}
+
 		]
 
 	},{ 
@@ -46,7 +70,7 @@
 		"ppRpIds":[ 15, 176 ] 
 	},
 	{ 
-		"ppIds": [ 162 ]
+		"ppIds": [ 255, 257, 162 ]
 	},
 	{ 
 		"evtp-UIB": 	[
@@ -194,15 +218,15 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [  7, 10, 11 ] },
-					{	"title": "OUT", 	"data": [  1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+					{ 	"title": "IN", 		"data": [  7, 11 ] },
+					{	"title": "OUT", 	"data": [  1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
 					{ 	"title": "FINAL",
 						"gw": 26,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
-						"drawn": false,
+						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+						"drawn": true,
 						"data": [ 	
-									{"team_h":0, "team_a":0 } 
+									{"team_h":7, "team_a":11 } 
 								] 
 					},
 					{ 	"title": "S-FINAL 2 ",

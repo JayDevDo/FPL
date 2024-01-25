@@ -22,8 +22,8 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 20,
-		currentRnd: 21,
+		finishedRounds: 21,
+		currentRnd: 22,
 		evWndw: { 'direction': 1 , 'start': 21, 'rounds': 8, 'end': 28 },
 		locks: [ false, false, false ],
 		locked: false,

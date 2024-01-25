@@ -2,7 +2,7 @@
 let callIndexer = 0 ;
 // let allStatsData = []; has moved to FPLConstants
 
-let curGW = 21;
+let curGW = 22;
 
 
 /*
