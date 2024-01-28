@@ -123,12 +123,12 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20 ] },
-					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 19 ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 11, 12, 13, 14, 15, 16, 20 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	"title": "FINAL",
 						"gw": 38,
-						"elim": [ 1, 4, 6, 8, 19 ],
+						"elim": [1, 4, 6, 8, 9, 10, 17, 18, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -136,7 +136,7 @@
 					},
 					{	"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 4, 6, 8, 19 ],
+						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -145,7 +145,7 @@
 					},
 					{	"title": "Q-FINAL",
 						"gw": 29,
-						"elim": [ 1, 4, 6, 8, 19 ],
+						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19  ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -156,20 +156,30 @@
 					},
 					{	"title": "L16 5th Rnd",
 						"gw": 26,
-						"elim": [ 1, 4, 6, 8, 19 ],
-						"drawn": false,
+						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ],
+						"drawn": true,
 						"data":	[
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 },
-									{"team_h":0, 	"team_a":0 }
+							{"team_h":0, 	"team_a":0, "oppNmH":"Sheffield W-Coventry","oppNmA":"Maidstone United"},
+							{"team_h":12, 	"team_a":13 },
+							{"team_h":20, 	"team_a":5  },
+							{"team_h":3, 	"team_a":0, "oppNmA": "Leicester" },
+							{"team_h":11, 	"team_a":0, "oppNmA": "Watford-Southampton" },
+							{"team_h":0, 	"team_a":15,"oppNmH": "Blackburn-Wrexham" },
+							{"team_h":7, 	"team_a":0, "oppNmA":"Leeds-Plymouth" },
+							{"team_h":2, 	"team_a":0, "oppNmA":"Leeds-Plymouth" },
+							{"team_h":16, 	"team_a":14 },
+							{"team_h":0, 	"team_a":14,"oppNmH":"Bristol City" }
 						]
 					},
-					{	"title": "L32 4th Rnd",
+					{	"title": "L32 replays",
+						"gw": 23,
+						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ],
+						"drawn": true,
+						"data":	[
+							{"team_h":7, 	"team_a":2, "replay": true 	},
+							{"team_h":16,	"team_a":0, "oppNmA":"Bristol City", "replay": true }
+						]
+					},{	"title": "L32 4th Rnd",
 						"gw": 21,
 						"elim": [ 1, 4, 6, 8, 19 ],
 						"drawn": true,
