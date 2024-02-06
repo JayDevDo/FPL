@@ -13,8 +13,8 @@ let fixtureArray = [];
 let allStatsData = [];
 
 let linearScale = d3.scaleLinear()
-  .domain([1000, 1400])
-  .range([ '#FFFF33', '#FF0033' ]);
+  .domain([1025, 1400])
+  .range([ '#FFFF33', '#861D46' ]);
   
 
 getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
@@ -22,9 +22,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 21,
-		currentRnd: 22,
-		evWndw: { 'direction': 1 , 'start': 21, 'rounds': 8, 'end': 28 },
+		finishedRounds: 23,
+		currentRnd: 24,
+		evWndw: { 'direction': 1 , 'start': 24, 'rounds': 6, 'end': 29 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {

@@ -2,7 +2,8 @@
 let callIndexer = 0 ;
 // let allStatsData = []; has moved to FPLConstants
 
-let curGW = 22;
+// initial value, will be overwritten 
+let curGW = 24;
 
 
 /*
