@@ -158,14 +158,14 @@
 						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ],
 						"drawn": true,
 						"data":	[
-							{"team_h":0, 	"team_a":0, "oppNmH":"Sheffield W-Coventry","oppNmA":"Maidstone United"},
+							{"team_h":0, 	"team_a":0, "oppNmH":"Coventry","oppNmA":"Maidstone United"},
 							{"team_h":12, 	"team_a":13 },
 							{"team_h":20, 	"team_a":5  },
 							{"team_h":3, 	"team_a":0, "oppNmA": "Leicester" },
-							{"team_h":11, 	"team_a":0, "oppNmA": "Watford-Southampton" },
+							{"team_h":11, 	"team_a":0, "oppNmA": "Southampton" },
 							{"team_h":0, 	"team_a":15,"oppNmH": "Blackburn-Wrexham" },
-							{"team_h":7, 	"team_a":0, "oppNmA":"Leeds-Plymouth" },
-							{"team_h":2, 	"team_a":0, "oppNmA":"Leeds-Plymouth" },
+							{"team_h":7, 	"team_a":0, "oppNmA":"Leeds" },
+							{"team_h":2, 	"team_a":0, "oppNmA":"Leeds" },
 							{"team_h":16, 	"team_a":14 },
 							{"team_h":0, 	"team_a":14,"oppNmH":"Bristol City" }
 						]
