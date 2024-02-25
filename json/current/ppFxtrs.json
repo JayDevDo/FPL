@@ -348,8 +348,8 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": false,
 				"data": [ 
-					{"team_h":0,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":0, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{"team_h":0,"team_a":0, 	"oppNmA": "TBD",			"cup": "Europa Lg" 	},
+					{"team_h":0, "team_a":0, 	"oppNmA": "TBD",			"cup": "EU Conf. Lg"}
 				]
 			},{ 	
 				"title": "S-FINAL-1",
@@ -357,8 +357,8 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": false,
 				"data": [ 
-					{"team_h":0,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":0, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{"team_h":0,"team_a":0, 	"oppNmA": "TBD",			"cup": "Europa Lg" 	},
+					{"team_h":0, "team_a":0, 	"oppNmA": "TBD",			"cup": "EU Conf. Lg"}
 				]
 			},{ 	
 				"title": "Q-FINAL-2",
@@ -366,12 +366,12 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": false,
 				"data": [ 
-					{"team_h":0, "team_a":13, 	"oppNmH": "FC Copenhagen", 	"cup": "Champions Lg"},
-					{"team_h":0, "team_a":1, 	"oppNmH": "FC Porto",		"cup": "Champions Lg"},
-					{"team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{"team_h":13,"team_a":0, 	"oppNmA": "TBD", 	"cup": "Champions Lg"},
+					{"team_h":1, "team_a":0, 	"oppNmA": "TBD",	"cup": "Champions Lg"},
+					{"team_h":19,"team_a":0, 	"oppNmA": "TBD",	"cup": "Europa Lg" 	},
+					{"team_h":5, "team_a":0, 	"oppNmA": "TBD",	"cup": "Europa Lg" 	},
+					{"team_h":11,"team_a":0, 	"oppNmA": "TBD",	"cup": "Europa Lg" 	},
+					{"team_h":2, "team_a":0, 	"oppNmA": "TBD",	"cup": "EU Conf. Lg"}
 			 	]
 			},{ 	
 				"title": "Q-FINAL-1",
@@ -379,12 +379,12 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": false,
 				"data": [ 
-					{"team_h":0, 	"team_a":13,"oppNmH": "unknown","cup": "Champions Lg"	},
-					{"team_h":0, 	"team_a":1, "oppNmH": "unknown","cup": "Champions Lg"	},
-					{"team_h":19,	"team_a":0, "oppNmA": "BYE",	"cup": "Europa Lg" 		},
-					{"team_h":5, 	"team_a":0, "oppNmA": "BYE",	"cup": "Europa Lg" 		},
-					{"team_h":11,	"team_a":0, "oppNmA": "BYE",	"cup": "Europa Lg" 		},
-					{"team_h":2, 	"team_a":0, "oppNmA": "BYE",	"cup": "EU Conf. Lg"	}
+					{"team_h":1, 	"team_a":0, "oppNmA": "TBD",	"cup": "Champions Lg"	},
+					{"team_h":13, 	"team_a":0,	"oppNmA": "TBD",	"cup": "Champions Lg"	},
+					{"team_h":5, 	"team_a":0, "oppNmA": "TBD",	"cup": "Europa Lg" 		},
+					{"team_h":11,	"team_a":0, "oppNmA": "TBD",	"cup": "Europa Lg" 		},
+					{"team_h":19,	"team_a":0, "oppNmA": "TBD",	"cup": "Europa Lg" 		},
+					{"team_h":2, 	"team_a":0, "oppNmA": "TBD",	"cup": "EU Conf. Lg"	}
 			 	]
 			},{ 	
 				"title": "L16-return-2",
@@ -392,12 +392,12 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": true,
 				"data": [ 
-					{"team_h":13,"team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{"team_h":0, "team_a":1, 	"oppNmH": "FC Porto",		"cup": "Champions Lg"},
-					{"team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{"team_h":13,"team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
+					{"team_h":5, "team_a":0, 	"oppNmA": "ROMA",			"cup": "Europa Lg" 	},
+					{"team_h":11,"team_a":0, 	"oppNmA": "SP Prague",		"cup": "Europa Lg" 	},
+					{"team_h":19,"team_a":0, 	"oppNmA": "FREIBURG",		"cup": "Europa Lg" 	},
+					{"team_h":2, "team_a":0, 	"oppNmA": "AJAX",			"cup": "EU Conf. Lg"}
 				]
 			},{ 	
 				"title": "L16-return-1",
@@ -407,10 +407,10 @@
 				"data": [ 
 					{"team_h":1, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{"team_h":0, "team_a":13, 	"oppNmH": "FC Copenhagen", 	"cup": "Champions Lg"},
-					{"team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{"team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{"team_h":0, "team_a":5, 	"oppNmH": "ROMA",			"cup": "Europa Lg" 	},
+					{"team_h":0,"team_a":11, 	"oppNmH": "SP Prague",		"cup": "Europa Lg" 	},
+					{"team_h":0,"team_a":19, 	"oppNmH": "FREIBURG",		"cup": "Europa Lg" 	},
+					{"team_h":0, "team_a":2, 	"oppNmH": "AJAX",			"cup": "EU Conf. Lg"}
 				]
 			},{ 	
 				"title": "L16-2",
@@ -418,11 +418,11 @@
 				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
 				"drawn": true,
 				"data": [ 
-					{ "team_h":13, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{ "team_h":0, "team_a":1, 	"oppNmH": "FC Porto",		"cup": "Champions Lg"},
-					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
+					{ "team_h":13, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{ "team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
 					{ "team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
+					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
 					{ "team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
 				]
 			},{ 	
@@ -433,9 +433,9 @@
 				"data": [ 
 					{ "team_h":1, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{ "team_h":0, "team_a":13, 	"oppNmH": "FC Copenhagen", 	"cup": "Champions Lg"},
-					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
 					{ "team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
 					{ "team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
+					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
 					{ "team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
 				]
 			}
