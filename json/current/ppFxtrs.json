@@ -12,6 +12,72 @@
 				"team_a_nm": "TOT",
 				"status": "postponed",
 				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."				
+			},{
+				"ppid": 281,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "ARS",
+				"team_h_id": 1,
+				"team_a_id": 7,
+				"team_a_nm": "CHE",
+				"status": "postponed",
+				"reason": "og: 29 CHE in FA Cup Q-Final."
+			},{
+				"ppid": 282 ,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "BHA",
+				"team_h_id": 5,
+				"team_a_id": 13,
+				"team_a_nm": "MNC",
+				"status": "postponed",
+				"reason": "og: 29 MNC in FA Cup Q-Final."	
+			},{
+				"ppid": 283,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "CRY",
+				"team_h_id": 8,
+				"team_a_id": 15,
+				"team_a_nm": "NEW",
+				"status": "postponed",
+				"reason": "og: 29 NEW in FA Cup Q-Final."
+			},{
+				"ppid": 285,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "EVE",
+				"team_h_id": 9,
+				"team_a_id": 11,
+				"team_a_nm": "LIV",
+				"status": "postponed",
+				"reason": "og: 29 LIV in FA Cup Q-Final."
+			},{
+				"ppid": 288,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "MNU",
+				"team_h_id": 14,
+				"team_a_id": 17,
+				"team_a_nm": "SHU",
+				"status": "postponed",
+				"reason": "og: 29 MNU in FA Cup Q-Final."
+			},{
+				"ppid": 290,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": false,
+				"team_h_nm": "WOL",
+				"team_h_id": 20,
+				"team_a_id": 3,
+				"team_a_nm": "BOU",
+				"status": "postponed",
+				"reason": "og: 29 WOL in FA Cup Q-Final."
 			}
 		]
 
@@ -71,7 +137,7 @@
 		"ppRpIds":[ 15, 162, 176, 257 ] 
 	},
 	{ 
-		"ppIds": [ 255 ]
+		"ppIds": [ 255, 281, 282, 283, 285, 288, 290 ]
 	},
 	{ 
 		"evtp-UIB": 	[
@@ -124,13 +190,13 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 3, 5, 7, 11, 12, 13, 14, 15, 16, 20 ] },
-					{	"title": "OUT", 	"data": [ 1, 2, 4, 6, 8, 9, 10, 17, 18, 19 ] },
+					{ 	"title": "IN", 		"data": [ 7, 11, 13, 14, 15, 20 ] },
+					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 19 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" 
 					},{	
 						"title": "FINAL",
 						"gw": 38,
-						"elim": [1, 2, 4, 6, 8, 9, 10, 17, 18, 19 ],
+						"elim": [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -138,7 +204,7 @@
 					},{	
 						"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 2, 4, 6, 8, 9, 10, 17, 18, 19 ],
+						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 19  ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 },
@@ -147,13 +213,13 @@
 					},{	
 						"title": "Q-FINAL",
 						"gw": 29,
-						"elim": [ 1, 2, 4, 6, 8, 9, 10, 17, 18, 19  ],
-						"drawn": false,
+						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 19 ],
+						"drawn": true,
 						"data":	[
-									{"team_h":0, "team_a":0 },
-									{"team_h":0, "team_a":0 },
-									{"team_h":0, "team_a":0 },
-									{"team_h":0, "team_a":0 }
+									{"team_h":14, "team_a":11  },
+									{"team_h":13, "team_a":15  },
+									{"team_h":7,  "team_a":0 , "oppNmA":"Leicester" },
+									{"team_h":20, "team_a":0 , "oppNmA":"Coventry" }
 						]
 					},{	
 						"title": "L16 5th Rnd",
