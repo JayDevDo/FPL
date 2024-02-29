@@ -165,13 +165,15 @@ tr.df_away td{ border-left: 2px solid lightcyan; }
 tr.df_hdr th{ border-left: 2px solid slateblue; }
 
 .shaded{
-	opacity: 0.2;
+	opacity: 0.7;
 	text-decoration-line: line-through;
+	color: red;
 }
 
 .unshaded{
 	opacity: 1;
 	text-decoration-line: initial;
+	color: green;
 }
 
 
