@@ -516,42 +516,40 @@ reverseSort = ()=>{
 
 
 sortTable = ()=>{
-	/* Sort table based on difficulty of selected next games */
 	let rows = $('#fxtrTbl tbody tr').get();
-	rows.sort(
-		function (a, b) {
-			let A = $(a).children('th.dfc').text();
-			let B = $(b).children('th.dfc').text();
-			
-			if( gamesOverview.sort == 1 ){
-
-				if (parseFloat(A) < parseFloat(B)) { return ( -1 ); }
-				if (parseFloat(A) > parseFloat(B)) { return (  1 ); }
-				return 0;
-
-			}else if( gamesOverview.sort == -1 ){
-
-				if (parseFloat(A) < parseFloat(B)) { return ( 1 ); }
-				if (parseFloat(A) > parseFloat(B)) { return ( -1 ); }
-				return 0;
-
-			}else{
-
-				// if (parseFloat(A) < parseFloat(B)) { return (-1 * gamesOverview.sort ); }
-				// if (parseFloat(A) > parseFloat(B)) { return (1 * gamesOverview.sort); }
-				if (parseInt(A) < parseInt(B)) { return -1; }
-				if (parseInt(A) > parseInt(B)) { return 1; }
-				return 0;
-
-			}
+	rows.sort(function(a,b){return dfcSort(a,b);});
+	$.each(rows, function(index,row){$('#fxtrTbl').children('tbody').append(row);});
+}
 
 
-		}
-	);
-	$.each(rows, function (index, row) {
-		// console.log("index", row)
-		$('#fxtrTbl').children('tbody').append(row);
-	});
+sortByTmNm =()=>{
+	let rows = $('#fxtrTbl tbody tr').get() ; 
+	rows.sort( function (a, b){ return nameSort(a,b) ; } ) ; 
+	$.each(rows,function(index,row){ $('#fxtrTbl').children('tbody').append(row); }); 
+	let curSort = parseInt( $( "th.tmNameHdr" ).attr("sort") ) ;
+	$( "th.tmNameHdr" ).attr( "sort", ( curSort * -1 ).toString() ) ;
+}
+
+
+nameSort = ( tmA, tmB )=>{
+	let currentSort = parseInt( $( "th.tmNameHdr" ).attr("sort") ) ;
+	let retVal = 0 ; 
+	let A = parseInt( $(tmA).attr('tmId') ) ;
+	let B = parseInt( $(tmB).attr('tmId') ) ;	
+	if (A < B){ retVal = (-1 * currentSort) ; } 
+	if (A > B){ retVal = ( 1 * currentSort) ; } 
+	return retVal ; 
+}
+
+
+dfcSort = ( tmA, tmB )=>{
+	let currentSort = parseInt( gamesOverview.sort ) ;
+	let retVal = 0 ; 
+	let A = parseFloat( $(tmA).children('th.dfc').text() );
+	let B = parseFloat( $(tmB).children('th.dfc').text() );
+	if (A < B){ retVal = (-1 * currentSort) ; } 
+	if (A > B){ retVal = ( 1 * currentSort) ; } 
+	return retVal ; 
 }
 
 
