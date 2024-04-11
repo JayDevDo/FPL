@@ -1,57 +1,9 @@
 [
 	{ 
-		"unplanned": [
-			{
-				"ppid": 255,
-				"nwRound": 39,
-				"ogGW": 26,
-				"added": false,
-				"team_h_nm": "CHE",
-				"team_h_id": 7,
-				"team_a_id": 18,
-				"team_a_nm": "TOT",
-				"status": "postponed",
-				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."
-			},{
-				"ppid": 332,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 7,
-				"team_a_nm": "CHE",
-				"status": "postponed",
-				"reason": "og:34-Chelsea in FA Cup Semi Final."
-			},{
-				"ppid": 337,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 15,
-				"team_a_nm": "NEW",
-				"status": "postponed",
-				"reason": "og:34-MNU in FA Cup Semi Final."
-			},
-			{
-				"ppid": 339,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": false,
-				"team_h_nm": "TOT",
-				"team_h_id": 18,
-				"team_a_id": 13,
-				"team_a_nm": "MNC",
-				"status": "postponed",
-				"reason": "og:34-MNC in FA Cup Semi Final."				
-			}
-		]
-
+		"unplanned": [ ]
 	},{ 
 		"re-planned": [
-			 {	
+			{	
 				"ppid": 15,
 				"nwRound": 7,
 				"ogGW": 2,
@@ -62,7 +14,8 @@
 				"team_a_nm": "BUR",
 				"status": "replanned",
 				"reason": "og = 2: Luton not ready for Home game"
-			},{
+			},
+			{
 				"ppid": 176,
 				"nwRound": 25,
 				"ogGW": 18,
@@ -73,7 +26,8 @@
 				"team_a_nm": "BRE",
 				"status": "replanned",
 				"reason": "og = 18: Man City played World Cup of teams."
-			},{
+			},
+			{
 				"ppid": 257,
 				"nwRound": 25,
 				"ogGW": 26,
@@ -84,7 +38,8 @@
 				"team_a_nm": "LUT",
 				"status": "replanned",
 				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."
-			},{ 
+			},
+			{ 
 				"ppid": 162,
 				"nwRound": 28,
 				"ogGW": 17,
@@ -95,7 +50,8 @@
 				"team_a_nm": "LUT",
 				"status": "replanned",
 				"reason": "og: 17: re-planned after Luton's Tom Lockyer collapsed."
-			},{	
+			},
+			{	
 				"ppid": 281,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -106,7 +62,8 @@
 				"team_a_nm": "CHE",
 				"status": "replanned",
 				"reason": "og: 29 CHE in FA Cup Q-Final."
-			},{
+			},
+			{
 				"ppid": 282 ,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -117,7 +74,8 @@
 				"team_a_nm": "MNC",
 				"status": "replanned",
 				"reason": "og: 29 MNC in FA Cup Q-Final."	
-			},{
+			},
+			{
 				"ppid": 284,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -128,7 +86,8 @@
 				"team_a_nm": "NEW",
 				"status": "replanned",
 				"reason": "og: 29 NEW in FA Cup Q-Final."
-			},{
+			},
+			{
 				"ppid": 285,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -139,7 +98,8 @@
 				"team_a_nm": "LIV",
 				"status": "replanned",
 				"reason": "og: 29 LIV in FA Cup Q-Final."
-			},{
+			},
+			{
 				"ppid": 288,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -150,7 +110,8 @@
 				"team_a_nm": "SHU",
 				"status": "replanned",
 				"reason": "og: 29 MNU in FA Cup Q-Final."
-			},{
+			},
+			{
 				"ppid": 290,
 				"nwRound": 34,
 				"ogGW": 29,
@@ -161,15 +122,63 @@
 				"team_a_nm": "BOU",
 				"status": "replanned",
 				"reason": "og: 29 WOL in FA Cup Q-Final."
+			},
+			{
+				"ppid": 255,
+				"nwRound": 35,
+				"ogGW": 26,
+				"added": false,
+				"team_h_nm": "CHE",
+				"team_h_id": 7,
+				"team_a_id": 18,
+				"team_a_nm": "TOT",
+				"status": "replanned",
+				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."
+			},
+			{
+				"ppid": 332,
+				"nwRound": 37,
+				"ogGW": 37,
+				"added": false,
+				"team_h_nm": "BHA",
+				"team_h_id": 5,
+				"team_a_id": 7,
+				"team_a_nm": "CHE",
+				"status": "replanned",
+				"reason": "og:34-Chelsea in FA Cup Semi Final."
+			},
+			{
+				"ppid": 337,
+				"nwRound": 37,
+				"ogGW": 34,
+				"added": false,
+				"team_h_nm": "MNU",
+				"team_h_id": 14,
+				"team_a_id": 15,
+				"team_a_nm": "NEW",
+				"status": "replanned",
+				"reason": "og:34-MNU in FA Cup Semi Final."
+			},
+			{
+				"ppid": 339,
+				"nwRound": 37,
+				"ogGW": 34,
+				"added": false,
+				"team_h_nm": "TOT",
+				"team_h_id": 18,
+				"team_a_id": 13,
+				"team_a_nm": "MNC",
+				"status": "replanned",
+				"reason": "og:34-MNC in FA Cup Semi Final."
 			}
 
 		]
 	},
 	{ 
-		"ppRpIds":[ 15, 162, 176, 257, 281, 282, 284, 285, 288, 290 ] 
+		"ppRpIds":[ 15, 162, 176, 255, 257, 281, 282, 284, 285, 288, 290, 332, 337, 339 ] 
 	},
 	{ 
-		"ppIds": [ 255, 332, 337, 339 ]
+		"ppIds": [  ]
 	},
 	{ 
 		"evtp-UIB": 	[
