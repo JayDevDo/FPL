@@ -1,181 +1,12 @@
 [
 	{ 
 		"unplanned": [ ]
-	},{ 
-		"re-planned": [
-			{	
-				"ppid": 15,
-				"nwRound": 7,
-				"ogGW": 2,
-				"added": false,
-				"team_h_nm": "LUT",
-				"team_h_id": 12,
-				"team_a_id": 6,
-				"team_a_nm": "BUR",
-				"status": "replanned",
-				"reason": "og = 2: Luton not ready for Home game"
-			},
-			{
-				"ppid": 176,
-				"nwRound": 25,
-				"ogGW": 18,
-				"added": false,
-				"team_h_nm": "MNC",
-				"team_h_id": 13,
-				"team_a_id": 4,
-				"team_a_nm": "BRE",
-				"status": "replanned",
-				"reason": "og = 18: Man City played World Cup of teams."
-			},
-			{
-				"ppid": 257,
-				"nwRound": 25,
-				"ogGW": 26,
-				"added": false,
-				"team_h_nm": "LIV",
-				"team_h_id": 11,
-				"team_a_id": 12,
-				"team_a_nm": "LUT",
-				"status": "replanned",
-				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."
-			},
-			{ 
-				"ppid": 162,
-				"nwRound": 28,
-				"ogGW": 17,
-				"added": false,
-				"team_h_nm": "BOU",
-				"team_h_id": 3,
-				"team_a_id": 12,
-				"team_a_nm": "LUT",
-				"status": "replanned",
-				"reason": "og: 17: re-planned after Luton's Tom Lockyer collapsed."
-			},
-			{	
-				"ppid": 281,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "ARS",
-				"team_h_id": 1,
-				"team_a_id": 7,
-				"team_a_nm": "CHE",
-				"status": "replanned",
-				"reason": "og: 29 CHE in FA Cup Q-Final."
-			},
-			{
-				"ppid": 282 ,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 13,
-				"team_a_nm": "MNC",
-				"status": "replanned",
-				"reason": "og: 29 MNC in FA Cup Q-Final."	
-			},
-			{
-				"ppid": 284,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "CRY",
-				"team_h_id": 8,
-				"team_a_id": 15,
-				"team_a_nm": "NEW",
-				"status": "replanned",
-				"reason": "og: 29 NEW in FA Cup Q-Final."
-			},
-			{
-				"ppid": 285,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "EVE",
-				"team_h_id": 9,
-				"team_a_id": 11,
-				"team_a_nm": "LIV",
-				"status": "replanned",
-				"reason": "og: 29 LIV in FA Cup Q-Final."
-			},
-			{
-				"ppid": 288,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 17,
-				"team_a_nm": "SHU",
-				"status": "replanned",
-				"reason": "og: 29 MNU in FA Cup Q-Final."
-			},
-			{
-				"ppid": 290,
-				"nwRound": 34,
-				"ogGW": 29,
-				"added": false,
-				"team_h_nm": "WOL",
-				"team_h_id": 20,
-				"team_a_id": 3,
-				"team_a_nm": "BOU",
-				"status": "replanned",
-				"reason": "og: 29 WOL in FA Cup Q-Final."
-			},
-			{
-				"ppid": 255,
-				"nwRound": 35,
-				"ogGW": 26,
-				"added": false,
-				"team_h_nm": "CHE",
-				"team_h_id": 7,
-				"team_a_id": 18,
-				"team_a_nm": "TOT",
-				"status": "replanned",
-				"reason": "og: 26 Liverpool vs Chelsea EFL Cup Final."
-			},
-			{
-				"ppid": 332,
-				"nwRound": 37,
-				"ogGW": 37,
-				"added": false,
-				"team_h_nm": "BHA",
-				"team_h_id": 5,
-				"team_a_id": 7,
-				"team_a_nm": "CHE",
-				"status": "replanned",
-				"reason": "og:34-Chelsea in FA Cup Semi Final."
-			},
-			{
-				"ppid": 337,
-				"nwRound": 37,
-				"ogGW": 34,
-				"added": false,
-				"team_h_nm": "MNU",
-				"team_h_id": 14,
-				"team_a_id": 15,
-				"team_a_nm": "NEW",
-				"status": "replanned",
-				"reason": "og:34-MNU in FA Cup Semi Final."
-			},
-			{
-				"ppid": 339,
-				"nwRound": 37,
-				"ogGW": 34,
-				"added": false,
-				"team_h_nm": "TOT",
-				"team_h_id": 18,
-				"team_a_id": 13,
-				"team_a_nm": "MNC",
-				"status": "replanned",
-				"reason": "og:34-MNC in FA Cup Semi Final."
-			}
-
-		]
 	},
 	{ 
-		"ppRpIds":[ 15, 162, 176, 255, 257, 281, 282, 284, 285, 288, 290, 332, 337, 339 ] 
+		"re-planned": [ ]
+	},
+	{ 
+		"ppRpIds":[  ] 
 	},
 	{ 
 		"ppIds": [  ]
@@ -231,104 +62,97 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 13, 14 ] },
-					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20  ] },
+					{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+					{	"title": "OUT", 	"data": [ ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" 
 					},{	
 						"title": "FINAL",
 						"gw": 38,
-						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data":	[
-									{"team_h":13, "team_a":14 }
+									{"team_h":0, "team_a":0 }
 					 			]
 					},{	
 						"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20  ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data":	[
-									{"team_h":0, "team_a":14,  "oppNmH":"Coventry"  },
-									{"team_h":7, "team_a":13 }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{	
 						"title": "Q-FINAL",
 						"gw": 29,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 19 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data":	[
-									{"team_h":14, "team_a":11  },
-									{"team_h":13, "team_a":15  },
-									{"team_h":7,  "team_a":0 , "oppNmA":"Leicester" },
-									{"team_h":20, "team_a":0 , "oppNmA":"Coventry" }
+									{"team_h":0, "team_a":0  },
+									{"team_h":0, "team_a":0  },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{	
 						"title": "L16 5th Rnd",
 						"gw": 26,
-						"elim": [ 1, 2, 4, 6, 8, 9, 10, 17, 18, 19 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data":	[
-							{"team_h":0, 	"team_a":0, "oppNmH":"Coventry","oppNmA":"Maidstone United"},
-							{"team_h":12, 	"team_a":13 },
-							{"team_h":20, 	"team_a":5  },
-							{"team_h":3, 	"team_a":0, "oppNmA": "Leicester" },
-							{"team_h":11, 	"team_a":0, "oppNmA": "Southampton" },
-							{"team_h":0, 	"team_a":15,"oppNmH": "Blackburn" },
-							{"team_h":7, 	"team_a":0, "oppNmA":"Leeds" },
-							{"team_h":16, 	"team_a":14 }
-						]
-					},{	
-						"title": "L32 replays",
-						"gw": 23,
-						"elim": [ 1, 4, 6, 8, 9, 10, 17, 18, 19 ],
-						"drawn": true,
-						"data":	[
-							{"team_h":7, 	"team_a":2, "replay": true 	},
-							{"team_h":16,	"team_a":0, "oppNmA":"Bristol City", "replay": true }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{	
 						"title": "L32 4th Rnd",
 						"gw": 21,
-						"elim": [ 1, 4, 6, 8, 19 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data":	[
-							{"team_h": 20, 	"team_a": 4, 	"replay":true 	},
-							{"team_h": 9, 	"team_a": 8, 	"replay":true 	},
-							{"team_h": 0, 	"team_a": 16, 	"oppNmH":"Blackpool", 	"replay":true 	},
-							{"team_h": 0, 	"team_a": 12, 	"oppNmH":"Bolton" , 	"replay":true	},
-							{"team_h": 0,	"team_a": 20,	"oppNmH":"West Brom" },
-							{"team_h": 0,	"team_a": 16,	"oppNmH":"Bristol City" },
-							{"team_h": 9,	"team_a": 12 	},
-							{"team_h": 7, 	"team_a": 2 	},
-							{"team_h": 3, 	"team_a": 0, 	"oppNmA":"Swansea City" },
-							{"team_h": 17, 	"team_a": 5 	},
-							{"team_h": 10, 	"team_a": 15 	},
-							{"team_h": 11, 	"team_a": 0, 	"oppNmA":"Norwich" },
-							{"team_h": 18, 	"team_a": 13 	},
-							{"team_h": 0, 	"team_a": 14,	"oppNmH":"Newport" }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{	
 						"title": "L64 3rd Rnd",
 						"gw": 20,
 						"elim": [],
-						"drawn": true,
+						"drawn": false,
 						"data": [
-									{"team_h":1,  	"team_a":11 	},
-									{"team_h":0,  	"team_a":2,		"oppNmH":"Middlesbrough" },
-									{"team_h":0,  	"team_a":3,		"oppNmH":"QPR" },
-									{"team_h":4,  	"team_a":20 	},
-									{"team_h":0,  	"team_a":5,		"oppNmH":"Stoke City" },
-									{"team_h":7,  	"team_a":0,		"oppNmA":"Preston NE" },
-									{"team_h":8,  	"team_a":9 		},
-									{"team_h":10,  	"team_a":0,		"oppNmA":"Rotherham" },
-									{"team_h":12,	"team_a":0,		"oppNmA":"Bolton" },
-									{"team_h":13,	"team_a":0,		"oppNmA":"Huddersfield" },
-									{"team_h":0,	"team_a":14,	"oppNmH":"Wigan" },
-									{"team_h":0,	"team_a":15,	"oppNmH":"Sunderland" },
-									{"team_h":16,	"team_a":0,		"oppNmA":"Blackpool" },
-									{"team_h":0,	"team_a":17,	"oppNmH":"Gillingham" },
-									{"team_h":18,	"team_a":6 		},
-									{"team_h":19,	"team_a":0,		"oppNmA":"Bristol City","replay":true  }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					}
 		]
@@ -336,101 +160,106 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [  7, 11 ] },
-					{	"title": "OUT", 	"data": [  1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+					{ 	"title": "IN", 		"data": [  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]   },
+					{	"title": "OUT", 	"data": [  ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" 
 					},{ 	
 						"title": "FINAL",
 						"gw": 26,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data": [ 	
-									{"team_h":7, "team_a":11 } 
+									{"team_h":0, "team_a":0 } 
 								] 
 					},{ 	
 						"title": "S-FINAL 2 ",
 						"gw": 21,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20  ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data": [ 
-									{"team_h":10, "team_a":11 },
-									{"team_h":7, "team_a":0, "oppNmA":"Middlesbrough" }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{ 	
 						"title": "S-FINAL 1",
 						"gw": 20,
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20  ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data": [ 
-									{"team_h": 11, "team_a": 10 },
-									{"team_h":  0, "team_a":  7, "oppNmH":"Middlesbrough" }
-						]
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+							]
 					},{ 	
 						"title": "Q-FINAL",
 						"gw": 17,	
-						"elim": [ 1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 16, 17, 18, 20 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data": [ 
-									{"team_h": 9, "team_a":10 },
-									{"team_h": 7, "team_a":15 },
-									{"team_h":11, "team_a":19 }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 					 	]
 					},{ 	
 						"title": "L16",
 						"gw": 10,
-						"elim": [ 2, 4, 5, 8, 12, 13, 16, 17 ,18, 20 ],
-						"drawn": true,
+						"elim": [  ],
+						"drawn": false,
 						"data": [ 
-									{"team_h":14, "team_a":15 	},
-									{"team_h":3, "team_a":11	},
-									{"team_h":7, "team_a":0, 	"oppNmA":"Blackburn Rovers" },
-									{"team_h":9, "team_a":6 	},
-									{"team_h":0, "team_a":10, 	"oppNmH":"Ipswitch" },
-									{"team_h":19, "team_a":1	}
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 						]
 					},{ 	
 						"title": "L32",
 						"gw": 6,
-						"elim": [ 16, 17 ,18 ],
-						"drawn": true,
+						"elim": [ ],
+						"drawn": false,
 						"data": [ 
-									{"team_h": 4, "team_a": 1 	},
-									{"team_h": 2, "team_a": 9 	},
-									{"team_h": 3, "team_a": 0, 	"oppNmA":"Stoke" },
-									{"team_h": 7, "team_a": 5 	},
-									{"team_h": 0, "team_a":12, 	"oppNmH":"Exeter" },
-									{"team_h":10, "team_a": 0, 	"oppNmA":"Norwich" },
-									{"team_h": 0, "team_a":20,	"oppNmH":"Ipswich" },
-									{"team_h": 0, "team_a":19,	"oppNmH":"Lincoln" },
-									{"team_h":11, "team_a": 0, 	"oppNmA":"Leicester" },
-									{"team_h":14, "team_a": 8 	},
-									{"team_h":15, "team_a":13	},
-									{"team_h": 0, "team_a": 6, 	"oppNmH":"Salford" }
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 					 	]
 					},{ 	
 						"title": "L64",
 						"gw": 3,
 						"elim": [ ],
-						"drawn": true,
+						"drawn": false,
 						"data": [ 
-									{"team_h": 1, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h": 2, "team_a": 0,	"oppNmA":"Hibs" 	},
-									{"team_h": 0, "team_a": 3,	"oppNmH":"Swansea" 	},
-									{"team_h": 0, "team_a": 4,	"oppNmH":"Newport" 	},
-									{"team_h": 5, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":16, "team_a": 6	},
-									{"team_h": 7, "team_a": 0,	"oppNmA":"Wimbledon"},
-									{"team_h": 0, "team_a": 8,	"oppNmH":"Plymouth Arguile" },
-									{"team_h": 0, "team_a": 9,	"oppNmH":"Doncaster" },
-									{"team_h":10, "team_a":18	},
-									{"team_h":11, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":12, "team_a": 0,	"oppNmA":"Gillingham"},
-									{"team_h":13, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":14, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":15, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":17, "team_a": 0,	"oppNmA":"Lincoln City" },
-									{"team_h":19, "team_a": 0,	"oppNmA":"Exempt" 	},
-									{"team_h":20, "team_a": 0,	"oppNmA":"Blackpool"}
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
 					 	]
 					}				
 		]
@@ -438,13 +267,13 @@
 
 	{
 		"evtp-ECL":[
-			{ 	"title": "IN", 		"data": [ 2 ] },
-			{	"title": "OUT", 	"data": [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+			{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+			{	"title": "OUT", 	"data": [ ] },
 			{ 	"title": "evntTp", 	"data": "evtp-ECL" 
 			},{ 	
 				"title": "FINAL",
 				"gw": 38,
-				"elim": [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"elim": [ ],
 				"drawn": false,
 				"data": [ 	
 							{"team_h":0, "team_a":0 , "oppNmH": "", "oppNmA": "" } 
@@ -452,24 +281,25 @@
 			},{ 	
 				"title": "S-FINAL-2 ",
 				"gw": 36,
-				"elim": [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"elim": [ ],
 				"drawn": false,
 				"data": [ 
-					{"team_h":0, "team_a":2, 	"oppNmH": "Olympiacos",	"cup": "EU Conf. Lg"}
-				]
+							{ "team_h":0, "team_a":0, "oppNmH": "", "oppNmA": "", "cup": "EU Conf. Lg" }, 
+							{ "team_h":0, "team_a":0, "oppNmH": "", "oppNmA": "", "cup": "EU Conf. Lg"}
+						]
 			},{ 	
 				"title": "S-FINAL-1",
 				"gw": 35,
-				"elim": [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
 					{ "team_h":2, "team_a":0, 	"oppNmA": "Olympiacos", "cup": "EU Conf. Lg" }
 				]
 			},{ 	
 				"title": "Q-FINAL-2",
 				"gw": 33,	
-				"elim": [ 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
 					{"team_h":13, "team_a":0, "oppNmA": "Real Madrid", 	"cup": "Champions Lg"},
 					{"team_h":0,  "team_a":1, "oppNmH": "Bayern Munich","cup": "Champions Lg"},
@@ -480,8 +310,8 @@
 			},{ 	
 				"title": "Q-FINAL-1",
 				"gw": 32,	
-				"elim": [ 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
 							{"team_h":1, 	"team_a":0, "oppNmA": "Bayern Munich",	"cup": "Champions Lg"	},
 							{"team_h":0, 	"team_a":13,"oppNmH": "Real Madrid",	"cup": "Champions Lg"	},
@@ -492,8 +322,8 @@
 			},{ 
 				"title": "L16-return-2",
 				"gw": 28, 
-				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
 					{"team_h":0, "team_a":1, 	"oppNmH": "FC Porto",		"cup": "Champions Lg"},
 					{"team_h":13,"team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
@@ -505,8 +335,8 @@
 			},{ 	
 				"title": "L16-return-1",
 				"gw": 27, 
-				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
 					{"team_h":1, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
 					{"team_h":0, "team_a":13, 	"oppNmH": "FC Copenhagen", 	"cup": "Champions Lg"},
@@ -518,28 +348,28 @@
 			},{ 	
 				"title": "L16-2",
 				"gw": 25,
-				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
-					{ "team_h":0, "team_a":1, 	"oppNmH": "FC Porto",		"cup": "Champions Lg"},
-					{ "team_h":13, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
-					{ "team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{ "team_h":0, "team_a":0, 	"oppNmH": "",			"cup": "Champions Lg"},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "",			"cup": "Champions Lg"},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 	 },
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 	 },
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 	 },
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "EU Conf. Lg" }
 				]
 			},{ 	
 				"title": "L16-1",
 				"gw": 24,
-				"elim": [ 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 20 ],
-				"drawn": true,
+				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"drawn": false,
 				"data": [ 
-					{ "team_h":1, "team_a":0, 	"oppNmA": "other GW",		"cup": "Champions Lg"},
-					{ "team_h":0, "team_a":13, 	"oppNmH": "FC Copenhagen", 	"cup": "Champions Lg"},
-					{ "team_h":5, "team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":11,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":19,"team_a":0, 	"oppNmA": "BYE",			"cup": "Europa Lg" 	},
-					{ "team_h":2, "team_a":0, 	"oppNmA": "BYE",			"cup": "EU Conf. Lg"}
+					{ "team_h":0, "team_a":0, 	"oppNmA": "other GW",	"cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":0, 	"oppNmH": " ", 			"cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 		},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 		},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "Europa Lg" 		},
+					{ "team_h":0, "team_a":0, 	"oppNmA": "BYE",		"cup": "EU Conf. Lg" 	}
 				]
 			}
 		]
@@ -557,8 +387,19 @@
 			"team_a_nm": "CHE",
 			"status": "postponed",
 			"reason": "og: 32: FA Cup SEMI Final for MNU and CHE"
+		},
+		"example replanned":{
+			"ppid": 15,
+			"nwRound": 7,
+			"ogGW": 2,
+			"added": false,
+			"team_h_nm": "LUT",
+			"team_h_id": 12,
+			"team_a_id": 6,
+			"team_a_nm": "BUR",
+			"status": "replanned",
+			"reason": "og = 2: Luton not ready for Home game"
 		}
 	}
 ]
-
 

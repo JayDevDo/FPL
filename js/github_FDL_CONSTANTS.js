@@ -22,9 +22,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 32,
-		currentRnd: 33,
-		evWndw: { 'direction': 1 , 'start': 33, 'rounds': 6, 'end': 38 },
+		finishedRounds: 0,
+		currentRnd: 1,
+		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 10, 'end': 10 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -392,7 +392,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "ARS",
 		id: 1,
-		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from events
@@ -437,7 +437,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "BRE",
 		id: 4,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
@@ -453,7 +453,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "BHA",
 		id: 5,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -466,25 +466,9 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "BUR",
-		id: 6,
-		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
-		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
-		longNm: "Burnley",
-		altNm: "Clarets",
-		players: [],
-		strength: [
-			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
-			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
-		],
-		ppgames: []
-	},
-
 	{   shortNm: "CHE",
-		id: 7,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		id: 6,
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -498,8 +482,8 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "CRY",
-		id: 8,
-		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		id: 7,
+		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -513,8 +497,8 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "EVE",
-		id: 9,
-		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		id: 8,
+		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -528,8 +512,8 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "FUL",
-		id: 10,
-		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		id: 9,
+		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -542,8 +526,38 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "LIV",
+	{   shortNm: "IPS",
+		id: 10,
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
+		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		longNm: "Ipswich",
+		altNm: "blues",
+		players: [],
+		strength: [
+			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
+			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
+		],
+		ppgames: []
+	},
+	{   shortNm: "LEI",
 		id: 11,
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
+		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		longNm: "Leicester",
+		altNm: "Tractor Boys",
+		players: [],
+		strength: [
+			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
+			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
+		],
+		ppgames: []
+	},
+	{   shortNm: "LIV",
+		id: 12,
 		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
@@ -557,21 +571,7 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "LUT",
-		id: 12,
-		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
-		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
-		longNm: "Luton",
-		altNm: "Hatters",
-		players: [],
-		strength: [
-			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
-			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
-		],
-		ppgames: []
-	},
+
 	{   shortNm: "MNC",
 		id: 13,
 		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
@@ -589,7 +589,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "MNU",
 		id: 14,
-		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -632,14 +632,14 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "SHU",
+	{   shortNm: "SOU",
 		id: 17,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
-		longNm: "Sheffield Utd",
-		altNm: "Blades",
+		longNm: "Southampton",
+		altNm: "Saints",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -649,7 +649,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "TOT",
 		id: 18,
-		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
@@ -664,7 +664,7 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "WHU",
 		id: 19,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
