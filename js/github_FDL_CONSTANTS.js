@@ -53,7 +53,7 @@ let gamesOverview = {
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
 		fontSize: 10,
-		manId: 
+		manId: 856045
 }
 
 getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
