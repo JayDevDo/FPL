@@ -4,10 +4,10 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>Jay's FPL 23/24 team schedules</title>
-		<link rel="stylesheet" type="text/css" href="splash.css" >
 		<script type="text/javascript" src="js/ext/jquery.min.js"></script>
 		<script type="text/javascript" src="js/ext/jquery-ui.min.js"></script>		
-		<script type="text/javascript" src="js/ext/d3.min.js"></script>		
+		<link rel="stylesheet" type="text/css" href="splash.css" >
+		<script defer type="text/javascript" src="js/ext/d3.min.js"></script>		
 		<link rel="stylesheet" type="text/css" href="fpl.css" >
 		<link rel="stylesheet" type="text/css" href="cups.css" >
 	</head>
@@ -223,10 +223,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=10 >
+								<form id="slctdRoundsForm" value=11 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=10
+											value=11
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -238,8 +238,8 @@
 										<option value=7  >7</option>
 										<option value=8  >8</option>
 										<option value=9  >9</option>
-										<option value=10 active selected >10</option>
-										<option value=11 >11</option>
+										<option value=10 >10</option>
+										<option value=11 active selected >11</option>
 										<option value=12 >12</option>
 										<option value=13 >13</option>
 										<option value=14 >14</option>
@@ -263,23 +263,23 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=10 >
+								<form id="eventWndwEndForm" value=11 >
 									<select name="endRnd"
 											id="endRnd"
-											value=10
+											value=11
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=1 >1</option>
 										<option value=2 >2</option>
-										<option value=3 >3</option>
+										<option value=3 >3 IB 1</option>
 										<option value=4 >4</option>
 										<option value=5 >5</option>
-										<option value=6 >6</option>
+										<option value=6 >6 IB 2</option>
 										<option value=7 >7</option>
 										<option value=8 >8</option>
 										<option value=9 >9</option>
-										<option value=10 active selected>10</option>
-										<option value=11 >11</option>
+										<option value=10 >10</option>
+										<option value=11 active selected>11 IB 3</option>
 										<option value=12 >12</option>
 										<option value=13 >13</option>
 										<option value=14 >14</option>
@@ -4077,11 +4077,11 @@
 
 	<footer>
 		<script src="js/github_FDL_CONSTANTS.js"></script>
-		<script src="js/github_FDL_DATA.js"></script>
-		<script src="js/github_FDL_UI.js"></script>
+		<script defer src="js/github_FDL_DATA.js"></script>
+		<script defer src="js/github_FDL_UI.js"></script>
 
 		<!-- script type="text/javascript">showEventWindow(2,"HTML init");</script -->
-		<script type="text/javascript">
+		<script defer type="text/javascript">
 			console.log("HTML init -> toggleReplanned(1)" )  ;
 			toggleReplanned(1) ;
 
