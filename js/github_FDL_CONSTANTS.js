@@ -24,7 +24,7 @@ let gamesOverview = {
 		fixedColumns: 3,
 		finishedRounds: 0,
 		currentRnd: 1,
-		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 10, 'end': 10 },
+		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 11, 'end': 11 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -53,13 +53,13 @@ let gamesOverview = {
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
 		fontSize: 10,
-		manId: 371654
+		manId: 
 }
 
-getEventWndwStart = ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
+getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
 getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	} 
 getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	} 
-hasUserStore 			= ()=>{ return ( localStorage.length > 0 ) ; }
+hasUserStore 		= ()=>{ return ( localStorage.length > 0 ) ; }
 
 setUserDF = ()=>{
 	// Stores the current values in the DF container to localstorage and FPLTeamsFull
