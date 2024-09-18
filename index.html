@@ -5,11 +5,9 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>Jay's FPL 23/24 team schedules</title>
 		<link rel="stylesheet" type="text/css" href="splash.css" >
+		<script type="text/javascript" src="js/ext/d3.min.js"></script>		
 		<script type="text/javascript" src="js/ext/jquery.min.js"></script>
 		<script type="text/javascript" src="js/ext/jquery-ui.min.js"></script>		
-		<script type="text/javascript" src="js/ext/d3.min.js"></script>		
-		<link rel="stylesheet" type="text/css" href="fpl.css" >
-		<link rel="stylesheet" type="text/css" href="cups.css" >
 	</head>
 
 	<body>
@@ -170,16 +168,16 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=1 >
+								<form id="eventWndwStartForm" value=4 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=1
+											value=4
 											onchange="setEventWndwStart(value)"
 									>
-										<option value=1 active selected >1</option>
+										<option value=1 >1</option>
 										<option value=2  >2</option>
 										<option value=3  >3</option>
-										<option value=4  >4 IB 1</option>
+										<option value=4 active selected >4 IB 1</option>
 										<option value=5  >5</option>
 										<option value=6  >6</option>
 										<option value=7  >7</option>
@@ -223,10 +221,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=11 >
+								<form id="slctdRoundsForm" value=8 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=11
+											value=12
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -236,10 +234,10 @@
 										<option value=5  >5</option>
 										<option value=6  >6</option>
 										<option value=7  >7</option>
-										<option value=8  >8</option>
+										<option value=8 active selected  >8</option>
 										<option value=9  >9</option>
 										<option value=10 >10</option>
-										<option value=11 active selected >11</option>
+										<option value=11 >11</option>
 										<option value=12 >12</option>
 										<option value=13 >13</option>
 										<option value=14 >14</option>
@@ -263,10 +261,10 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=11 >
+								<form id="eventWndwEndForm" value=12 >
 									<select name="endRnd"
 											id="endRnd"
-											value=11
+											value=12
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=1 >1</option>
@@ -279,8 +277,8 @@
 										<option value=8 >8</option>
 										<option value=9 >9</option>
 										<option value=10 >10</option>
-										<option value=11 active selected>11 IB 3</option>
-										<option value=12 >12</option>
+										<option value=11 >11 IB 3</option>
+										<option value=12 active selected>12</option>
 										<option value=13 >13</option>
 										<option value=14 >14</option>
 										<option value=15 >15</option>
@@ -347,7 +345,7 @@
 						</div>
 
 						<div>
-							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" enabled="false" unchecked />
+							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" enabled="true" checked />
 							<label for="evtp-ECL">UEFA Cups:</label>
 								<ul id="evtp-ECL-ul" style="padding-left: 35%;">
 									<li>
@@ -732,145 +730,155 @@
 							</th>
 
 							<!-- Gameweek 01  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01">GW 01</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></th> 
 
 							<!-- Gameweek 02  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="2" date="2024-08-24" round="GW 02">GW 02</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="2" date="2024-08-26" round="L64">EFL Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="2" date="2024-08-24" round="GW 02"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="2" date="2024-08-26" round="L64"></th> 
 
 							<!-- Gameweek 03  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="3" date="2024-08-31" round="GW 03">GW 03</th>
-							<th class="evtTeamBlock evtp-UIB" evrnd="3" date="2024-08-31" round="IB 1">IB 1</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="3" date="2024-08-31" round="GW 03"></th> 
+							<th class="evtTeamBlock evtp-UIB" evrnd="3" date="2024-08-31" round="IB 1"></th> 
 	
 							<!-- Gameweek 04  -->
-							<th class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1">IB 1</th>
-							<th class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04">GW 04</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A">EFL Cup</th>
+							<th class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></th> 
+							<th class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></th> 
 
 							<!-- Gameweek 05  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05">GW 05</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B">EFL Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></th> 
 
 							<!-- Gameweek 06  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06">GW 06</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></th> 
 	
 							<!-- Gameweek 07  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" >GW 07</th>
-							<th class="evtTeamBlock evtp-UIB" evrnd="7" date="2024-10-05" round="IB 2">IB 2</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></th> 
+							<th class="evtTeamBlock evtp-UIB" evrnd="7" date="2024-10-05" round="IB 2"></th> 
 
 							<!-- Gameweek 08  -->
-							<th class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2">IB 2</th>
-							<th class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" >GW 08</th>	
+							<th class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></th> 
+							<th class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></th> 	
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></th> 
 
 							<!-- Gameweek 09  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09">GW 09</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16">EFL Cup</th>
-
+							<th class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></th> 
 
 							<!-- Gameweek 10  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10">GW 10</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></th> 
 
 							<!-- Gameweek 11  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11">GW 11</th>
-							<th class="evtTeamBlock evtp-UIB" evrnd="11" date="2024-11-09" round="IB 3">IB 3</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></th> 
+							<th class="evtTeamBlock evtp-UIB" evrnd="11" date="2024-11-09" round="IB 3"></th> 
 
 							<!-- Gameweek 12  -->
-							<th class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3">IB 3</th>
-							<th class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12">GW 12</th>
+							<th class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></th> 
+							<th class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></th> 
 
 							<!-- Gameweek 13  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13">GW 13</th>
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2024-11-30" round="2nd Round">FA Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></th> 
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2024-11-30" round="2nd Round"></th> 
 
 							<!-- Gameweek 14  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="14" date="2024-12-03" round="GW 14">GW 14</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="14" date="2024-12-03" round="GW 14"></th> 
 
 							<!-- Gameweek 15  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15">GW 15</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></th> 
 
 							<!-- Gameweek 16  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16">GW 16</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="16" date="2024-12-21" round="Q-FINAL">EFL Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="16" date="2024-12-21" round="Q-FINAL"></th> 
 
 							<!-- Gameweek 17  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="17" date="2024-12-21" round="GW 17">GW 17</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="17" date="2024-12-21" round="GW 17"></th> 
 
 							<!-- Gameweek 18  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="18" date="2024-12-26" round="GW 18">GW 18</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="18" date="2024-12-26" round="GW 18"></th> 
 
 							<!-- Gameweek 19  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="19" date="2024-12-29" round="GW 19">GW 19</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="19" date="2024-12-29" round="GW 19"></th> 
 
 							<!-- Gameweek 20  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="20" date="2025-01-04" round="GW 20">GW 20</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1">EFL Cup</th>	
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64">FA Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="20" date="2025-01-04" round="GW 20"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></th> 	
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></th> 
 
 
 							<!-- Gameweek 21  -->
-							<th class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21">GW 21</th>
+							<th class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></th> 
 
 							<!-- Gameweek 22  -->
-							<th class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22">GW 22</th>
+							<th class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></th> 
 
 							<!-- Gameweek 23  -->
-							<th class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23">GW 23</th>
+							<th class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></th> 
 	
 							<!-- Gameweek 24  -->
-							<th class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24">GW 24</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr afc" evrnd="24" date="2025-02-03" round="S-FINAL 2">EFL Cup</th>
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="24" date="2025-02-08" round="L32">FA Cup</th>
+							<th class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr afc" evrnd="24" date="2025-02-03" round="S-FINAL 2"></th> 
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="24" date="2025-02-08" round="L32"></th> 
 
 							<!-- Gameweek 25  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="25" date="2025-02-15" round="GW 25">GW 25</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="25" date="2025-02-15" round="GW 25"></th> 
 
 							<!-- Gameweek 26  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="26" date="2025-02-22" round="GW 26">GW 26</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="26" date="2025-02-22" round="GW 26"></th> 
 
 							<!-- Gameweek 27  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="27" date="2025-02-25" round="GW 27">GW 27</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="27" date="2025-02-25" round="GW 27"></th> 
 
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16">FA Cup</th>
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></th> 
 
 
 							<!-- Gameweek 28  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28">GW 28</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></th> 
 
 							<!-- Gameweek 29  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29">GW 29</th>
-							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL">EFL Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></th> 
+							<th class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></th> 
 
 
 							<!-- Gameweek 30  -->
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL">FA Cup</th>
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></th> 
 
-							<th class="evtTeamBlock evtp-EPL" evrnd="30" date="2025-04-01" round="GW 30">GW 30</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="30" date="2025-04-01" round="GW 30"></th> 
 
 							<!-- Gameweek 31  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31">GW 31</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></th> 
 
 							<!-- Gameweek 32  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32">GW 32</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></th> 
 
 							<!-- Gameweek 33  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33">GW 33</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></th> 
 	
 							<!-- Gameweek 34  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="34" date="2025-04-26" round="GW 34">GW 34</th>
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="34" date="2025-04-26" round="S-FINAL">FA Cup</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="34" date="2025-04-26" round="GW 34"></th> 
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="34" date="2025-04-26" round="S-FINAL"></th> 
 	
 							<!-- Gameweek 35  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="35" date="2025-05-03" round="GW 35">GW 35</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="35" date="2025-05-03" round="GW 35"></th> 
 
 							<!-- Gameweek 36  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="36" date="2025-05-10" round="GW 36">GW 36</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="36" date="2025-05-10" round="GW 36"></th> 
 	
 							<!-- Gameweek 37  -->
-							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL">FA Cup</th>
-							<th class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37">GW 37</th>
+							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></th> 
+							<th class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></th> 
 
 							<!-- Gameweek 38  -->
-							<th class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38">GW 38</th>
+							<th class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></th> 
 
 							<!-- Gameweek 39 (postponed)  -->
 
@@ -908,13 +916,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -923,14 +934,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -939,6 +952,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -949,6 +963,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -974,9 +989,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1033,6 +1050,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1067,13 +1085,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1082,14 +1103,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1098,6 +1121,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1108,6 +1132,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1133,9 +1158,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1192,6 +1219,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1211,6 +1239,7 @@
 							</th>
 							
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -1226,13 +1255,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1241,14 +1273,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1257,6 +1291,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1267,6 +1302,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1292,9 +1328,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1351,6 +1389,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1383,13 +1422,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1398,14 +1440,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1414,6 +1458,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1424,6 +1469,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1449,9 +1495,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1508,6 +1556,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1525,6 +1574,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -1540,13 +1590,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1555,14 +1608,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1571,6 +1626,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1581,6 +1637,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1606,9 +1663,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1665,6 +1724,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1685,6 +1745,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -1700,13 +1761,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1715,14 +1779,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1731,6 +1797,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1741,6 +1808,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1766,9 +1834,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1786,14 +1856,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -1825,6 +1893,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1844,6 +1913,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -1859,13 +1929,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -1874,14 +1947,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -1890,6 +1965,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -1900,6 +1976,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -1925,9 +2002,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -1984,6 +2063,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2004,6 +2084,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2019,13 +2100,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2034,14 +2118,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2050,6 +2136,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2060,6 +2147,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2079,15 +2167,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2105,14 +2194,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2144,6 +2231,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2164,6 +2252,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2179,13 +2268,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2194,14 +2286,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2210,6 +2304,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2220,6 +2315,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2239,15 +2335,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2265,14 +2362,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2304,6 +2399,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2323,6 +2419,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2338,13 +2435,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2353,14 +2453,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2369,6 +2471,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2379,6 +2482,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2398,15 +2502,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2424,14 +2529,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2463,6 +2566,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2483,6 +2587,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2498,13 +2603,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2513,14 +2621,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2529,6 +2639,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2539,6 +2650,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2558,15 +2670,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2584,14 +2697,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2623,6 +2734,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2643,6 +2755,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2658,13 +2771,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2673,14 +2789,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2689,6 +2807,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2699,6 +2818,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2718,15 +2838,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2744,14 +2865,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2783,6 +2902,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2800,6 +2920,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2815,13 +2936,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2830,14 +2954,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -2846,6 +2972,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -2856,6 +2983,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -2875,15 +3003,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -2901,14 +3030,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -2940,6 +3067,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2961,6 +3089,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -2976,13 +3105,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -2991,14 +3123,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3007,6 +3141,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3017,6 +3152,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3042,9 +3178,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3062,14 +3200,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -3101,6 +3237,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3119,6 +3256,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3134,13 +3272,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3149,14 +3290,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3165,6 +3308,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3175,6 +3319,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3194,15 +3339,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3220,14 +3366,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -3259,6 +3403,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3278,6 +3423,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3293,13 +3439,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3308,14 +3457,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3324,6 +3475,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3334,6 +3486,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3359,9 +3512,11 @@
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3418,6 +3573,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3438,6 +3594,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3453,13 +3610,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3468,14 +3628,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3484,6 +3646,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3494,6 +3657,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3513,15 +3677,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3539,14 +3704,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -3578,6 +3741,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3597,6 +3761,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3612,13 +3777,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3627,14 +3795,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3643,6 +3813,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3653,6 +3824,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3672,15 +3844,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3698,14 +3871,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -3737,6 +3908,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3756,6 +3928,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3771,13 +3944,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3786,14 +3962,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3802,6 +3980,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3812,6 +3991,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3831,15 +4011,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -3857,14 +4038,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -3896,6 +4075,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3916,6 +4096,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2024-08-16" round="GW 01"></td>
 
@@ -3931,13 +4112,16 @@
 							<td class="evtTeamBlock evtp-UIB" evrnd="4" date="2024-09-14" round="IB 1"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="4" date="2024-09-14" round="GW 04"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="4" date="2024-09-16" round="L32A"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="4" date="2024-09-17" round="ChLg-R1"></td>
 
 							<!-- Gameweek 05  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="5" date="2024-09-21" round="GW 05"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="5" date="2024-09-23" round="L32B"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="5" date="2024-09-25" round="EuLg-R1"></td>
 
 							<!-- Gameweek 06  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="6" date="2024-09-28" round="GW 06"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="6" date="2024-10-01" round="ChLg-R2"></td>
 	
 							<!-- Gameweek 07  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="7" date="2024-10-05" round="GW 07" ></td>
@@ -3946,14 +4130,16 @@
 							<!-- Gameweek 08  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="8" date="2024-10-19" round="IB 2"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="8" date="2024-10-19" round="GW 08" ></td>	
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="8" date="2024-10-22" round="ChLg-R3"></td>
 
 							<!-- Gameweek 09  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="9" date="2024-10-26" round="GW 09"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="9" date="2024-10-28" round="L16"></td>
-
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="9" date="2024-11-05" round="ChLg-R4"></td>
 
 							<!-- Gameweek 10  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="10" date="2024-11-02" round="GW 10"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="10" date="2024-11-07" round="EuLg-R4"></td>
 
 							<!-- Gameweek 11  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="11" date="2024-11-09" round="GW 11"></td>
@@ -3962,6 +4148,7 @@
 							<!-- Gameweek 12  -->
 							<td class="evtTeamBlock evtp-UIB" evrnd="12" date="2024-11-23" round="IB 3"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="12" date="2024-11-23" round="GW 12"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="12" date="2024-11-25" round="ChLg-R5"></td>
 
 							<!-- Gameweek 13  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="13" date="2024-11-30" round="GW 13"></td>
@@ -3972,6 +4159,7 @@
 
 							<!-- Gameweek 15  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="15" date="2024-12-07" round="GW 15"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="15" date="2024-12-10" round="ChLg-R6"></td>
 
 							<!-- Gameweek 16  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2024-12-14" round="GW 16"></td>
@@ -3991,15 +4179,16 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="L64"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
 							<!-- Gameweek 22  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="22" date="2025-01-18" round="GW 22"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="22" date="2025-01-21" round="ChLg-R7"></td>
 
 							<!-- Gameweek 23  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="23" date="2025-01-25" round="GW 23"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="23" date="2025-01-28" round="ChLg-R8"></td>
 	
 							<!-- Gameweek 24  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="24" date="2025-02-01" round="GW 24"></td>
@@ -4017,14 +4206,12 @@
 
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></td>
 
-
 							<!-- Gameweek 28  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="28" date="2025-03-08" round="GW 28"></td>
 
 							<!-- Gameweek 29  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="29" date="2025-03-15" round="GW 29"></td>
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="29" date="2025-03-16" round="FINAL"></td>
-
 
 							<!-- Gameweek 30  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="30" date="2025-03-29" round="Q-FINAL"></td>
@@ -4056,6 +4243,7 @@
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -4076,6 +4264,8 @@
 	</body>
 
 	<footer>
+		<link 	rel="stylesheet" type="text/css" href="fpl.css" >
+		<link 	rel="stylesheet" type="text/css" href="cups.css" >
 		<script src="js/github_FDL_CONSTANTS.js"></script>
 		<script src="js/github_FDL_DATA.js"></script>
 		<script src="js/github_FDL_UI.js"></script>
@@ -4111,6 +4301,7 @@
 				}
 			) ;
 		</script >
+
 
 	</footer>
 
