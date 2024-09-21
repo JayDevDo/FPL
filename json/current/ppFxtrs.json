@@ -180,14 +180,14 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]   },
-					{	"title": "OUT", 	"data": [  ] },
+					{ 	"title": "IN", 		"data": [  1, 2, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17, 18, 19 ]   },
+					{	"title": "OUT", 	"data": [  3, 8, 9, 10, 16, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" 
 					},
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
-						"elim": [ ],
+						"elim": [ 3, 8, 9, 10, 16, 20 ],
 						"drawn": false,
 						"data": [ 	
 									{"team_h":0, "team_a":0 } 
@@ -196,7 +196,7 @@
 					{ 	
 						"title": "S-FINAL 2 ",
 						"gw": 24,
-						"elim": [ ],
+						"elim": [ 3, 8, 9, 10, 16, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -206,7 +206,7 @@
 					{ 	
 						"title": "S-FINAL 1",
 						"gw": 20,
-						"elim": [ ],
+						"elim": [ 3, 8, 9, 10, 16, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -216,7 +216,7 @@
 					{ 	
 						"title": "Q-FINAL",
 						"gw": 16,	
-						"elim": [ ],
+						"elim": [ 3, 8, 9, 10, 16, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -228,89 +228,56 @@
 					{ 	
 						"title": "L16",
 						"gw": 9,
-						"elim": [  ],
+						"elim": [ 3, 8, 9, 10, 16, 20 ],
 						"drawn": false,
 						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
-						]
-					},
-					{ 	
-						"title": "L32B",
-						"gw": 5,
-						"elim": [ ],
-						"drawn": false,
-						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":4, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":5, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":7, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":12, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":14, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":17, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":18, 	"team_a":0, "oppNmH":"not drawn" 	},
+									{"team_h":19, 	"team_a":0, "oppNmA":"not drawn" 	},
+									{"team_h":0, 	"team_a":0, "oppNmA":"not drawn" 	}
 					 	]
 					},					
 					{ 	
-						"title": "L32A",
-						"gw": 4,
-						"elim": [ ],
-						"drawn": false,
+						"title": "L32B",
+						"gw": 5,
+						"elim": [ 3, 10, 16 ],
+						"drawn": true,
 						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":1, 	"team_a":0, 	"oppNmA":"Bolton" 		},
+									{"team_h":0, 	"team_a":2, 	"oppNmH":"Wycombe" 		},
+									{"team_h":6, 	"team_a":0, 	"oppNmA":"Barrow" 		},
+									{"team_h":0, 	"team_a":11, 	"oppNmH":"Walsall" 		},
+									{"team_h":12, 	"team_a":19 	},
+									{"team_h":13, 	"team_a":0, 	"oppNmA":"Watford" 		},
+									{"team_h":0, 	"team_a":15, 	"oppNmH":"Wimbledon"	},
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn"	}
 					 	]
 					},
 					{ 	
-						"title": "L64",
-						"gw": 2,
-						"elim": [ ],
-						"drawn": false,
+						"title": "L32A",
+						"gw": 4,
+						"elim": [ 3, 10, 16 ],
+						"drawn": true,
 						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":0, 	"team_a":18, 	"oppNmH":"Coventry" 	},
+									{"team_h":5, 	"team_a":20		},
+									{"team_h":14, 	"team_a":0, 	"oppNmA":"Barnsley" 	},
+									{"team_h":4, 	"team_a":0, 	"oppNmA":"Leyton Orient" },
+									{"team_h":8, 	"team_a":17  	},
+									{"team_h":0, 	"team_a":9, 	"oppNmH":"Preston NE" 	},
+									{"team_h":0, 	"team_a":7, 	"oppNmH":"QPR" 			},
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn" 	}
 					 	]
 					}				
 		]
