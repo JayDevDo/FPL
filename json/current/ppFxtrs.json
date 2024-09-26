@@ -180,14 +180,14 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [  1, 2, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17, 18, 19 ]   },
-					{	"title": "OUT", 	"data": [  3, 8, 9, 10, 16, 20 ] },
+					{ 	"title": "IN", 		"data": [  1, 2, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17, 18 ]   },
+					{	"title": "OUT", 	"data": [  3, 8, 9, 10, 16, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" 
 					},
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
-						"elim": [ 3, 8, 9, 10, 16, 20 ],
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
 						"drawn": false,
 						"data": [ 	
 									{"team_h":0, "team_a":0 } 
@@ -196,7 +196,7 @@
 					{ 	
 						"title": "S-FINAL 2 ",
 						"gw": 24,
-						"elim": [ 3, 8, 9, 10, 16, 20 ],
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -206,7 +206,7 @@
 					{ 	
 						"title": "S-FINAL 1",
 						"gw": 20,
-						"elim": [ 3, 8, 9, 10, 16, 20 ],
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -216,7 +216,7 @@
 					{ 	
 						"title": "Q-FINAL",
 						"gw": 16,	
-						"elim": [ 3, 8, 9, 10, 16, 20 ],
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
 						"drawn": false,
 						"data": [ 
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -228,24 +228,17 @@
 					{ 	
 						"title": "L16",
 						"gw": 9,
-						"elim": [ 3, 8, 9, 10, 16, 20 ],
-						"drawn": false,
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
+						"drawn": true,
 						"data": [ 
-									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":4, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":5, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":7, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":12, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":14, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":17, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":18, 	"team_a":0, "oppNmH":"not drawn" 	},
-									{"team_h":19, 	"team_a":0, "oppNmA":"not drawn" 	},
-									{"team_h":0, 	"team_a":0, "oppNmA":"not drawn" 	}
+									{"team_h":0, 	"team_a":1, "oppNmH":"Preston NE" 	},
+									{"team_h":2, 	"team_a":7	},
+									{"team_h":4, 	"team_a":0, "oppNmA":"Sheffield W." },
+									{"team_h":5, 	"team_a":12	},
+									{"team_h":0, 	"team_a":6, "oppNmH":"Newcastle/Wimbledon" 	},
+									{"team_h":14, 	"team_a":11	},
+									{"team_h":17, 	"team_a":0, "oppNmA":"Stoke City"	},
+									{"team_h":18, 	"team_a":13	}									
 					 	]
 					},					
 					{ 	
