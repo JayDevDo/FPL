@@ -34,7 +34,7 @@ let gamesOverview = {
 		fixedColumns: 3,
 		finishedRounds: 5,
 		currentRnd: 6,
-		evWndw: { 'direction': 1 , 'start': 6, 'rounds': 6, 'end': 11 },
+		evWndw: { 'direction': 1 , 'start': 12, 'rounds': 8, 'end': 20 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -47,19 +47,19 @@ let gamesOverview = {
 			user: false,
 			loaded:[ false, false ] 	/* 	DF data available (from FPL constants FPLTeamsFull /fixtures/teams or user) */
 		},
-		showSttng: true ,
-		showDdln: true ,
-		hasPP: false ,
-		showPP: false ,
-		showRP: true ,
-		postponedGameIds: 	[] ,
-		postponedGames: 	[] ,
-		replannedGamesIds: 	[] ,
-		replannedGames: 	[] ,
-		iBreaks:[] ,
-		iBreaksShow: 	false ,
-		evTypes: 	[	"evtp-EFL", "evtp-FAC",	"evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
-		selectedTeamId: 11 ,
+		showSttng: true,
+		showDdln: true,
+		hasPP: false,
+		showPP: false,
+		showRP: true,
+		postponedGameIds: [],
+		postponedGames: [],
+		replannedGamesIds: [],
+		replannedGames: [],
+		iBreaks: [],
+		iBreaksShow: false,
+		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
+		selectedTeamId: 11,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
 		sort: 1 ,
 		fontSize: 10,
@@ -69,13 +69,17 @@ let gamesOverview = {
 getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
 getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	} 
 getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	} 
-hasUserStore 		= ()=>{ return ( localStorage.length > 0 ) ; }
+
+
+hasUserStore = ()=>{
+	return ( localStorage.length > 0 );
+}
 
 setUserDF = ()=>{
 	// Stores the current values in the DF container to localstorage and FPLTeamsFull
 	// Then updates view by calling 'loadUserDF()'
 
-	if( hasUserStore() ){ localStorage.clear(); }
+	if( localStorage.usrdf ){ localStorage.clear(); }
 
 	let lclStrgArr = [] ;
 	let h_df = $("#df_home > td[df]").get() ;
@@ -115,7 +119,7 @@ setUserDF = ()=>{
 
 delUserDF = ()=>{
 	console.log("delUserDF") ;
-	localStorage.clear();
+	localStorage.userdf.clear();
 }
 
 
@@ -125,13 +129,13 @@ loadUserDF = ()=>{
 	let storedH = [] ; 
 	let storedA = [] ; 
 
-	if( hasUserStore() ){ 
+	if( localStorage.usrdf ){ 
 
 		// console.log( "loadUserDF: localStorage exists. =", localStorage.usrdf ) ;
 		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
 		storedH = JSON.parse( localStorage.usrdf ) ;
 
-		if( storedH.length !=20 ){ setUserDF() ;}
+		if( storedH.length !=20 ){ setUserDF() ; }
 
 	}else{
 		console.log("loadUserDF: localStorage doesnt exist.") ;

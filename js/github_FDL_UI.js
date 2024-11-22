@@ -13,7 +13,7 @@ isLocked = (l)=>{ return gamesOverview.locks[l] == true || false ; }
 let evchanges = [ "start", "round", "end" ] ;
 
 
-/* Event window toggles */
+// Event window toggles
 
 toggleLocks = (l)=>{
 
@@ -207,6 +207,7 @@ showEventWindow = (l,f)=>{
 	
 	if( gamesOverview.showPP ){ 
 		togglePPdisplay(true, "showEventWindow true");
+		$("tr.pp_count").show() ;		
 		showEventClmn(39) ; 
 	}else{ 
 		$("tr.pp_count").hide() ;
@@ -311,12 +312,12 @@ eventTypeSelectionChanged = ()=>{
 	);
 }
 
-/* User DF functions */
+// User DF functions
 
 setCustomDF = (loc, tmId)=>{
 	
 	$("#popUpDF").attr( 'tmId', tmId )
-	$("#puDF_tmSNm").first("span").text(FPLTeamsFull[ tmId].shortNm )
+	$("#puDF_tmSNm").first("span").text(FPLTeamsFull[tmId].shortNm )
 
 	let offset = $("#df_away td[tmId="+tmId + "]").offset();
 
@@ -366,7 +367,7 @@ updateCustomDF = (loc,val)=>{
 }
 
 
-/* Change sorting option changDFviewIdx from CONSTANTS */
+// Change sorting option changDFviewIdx from CONSTANTS
 changDFview = ()=>{
 	if( (changDFviewIdx+1) > 3 ){
 		changDFviewIdx = 0;
@@ -553,7 +554,7 @@ dfcSort = ( tmA, tmB )=>{
 }
 
 
-/* selected teams functionality */
+// selected teams functionality
 
 rowFilter = (rf_option)=>{
 
