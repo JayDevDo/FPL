@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 5,
-		currentRnd: 6,
-		evWndw: { 'direction': 1 , 'start': 12, 'rounds': 8, 'end': 20 },
+		finishedRounds: 13,
+		currentRnd: 14,
+		evWndw: { 'direction': 1 , 'start': 14, 'rounds': 9, 'end': 22 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -72,14 +72,32 @@ getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	}
 
 
 hasUserStore = ()=>{
-	return ( localStorage.length > 0 );
+
+	let hasLS = false;
+
+	try{
+		hasLS = ( 
+			localStorage.usrdf.length > 0 
+		)
+		.catch( 
+			( error ) => {
+				console.log("error in hasUserStore: =>", error );
+				hasLS = false;
+			}
+		) ;
+
+	}finally{
+		return hasLS;
+	}
+
 }
+
 
 setUserDF = ()=>{
 	// Stores the current values in the DF container to localstorage and FPLTeamsFull
 	// Then updates view by calling 'loadUserDF()'
 
-	if( localStorage.usrdf ){ localStorage.clear(); }
+	if( localStorage.usrdf ){ delUserDF() }
 
 	let lclStrgArr = [] ;
 	let h_df = $("#df_home > td[df]").get() ;
@@ -118,8 +136,8 @@ setUserDF = ()=>{
 
 
 delUserDF = ()=>{
-	console.log("delUserDF") ;
-	localStorage.userdf.clear();
+	// console.log("delUserDF") ;
+	localStorage.usrdf = JSON.stringify( [] );
 }
 
 

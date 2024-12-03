@@ -329,7 +329,7 @@ setCustomDF = (loc, tmId)=>{
 
 updateCustomDF = (loc,val)=>{
 	let tmId = $("#popUpDF").attr("tmId") ; 
-	console.log("shortNm: ", FPLTeamsFull[ tmId ].shortNm, "updateCustomDF: loc: ", loc, "val: ", val ) ; 
+	//console.log("shortNm: ", FPLTeamsFull[ tmId ].shortNm, "updateCustomDF: loc: ", loc, "val: ", val ) ; 
 
 	let text = FPLTeamsFull[tmId].shortNm + " " + ((loc=="H")? "A":"H" ) + " (" + val + ")" ; 
 

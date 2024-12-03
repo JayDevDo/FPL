@@ -3,7 +3,7 @@
 // let allStatsData = []; has moved to FPLConstants
 
 // initial value, will be overwritten 
-let curGW = 1;
+let curGW = 14;
 
 
 /*
@@ -126,7 +126,6 @@ getPostponedData = async ()=> {
 }
 
 
-
 getFixtureData = async ()=> {
 
 	let fxtrPrms = new Promise( ( myFxtrResolve )=> {
@@ -166,10 +165,8 @@ getManagerData = async ()=> {
 	if( parseInt(gamesOverview.manId) > 0 ){
 		FPLid = gamesOverview.manId
 	}else{
-		FPLid = 371654
+		FPLid = 856045
 	}
-
-
 
 	let picksPrms = new Promise( ( myPicksResolve )=> {
 
@@ -283,13 +280,13 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		target_txt = [ fxtr.team_h_nm, loc, ["(",  FPLTeamsFull[fxtr.team_h].fplDF[0], ")"].join("") ].join(" ") ;
 		$(fxtrSpan).attr( "df", FPLTeamsFull[fxtr.team_h].fplDF[0]) ;
 		$(fxtrSpan).text( target_txt ) ; 
-
 	}
 
-	let ttlText = 	[ 	"Home attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
-						"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
-						"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
-					].join("\t") ;
+	let ttlText = 	[ 	
+		"Home attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
+		"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
+		"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
+		].join("\t") ;
 
 	$( fxtrSpan ).attr( "title", ttlText ) ;
 
@@ -301,7 +298,7 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 
 	$(fxtrSpan).appendTo( $(target_td) ) ;
 	$(target_td).attr("fxtrCount",   $(target_td).children(".fxtrspan").length ) ;
-	
+
 }
 
 
@@ -480,7 +477,8 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 			"gw", gw,
 			"tmId", tmId,
 			"text", cellText,
-			"cupCelltd len", cupCelltd.length
+			"cupCelltd len", cupCelltd.length,
+			"cupCelltd", $(cupCelltd)
 		) ;
 	}
 
@@ -512,6 +510,19 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 
 	}
 
+	/* 
+		else{
+			console.log( 
+				getCI(),
+				"updateCupCell", evtClass,
+				"gw", gw,
+				"tmId", tmId,
+				"text", cellText,
+				"cupCelltd len", cupCelltd.length,
+				"cupCelltd SHOULD BE 1 CELL", $(cupCelltd)
+			) ;		
+		}
+	*/
 }
 
 handleCups = ( cupData )=>{
@@ -556,7 +567,7 @@ handleCups = ( cupData )=>{
 		let pastGW = ( cupData[ck]["gw"] < curGW ) ;
 		let cupDrawn = cupData[ck]["drawn"] ;
 
-		/* 		
+		/* 		 		
 		console.log( "\n",
 			getCI(), 
 			"handleCups looping: ", ck , 
@@ -588,19 +599,28 @@ handleCups = ( cupData )=>{
 
 				if( tmHisFPL ){
 					tmHName = FPLTeamsFull[ evFxtr["team_h"] ]["shortNm"];
+					oppName = (evFxtr["oppNmA"])? evFxtr["oppNmA"]:"oppNameA" 
 				}else{
 					tmHName = evFxtr["oppNmH"] ;
 				}
 
 				if( tmAisFPL ){
 					tmAName = FPLTeamsFull[ evFxtr["team_a"] ]["shortNm"];
+					oppName = (evFxtr["oppNmH"])? evFxtr["oppNmH"]:"oppNameH" 
 				}else{
 					tmAName = evFxtr["oppNmA"] ;
 				}
 
 				let rpl = (evFxtr["replay"])? " (replay)":"" ;
+				/* 
+					To debug, change 'evtp-FACorsomething' below, to an existing cup-class [] 
+					let iBreaks = tmpArr[4]['evtp-UIB'] ; 
+					let evTpEFL = tmpArr[6]['evtp-EFL'] ;
+					let evTpFAC = tmpArr[5]['evtp-FAC'] ;
+					let evTpECL = tmpArr[7]["evtp-ECL"] ;
+				*/
 
-				if( whichCup == "evtp-FACorsomething" ){
+				if( whichCup == "evtp-FACdebuggingabove" ){
 					console.log( 
 						getCI(), 
 						"handleCups ", cupData[ck]["title"],
@@ -631,11 +651,13 @@ handleCups = ( cupData )=>{
 
 				}else{
 
-					/* This fixture is in the future */
+					/* This fixture is in the future 
+						console.log("updateCupCell(team_h=", evFxtr["team_h"], ", gw=", cupData[ck]["gw"], ", whichCup=", whichCup, ", tmAName=", tmAName ) ;
+						console.log("updateCupCell(team_a=", evFxtr["team_a"], ", gw=", cupData[ck]["gw"], ", whichCup=", whichCup, ", tmHName=", tmHName ) ;
+					*/
 					if( tmHisFPL ){ updateCupCell( evFxtr["team_h"], cupData[ck]["gw"], whichCup, tmAName + rpl ) ; }
 					if( tmAisFPL ){ updateCupCell( evFxtr["team_a"], cupData[ck]["gw"], whichCup, tmHName + rpl ) ; }
-				}
-		
+				}		
 			}
 
 		}else{
