@@ -53,8 +53,7 @@
 		"evtp-FAC": [
 					{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
 					{	"title": "OUT", 	"data": [ ] },
-					{ 	"title": "evntTp", 	"data": "evtp-FAC" 
-					},
+					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	
 						"title": "FINAL",
 						"gw": 37,
@@ -87,7 +86,7 @@
 						]
 					},
 					{	
-						"title": "L16 5th Rnd",
+						"title": "5th Rnd (L16)",
 						"gw": 27,
 						"elim": [ ],
 						"drawn": false,
@@ -103,7 +102,7 @@
 						]
 					},
 					{	
-						"title": "L32 4th Rnd",
+						"title": "4th Rnd (FA-L32)",
 						"gw": 24,
 						"elim": [ ],
 						"drawn": false,
@@ -111,7 +110,6 @@
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
 									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
 									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -127,63 +125,39 @@
 						]
 					},
 					{	
-						"title": "L64",
+						"title": "3rd Rnd (FA-L64)",
 						"gw": 20,
-						"elim": [],
-						"drawn": false,
+						"elim": [ ],
+						"drawn": true,
 						"data": [
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
-						]
-					},
-					{	
-						"title": "2nd Round",
-						"gw": 13,
-						"elim": [],
-						"drawn": false,
-						"data": [
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":1,  "team_a":14, 	"oppNmH":"" },
+									{"team_h":2,  "team_a":19, 	"oppNmH":"" },
+									{"team_h":0,  "team_a":5, 	"oppNmH":"Norwich City" },
+									{"team_h":0,  "team_a":18, 	"oppNmH":"Tamworth" },
+									{"team_h":0,  "team_a":20, 	"oppNmH":"Bristol City" },
+									{"team_h":3,  "team_a":0, 	"oppNmA":"West Brom." },
+									{"team_h":4,  "team_a":0, 	"oppNmA":"Plymouth Argyle" },
+									{"team_h":6,  "team_a":0, 	"oppNmA":"Morecambe" },
+									{"team_h":7,  "team_a":0, 	"oppNmA":"Stockport County" },
+									{"team_h":8,  "team_a":0, 	"oppNmA":"Peterborough Utd." },
+									{"team_h":9,  "team_a":0, 	"oppNmA":"Watford" },
+									{"team_h":10, "team_a":0, 	"oppNmA":"Bristol Rovers" },
+									{"team_h":11, "team_a":0, 	"oppNmA":"QPR" },
+									{"team_h":12, "team_a":0, 	"oppNmA":"Accrington Stanley" },
+									{"team_h":13, "team_a":0, 	"oppNmA":"Salford City" },
+									{"team_h":15, "team_a":0, 	"oppNmA":"Bromley" },
+									{"team_h":16, "team_a":0, 	"oppNmA":"Luton Town" },
+									{"team_h":17, "team_a":0, 	"oppNmA":"Swansea" }
 						]
 					}
-
 		]
 	},
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [  1, 4, 7, 12, 14, 15, 17, 18 ]   },
-					{	"title": "OUT", 	"data": [   2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ] },
-					{ 	"title": "evntTp", 	"data": "evtp-EFL" 
-					},
+					{ 	"title": "IN", 		"data": [ 1,  4,   7,         12, 14,15, 17,18 ]   },
+					{	"title": "OUT", 	"data": [  2,3, 5,6, 8,9,10,11, 13,    16,    19,20 ] },
+					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
@@ -480,5 +454,3 @@
 		}
 	}
 ]
-
-
