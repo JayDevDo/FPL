@@ -207,7 +207,16 @@ getManagerData = async ()=> {
 */
 
 getCurGW = ( allRounds )=>{
-	if(allRounds.length>0){ for(let r=0; r<allRounds.length;r++){ if( allRounds[r].is_next ){ gamesOverview.currentRnd =  parseInt(allRounds[r].id ) ; return gamesOverview.currentRnd ; }}}else{ return 0 ; } 
+	if(allRounds.length>0){ 
+		for(let r=0; r<allRounds.length;r++){ 
+			if( allRounds[r].is_next ){  
+				curGW =  parseInt(allRounds[r].id ) ;
+				// console.log("getCurGW finds: ", curGW, "\tin ", allRounds[r] ) ;
+				gamesOverview.currentRnd = curGW ; 
+				return gamesOverview.currentRnd ; 
+			}
+		}
+	}else{ return curGW ; } 
 }
 
 
@@ -282,8 +291,9 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		$(fxtrSpan).text( target_txt ) ; 
 	}
 
-	let ttlText = 	[ 	
-		"Home attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
+	let ttlText = [
+		"fxtr.id:", fxtr.id,
+		"\nHome attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
 		"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
 		"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
 		].join("\t") ;
@@ -673,6 +683,19 @@ handleCups = ( cupData )=>{
 
 }
 
+updateDeadlines = ( eventArray )=>{
+
+	for (let gwk=0; gwk<eventArray.length; gwk++){
+		
+		let gwkNr 		= eventArray[gwk]['id'] ;
+		let gwkDdl 		= eventArray[gwk]['deadline_time'].toString() ;
+		let gwkDdlnCut 	= gwkDdl.substring( 0,10 ) ;
+		let gwkDdlnTmCut= gwkDdl.substring(11,16 ) ;
+		let hdr = $( "#fxtrTblHdr>tr>th[evrnd="+gwkNr.toString()+"].evtp-EPL" ).get() ;
+		if( $(hdr).length==1 ){ $(hdr).attr("date", gwkDdlnCut + " " + gwkDdlnTmCut ) };
+	}
+}
+
 
 getOrigPPRnd = ( fxtrId )=>{
 	if(gamesOverview.postponedGames.length>0){for( f=0; f<gamesOverview.postponedGames.length; f++){if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ return gamesOverview.postponedGames[f].ogGW;}}}
@@ -747,9 +770,15 @@ allPromise.then(
 
 		// EVENT LOOP START
 		// Add dates + rounds for cups in fxtr table th
+		console.log( getCI(), "allPromise.then(values) event loop START" ) ; 
+
 		curGW = getCurGW( events ) ;
 		console.log( getCI(), "allPromise.then(values) curGw(events)", curGW ) ; 
 		$("#curRound").text("GW: " + curGW.toString() ) ;
+
+		updateDeadlines(events) ;
+		console.log( getCI(), "allPromise.then(values) event loop END" ) ; 
+
 		// EVENT LOOP END
 
 		// TEAM LOOP START 
@@ -829,7 +858,7 @@ allPromise.then(
 				fxtr.reason 	= getOrigPPRsn( fxtr.id ) ; 
 				fxtr.finished 	= false ; 
 				fxtr.finished_provisional = false ; 
-				fxtr.kickoff_time = "2024-06-30T15:00:00Z" ; 
+				fxtr.kickoff_time = "2025-06-30T15:00:00Z" ; 
 				fxtr.minutes 	= 0 ; 
 				fxtr.provisional_start_time = false ; 
 				fxtr.started 	= false ; 

@@ -1,9 +1,20 @@
 
 
-tmNmClick = (tmId)=>{  
+tmNmClick = (tmId)=>{ 
+
 	gamesOverview.selectedTeamId = tmId ;
-	console.log("tmNmClick tmId", tmId , FPLTeamsFull[tmId]["altNm"] ) ;
-	/* window.open("teamPopUp.html?tmId="+tmId.toString(), FPLTeamsFull[tmId]["altNm"]  ) ;  */
+
+	let ls_tmdfbarchart = [] ;
+	
+	for( let e=1; e<39; e++){
+		ls_tmdfbarchart.push( {'gw': e, 'df': FPLTeamsFull[tmId]['ownDFhis'][e] } );
+	}
+
+	localStorage.tmdfbarchart = JSON.stringify( ls_tmdfbarchart ) ;
+	lsSize = JSON.parse(localStorage.tmdfbarchart).length ;
+
+	console.log("tmNmClick tmId", tmId , FPLTeamsFull[tmId]["altNm"], "locstore Size:", lsSize ) ;
+	window.open("teamDFBarChart.html?tmId="+tmId.toString(), FPLTeamsFull[tmId]["altNm"]  ) ;
 }
 
 showEvent = (id)=>{ for(let e=0; e < fixtures.length; e++){ if( fixtures[e].id == id ){ return fixtures[e] ; }}}
@@ -916,7 +927,7 @@ toggleStrengthAway = ()=>{
 
 
 toggleDFuser = ()=>{
-	// console.log( getCI(), "toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
+	console.log( getCI(), "toggleDFuser gamesOverview.dfSource User: ", gamesOverview.dfSource['user'] );
 	if( gamesOverview.dfSource['user'] ){
 		// now using FPL DF's, switch to user DF (if stored)
 		// console.log( getCI(), "toggleDFuser - now using USER DF " ) ; 
@@ -939,7 +950,7 @@ showDeadline = (blnSD)=>{
 
 	for(let gw=1; gw < 39 ; gw++){
 
-		let hdr = $("th[evrnd=" + gw + "]" ).get() ;
+		let hdr = $("#fxtrTblHdr > tr > th[evrnd=" + gw + "]" ).get() ;
 		let hdrCupStr 	= "" ;
 		let hdrTxtStr 	= [] ;
 		let hdrDateStr 	= [] ;

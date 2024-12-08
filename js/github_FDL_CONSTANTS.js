@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 13,
-		currentRnd: 14,
-		evWndw: { 'direction': 1 , 'start': 14, 'rounds': 9, 'end': 22 },
+		finishedRounds: 14,
+		currentRnd: 15,
+		evWndw: { 'direction': 1 , 'start': 15, 'rounds': 8, 'end': 22 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -49,8 +49,8 @@ let gamesOverview = {
 		},
 		showSttng: true,
 		showDdln: true,
-		hasPP: false,
-		showPP: false,
+		hasPP: true,
+		showPP: true,
 		showRP: true,
 		postponedGameIds: [],
 		postponedGames: [],
@@ -72,24 +72,13 @@ getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	}
 
 
 hasUserStore = ()=>{
-
-	let hasLS = false;
-
+	let hasLS = false ; 
 	try{
-		hasLS = ( 
-			localStorage.usrdf.length > 0 
-		)
-		.catch( 
-			( error ) => {
-				console.log("error in hasUserStore: =>", error );
-				hasLS = false;
-			}
-		) ;
-
+		if( JSON.parse( localStorage.usrdf ) ){ hasLS = true; }else{ hasLS = false; }
+		// console.log("hasUserStore: hasLS=", hasLS, JSON.parse( localStorage.usrdf ) ) ;
 	}finally{
 		return hasLS;
 	}
-
 }
 
 
@@ -149,11 +138,11 @@ loadUserDF = ()=>{
 
 	if( localStorage.usrdf ){ 
 
-		// console.log( "loadUserDF: localStorage exists. =", localStorage.usrdf ) ;
+		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
 		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
 		storedH = JSON.parse( localStorage.usrdf ) ;
 
-		if( storedH.length !=20 ){ setUserDF() ; }
+		if( storedH.length != 20 ){ setUserDF() ; }
 
 	}else{
 		console.log("loadUserDF: localStorage doesnt exist.") ;
@@ -471,7 +460,6 @@ let FPLTeamsFull = [
 		id: 4,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
-		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
 		longNm: "Brentford",
