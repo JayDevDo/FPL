@@ -168,10 +168,10 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=14 >
+								<form id="eventWndwStartForm" value=15 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=14
+											value=15
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1 >1</option>
@@ -187,8 +187,8 @@
 										<option value=11 >11</option>
 										<option value=12 >12 IB 3</option>
 										<option value=13 >13</option>
-										<option value=14 active selected >14</option>
-										<option value=15 >15</option>
+										<option value=14 >14</option>
+										<option value=15 active selected>15</option>
 										<option value=16 >16</option>
 										<option value=17 >17</option>
 										<option value=18 >18</option>
@@ -221,10 +221,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=9 >
+								<form id="slctdRoundsForm" value=8 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=9
+											value=8
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -234,8 +234,8 @@
 										<option value=5  >5</option>
 										<option value=6  >6</option>
 										<option value=7  >7</option>
-										<option value=8  >8</option>
-										<option value=9 active selected >9</option>
+										<option value=8  active selected >8</option>
+										<option value=9  >9</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
 										<option value=12 >12</option>
@@ -835,7 +835,6 @@
 
 							<!-- Gameweek 27  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="27" date="2025-02-25" round="GW 27"></th> 
-
 							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="27" date="2025-03-01" round="L16"></th> 
 
 
@@ -4252,11 +4251,12 @@
 
 		<!-- script type="text/javascript">showEventWindow(2,"HTML init");</script -->
 		<script defer type="text/javascript">
-			console.log("HTML init -> toggleReplanned(1)" )  ;
-			toggleReplanned(1) ;
 
-			console.log("HTML init -> togglePPdisplay(false, 'HTML init')" )  ;
-			togglePPdisplay(false,"HTML init") ;
+			console.log("HTML init -> togglePPdisplay(true, 'HTML init')" )  ;
+			togglePPdisplay(true,"HTML init") ;
+
+			console.log("HTML init -> toggleReplanned(0)" )  ;
+			toggleReplanned(0) ;
 
 			console.log("\nHTML init -> showEventWindow(2, 'HTML init')")  ;
 		 	showEventWindow(2, "HTML init") ;
@@ -4281,7 +4281,6 @@
 				}
 			) ;
 		</script >
-
 
 	</footer>
 
