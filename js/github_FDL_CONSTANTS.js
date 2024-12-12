@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 14,
-		currentRnd: 15,
-		evWndw: { 'direction': 1 , 'start': 15, 'rounds': 8, 'end': 22 },
+		finishedRounds: 15,
+		currentRnd: 16,
+		evWndw: { 'direction': 1 , 'start': 16, 'rounds': 7, 'end': 22 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -51,7 +51,7 @@ let gamesOverview = {
 		showDdln: true,
 		hasPP: true,
 		showPP: true,
-		showRP: true,
+		showRP: false,
 		postponedGameIds: [],
 		postponedGames: [],
 		replannedGamesIds: [],
@@ -395,6 +395,24 @@ exportFTbl = ()=>{
 	return FPLTeamsFull;
 }
 
+openPPInfo = ( fxtrId )=>{
+
+	let ppArray = gamesOverview.postponedGames ;
+	let ppLink = "" ;
+	
+	for( let p=0; p<ppArray.length; p++ ){		
+		
+		ppLink = ppArray[p].link ;
+
+		if( parseInt( ppArray[p].ppid ) == parseInt( fxtrId ) ){ 	
+			console.log( "opening postponement info for fxtrId", fxtrId, "link:", ppLink  ) ;
+ 		}
+	}
+	window.open( ppLink , target="_blank" ) ;
+}
+
+
+
 let FPLTeamsFull = [
 	{   shortNm: "NPL",
 		id: 0,
@@ -414,9 +432,9 @@ let FPLTeamsFull = [
 	{   shortNm: "ARS",
 		id: 1,
 		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from fixtures
 		longNm: "Arsenal",	
 		altNm: "Gunners",
 		players: [],
@@ -429,9 +447,9 @@ let FPLTeamsFull = [
 	{   shortNm: "AVL",
 		id: 2,
 		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Aston Villa",
 		altNm: "Villains",
 		players: [],
@@ -444,9 +462,9 @@ let FPLTeamsFull = [
 	{   shortNm: "BOU",
 		id: 3,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Bournemouth",
 		altNm: "Cherries",
 		players: [],
@@ -459,9 +477,9 @@ let FPLTeamsFull = [
 	{   shortNm: "BRE",
 		id: 4,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Brentford",
 		altNm: "Bees",
 		players: [],
@@ -476,7 +494,7 @@ let FPLTeamsFull = [
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Brighton",
 		altNm: "Seagulls",
 		players: [],
@@ -491,7 +509,7 @@ let FPLTeamsFull = [
 		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Chelsea",
 		altNm: "Blues",
 		players: [],
@@ -503,10 +521,10 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "CRY",
 		id: 7,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Crystal Palace",
 		altNm: "Eagles",
 		players: [],
@@ -518,10 +536,10 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "EVE",
 		id: 8,
-		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Everton",
 		altNm: "Toffees",
 		players: [],
@@ -536,7 +554,7 @@ let FPLTeamsFull = [
 		fplDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Fulham",
 		altNm: "Cottagers",
 		players: [],
@@ -551,7 +569,7 @@ let FPLTeamsFull = [
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Ipswich",
 		altNm: "blues",
 		players: [],
@@ -566,7 +584,7 @@ let FPLTeamsFull = [
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Leicester",
 		altNm: "Tractor Boys",
 		players: [],
@@ -578,10 +596,10 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "LIV",
 		id: 12,
-		fplDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Liverpool",
 		altNm: "Reds",
 		players: [],
@@ -597,7 +615,7 @@ let FPLTeamsFull = [
 		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 5, 4 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Man city",
 		altNm: "Citizens",
 		players: [],
@@ -610,9 +628,9 @@ let FPLTeamsFull = [
 	{   shortNm: "MNU",
 		id: 14,
 		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Man utd",
 		altNm: "Red Devils",
 		players: [],
@@ -624,10 +642,10 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "NEW",
 		id: 15,
-		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		fplDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 3, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Newcastle",
 		altNm: "Magpies",
 		players: [],
@@ -642,7 +660,7 @@ let FPLTeamsFull = [
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Nott-m Forest",
 		altNm: "Forest",
 		players: [],
@@ -657,7 +675,7 @@ let FPLTeamsFull = [
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 2, 1 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Southampton",
 		altNm: "Saints",
 		players: [],
@@ -672,7 +690,7 @@ let FPLTeamsFull = [
 		fplDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		usrDF: [ 4, 3 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Tottenham",
 		altNm: "Spurs",
 		players: [],
@@ -685,9 +703,9 @@ let FPLTeamsFull = [
 	{   shortNm: "WHU",
 		id: 19,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "West Ham",
 		altNm: "Hammers",
 		players: [],
@@ -700,10 +718,10 @@ let FPLTeamsFull = [
 	{   shortNm: "WOL",
 		id: 20,
 		fplDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 3, 2 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 2, 2 ] , 	/* [HOME,AWAY] */
 		usrDF:[0,0],
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from events
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Wanderers",
 		altNm: "Wolves",
 		players: [],

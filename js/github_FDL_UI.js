@@ -493,7 +493,7 @@ updateTotalDF = (dfType)=>{
 				}
 			);
 
-			// All fixtures have been couted. Now Update column "DF"
+			// All fixtures have been counted. Now Update column "DF"
 			let dfAvg = ( parseInt(rwDFSum) / parseInt(rwMtchCount) ).toString().slice(0,4);
 			let dfStr = ""
 

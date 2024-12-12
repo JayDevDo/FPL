@@ -270,8 +270,8 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 			target_td = target_fcell; 
 		}
 
-		target_txt = [ fxtr.team_a_nm, loc, ["(", FPLTeamsFull[fxtr.team_a].fplDF[1], ")"].join("") ].join(" ") ;
-		$(fxtrSpan).attr( "df", FPLTeamsFull[fxtr.team_a].fplDF[1] ) ;
+		target_txt = [ fxtr.team_a_nm, loc, ["(", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ], ")"].join("") ].join(" ") ;
+		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ]   ) ;
 		$(fxtrSpan).text( target_txt ) ;
 		
    }else{
@@ -286,13 +286,15 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 			target_td = target_fcell; 
 		}
 		
-		target_txt = [ fxtr.team_h_nm, loc, ["(",  FPLTeamsFull[fxtr.team_h].fplDF[0], ")"].join("") ].join(" ") ;
-		$(fxtrSpan).attr( "df", FPLTeamsFull[fxtr.team_h].fplDF[0]) ;
+		target_txt = [ fxtr.team_h_nm, loc, ["(", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ] , ")"].join("") ].join(" ") ;
+		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ]  ) ;
 		$(fxtrSpan).text( target_txt ) ; 
 	}
 
 	let ttlText = [
-		"fxtr.id:", fxtr.id,
+		"fxtr.id:", fxtr.id, 
+		"homeDF[gw]:", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ],
+		"awayDF[gw]:", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ],
 		"\nHome attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
 		"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
 		"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
@@ -374,11 +376,14 @@ buidPPContainer = ( treatedPPData )=>{
 	for( let f = 0; f < treatedPPData[0].length; f++ ){
 
 		fxtr = treatedPPData[0][f] ; 
+		/* 
+			"<span>Link:  ", fxtr.link ,"</span>",
+		*/
 
-		ppArr = [ 	"<li title='", fxtr.ppid ,
-					"'><span>R ", fxtr.ogGW,
-					"\t", fxtr.team_h_nm, "\tVs\t", fxtr.team_a_nm,"\t\t\t", fxtr.reason, 
-					"</span></li>"
+		ppArr =[	"<li title='", fxtr.ppid , "><button fxtrId='",fxtr.ppid,"' onclick=openPPInfo(",fxtr.ppid,") style='color:#FF3300 !important; background-color:#000000 !important;' >", 
+						"R ", fxtr.ogGW, "\t", fxtr.team_h_nm, "\tvs\t", fxtr.team_a_nm,"\t\t", fxtr.reason, 
+						"</button>",
+					"</li>"
 				].join("") ; 
 
 		let ppFxtrLi = $( ppArr ) ; 
@@ -414,6 +419,9 @@ buidPPContainer = ( treatedPPData )=>{
 }
 
 setDFTeam = (tmId, df )=>{
+	/*
+		Updates the DF table in #teamDFCnt
+	*/
 	let tmDFCritH = "#df_home td[tmId="+tmId+"]" ;
 	let tmDFCritA = "#df_away td[tmId="+tmId+"]" ;
 	let cellJQH = $( tmDFCritH ).get() ;
