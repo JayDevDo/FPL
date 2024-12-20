@@ -11,7 +11,7 @@
 				"team_a_id": 12,
 				"team_a_nm": "LIV",
 				"status": "postponed",
-				"reason": "og: 15: Merseyside derby called off because of Storm Darragh.",
+				"reason": "og: 15: Merseyside derby called off because of Storm Darragh. 2024-12-20 12h00: still unplanned",
 				"link": "https://www.bbc.com/sport/football/articles/c4gllz8g5zgo"
 			}
 		]
@@ -169,13 +169,13 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [ 1,  4,   7,         12, 14,15, 17,18 ]   },
-					{	"title": "OUT", 	"data": [  2,3, 5,6, 8,9,10,11, 13,    16,    19,20 ] },
+					{ 	"title": "IN", 		"data": [ 1, 12, 15, 18 ] },
+					{	"title": "OUT", 	"data": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
-						"elim": [ 2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ],
+						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
 						"drawn": false,
 						"data": [ 	
 									{"team_h":0, "team_a":0 } 
@@ -184,21 +184,21 @@
 					{ 	
 						"title": "S-FINAL 2 ",
 						"gw": 24,
-						"elim": [ 2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ],
-						"drawn": false,
+						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
 						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":15, "team_a":1  },
+									{"team_h":12, "team_a":18 }
 						]
 					},
 					{ 	
 						"title": "S-FINAL 1",
 						"gw": 20,
-						"elim": [ 2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ],
-						"drawn": false,
+						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
 						"data": [ 
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h": 1, "team_a":15 },
+									{"team_h":18, "team_a":12 }
 							]
 					},
 					{ 	
