@@ -3,7 +3,7 @@
 // let allStatsData = []; has moved to FPLConstants
 
 // initial value, will be overwritten 
-let curGW = 14;
+let curGW = 17;
 
 
 /*
