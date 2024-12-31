@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Jay's FPL 23/24 team schedules</title>
+		<title>Jay's FPL 24/25 team schedules</title>
 		<link rel="stylesheet" type="text/css" href="splash.css" >
 		<script type="text/javascript" src="js/ext/d3.min.js"></script>		
 		<script type="text/javascript" src="js/ext/jquery.min.js"></script>
@@ -168,31 +168,23 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=17 >
+								<form id="eventWndwStartForm" value=19 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=17
+											value=19
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1 >1</option>
-										<option value=2  >2</option>
-										<option value=3  >3</option>
 										<option value=4  >4 IB 1</option>
-										<option value=5  >5</option>
-										<option value=6  >6</option>
-										<option value=7  >7</option>
 										<option value=8  >8 IB 2</option>
-										<option value=9  >9 </option>
-										<option value=10 >10</option>
-										<option value=11 >11</option>
 										<option value=12 >12 IB 3</option>
 										<option value=13 >13</option>
 										<option value=14 >14</option>
 										<option value=15 >15</option>
 										<option value=16 >16</option>
-										<option value=17 active selected >17</option>
+										<option value=17 >17</option>
 										<option value=18 >18</option>
-										<option value=19 >19</option>
+										<option value=19 active selected >19</option>
 										<option value=20 >20</option>
 										<option value=21 >21</option>
 										<option value=22 >22</option>
@@ -212,6 +204,14 @@
 										<option value=36 >36</option>
 										<option value=37 >37</option>
 										<option value=38 >38</option>
+										<option value=2  >2</option>
+										<option value=3  >3</option>
+										<option value=5  >5</option>
+										<option value=6  >6</option>
+										<option value=7  >7</option>
+										<option value=9  >9 </option>
+										<option value=10 >10</option>
+										<option value=11 >11</option>
 									</select>
 								</form>
 							</td>
@@ -261,22 +261,13 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=22 >
+								<form id="eventWndwEndForm" value=24 >
 									<select name="endRnd"
 											id="endRnd"
-											value=22
+											value=24
 											onchange="setEventWndwEnd(value)" 
 									>
-										<option value=1 >1</option>
-										<option value=2 >2</option>
-										<option value=3 >3 IB 1</option>
-										<option value=4 >4</option>
-										<option value=5 >5</option>
 										<option value=6 >6 IB 2</option>
-										<option value=7 >7</option>
-										<option value=8 >8</option>
-										<option value=9 >9</option>
-										<option value=10 >10</option>
 										<option value=11 >11 IB 3</option>
 										<option value=12 >12</option>
 										<option value=13 >13</option>
@@ -288,9 +279,9 @@
 										<option value=19 >19</option>
 										<option value=20 >20</option>
 										<option value=21 >21</option>
-										<option value=22 active selected >22</option>
+										<option value=22 >22</option>
 										<option value=23 >23</option>
-										<option value=24 >24</option>
+										<option value=24 active selected >24</option>
 										<option value=25 >25</option>
 										<option value=26 >26</option>
 										<option value=27 >27</option>
@@ -305,6 +296,15 @@
 										<option value=36 >36</option>
 										<option value=37 >37</option>
 										<option value=38 >38</option>
+										<option value=1 >1</option>
+										<option value=2 >2</option>
+										<option value=3 >3 IB 1</option>
+										<option value=4 >4</option>
+										<option value=5 >5</option>
+										<option value=7 >7</option>
+										<option value=8 >8</option>
+										<option value=9 >9</option>
+										<option value=10 >10</option>
 									</select>
 								</form>
 							</td>
@@ -4273,11 +4273,13 @@
 			console.log("\nHTML init -> toggleDeadline -2nd" )  ;
 			toggleDeadline() ;
 
+
 			$(document).ready(
 				()=>{
 					console.log("\nHTML init -> document = ready") ;
 					$("#splash").hide() ;
-					// openCheck(splashDialog);					
+					// openCheck(splashDialog);
+					setFPLdfToGW( curGW )
 				}
 			) ;
 		</script >
