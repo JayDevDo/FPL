@@ -3,7 +3,7 @@
 // let allStatsData = []; has moved to FPLConstants
 
 // initial value, will be overwritten 
-let curGW = 17;
+let curGW = 19;
 
 
 /*
@@ -209,7 +209,7 @@ getManagerData = async ()=> {
 getCurGW = ( allRounds )=>{
 	if(allRounds.length>0){ 
 		for(let r=0; r<allRounds.length;r++){ 
-			if( allRounds[r].is_next ){  
+			if( allRounds[r].is_current ){  
 				curGW =  parseInt(allRounds[r].id ) ;
 				// console.log("getCurGW finds: ", curGW, "\tin ", allRounds[r] ) ;
 				gamesOverview.currentRnd = curGW ; 
@@ -420,7 +420,7 @@ buidPPContainer = ( treatedPPData )=>{
 
 setDFTeam = (tmId, df )=>{
 	/*
-		Updates the DF table in #teamDFCnt
+		Updates the DF table in #teamDFCnt at initial load. Once all fixtures are loaded df's are updatedfrom current gameweek backwards.
 	*/
 	let tmDFCritH = "#df_home td[tmId="+tmId+"]" ;
 	let tmDFCritA = "#df_away td[tmId="+tmId+"]" ;
@@ -448,8 +448,6 @@ setDFTeam = (tmId, df )=>{
 	}
 }
 
-
-// $("#df_home td[ tmId = 1 ]").length
 
 setDFTableStrength = ( eId, tmId, intStrength )=>{
 
@@ -726,6 +724,80 @@ sortByGmID = ( evArr )=>{
 }
 
 
+
+getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
+	// console.log("getTmDfGwLoc| --tmId: ", tmId, "--gw:", gw, "len(fixtureArray):", fixtureArray.length ) ;
+	let tempArr = [] ;
+	
+	for( i=0; i<=39; i++){
+		tempArr.push( {'gw':i, 'loc': "N", 'df':0, 'opp': "NA" } )
+	}
+
+	let curGWDF;
+	let otherGWDF;
+	let retArr = [0,0];
+
+	// console.log("getTmDfGwLoc| --tempArr:", tempArr.length ) ;
+
+	if (fixtureArray.length >0){
+
+		for ( fi = 0; fi < 380; fi++){
+
+			let fxtr = fixtureArray[fi] ;
+			let ogw = fxtr.event ;
+			if (ogw == 39){ ogw = fxtr.ogGW; }
+
+			if( parseInt(fxtr.team_h) == tmId ){
+				// console.log("fxtr.id", fxtr.id, "gw", ogw, "team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty ,"team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ) ;
+				tempArr[ ogw ]['gw'] = ogw ;
+				tempArr[ ogw ]['loc']= "H" ;
+				tempArr[ ogw ]['df'] = fxtr.team_a_difficulty ;
+				tempArr[ ogw ]['opp'] = fxtr.team_a_nm
+			}else if( parseInt(fxtr.team_a) == tmId ){
+				// console.log("fxtr.id", fxtr.id, "gw", ogw, "team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ,"team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty  ) ;
+				tempArr[ ogw ]['gw'] = ogw ;
+				tempArr[ ogw ]['loc']= "A" ;
+				tempArr[ ogw ]['df'] = fxtr.team_h_difficulty ;
+				tempArr[ ogw ]['opp'] = fxtr.team_h_nm
+			}
+		}
+	}
+	// Now we have the team's DF list per gameweek with loc
+	// Set the DF of the current GW (H or A) then look back for the first DF not H/A 
+	// console.log("getTmDfGwLoc| --tempArr:", tempArr ) ;
+	curGWDF = tempArr[gw] ;
+	// console.log("getTmDfGwLoc| --curGWDF:", curGWDF ) ;
+
+	for( g = (gw-1); g > 0; g--){
+		// console.log("tempArr[",g,"]", tempArr[g] )
+		if ( tempArr[g]['loc'] != curGWDF['loc'] ){
+			otherGWDF = tempArr[g];
+			// console.log("found other GW:", tempArr[g])
+			break ;
+		}
+	}
+
+	// console.log("getTmDfGwLoc| --otherGWDF:", otherGWDF );
+
+	if( curGWDF['loc'] == "H" ){
+		retArr[0] = curGWDF['df'];
+		retArr[1] = otherGWDF['df'];
+	}else{
+		retArr[0] = otherGWDF['df'];
+		retArr[1] = curGWDF['df'];
+	}
+	// console.log("retArr: ", retArr ) ;
+	return retArr ;
+}
+
+
+setFPLdfToGW = (gw=gamesOverview.currentRnd)=>{
+	for( t=1; t<21; t++ ){
+		FPLTeamsFull[t]['fplDF'] = getTmDfGwLoc(t,gw)
+	}
+}
+
+
 /*
 #####################
 #	 DATA READY		#	
@@ -949,6 +1021,9 @@ allPromise.then(
 		//console.log("starting handleCups( Uefa )" ) ;
 		handleCups( uefa ,"evtp-ECL") ; 
 
+
+		setFPLdfToGW(curGW)
+		loadFPLDF()
 		// CUP FIXTURES LOOP END
 		$("#pulser").remove() ;
 	}

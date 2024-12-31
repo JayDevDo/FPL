@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 16,
-		currentRnd: 17,
-		evWndw: { 'direction': 1 , 'start': 17, 'rounds': 6, 'end': 22 },
+		finishedRounds: 18,
+		currentRnd: 19,
+		evWndw: { 'direction': 1 , 'start': 19, 'rounds': 6, 'end': 24 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -203,13 +203,14 @@ loadUserDF = ()=>{
 
 }
 
-loadFPLDF = ()=>{
+loadFPLDF = (gw=gamesOverview.currentRnd)=>{
 	/* 
 		Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] situated below into the DFcontainer and fixtures. 
 		These are/were the values set by the developer of this at the start of the season.
 		To load the most recent values, run update_FPLDF(Gameweek).
 
 	*/
+	console.log("loadFPLDF| gw:",gw )
 
 	if( FPLTeamsFull.length == 21 ){
 
