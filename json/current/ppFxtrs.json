@@ -65,13 +65,13 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
-					{	"title": "OUT", 	"data": [ ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 19] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	
 						"title": "FINAL",
 						"gw": 37,
-						"elim": [ ],
+						"elim": [ 1, 4, 19],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -80,7 +80,7 @@
 					{	
 						"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ ],
+						"elim": [ 1, 4, 19],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -90,7 +90,7 @@
 					{	
 						"title": "Q-FINAL",
 						"gw": 30,
-						"elim": [ ],
+						"elim": [ 1, 4, 19],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0  },
@@ -102,7 +102,7 @@
 					{	
 						"title": "5th Rnd (L16)",
 						"gw": 27,
-						"elim": [ ],
+						"elim": [1, 4, 19 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -118,24 +118,25 @@
 					{	
 						"title": "4th Rnd (FA-L32)",
 						"gw": 24,
-						"elim": [ 4, 19 ],
+						"elim": [ 1, 4, 19 ],
 						"drawn": true,
 						"data":	[
-									{"team_h":2, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":20, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":12, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":11, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":3, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":6, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":5, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":16, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h":2, 	"team_a":18		},
+									{"team_h":8, 	"team_a":3 		},
+									{"team_h":5, 	"team_a":6 		},
+									{"team_h":14, 	"team_a":11 	},
+									{"team_h":0, 	"team_a":7, 	"oppNmH":"Doncaster Rovers" },
+									{"team_h":0, 	"team_a":9, 	"oppNmH":"Mansfield or Wigan" },
+									{"team_h":0, 	"team_a":10, 	"oppNmH":"Coventry City" },
+									{"team_h":0, 	"team_a":12, 	"oppNmH":"Plymouth Argyle" },
+									{"team_h":0, 	"team_a":13, 	"oppNmH":"Leyton Orient or Derby" },
+									{"team_h":0, 	"team_a":15, 	"oppNmH":"Birmingham City" },
+									{"team_h":0, 	"team_a":16, 	"oppNmH":"Exeter City" },
+									{"team_h":17, 	"team_a":0, 	"oppNmA":"Burnley" },
+									{"team_h":0, 	"team_a":20, 	"oppNmH":"Blackburn Rovers" },
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"Leeds v Milwall/Dagenham & Redbridge " },
+									{"team_h":0, 	"team_a":0, 	"oppNmH":"Preston/Charlton v Wycombe Wanderers" },
+									{"team_h":0, 	"team_a":0, 	"oppNmH":"Stoke City v Cardiff City" }
 						]
 					},
 					{	
