@@ -3,7 +3,7 @@
 // let allStatsData = []; has moved to FPLConstants
 
 // initial value, will be overwritten 
-let curGW = 19;
+let curGW = 21;
 
 
 /*
@@ -704,7 +704,13 @@ updateDeadlines = ( eventArray )=>{
 
 
 getOrigPPRnd = ( fxtrId )=>{
-	if(gamesOverview.postponedGames.length>0){for( f=0; f<gamesOverview.postponedGames.length; f++){if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ return gamesOverview.postponedGames[f].ogGW;}}}
+	if( gamesOverview.postponedGames.length > 0 ){
+		for( f=0; f<gamesOverview.postponedGames.length; f++){
+			if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ 
+				return gamesOverview.postponedGames[f].ogGW;
+			}
+		}
+	}
 }
 
 getOrigPPRsn = ( fxtrId )=>{
@@ -772,7 +778,7 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 		// console.log("tempArr[",g,"]", tempArr[g] )
 		if ( tempArr[g]['loc'] != curGWDF['loc'] ){
 			otherGWDF = tempArr[g];
-			// console.log("found other GW:", tempArr[g])
+			console.log("found other GW:", tempArr[g])
 			break ;
 		}
 	}
@@ -841,7 +847,7 @@ allPromise.then(
 		let faCup 	= ppGames[4] ; 
 		let uefa 	= ppGames[5] ;
 
-		console.log( getCI(), "values: events: ", events.length, "teams:", teams.length, "ppGames[0]:", ppGames[0].length, "fxtrs:", fxtrs.length ) ; 
+		console.log( getCI(), "values: events: ", events.length, "teams:", teams.length, "ppGames[0]:", ppGames[0].length, "ppGames[1]:", ppGames[1].length, "fxtrs:", fxtrs.length ) ; 
 		// Step 2 : Add data from ppGames to fxtrs. 		( 	FXTR LOOP 	)	-origGw, -reason, -newGW(39), -postponed(true/false) 
 		// Step 4 : Add data from fxtrs to FPLTeamsFull.	( 	FXTR LOOP 	)	-hisDF
 		// Step 5 : Add data from FPLTeamsFull to fxtrs.	( 	FXTR LOOP 	)	-FPL-DF -strengths 
