@@ -4274,12 +4274,15 @@
 			toggleDeadline() ;
 
 
+
 			$(document).ready(
 				()=>{
 					console.log("\nHTML init -> document = ready") ;
 					$("#splash").hide() ;
 					// openCheck(splashDialog);
-					setFPLdfToGW( curGW )
+					setFPLdfToGW( curGW ) ;
+					console.log("\nHTML init -> getTeamTableDifference" ) ;
+					getTeamTableDifference( 11, 1 ) ;
 				}
 			) ;
 		</script >
