@@ -842,6 +842,75 @@ toggleSettings = ()=>{
 
 /* 
 
+###### Manager GW rank difference  ######
+
+# https://footballapi.pulselive.com/football/standings?compSeasons=719&altIds=true&detail=2&FOOTBALL_COMPETITION=1&live=true
+# pulse_id == 
+*/
+
+/* 
+	We get the index of the team in fixturedata, the ranking table uses pulse_id wich is available in FPLTeamsFULL
+*/
+getTeamTableDifference = ( mngrTm = 1, oppTm = 20 ) =>{
+	// console.log("currentTeamTable[0]", currentTeamTable[0].length ) ;
+	curTmTable 		= currentTeamTable['tables'][0]['entries'];
+	let mngrTmName 	= FPLTeamsFull[mngrTm]['longNm'].toUpperCase() ;
+	let mngrTmPlsId = FPLTeamsFull[mngrTm]['pulse_id'] ;
+	let mngrName 	= FPLTeamsFull[mngrTm]['manName'] ;
+
+	let oppTmName 	= FPLTeamsFull[oppTm]['longNm'].toUpperCase() ;
+	let oppTmPlsId 	= FPLTeamsFull[oppTm]['pulse_id'] ;
+	let oppMngrName = FPLTeamsFull[oppTm]['manName'] ;
+	/* 
+	console.log(
+		"currentTeamTable",
+		"--mngrTm: ", 	mngrTm, 
+		"--mngrTmName: ",mngrTmName, 
+		"--mngrName: ", mngrName,
+		"--oppTm: ", 	oppTm, 
+		"--oppTmName: ",oppTmName
+	) ;
+	*/
+
+	let retValArr 	= 	{
+		"manTm": 	mngrTm,
+		"manTmRank": 20,
+		"manTmNm": 	mngrTmName,
+		"manName": 	mngrName,
+		"oppTm": 	oppTm,
+		"oppTmRank": 20,
+		"oppTmName": oppTmName,
+		"oppMngrName": oppMngrName,
+		"rankingDistance": 0,
+		"tableBonusActive": false } ;
+
+	// console.log("retValArr: ", retValArr )
+	let ttb = 0 ;
+
+	for ( ttb; ttb < curTmTable.length; ttb++ ){
+
+		let rnkTeam 	= curTmTable[ ttb ] ;
+		let rnkTmPlsId 	= rnkTeam['team']['id'] ;
+
+		if( parseInt( rnkTmPlsId ) == parseInt( mngrTmPlsId ) ){
+			retValArr['manTmRank'] = ttb+1 ;
+
+		}else if( parseInt( rnkTmPlsId ) == parseInt( oppTmPlsId ) ){
+			retValArr['oppTmRank'] = ttb+1 ;
+
+		}
+		// else{ console.log("neither mngrTm nor oppTm") }
+	}
+
+	retValArr['rankingDistance'] =  retValArr['manTmRank'] - retValArr['oppTmRank'] ;
+	retValArr['tableBonusActive'] = ( retValArr['rankingDistance'] >= 5 )? true:false ;
+	// console.log("retValArr: ", retValArr ) ;
+	return retValArr ;
+}
+
+
+/* 
+
 ###### SUB section togglers  ######
 
 */

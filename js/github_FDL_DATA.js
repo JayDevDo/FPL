@@ -1,6 +1,7 @@
 
 
 // let allStatsData = []; has moved to FPLConstants
+let currentTeamTable = [] ;
 
 // initial value, will be overwritten 
 let curGW = 21;
@@ -200,6 +201,35 @@ getManagerData = async ()=> {
 }
 
 
+getTeamTableData = async ()=> {
+
+	let tmTblPrms = new Promise( ( myTmTblResolve )=> {
+
+		let tmTblXhttp = new XMLHttpRequest();
+
+		tmTblXhttp.open("GET", "json/current/FPL_TeamTable_current.json", true ) ; 
+		tmTblXhttp.send() ; 
+
+		tmTblXhttp.onreadystatechange = ()=>{
+
+			if ( (tmTblXhttp.readyState == 4) && (tmTblXhttp.status == 200) ){
+
+				let tmTableResponse = JSON.parse( tmTblXhttp.responseText ) ; 
+				currentTeamTable = tmTableResponse ;
+				// console.log("currentTeamTable", tmTableResponse ) ;
+				myTmTblResolve( tmTableResponse ) ; 
+			}
+
+		} 
+
+	});
+
+	return await tmTblPrms ;
+
+};
+
+
+
 /*
 #####################
 #		Helpers		#	
@@ -220,6 +250,11 @@ getCurGW = ( allRounds )=>{
 }
 
 
+getStaticTeam = ()=>{
+
+}
+
+
 updateCellByTmIdRnd = ( fxtr, loc )=>{
 
 	if(fxtr.postponed){
@@ -229,7 +264,7 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 	}
 
 	let target_td, target_txt, target_fplDF, target_fcell
-
+	let mnBonus
 	/* target_arr is a html element 'span' */
 	let target_arr = [	"<span", 
 						" teamId_h=" + fxtr.team_h,
@@ -273,6 +308,7 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		target_txt = [ fxtr.team_a_nm, loc, ["(", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ], ")"].join("") ].join(" ") ;
 		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ]   ) ;
 		$(fxtrSpan).text( target_txt ) ;
+		mnBonus = getTeamTableDifference( fxtr.team_h, fxtr.team_a ) ;
 		
    }else{
 		
@@ -289,9 +325,26 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		target_txt = [ fxtr.team_h_nm, loc, ["(", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ] , ")"].join("") ].join(" ") ;
 		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ]  ) ;
 		$(fxtrSpan).text( target_txt ) ; 
+		mnBonus = getTeamTableDifference( fxtr.team_a, fxtr.team_h ) ;
 	}
 
-	let ttlText = [
+	let ttlText = [ "RANK", "TEAM", "MANAGER", "\n",
+					mnBonus.manTmRank,
+					mnBonus.manTmNm,
+					mnBonus.manName, "\n",
+					mnBonus.oppTmRank,
+					mnBonus.oppTmName,
+					mnBonus.oppMngrName, "\n",
+					"difference",
+					mnBonus.rankingDistance,"\n",
+					"tableBonusActive",
+					mnBonus.tableBonusActive
+	].join("\t")
+
+	/* 
+	getTeamTableDifference()
+	replacing title with attack vs defence with manager details for table bonus
+	[
 		"fxtr.id:", fxtr.id, 
 		"homeDF[gw]:", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ],
 		"awayDF[gw]:", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ],
@@ -299,6 +352,7 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
 		"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
 		].join("\t") ;
+	*/
 
 	$( fxtrSpan ).attr( "title", ttlText ) ;
 
@@ -713,9 +767,11 @@ getOrigPPRnd = ( fxtrId )=>{
 	}
 }
 
+
 getOrigPPRsn = ( fxtrId )=>{
 	if(gamesOverview.postponedGames.length>0){for( f=0; f<gamesOverview.postponedGames.length; f++){if( parseInt( gamesOverview.postponedGames[f].ppid ) == parseInt(fxtrId) ){ return gamesOverview.postponedGames[f].reason; }}}
 }
+
 
 sortByGmID = ( evArr )=>{
 	let retArr = evArr.sort(
@@ -728,7 +784,6 @@ sortByGmID = ( evArr )=>{
 					}) ; 
 	return retArr;
 }
-
 
 
 getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
@@ -814,7 +869,8 @@ const allPromise = 	Promise.all(
 						[ 	
 							getStaticData(), 
 							getPostponedData(), 
-							getFixtureData() // , getManagerData()
+							getFixtureData(),
+							getTeamTableData() // , getManagerData()
 						] 
 					) ; 
 
@@ -828,6 +884,7 @@ allPromise.then(
 		let teams 	= values[0]['teams'] ; 
 		let ppGames = values[1] ; 
 		let fxtrs 	= values[2] ;
+		let tmTbl 	= values[3] ;
 		// let mngrData= values[3] ;
 
 		/*
@@ -851,7 +908,7 @@ allPromise.then(
 		// Step 2 : Add data from ppGames to fxtrs. 		( 	FXTR LOOP 	)	-origGw, -reason, -newGW(39), -postponed(true/false) 
 		// Step 4 : Add data from fxtrs to FPLTeamsFull.	( 	FXTR LOOP 	)	-hisDF
 		// Step 5 : Add data from FPLTeamsFull to fxtrs.	( 	FXTR LOOP 	)	-FPL-DF -strengths 
-
+		console.log( "tmTbl['tables'][0][1]:", tmTbl['tables'][0]['gameWeek'] )
 		// Set the curGW at the earliest possibility
 
 		// EVENT LOOP START
@@ -878,6 +935,9 @@ allPromise.then(
 			// Our data from CONSTANTS.FPLTeamsFull
 			let jtf_tm 		= FPLTeamsFull[fpl_tmId] ; 
 			let jtf_tmId 	= jtf_tm.id ; 
+
+			console.log("static team = ", teams[t]['pulse_id'] ) ;
+			jtf_tm['pulse_id'] = teams[t]['pulse_id'] ;
 
 			// STEP 0
 			// I don't agree with the short names of the Machester teams. 13 = City, 14 = Utd.

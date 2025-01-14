@@ -423,6 +423,7 @@ let FPLTeamsFull = [
 		oppDFhis: [] , 		/* from fixtures */
 		longNm: "Not-a-PL-team",
 		altNm: "placeholder",
+		manName: "noManager",
 		players: [],
 		strength: [
 			{ 'loc':"H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -438,6 +439,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,// from fixtures
 		longNm: "Arsenal",	
 		altNm: "Gunners",
+		manName: "Mikel Arteta",
 		players: [],
 		strength: [
 			{ 'loc':"H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -453,6 +455,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Aston Villa",
 		altNm: "Villains",
+		manName: "Unai Emery",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -468,6 +471,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Bournemouth",
 		altNm: "Cherries",
+		manName: "Andoni Iraola",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -483,6 +487,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Brentford",
 		altNm: "Bees",
+		manName: "Thomas Frank",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -498,6 +503,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Brighton",
 		altNm: "Seagulls",
+		manName: "Fabian Hürzeler",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -513,6 +519,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Chelsea",
 		altNm: "Blues",
+		manName: "Enzo Maresca",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -528,6 +535,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Crystal Palace",
 		altNm: "Eagles",
+		manName: "Oliver Glasner",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -543,6 +551,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Everton",
 		altNm: "Toffees",
+		manName: "David Moyes",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -558,6 +567,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Fulham",
 		altNm: "Cottagers",
+		manName: "Marco Silva",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -573,6 +583,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Ipswich",
 		altNm: "blues",
+		manName: "Kieran McKenna",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -588,6 +599,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Leicester",
 		altNm: "Tractor Boys",
+		manName: "Ruud v Nistelrooij",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -603,6 +615,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Liverpool",
 		altNm: "Reds",
+		manName: "Arne Slot",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -619,6 +632,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Man city",
 		altNm: "Citizens",
+		manName: "Pep Guardiola",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -634,6 +648,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Man utd",
 		altNm: "Red Devils",
+		manName: "Rúben Amorim",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -649,6 +664,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Newcastle",
 		altNm: "Magpies",
+		manName: "Eddy Howe",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -664,6 +680,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Nott-m Forest",
 		altNm: "Forest",
+		manName: "Nuno Espírito Santo",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -679,6 +696,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Southampton",
 		altNm: "Saints",
+		manName: "Ivan Jurić",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -694,6 +712,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Tottenham",
 		altNm: "Spurs",
+		manName: "Big Ange",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -709,6 +728,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "West Ham",
 		altNm: "Hammers",
+		manName: "Graham Potter",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -725,6 +745,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,// from fixtures
 		longNm: "Wanderers",
 		altNm: "Wolves",
+		manName: "Vitor Pereira",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
