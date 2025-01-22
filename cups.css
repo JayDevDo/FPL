@@ -1,13 +1,11 @@
 /* cups css deals with event-types cups
-
-	evTypes: 	[	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIB" ],
- */
+evTypes: [	"evtp-EPL", "evtp-FAC",	"evtp-EFL",	"evtp-ECL",	"evtp-EUL",	"evtp-CLE",	"evtp-UIB" ],
+*/
 
 /* afcon  */
 th.afc{
 	border: 2px solid red !important;
 }
-
 
 th.evtp-UIB{
 	background-color: #ff5c33 !important;
@@ -29,7 +27,6 @@ th.evtp-ECL{
 	color: #000000;
 }
 
-
 .evtp-UIB{
 	background-color: #ff5c33;
 	color: #000000;
@@ -50,9 +47,6 @@ th.evtp-ECL{
 	color: #000000;
 }
 
-
-
-
 .cupCntndr{
 	background-color: #ffff99;
 	color: #000000;
@@ -61,7 +55,6 @@ th.evtp-ECL{
 td > span.cupCntndr{
 	background-color: #ff8080;
 }
-
 
 .cupElim{
 	background-color: #000000 !important;
