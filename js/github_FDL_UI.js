@@ -5,8 +5,8 @@ tmNmClick = (tmId)=>{
 	gamesOverview.selectedTeamId = tmId ;
 
 	let ls_tmdfbarchart = [] ;
-	
-	for( let e=1; e<39; e++){
+	let e ;
+	for( e=1; e < 39; e++ ){
 		ls_tmdfbarchart.push( {'gw': e, 'df': FPLTeamsFull[tmId]['ownDFhis'][e] } );
 	}
 

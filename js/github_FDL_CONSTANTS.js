@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 20,
-		currentRnd: 21,
-		evWndw: { 'direction': 1 , 'start': 21, 'rounds': 6, 'end': 26 },
+		finishedRounds: 22,
+		currentRnd: 23,
+		evWndw: { 'direction': 1 , 'start': 23, 'rounds': 6, 'end': 28 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -49,8 +49,8 @@ let gamesOverview = {
 		},
 		showSttng: true,
 		showDdln: true,
-		hasPP: true,
-		showPP: true,
+		hasPP: false,
+		showPP: false,
 		showRP: false,
 		postponedGameIds: [],
 		postponedGames: [],
@@ -58,6 +58,8 @@ let gamesOverview = {
 		replannedGames: [],
 		iBreaks: [],
 		iBreaksShow: false,
+		teamTableWk: 21,
+		teamTableDt: "2025-01-01 20h00",
 		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 11,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
@@ -259,73 +261,75 @@ loadFPLDF = (gw=gamesOverview.currentRnd)=>{
 }
 
 /*
-update_FPLDF = (gw)=>{
-	//This function changes the FPLDF values in FPLTeamsFull, based on the values in static.events.
-	//The function loops through the gw events in reverse, starting from variable 'gw' (gameweek).
-	//It stops as soon as all teams have been attributed a home- and away DF.
-	//Then it loops through all teams applying the new values.
-	let newFPL_DF_H = [ 0,
-											0, 0, 0, 0, 0, 
-											0, 0, 0, 0, 0,
-											0, 0, 0, 0, 0,
-											0, 0, 0, 0, 5 
-										] ;
-	let newFPL_DF_A = [ 0,
-											0, 0, 0, 0, 0, 
-											0, 0, 0, 0, 0,
-											0, 0, 0, 0, 0,
-											0, 0, 0, 0, 5 
-										] ;
+	update_FPLDF = (gw)=>{
+		//This function changes the FPLDF values in FPLTeamsFull, based on the values in static.events.
+		//The function loops through the gw events in reverse, starting from variable 'gw' (gameweek).
+		//It stops as soon as all teams have been attributed a home- and away DF.
+		//Then it loops through all teams applying the new values.
+		let newFPL_DF_H = [ 0,
+												0, 0, 0, 0, 0, 
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 5 
+											] ;
+		let newFPL_DF_A = [ 0,
+												0, 0, 0, 0, 0, 
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 5 
+											] ;
 
-	let staticEventsExists = false ;
+		let staticEventsExists = false ;
 
-	const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ; 
-	const allDone 	= ()=>{  return (( newFPL_DF_H.lastIndexOf(0) == 0 ) && ( newFPL_DF_A.lastIndexOf(0) == 0 )) } ; 
+		const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ; 
+		const allDone 	= ()=>{  return (( newFPL_DF_H.lastIndexOf(0) == 0 ) && ( newFPL_DF_A.lastIndexOf(0) == 0 )) } ; 
 
-	const updateTm 	= ( tmId, loc, df )=>{ 
-		if( loc == "H" ){ 
-			newFPL_DF_H[tmId] = df ;
-		}else{
-			newFPL_DF_A[tmId] = df ;
+		const updateTm 	= ( tmId, loc, df )=>{ 
+			if( loc == "H" ){ 
+				newFPL_DF_H[tmId] = df ;
+			}else{
+				newFPL_DF_A[tmId] = df ;
+			}
 		}
-	}
 
-	const setAll = (df)=>{ 
-		for( let t=1; t<21; t++ ){ 
-			newFPL_DF_H[t] = df; 
-			newFPL_DF_A[t] = df; 
-		} 
-	}
+		const setAll = (df)=>{ 
+			for( let t=1; t<21; t++ ){ 
+				newFPL_DF_H[t] = df; 
+				newFPL_DF_A[t] = df; 
+			} 
+		}
 
-	console.log( 
-		getCI(), 
-		"update_FPLDF gw: ", gw , 
-		"\nlen(newFPL_DF_H): ", newFPL_DF_H.length ,
-		"\tlen(newFPL_DF_A): ", newFPL_DF_A.length ,
-		"\ntest allDone (should be false): ", allDone() ,
-	//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
-		"\ttest teamDone(1)(should be false): ", teamDone(1) , 
-		"\ttest teamDone(0)(should be false): ", teamDone(0) , 
-		"\ttest teamDone(20)(should be true): ", teamDone(20) , 
-		"\ntest settingAll(3)", setAll(3) ,
-	//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
-		"\ntest allDone(should be true): ", allDone() ,
-		"\ntest teamDone(0)(should be false): ", teamDone(0) 
-	) ;
-	let tst_allDone = false;
-	let tst_tmDone 	= false;
-	
-	while( !tst_allDone ){
-		console.log("While-Loop for tst_allDone; still false -> ", tst_allDone ) ;
+		console.log( 
+			getCI(), 
+			"update_FPLDF gw: ", gw , 
+			"\nlen(newFPL_DF_H): ", newFPL_DF_H.length ,
+			"\tlen(newFPL_DF_A): ", newFPL_DF_A.length ,
+			"\ntest allDone (should be false): ", allDone() ,
+		//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
+			"\ttest teamDone(1)(should be false): ", teamDone(1) , 
+			"\ttest teamDone(0)(should be false): ", teamDone(0) , 
+			"\ttest teamDone(20)(should be true): ", teamDone(20) , 
+			"\ntest settingAll(3)", setAll(3) ,
+		//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
+			"\ntest allDone(should be true): ", allDone() ,
+			"\ntest teamDone(0)(should be false): ", teamDone(0) 
+		) ;
+		let tst_allDone = false;
+		let tst_tmDone 	= false;
+		
+		while( !tst_allDone ){
+			console.log("While-Loop for tst_allDone; still false -> ", tst_allDone ) ;
 
-		while( !tst_tmDone ){
-			console.log("While-Loop for tst_tmDone; still false -> ", tst_tmDone ) ;
+			while( !tst_tmDone ){
+				console.log("While-Loop for tst_tmDone; still false -> ", tst_tmDone ) ;
 
-			for(let tmId=1; tmId<21; tmId++){
-				console.log("For-Loop for tmId<21; still true -> ", tmId ) ;
+				for(let tmId=1; tmId<21; tmId++){
+					console.log("For-Loop for tmId<21; still true -> ", tmId ) ;
 
-				for(let gwr = gw; gwr>0; gwr--){
-					console.log("For-Loop (reverse) for gw>0; still true -> ", gwr ) ;
+					for(let gwr = gw; gwr>0; gwr--){
+						console.log("For-Loop (reverse) for gw>0; still true -> ", gwr ) ;
+
+					}
 
 				}
 
@@ -334,8 +338,6 @@ update_FPLDF = (gw)=>{
 		}
 
 	}
-
-}
 */
 
 clearIndicator = (indctr)=>{

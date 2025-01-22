@@ -4,7 +4,7 @@
 let currentTeamTable = [] ;
 
 // initial value, will be overwritten 
-let curGW = 21;
+let curGW = 23;
 
 
 /*
@@ -794,9 +794,9 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 		tempArr.push( {'gw':i, 'loc': "N", 'df':0, 'opp': "NA" } )
 	}
 
-	let curGWDF;
-	let otherGWDF;
-	let retArr = [0,0];
+	let curGWDF 	= [] ;
+	let otherGWDF 	= [] ;
+	let retArr 		= [ 0, 0 ] ;
 
 	// console.log("getTmDfGwLoc| --tempArr:", tempArr.length ) ;
 
@@ -859,10 +859,21 @@ setFPLdfToGW = (gw=gamesOverview.currentRnd)=>{
 }
 
 
+setTeamTableInfo = ()=>{
+	console.log("teamTableWk", gamesOverview.teamTableWk ) ;
+	console.log("teamTableDt", gamesOverview.teamTableDt.split(",")[0] ) ;
+	let ttTmArr = gamesOverview.teamTableDt.split(",") ;
+	let ttmArrDt = ttTmArr[0].split(" ")
+	let ttmArrTm = ttTmArr[1]
+
+	$("#tmTblGW").text( "GW: " + gamesOverview.teamTableWk + " --> " ) ;
+	$("#tmTblDt").text( "" + ttmArrDt[1] + " " + ttmArrDt[0] + " " + ttmArrTm ) ;
+}
+
 /*
 #####################
-#	 DATA READY		#	
-#####################	
+#	 DATA READY		#
+#####################
 */
 
 const allPromise = 	Promise.all( 
@@ -1087,9 +1098,16 @@ allPromise.then(
 		//console.log("starting handleCups( Uefa )" ) ;
 		handleCups( uefa ,"evtp-ECL") ; 
 
+		setFPLdfToGW( curGW ) ;
 
-		setFPLdfToGW(curGW)
-		loadFPLDF()
+		loadFPLDF() ;
+
+		console.log( "tmTbl| --tables[0].gameweek:", 	tmTbl['tables'][0]['gameWeek'] ) ;
+		console.log( "tmTbl| --tables[0].timestamp:", 	tmTbl['timestamp']['label'] ) ;
+		gamesOverview.teamTableWk = tmTbl['tables'][0]['gameWeek']
+		gamesOverview.teamTableDt = tmTbl['timestamp']['label']
+		setTeamTableInfo()
+		
 		// CUP FIXTURES LOOP END
 		$("#pulser").remove() ;
 	}
