@@ -305,8 +305,6 @@ td.ppgame > div:last-of-type{display: inline-block;width: 80%;float: right;}
 	.postponed{ background-color: #ADADAD !important; color: #000000 !important;}
 */
 
-
-
 /*  Fixtures container fixtures hiding	*/
 
 .clmnHide{ display: none; }
@@ -314,13 +312,9 @@ td.ppgame > div:last-of-type{display: inline-block;width: 80%;float: right;}
 .rowShow{ display: table-row; }
 .evtypeHide{ display: none; }
 
-
 /*  Fixtures container fixtures showing */
 
-
-
 /*  Fixtures container rows	*/
-
 div.tm-idc.tmSelected{ 
 	width: 25px;
 	min-height: 12px;
@@ -331,20 +325,78 @@ div.tm-idc.tmSelected{
 	content: "Show";
 }
 
-
-
-
-/*  animations 				*/
-
+/*  animations 	*/
 .evHighLite{
 	animation-name: selectedborder;
 	animation-duration: 0.5s;
 	animation-iteration-count: 1;
 }
 
-
 @keyframes selectedborder {
 	0%   {border-color:#000000; border-width: 6px; border-style: solid; }
 	55%  {border-color:#FFFFFF; border-width: 6px; border-style: solid; }
 	100% {border-color:#000000; border-width: 4px; border-style: solid; }
+}
+
+
+/* 
+	evTypes: [ "evtp-EPL", "evtp-FAC", "evtp-EFL", "evtp-ECL", "evtp-EUL", "evtp-CLE", "evtp-UIB" ],
+*/
+
+th.afc{
+	border: 2px solid red !important;
+}
+
+th.evtp-UIB{
+	background-color: #ff5c33 !important;
+	color: #000000;
+}
+
+th.evtp-EFL{
+	background-color: #ECEF82 !important;
+	color: #000000;
+}
+
+th.evtp-FAC{
+	background-color: #ff8080 !important;
+	color: #000000;
+}
+
+th.evtp-ECL{
+	background-color: #80d4ff !important;
+	color: #000000;
+}
+
+.evtp-UIB{
+	background-color: #ff5c33;
+	color: #000000;
+}
+
+.evtp-EFL{
+	background-color: #ECEF82 ;
+	color: #000000;
+}
+
+.evtp-FAC{
+	background-color: #ff8080 ;
+	color: #000000;
+}
+
+.evtp-ECL{
+	background-color: #80d4ff;
+	color: #000000;
+}
+
+.cupCntndr{
+	background-color: #ffff99;
+	color: #000000;
+}
+
+td > span.cupCntndr{
+	background-color: #ff8080;
+}
+
+.cupElim{
+	background-color: #000000 !important;
+	color: #FFFFFF !important;	
 }
