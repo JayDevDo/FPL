@@ -168,10 +168,10 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=21 >
+								<form id="eventWndwStartForm" value=24 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=21
+											value=24
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1 >1</option>
@@ -186,10 +186,10 @@
 										<option value=18 >18</option>
 										<option value=19 >19</option>
 										<option value=20 >20</option>
-										<option value=21 active selected >21</option>
+										<option value=21 >21</option>
 										<option value=22 >22</option>
 										<option value=23 >23</option>
-										<option value=24 >24</option>
+										<option value=24 active selected >24</option>
 										<option value=25 >25</option>
 										<option value=26 >26</option>
 										<option value=27 >27</option>
@@ -221,10 +221,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=6 >
+								<form id="slctdRoundsForm" value=7 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=6
+											value=7
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -232,8 +232,8 @@
 										<option value=3  >3</option>
 										<option value=4  >4</option>
 										<option value=5  >5</option>
-										<option value=6  active selected >6</option>
-										<option value=7  >7</option>
+										<option value=6  >6</option>
+										<option value=7 active selected >7</option>
 										<option value=8  >8</option>
 										<option value=9  >9</option>
 										<option value=10 >10</option>
@@ -261,10 +261,10 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=26 >
+								<form id="eventWndwEndForm" value=30 >
 									<select name="endRnd"
 											id="endRnd"
-											value=26
+											value=30
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=6 >6 IB 2</option>
@@ -283,11 +283,11 @@
 										<option value=23 >23</option>
 										<option value=24 >24</option>
 										<option value=25 >25</option>
-										<option value=26 active selected >26</option>
+										<option value=26 >26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
 										<option value=29 >29</option>
-										<option value=30 >30</option>
+										<option value=30 active selected >30</option>
 										<option value=31 >31</option>
 										<option value=32 >32</option>
 										<option value=33 >33</option>
@@ -313,7 +313,7 @@
 						<tr>
 							<th>Team Table</th>
 							<td id="tmTblGW"></td>
-							<td id="tmTblDt"></td>							
+							<td id="tmTblDt"></td>	
 						</tr>
 
 					</table>
@@ -4250,7 +4250,6 @@
 
 	<footer>
 		<link 	rel="stylesheet" type="text/css" href="fpl.css" >
-		<link 	rel="stylesheet" type="text/css" href="cups.css" >
 		<script src="js/github_FDL_CONSTANTS.js"></script>
 		<script src="js/github_FDL_DATA.js"></script>
 		<script src="js/github_FDL_UI.js"></script>
@@ -4278,8 +4277,6 @@
 
 			console.log("\nHTML init -> toggleDeadline -2nd" )  ;
 			toggleDeadline() ;
-
-
 
 			$(document).ready(
 				()=>{
