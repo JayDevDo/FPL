@@ -4,7 +4,7 @@
 let currentTeamTable = [] ;
 
 // initial value, will be overwritten 
-let curGW = 23;
+let curGW = 24;
 
 
 /*

@@ -32,9 +32,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 22,
-		currentRnd: 23,
-		evWndw: { 'direction': 1 , 'start': 23, 'rounds': 8, 'end': 30 },
+		finishedRounds: 23,
+		currentRnd: 24,
+		evWndw: { 'direction': 1 , 'start': 24, 'rounds': 7, 'end': 30 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -58,7 +58,7 @@ let gamesOverview = {
 		replannedGames: [],
 		iBreaks: [],
 		iBreaksShow: false,
-		teamTableWk: 21,
+		teamTableWk: 23,
 		teamTableDt: "2025-01-01 20h00",
 		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 11,
