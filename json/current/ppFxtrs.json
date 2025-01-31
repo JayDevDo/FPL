@@ -125,16 +125,16 @@
 									{"team_h":5, 	"team_a":6 		},
 									{"team_h":14, 	"team_a":11 	},
 									{"team_h":0, 	"team_a":7, 	"oppNmH":"Doncaster Rovers" },
-									{"team_h":0, 	"team_a":9, 	"oppNmH":"Mansfield or Wigan" },
+									{"team_h":0, 	"team_a":9, 	"oppNmH":"Wigan" },
 									{"team_h":0, 	"team_a":10, 	"oppNmH":"Coventry City" },
 									{"team_h":0, 	"team_a":12, 	"oppNmH":"Plymouth Argyle" },
-									{"team_h":0, 	"team_a":13, 	"oppNmH":"Leyton Orient or Derby" },
+									{"team_h":0, 	"team_a":13, 	"oppNmH":"Leyton Orient" },
 									{"team_h":0, 	"team_a":15, 	"oppNmH":"Birmingham City" },
 									{"team_h":0, 	"team_a":16, 	"oppNmH":"Exeter City" },
 									{"team_h":17, 	"team_a":0, 	"oppNmA":"Burnley" },
 									{"team_h":0, 	"team_a":20, 	"oppNmH":"Blackburn Rovers" },
-									{"team_h":0, 	"team_a":0, 	"oppNmA":"Leeds v Milwall/Dagenham & Redbridge " },
-									{"team_h":0, 	"team_a":0, 	"oppNmH":"Preston/Charlton v Wycombe Wanderers" },
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"Leeds v Milwall" },
+									{"team_h":0, 	"team_a":0, 	"oppNmH":"Preston NE v Wycombe Wanderers" },
 									{"team_h":0, 	"team_a":0, 	"oppNmH":"Stoke City v Cardiff City" }
 						]
 					},
@@ -284,7 +284,63 @@
 							{"team_h":0, "team_a":0 , "oppNmH": "", "oppNmA": "" } 
 						] 
 			},
-	
+			{
+				"title": "L16-2",
+				"gw": 28,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1, 	"team_a":0, "oppNmA": "Feyenoord/AC Milan or Juventus/PSV", "cup": "Champions Lg" },
+					{ "team_h":2, 	"team_a":0, "oppNmA": "Sporting/B.Dortmund or Cl.Brugge/Atalanta", "cup": "Champions Lg" },
+					{ "team_h":12, 	"team_a":0, "oppNmA": "Brest/PSG or Monaco/Benfica", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":13,"oppNmH": "Leverkusen/Atletico Madrid", "cup": "Champions Lg" },
+					{ "team_h":14, 	"team_a":0, "oppNmA": "AZ Alkmaar/Galatasaray", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a":0, "oppNmA": "Midtjylland/Real Sociedad", "cup": "Europa Lg" }
+				]
+			},
+			{
+				"title": "L16-1",
+				"gw": 27,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Feyenoord/AC Milan or Juventus/PSV", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":2, 	"oppNmH": "Sporting/B.Dortmund or Cl.Brugge/Atalanta", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Brest/PSG or Monaco/Benfica", "cup": "Champions Lg" 	},
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Leverkusen/Atletico Madrid", "cup": "Champions Lg" 	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "AZ Alkmaar/Galatasaray", "cup": "Europa Lg" 			},
+					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Midtjylland/Real Sociedad", "cup": "Europa Lg" 		}
+				]
+			},
+			{
+				"title": "ChLg-PO2",
+				"gw": 25,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":13, 	"oppNmH": "Real Madrid","cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "Bye", "cup": "Europa Lg"	},
+					{ "team_h":18,	"team_a":0, 	"oppNmA": "Bye", "cup": "Europa Lg"	}
+				]
+			},
+			{
+				"title": "ChLg-PO1",
+				"gw": 24,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Bye", 		"cup": "Champions Lg"	},
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bye", 		"cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Bye",		"cup": "Champions Lg"	},
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Real Madrid","cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "Bye",		"cup": "Europa Lg"		},
+					{ "team_h":18,	"team_a":0, 	"oppNmA": "Bye",		"cup": "Europa Lg"		}
+				]
+
+			},
 			{ 	
 				"title": "ChLg-R8",
 				"gw": 23,
