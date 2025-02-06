@@ -1,0 +1,565 @@
+[
+	{ 
+		"unplanned": [
+			{ 	"ppid": 289,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "NEW",
+				"team_h_id": 15,
+				"team_a_id": 7,
+				"team_a_nm": "CRY",
+				"status": "replanned",
+				"reason": "og: 29: Newcaste plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
+				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
+			},
+			{ 	"ppid": 282,
+				"nwRound": 25,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "LIV",
+				"team_h_id": 12,
+				"team_a_id": 2,
+				"team_a_nm": "AVL",
+				"status": "replanned",
+				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
+				"link": ""
+			},			
+			{ 	"ppid": 285,
+				"nwRound": 24,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "FUL",
+				"team_h_id": 9,
+				"team_a_id": 18,
+				"team_a_nm": "TOT",
+				"status": "replanned",
+				"reason": "og: 29: Spurs play EFL Carabao Cup Final in GW29. 2025-02-06: TOT beats LIV. Re-planned automatic.",
+				"link": ""
+			}
+		]
+	},
+	{ 
+		"re-planned": [
+			{ 	"ppid": 144,
+				"nwRound": 24,
+				"ogGW": 15,
+				"added": true,
+				"team_h_nm": "EVE",
+				"team_h_id": 8,
+				"team_a_id": 12,
+				"team_a_nm": "LIV",
+				"status": "replanned",
+				"reason": "og: 15: Merseyside derby called off because of Storm Darragh. 2025-01-13 16h00: Re-planned",
+				"link": "https://www.bbc.com/sport/football/articles/c4gllz8g5zgo"
+			}
+		]
+	},
+	{ 
+		"ppRpIds":[ 144 ] 
+	},
+	{ 
+		"ppIds": [  282, 285, 289 ]
+	},
+	{ 
+		"evtp-UIB": [
+			{	"iBreakId": 1,
+				"wkNr": 36,
+				"prevGW": 3,
+				"prevGWDate": "2024-08-31",
+				"nextGW": 4,
+				"nextGWDate": "2024-09-14",
+				"brkDuration": 2,
+				"brkTitle": "IntlBreak 1",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 2,
+				"wkNr": 41,
+				"prevGW": 7,
+				"prevGWDate": "2024-10-05",
+				"nextGW": 8,
+				"nextGWDate": "2024-10-19",
+				"brkDuration": 2,
+				"brkTitle": "IntlBreak 2",
+				"passed": 0,
+				"toCome": 1
+			},
+			{	"iBreakId": 3,
+				"wkNr": 46,
+				"prevGW": 11,
+				"prevGWDate": "2024-11-09",
+				"nextGW": 12,
+				"nextGWDate": "2024-11-23",
+				"brkDuration": 1,
+				"brkTitle": "IntlBreak 3",
+				"passed": 0,
+				"toCome": 1
+			}
+		]
+	},
+
+	{
+		"evtp-FAC": [
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 19] },
+					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
+					{	
+						"title": "FINAL",
+						"gw": 37,
+						"elim": [ 1, 4, 19],
+						"drawn": false,
+						"data":	[
+									{"team_h":0, "team_a":0 }
+					 			]
+					},
+					{	
+						"title": "S-FINAL",
+						"gw": 34,
+						"elim": [ 1, 4, 19],
+						"drawn": false,
+						"data":	[
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+						]
+					},
+					{	
+						"title": "Q-FINAL",
+						"gw": 30,
+						"elim": [ 1, 4, 19],
+						"drawn": false,
+						"data":	[
+									{"team_h":0, "team_a":0  },
+									{"team_h":0, "team_a":0  },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+						]
+					},
+					{	
+						"title": "5th Rnd (L16)",
+						"gw": 27,
+						"elim": [1, 4, 19 ],
+						"drawn": false,
+						"data":	[
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
+									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+						]
+					},
+					{	
+						"title": "4th Rnd (FA-L32)",
+						"gw": 24,
+						"elim": [ 1, 4, 19 ],
+						"drawn": true,
+						"data":	[
+									{"team_h":2, 	"team_a":18		},
+									{"team_h":8, 	"team_a":3 		},
+									{"team_h":5, 	"team_a":6 		},
+									{"team_h":14, 	"team_a":11 	},
+									{"team_h":0, 	"team_a":7, 	"oppNmH":"Doncaster Rovers" },
+									{"team_h":0, 	"team_a":9, 	"oppNmH":"Wigan" },
+									{"team_h":0, 	"team_a":10, 	"oppNmH":"Coventry City" },
+									{"team_h":0, 	"team_a":12, 	"oppNmH":"Plymouth Argyle" },
+									{"team_h":0, 	"team_a":13, 	"oppNmH":"Leyton Orient" },
+									{"team_h":0, 	"team_a":15, 	"oppNmH":"Birmingham City" },
+									{"team_h":0, 	"team_a":16, 	"oppNmH":"Exeter City" },
+									{"team_h":17, 	"team_a":0, 	"oppNmA":"Burnley" },
+									{"team_h":0, 	"team_a":20, 	"oppNmH":"Blackburn Rovers" },
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"Leeds v Milwall" },
+									{"team_h":0, 	"team_a":0, 	"oppNmH":"Preston NE v Wycombe Wanderers" },
+									{"team_h":0, 	"team_a":0, 	"oppNmH":"Stoke City v Cardiff City" }
+						]
+					},
+					{	
+						"title": "3rd Rnd (FA-L64)",
+						"gw": 20,
+						"elim": [ ],
+						"drawn": true,
+						"data": [
+									{"team_h":1,  "team_a":14, 	"oppNmH":"" },
+									{"team_h":2,  "team_a":19, 	"oppNmH":"" },
+									{"team_h":0,  "team_a":5, 	"oppNmH":"Norwich City" },
+									{"team_h":0,  "team_a":18, 	"oppNmH":"Tamworth" },
+									{"team_h":0,  "team_a":20, 	"oppNmH":"Bristol City" },
+									{"team_h":3,  "team_a":0, 	"oppNmA":"West Brom." },
+									{"team_h":4,  "team_a":0, 	"oppNmA":"Plymouth Argyle" },
+									{"team_h":6,  "team_a":0, 	"oppNmA":"Morecambe" },
+									{"team_h":7,  "team_a":0, 	"oppNmA":"Stockport County" },
+									{"team_h":8,  "team_a":0, 	"oppNmA":"Peterborough Utd." },
+									{"team_h":9,  "team_a":0, 	"oppNmA":"Watford" },
+									{"team_h":10, "team_a":0, 	"oppNmA":"Bristol Rovers" },
+									{"team_h":11, "team_a":0, 	"oppNmA":"QPR" },
+									{"team_h":12, "team_a":0, 	"oppNmA":"Accrington Stanley" },
+									{"team_h":13, "team_a":0, 	"oppNmA":"Salford City" },
+									{"team_h":15, "team_a":0, 	"oppNmA":"Bromley" },
+									{"team_h":16, "team_a":0, 	"oppNmA":"Luton Town" },
+									{"team_h":17, "team_a":0, 	"oppNmA":"Swansea" }
+						]
+					}
+		]
+	},
+
+	{
+		"evtp-EFL":[
+					{ 	"title": "IN", 		"data": [ 12, 15, 18 ] },
+					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ] },
+					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
+					{ 	
+						"title": "FINAL",
+						"gw": 29,
+						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
+						"data": [ 	
+									{"team_h":15, "team_a":0 ,"oppNmA":"Liverpool or Spurs" } 
+								] 
+					},
+					{ 	
+						"title": "S-FINAL 2 ",
+						"gw": 24,
+						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h":15, "team_a":1  },
+									{"team_h":12, "team_a":18 }
+						]
+					},
+					{ 	
+						"title": "S-FINAL 1",
+						"gw": 20,
+						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h": 1, "team_a":15 },
+									{"team_h":18, "team_a":12 }
+							]
+					},
+					{ 	
+						"title": "Q-FINAL",
+						"gw": 16,
+						"elim": [ 2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h":18, "team_a":14 },
+									{"team_h":1,  "team_a":7  },
+									{"team_h":15, "team_a":4  },
+									{"team_h":17, "team_a":12 }
+					 	]
+					},
+					{ 	
+						"title": "L16",
+						"gw": 9,
+						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h":0, 	"team_a":1, "oppNmH":"Preston NE" 	},
+									{"team_h":2, 	"team_a":7	},
+									{"team_h":4, 	"team_a":0, "oppNmA":"Sheffield W." },
+									{"team_h":5, 	"team_a":12	},
+									{"team_h":15, 	"team_a":6	},
+									{"team_h":14, 	"team_a":11	},
+									{"team_h":17, 	"team_a":0, "oppNmA":"Stoke City"	},
+									{"team_h":18, 	"team_a":13	}									
+					 	]
+					},					
+					{ 	
+						"title": "L32B",
+						"gw": 5,
+						"elim": [ 3, 10, 16 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h":1, 	"team_a":0, 	"oppNmA":"Bolton" 		},
+									{"team_h":0, 	"team_a":2, 	"oppNmH":"Wycombe" 		},
+									{"team_h":6, 	"team_a":0, 	"oppNmA":"Barrow" 		},
+									{"team_h":0, 	"team_a":11, 	"oppNmH":"Walsall" 		},
+									{"team_h":12, 	"team_a":19 	},
+									{"team_h":13, 	"team_a":0, 	"oppNmA":"Watford" 		},
+									{"team_h":0, 	"team_a":15, 	"oppNmH":"Wimbledon"	},
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn"	}
+					 	]
+					},
+					{ 	
+						"title": "L32A",
+						"gw": 4,
+						"elim": [ 3, 10, 16 ],
+						"drawn": true,
+						"data": [ 
+									{"team_h":0, 	"team_a":18, 	"oppNmH":"Coventry" 	},
+									{"team_h":5, 	"team_a":20		},
+									{"team_h":14, 	"team_a":0, 	"oppNmA":"Barnsley" 	},
+									{"team_h":4, 	"team_a":0, 	"oppNmA":"Leyton Orient" },
+									{"team_h":8, 	"team_a":17  	},
+									{"team_h":0, 	"team_a":9, 	"oppNmH":"Preston NE" 	},
+									{"team_h":0, 	"team_a":7, 	"oppNmH":"QPR" 			},
+									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn" 	}
+					 	]
+					}				
+		]
+	},
+
+	{
+		"evtp-ECL":[
+			{ 	
+				"title": "IN", 		"data": [ 1, 2, 6, 12, 13, 14, 18 ] 
+			},
+			{	
+				"title": "OUT", 	"data": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ] 
+			},
+			{ 	
+				"title": "evntTp", 	"data": "evtp-ECL" 
+			},
+			{ 
+				"title": "FINAL",
+				"gw": 38,
+				"elim": [ ],
+				"drawn": false,
+				"data": [ 	
+							{"team_h":0, "team_a":0 , "oppNmH": "", "oppNmA": "" } 
+						] 
+			},
+			{
+				"title": "L16-2",
+				"gw": 28,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1, 	"team_a":0, "oppNmA": "Feyenoord-AC Milan or Juventus-PSV", "cup": "Champions Lg" },
+					{ "team_h":2, 	"team_a":0, "oppNmA": "Sporting-B.Dortmund or Cl.Brugge-Atalanta", "cup": "Champions Lg" },
+					{ "team_h":12, 	"team_a":0, "oppNmA": "Brest-PSG or Monaco-Benfica", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":13,"oppNmH": "Leverkusen-Atletico Madrid", "cup": "Champions Lg" },
+					{ "team_h":14, 	"team_a":0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a":0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
+				]
+			},
+			{
+				"title": "L16-1",
+				"gw": 27,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Feyenoord-AC Milan or Juventus-PSV", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":2, 	"oppNmH": "Sporting-B.Dortmund or Cl.Brugge-Atalanta", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Brest-PSG or Monaco-Benfica", "cup": "Champions Lg" 	},
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Leverkusen-Atletico Madrid", "cup": "Champions Lg" 	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" 			},
+					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Midtjylland-Real Sociedad", "cup": "Europa Lg" 		}
+				]
+			},
+			{
+				"title": "ChLg-PO2",
+				"gw": 25,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":13, 	"oppNmH": "Real Madrid","cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "Bye", "cup": "Europa Lg"	},
+					{ "team_h":18,	"team_a":0, 	"oppNmA": "Bye", "cup": "Europa Lg"	}
+				]
+			},
+			{
+				"title": "ChLg-PO1",
+				"gw": 24,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Bye", 		"cup": "Champions Lg"	},
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bye", 		"cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Bye",		"cup": "Champions Lg"	},
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Real Madrid","cup": "Champions Lg"	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "Bye",		"cup": "Europa Lg"		},
+					{ "team_h":18,	"team_a":0, 	"oppNmA": "Bye",		"cup": "Europa Lg"		}
+				]
+
+			},
+			{ 	
+				"title": "ChLg-R8",
+				"gw": 23,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, "team_a":1, 	"oppNmH": "Girona", "cup": "Champions Lg"	},
+					{ "team_h":2, "team_a":0, 	"oppNmA": "Celtic", "cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":12, 	"oppNmH": "PSV",	"cup": "Champions Lg"	},
+					{ "team_h":13, "team_a":0, 	"oppNmA": "Brugge", "cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":14, 	"oppNmH": "FCSB",		"cup": "Europa Lg"	},
+					{ "team_h":18,"team_a":0, 	"oppNmA": "Elfsborg",	"cup": "Europa Lg"	}
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R7",
+				"gw": 22,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1,  "team_a":0, "oppNmA": "Dinamo Zagreb", "cup": "Champions Lg" },
+					{ "team_h":0,  "team_a":2, "oppNmH": "Monaco", "cup": "Champions Lg"	},
+					{ "team_h":12, "team_a":0, "oppNmA": "Lille",	"cup": "Champions Lg"	},
+					{ "team_h":0,  "team_a":13, "oppNmH": "PSG",	"cup": "Champions Lg"	},
+					{ "team_h":14, "team_a":0, "oppNmA": "Rangers",	"cup": "Europa Lg"	},
+					{ "team_h":0,  "team_a":18, "oppNmH": "Hoffenheim","cup": "Europa Lg"	}
+				]
+			},
+
+			{ 	
+				"title": "CoLg-R6",
+				"gw": 16,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":6, "team_a":0, 	"oppNmA": "Shamrock Rovers", "cup": "Europa Lg"	}
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R6",
+				"gw": 15,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1, "team_a":0, 	"oppNmA": "Monaco", 		"cup": "Champions Lg" },
+					{ "team_h":0, "team_a":2, 	"oppNmH": "RB Leipzig", 	"cup": "Champions Lg" },
+					{ "team_h":0, "team_a":12, 	"oppNmH": "Girona",			"cup": "Champions Lg" },
+					{ "team_h":0, "team_a":13,	"oppNmH": "Juventus", 		"cup": "Champions Lg" },
+					{ "team_h":0, "team_a":14, 	"oppNmH": "Viktoria Plzn",	"cup": "Europa Lg" },
+					{ "team_h":0, "team_a":18, 	"oppNmH": "Rangers", 		"cup": "Europa Lg" },
+					{ "team_h":6, "team_a":0, 	"oppNmA": "FC Astana", 		"cup": "Europa Lg" }
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R5",
+				"gw": 12,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, "team_a":1, 	"oppNmH": "Sporting CP", 	"cup": "Champions Lg" },
+					{ "team_h":2, "team_a":0, 	"oppNmA": "Juventus", 		"cup": "Champions Lg" },
+					{ "team_h":12, "team_a":0, 	"oppNmA": "Real Madrid",	"cup": "Champions Lg" },
+					{ "team_h":13, "team_a":0, 	"oppNmA": "Feyenoord",		"cup": "Champions Lg" },
+					{ "team_h":14, "team_a":0, 	"oppNmA": "Bodo Glimt",	"cup": "Europa Lg" },
+					{ "team_h":18, "team_a":0, 	"oppNmA": "AS Roma", 	"cup": "Europa Lg" },
+					{ "team_h":0, "team_a":6, 	"oppNmH": "Heidenheim","cup": "Europa Lg" }
+				]
+			},
+
+			{ 	
+				"title": "EuLg-R4",
+				"gw": 10,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":14, 	"team_a":0, 	"oppNmA": "PAOK FC",	"cup": "Europa Lg" },
+					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Galatasaray","cup": "Europa Lg" },
+					{ "team_h":6, 	"team_a":0, 	"oppNmA": "FC NOAH", 	"cup": "Europa Lg" }
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R4",
+				"gw": 9,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, "team_a":1, 	"oppNmH": "Inter Milan", "cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":2, 	"oppNmH": "Brugge", 	"cup": "Champions Lg"	},
+					{ "team_h":12, "team_a":0, 	"oppNmA": "Leverkusen",	"cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":13, 	"oppNmH": "Sporting CP","cup": "Champions Lg"	}
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R3",
+				"gw": 8,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1, 	"team_a":0, 	"oppNmA": "Shaktar", 		"cup": "Champions Lg" },
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bologna", 		"cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "RB Leipzig",		"cup": "Champions Lg" },
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Sparta Prague",	"cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "Fenerbahce",		"cup": "Europa Lg" },
+					{ "team_h":18,	"team_a":0, 	"oppNmA": "AZ Alkmaar", 	"cup": "Europa Lg" },
+					{ "team_h":0, 	"team_a":6, 	"oppNmH": "Panathinaikos",	"cup": "Europa Lg" }
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R2",
+				"gw": 6,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":1, 	"team_a":0, 	"oppNmA": "PSG", 			"cup": "Champions Lg" },
+					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bayern Munich", 	"cup": "Champions Lg" },
+					{ "team_h":12, 	"team_a":0, 	"oppNmA": "Bologna",		"cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":13, 	"oppNmH": "Sl Bratislava",	"cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "FC Porto",		"cup": "Europa Lg" },
+					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Ferencvaros",	"cup": "Europa Lg" },
+					{ "team_h":6, 	"team_a":0,  	"oppNmA": "Gent",			"cup": "Europa Lg" }
+				]
+			},
+
+			{ 	
+				"title": "EuLg-R1",
+				"gw": 5,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":14, "team_a":0, 	"oppNmA": "FC Twente",	"cup": "Europa Lg"	},
+					{ "team_h":18, "team_a":0, 	"oppNmA": "Quarabag", 	"cup": "Europa Lg"	}
+				]
+			},
+
+			{ 	
+				"title": "ChLg-R1",
+				"gw": 4,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
+				"drawn": true,
+				"data": [ 
+					{ "team_h":0, "team_a":1, 	"oppNmH": "Atalanta", 	"cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":2, 	"oppNmH": "Young Boys", "cup": "Champions Lg"	},
+					{ "team_h":0, "team_a":12, 	"oppNmH": "AC Milan",	"cup": "Champions Lg"	},
+					{ "team_h":13,"team_a":0, 	"oppNmA": "Inter Milan","cup": "Champions Lg"	}
+				]
+			}
+
+		]
+	},
+
+
+	{	"example pp": {	
+			"ppid": 144,
+			"nwRound": 39,
+			"ogGW": 15,
+			"added": false,
+			"team_h_nm": "EVE",
+			"team_h_id": 8,
+			"team_a_id": 12,
+			"team_a_nm": "LIV",
+			"status": "postponed",
+			"reason": "og: 15: Storm Darragh made play impossible.",
+			"link": "https://www.bbc.com/sport/football"
+		},
+		"example replanned":{
+			"ppid": 15,
+			"nwRound": 7,
+			"ogGW": 2,
+			"added": false,
+			"team_h_nm": "LUT",
+			"team_h_id": 12,
+			"team_a_id": 6,
+			"team_a_nm": "BUR",
+			"status": "replanned",
+			"reason": "og = 2: Luton not ready for Home game",
+			"link": "https://www.bbc.com/sport/football"
+		}
+	}
+]
