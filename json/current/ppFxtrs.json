@@ -1,6 +1,43 @@
 [
 	{ 
-		"unplanned": []
+		"unplanned": [
+			{ 	"ppid": 289,
+				"nwRound": 39,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "NEW",
+				"team_h_id": 15,
+				"team_a_id": 7,
+				"team_a_nm": "CRY",
+				"status": "replanned",
+				"reason": "og: 29: Newcaste plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
+				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
+			},
+			{ 	"ppid": 282,
+				"nwRound": 25,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "LIV",
+				"team_h_id": 12,
+				"team_a_id": 2,
+				"team_a_nm": "AVL",
+				"status": "replanned",
+				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
+				"link": ""
+			},			
+			{ 	"ppid": 285,
+				"nwRound": 24,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "FUL",
+				"team_h_id": 9,
+				"team_a_id": 18,
+				"team_a_nm": "TOT",
+				"status": "replanned",
+				"reason": "og: 29: Spurs play EFL Carabao Cup Final in GW29. 2025-02-06: TOT beats LIV. Re-planned automatic.",
+				"link": ""
+			}
+		]
 	},
 	{ 
 		"re-planned": [
@@ -22,7 +59,7 @@
 		"ppRpIds":[ 144 ] 
 	},
 	{ 
-		"ppIds": [  ]
+		"ppIds": [  282, 285, 289 ]
 	},
 	{ 
 		"evtp-UIB": [
@@ -169,16 +206,16 @@
 
 	{
 		"evtp-EFL":[
-					{ 	"title": "IN", 		"data": [ 1, 12, 15, 18 ] },
-					{	"title": "OUT", 	"data": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ] },
+					{ 	"title": "IN", 		"data": [ 12, 15, 18 ] },
+					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
-						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
-						"drawn": false,
+						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"drawn": true,
 						"data": [ 	
-									{"team_h":0, "team_a":0 } 
+									{"team_h":15, "team_a":0 ,"oppNmA":"Liverpool or Spurs" } 
 								] 
 					},
 					{ 	
@@ -290,12 +327,12 @@
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [ 
-					{ "team_h":1, 	"team_a":0, "oppNmA": "Feyenoord/AC Milan or Juventus/PSV", "cup": "Champions Lg" },
-					{ "team_h":2, 	"team_a":0, "oppNmA": "Sporting/B.Dortmund or Cl.Brugge/Atalanta", "cup": "Champions Lg" },
-					{ "team_h":12, 	"team_a":0, "oppNmA": "Brest/PSG or Monaco/Benfica", "cup": "Champions Lg" },
-					{ "team_h":0, 	"team_a":13,"oppNmH": "Leverkusen/Atletico Madrid", "cup": "Champions Lg" },
-					{ "team_h":14, 	"team_a":0, "oppNmA": "AZ Alkmaar/Galatasaray", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a":0, "oppNmA": "Midtjylland/Real Sociedad", "cup": "Europa Lg" }
+					{ "team_h":1, 	"team_a":0, "oppNmA": "Feyenoord-AC Milan or Juventus-PSV", "cup": "Champions Lg" },
+					{ "team_h":2, 	"team_a":0, "oppNmA": "Sporting-B.Dortmund or Cl.Brugge-Atalanta", "cup": "Champions Lg" },
+					{ "team_h":12, 	"team_a":0, "oppNmA": "Brest-PSG or Monaco-Benfica", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":13,"oppNmH": "Leverkusen-Atletico Madrid", "cup": "Champions Lg" },
+					{ "team_h":14, 	"team_a":0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a":0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
 				]
 			},
 			{
@@ -304,12 +341,12 @@
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [ 
-					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Feyenoord/AC Milan or Juventus/PSV", "cup": "Champions Lg" },
-					{ "team_h":0, 	"team_a":2, 	"oppNmH": "Sporting/B.Dortmund or Cl.Brugge/Atalanta", "cup": "Champions Lg" },
-					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Brest/PSG or Monaco/Benfica", "cup": "Champions Lg" 	},
-					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Leverkusen/Atletico Madrid", "cup": "Champions Lg" 	},
-					{ "team_h":0, 	"team_a":14, 	"oppNmH": "AZ Alkmaar/Galatasaray", "cup": "Europa Lg" 			},
-					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Midtjylland/Real Sociedad", "cup": "Europa Lg" 		}
+					{ "team_h":0, 	"team_a":1, 	"oppNmH": "Feyenoord-AC Milan or Juventus-PSV", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":2, 	"oppNmH": "Sporting-B.Dortmund or Cl.Brugge-Atalanta", "cup": "Champions Lg" },
+					{ "team_h":0, 	"team_a":12, 	"oppNmH": "Brest-PSG or Monaco-Benfica", "cup": "Champions Lg" 	},
+					{ "team_h":13, 	"team_a":0, 	"oppNmA": "Leverkusen-Atletico Madrid", "cup": "Champions Lg" 	},
+					{ "team_h":0, 	"team_a":14, 	"oppNmH": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" 			},
+					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Midtjylland-Real Sociedad", "cup": "Europa Lg" 		}
 				]
 			},
 			{
