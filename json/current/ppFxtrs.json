@@ -10,32 +10,8 @@
 				"team_a_id": 7,
 				"team_a_nm": "CRY",
 				"status": "replanned",
-				"reason": "og: 29: Newcaste plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
+				"reason": "og: 29: Newcastle plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
 				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
-			},
-			{ 	"ppid": 282,
-				"nwRound": 25,
-				"ogGW": 29,
-				"added": true,
-				"team_h_nm": "LIV",
-				"team_h_id": 12,
-				"team_a_id": 2,
-				"team_a_nm": "AVL",
-				"status": "replanned",
-				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
-				"link": ""
-			},			
-			{ 	"ppid": 285,
-				"nwRound": 24,
-				"ogGW": 29,
-				"added": true,
-				"team_h_nm": "FUL",
-				"team_h_id": 9,
-				"team_a_id": 18,
-				"team_a_nm": "TOT",
-				"status": "replanned",
-				"reason": "og: 29: Spurs play EFL Carabao Cup Final in GW29. 2025-02-06: TOT beats LIV. Re-planned automatic.",
-				"link": ""
 			}
 		]
 	},
@@ -52,14 +28,26 @@
 				"status": "replanned",
 				"reason": "og: 15: Merseyside derby called off because of Storm Darragh. 2025-01-13 16h00: Re-planned",
 				"link": "https://www.bbc.com/sport/football/articles/c4gllz8g5zgo"
+			},
+			{ 	"ppid": 282,
+				"nwRound": 25,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "LIV",
+				"team_h_id": 12,
+				"team_a_id": 2,
+				"team_a_nm": "AVL",
+				"status": "replanned",
+				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
+				"link": ""
 			}
 		]
 	},
 	{ 
-		"ppRpIds":[ 144 ] 
+		"ppRpIds":[ 144, 282 ] 
 	},
 	{ 
-		"ppIds": [  282, 285, 289 ]
+		"ppIds": [ 289 ]
 	},
 	{ 
 		"evtp-UIB": [
