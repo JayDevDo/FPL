@@ -12,6 +12,8 @@ let fixtureArray = [];
 
 let allStatsData = [];
 
+let currentTeamTable = [] ;
+
 let linearScale = d3.scaleLinear()
   .domain( [1000, 1400] )
   .range( [ "#FFCCFF", "#CC00CC" ] );
@@ -32,9 +34,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 23,
-		currentRnd: 24,
-		evWndw: { 'direction': 1 , 'start': 24, 'rounds': 7, 'end': 30 },
+		finishedRounds: 24,
+		currentRnd: 25,
+		evWndw: { 'direction': 1 , 'start': 25, 'rounds': 6, 'end': 30 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -51,14 +53,14 @@ let gamesOverview = {
 		showDdln: true,
 		hasPP: true,
 		showPP: true,
-		showRP: false,
+		showRP: true,
 		postponedGameIds: [],
 		postponedGames: [],
 		replannedGamesIds: [],
 		replannedGames: [],
 		iBreaks: [],
 		iBreaksShow: false,
-		teamTableWk: 23,
+		teamTableWk: 24,
 		teamTableDt: "2025-01-01 20h00",
 		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 11,

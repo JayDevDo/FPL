@@ -1,10 +1,10 @@
 
 
 // let allStatsData = []; has moved to FPLConstants
-let currentTeamTable = [] ;
+
 
 // initial value, will be overwritten 
-let curGW = 24;
+let curGW = 25;
 
 
 /*
