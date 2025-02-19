@@ -14,8 +14,8 @@
         "id": 719
     },
     "timestamp": {
-        "millis": 1739646694000,
-        "label": "15 February 2025, 19:11"
+        "millis": 1739727133000,
+        "label": "16 February 2025, 17:32"
     },
     "live": true,
     "dynamicallyGenerated": false,
@@ -42,24 +42,24 @@
                     "position": 1,
                     "startingPosition": 1,
                     "overall": {
-                        "played": 24,
-                        "won": 17,
+                        "played": 25,
+                        "won": 18,
                         "drawn": 6,
                         "lost": 1,
-                        "goalsFor": 58,
-                        "goalsAgainst": 23,
-                        "goalsDifference": 35,
-                        "points": 57
+                        "goalsFor": 60,
+                        "goalsAgainst": 24,
+                        "goalsDifference": 36,
+                        "points": 60
                     },
                     "home": {
-                        "played": 11,
-                        "won": 8,
+                        "played": 12,
+                        "won": 9,
                         "drawn": 2,
                         "lost": 1,
-                        "goalsFor": 24,
-                        "goalsAgainst": 9,
-                        "goalsDifference": 15,
-                        "points": 26
+                        "goalsFor": 26,
+                        "goalsAgainst": 10,
+                        "goalsDifference": 16,
+                        "points": 29
                     },
                     "away": {
                         "played": 13,
@@ -79,84 +79,6 @@
                         }
                     ],
                     "form": [
-                        {
-                            "gameweek": {
-                                "id": 18410,
-                                "gameweek": 21
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1736884800000,
-                                "label": "Tue 14 Jan 2025, 20:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1736884800000,
-                                "label": "Tue 14 Jan 2025, 20:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Nottingham Forest",
-                                        "club": {
-                                            "name": "Nottingham Forest",
-                                            "shortName": "Nott'm Forest",
-                                            "abbr": "NFO",
-                                            "id": 15
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Nottm Forest",
-                                        "id": 15,
-                                        "altIds": {
-                                            "opta": "t17"
-                                        }
-                                    },
-                                    "score": 1
-                                },
-                                {
-                                    "team": {
-                                        "name": "Liverpool",
-                                        "club": {
-                                            "name": "Liverpool",
-                                            "shortName": "Liverpool",
-                                            "abbr": "LIV",
-                                            "id": 10
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Liverpool",
-                                        "id": 10,
-                                        "altIds": {
-                                            "opta": "t14"
-                                        }
-                                    },
-                                    "score": 1
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "The City Ground",
-                                "city": "Nottingham",
-                                "source": "OPTA",
-                                "id": 2548
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "D",
-                            "attendance": 30249,
-                            "clock": {
-                                "secs": 5880,
-                                "label": "90 +8'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116032,
-                            "altIds": {
-                                "opta": "g2444675"
-                            }
-                        },
                         {
                             "gameweek": {
                                 "id": 18411,
@@ -468,6 +390,84 @@
                             "altIds": {
                                 "opta": "g2444613"
                             }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18414,
+                                "gameweek": 25
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1739714400000,
+                                "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1739714400000,
+                                "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Liverpool",
+                                        "club": {
+                                            "name": "Liverpool",
+                                            "shortName": "Liverpool",
+                                            "abbr": "LIV",
+                                            "id": 10
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Liverpool",
+                                        "id": 10,
+                                        "altIds": {
+                                            "opta": "t14"
+                                        }
+                                    },
+                                    "score": 2
+                                },
+                                {
+                                    "team": {
+                                        "name": "Wolverhampton Wanderers",
+                                        "club": {
+                                            "name": "Wolverhampton Wanderers",
+                                            "shortName": "Wolves",
+                                            "abbr": "WOL",
+                                            "id": 38
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Wolves",
+                                        "id": 38,
+                                        "altIds": {
+                                            "opta": "t39"
+                                        }
+                                    },
+                                    "score": 1
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Anfield",
+                                "city": "Liverpool",
+                                "source": "OPTA",
+                                "id": 7305
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 60401,
+                            "clock": {
+                                "secs": 5820,
+                                "label": "90 +7'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116072,
+                            "altIds": {
+                                "opta": "g2444715"
+                            }
                         }
                     ],
                     "next": {
@@ -477,15 +477,32 @@
                         },
                         "kickoff": {
                             "completeness": 3,
-                            "millis": 1739714400000,
-                            "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            "millis": 1739993400000,
+                            "label": "Wed 19 Feb 2025, 19:30 GMT"
                         },
                         "provisionalKickoff": {
                             "completeness": 3,
-                            "millis": 1739714400000,
-                            "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            "millis": 1739993400000,
+                            "label": "Wed 19 Feb 2025, 19:30 GMT"
                         },
                         "teams": [
+                            {
+                                "team": {
+                                    "name": "Aston Villa",
+                                    "club": {
+                                        "name": "Aston Villa",
+                                        "shortName": "Aston Villa",
+                                        "abbr": "AVL",
+                                        "id": 2
+                                    },
+                                    "teamType": "FIRST",
+                                    "shortName": "Aston Villa",
+                                    "id": 2,
+                                    "altIds": {
+                                        "opta": "t7"
+                                    }
+                                }
+                            },
                             {
                                 "team": {
                                     "name": "Liverpool",
@@ -501,49 +518,26 @@
                                     "altIds": {
                                         "opta": "t14"
                                     }
-                                },
-                                "score": 0
-                            },
-                            {
-                                "team": {
-                                    "name": "Wolverhampton Wanderers",
-                                    "club": {
-                                        "name": "Wolverhampton Wanderers",
-                                        "shortName": "Wolves",
-                                        "abbr": "WOL",
-                                        "id": 38
-                                    },
-                                    "teamType": "FIRST",
-                                    "shortName": "Wolves",
-                                    "id": 38,
-                                    "altIds": {
-                                        "opta": "t39"
-                                    }
-                                },
-                                "score": 0
+                                }
                             }
                         ],
                         "replay": false,
                         "ground": {
-                            "name": "Anfield",
-                            "city": "Liverpool",
+                            "name": "Villa Park",
+                            "city": "Birmingham",
                             "source": "OPTA",
-                            "id": 7305
+                            "id": 1986
                         },
                         "neutralGround": false,
                         "status": "U",
                         "phase": "0",
-                        "clock": {
-                            "secs": 0,
-                            "label": "00'00"
-                        },
                         "fixtureType": "REGULAR",
                         "extraTime": false,
                         "shootout": false,
                         "behindClosedDoors": false,
-                        "id": 116072,
+                        "id": 116108,
                         "altIds": {
-                            "opta": "g2444715"
+                            "opta": "g2444752"
                         }
                     },
                     "ground": {
@@ -2048,6 +2042,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "H",
+                            "attendance": 52432,
                             "clock": {
                                 "secs": 5700,
                                 "label": "90 +5'00"
@@ -3105,6 +3100,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "H",
+                            "attendance": 31503,
                             "clock": {
                                 "secs": 5760,
                                 "label": "90 +6'00"
@@ -3626,6 +3622,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "H",
+                            "attendance": 52432,
                             "clock": {
                                 "secs": 5700,
                                 "label": "90 +5'00"
@@ -5191,6 +5188,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "H",
+                            "attendance": 31503,
                             "clock": {
                                 "secs": 5760,
                                 "label": "90 +6'00"
@@ -5712,6 +5710,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "A",
+                            "attendance": 62467,
                             "clock": {
                                 "secs": 5760,
                                 "label": "90 +6'00"
@@ -5806,6 +5805,524 @@
                 },
                 {
                     "team": {
+                        "name": "Tottenham Hotspur",
+                        "club": {
+                            "name": "Tottenham Hotspur",
+                            "shortName": "Spurs",
+                            "abbr": "TOT",
+                            "id": 21
+                        },
+                        "teamType": "FIRST",
+                        "shortName": "Spurs",
+                        "id": 21,
+                        "altIds": {
+                            "opta": "t6"
+                        }
+                    },
+                    "position": 12,
+                    "startingPosition": 14,
+                    "overall": {
+                        "played": 25,
+                        "won": 9,
+                        "drawn": 3,
+                        "lost": 13,
+                        "goalsFor": 49,
+                        "goalsAgainst": 37,
+                        "goalsDifference": 12,
+                        "points": 30
+                    },
+                    "home": {
+                        "played": 13,
+                        "won": 5,
+                        "drawn": 2,
+                        "lost": 6,
+                        "goalsFor": 28,
+                        "goalsAgainst": 23,
+                        "goalsDifference": 5,
+                        "points": 17
+                    },
+                    "away": {
+                        "played": 12,
+                        "won": 4,
+                        "drawn": 1,
+                        "lost": 7,
+                        "goalsFor": 21,
+                        "goalsAgainst": 14,
+                        "goalsDifference": 7,
+                        "points": 13
+                    },
+                    "form": [
+                        {
+                            "gameweek": {
+                                "id": 18410,
+                                "gameweek": 21
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1736971200000,
+                                "label": "Wed 15 Jan 2025, 20:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1736971200000,
+                                "label": "Wed 15 Jan 2025, 20:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Arsenal",
+                                        "club": {
+                                            "name": "Arsenal",
+                                            "shortName": "Arsenal",
+                                            "abbr": "ARS",
+                                            "id": 1
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Arsenal",
+                                        "id": 1,
+                                        "altIds": {
+                                            "opta": "t3"
+                                        }
+                                    },
+                                    "score": 2
+                                },
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 1
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Emirates Stadium",
+                                "city": "London",
+                                "source": "OPTA",
+                                "id": 52
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 60287,
+                            "clock": {
+                                "secs": 5760,
+                                "label": "90 +6'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116027,
+                            "altIds": {
+                                "opta": "g2444670"
+                            }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18411,
+                                "gameweek": 22
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1737295200000,
+                                "label": "Sun 19 Jan 2025, 14:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1737295200000,
+                                "label": "Sun 19 Jan 2025, 14:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Everton",
+                                        "club": {
+                                            "name": "Everton",
+                                            "shortName": "Everton",
+                                            "abbr": "EVE",
+                                            "id": 7
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Everton",
+                                        "id": 7,
+                                        "altIds": {
+                                            "opta": "t11"
+                                        }
+                                    },
+                                    "score": 3
+                                },
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 2
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Goodison Park",
+                                "city": "Liverpool",
+                                "source": "OPTA",
+                                "id": 31
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 39326,
+                            "clock": {
+                                "secs": 5700,
+                                "label": "90 +5'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116040,
+                            "altIds": {
+                                "opta": "g2444683"
+                            }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18412,
+                                "gameweek": 23
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1737900000000,
+                                "label": "Sun 26 Jan 2025, 14:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1737900000000,
+                                "label": "Sun 26 Jan 2025, 14:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 1
+                                },
+                                {
+                                    "team": {
+                                        "name": "Leicester City",
+                                        "club": {
+                                            "name": "Leicester City",
+                                            "shortName": "Leicester",
+                                            "abbr": "LEI",
+                                            "id": 26
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Leicester",
+                                        "id": 26,
+                                        "altIds": {
+                                            "opta": "t13"
+                                        }
+                                    },
+                                    "score": 2
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Tottenham Hotspur Stadium",
+                                "city": "London",
+                                "source": "OPTA",
+                                "id": 3921
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "A",
+                            "attendance": 61295,
+                            "clock": {
+                                "secs": 5940,
+                                "label": "90 +9'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116055,
+                            "altIds": {
+                                "opta": "g2444698"
+                            }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18413,
+                                "gameweek": 24
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1738504800000,
+                                "label": "Sun 2 Feb 2025, 14:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1738504800000,
+                                "label": "Sun 2 Feb 2025, 14:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Brentford",
+                                        "club": {
+                                            "name": "Brentford",
+                                            "shortName": "Brentford",
+                                            "abbr": "BRE",
+                                            "id": 130
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Brentford",
+                                        "id": 130,
+                                        "altIds": {
+                                            "opta": "t94"
+                                        }
+                                    },
+                                    "score": 0
+                                },
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 2
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Gtech Community Stadium",
+                                "city": "Brentford",
+                                "source": "OPTA",
+                                "id": 4003
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "A",
+                            "attendance": 17154,
+                            "clock": {
+                                "secs": 5700,
+                                "label": "90 +5'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116059,
+                            "altIds": {
+                                "opta": "g2444702"
+                            }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18414,
+                                "gameweek": 25
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1739723400000,
+                                "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1739723400000,
+                                "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 1
+                                },
+                                {
+                                    "team": {
+                                        "name": "Manchester United",
+                                        "club": {
+                                            "name": "Manchester United",
+                                            "shortName": "Man Utd",
+                                            "abbr": "MUN",
+                                            "id": 12
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Man Utd",
+                                        "id": 12,
+                                        "altIds": {
+                                            "opta": "t1"
+                                        }
+                                    },
+                                    "score": 0
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Tottenham Hotspur Stadium",
+                                "city": "London",
+                                "source": "OPTA",
+                                "id": 3921
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 61383,
+                            "clock": {
+                                "secs": 5640,
+                                "label": "90 +4'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116075,
+                            "altIds": {
+                                "opta": "g2444718"
+                            }
+                        }
+                    ],
+                    "next": {
+                        "gameweek": {
+                            "id": 18415,
+                            "gameweek": 26
+                        },
+                        "kickoff": {
+                            "completeness": 3,
+                            "millis": 1740236400000,
+                            "label": "Sat 22 Feb 2025, 15:00 GMT"
+                        },
+                        "provisionalKickoff": {
+                            "completeness": 3,
+                            "millis": 1740236400000,
+                            "label": "Sat 22 Feb 2025, 15:00 GMT"
+                        },
+                        "teams": [
+                            {
+                                "team": {
+                                    "name": "Ipswich Town",
+                                    "club": {
+                                        "name": "Ipswich Town",
+                                        "shortName": "Ipswich",
+                                        "abbr": "IPS",
+                                        "id": 8
+                                    },
+                                    "teamType": "FIRST",
+                                    "shortName": "Ipswich",
+                                    "id": 8,
+                                    "altIds": {
+                                        "opta": "t40"
+                                    }
+                                }
+                            },
+                            {
+                                "team": {
+                                    "name": "Tottenham Hotspur",
+                                    "club": {
+                                        "name": "Tottenham Hotspur",
+                                        "shortName": "Spurs",
+                                        "abbr": "TOT",
+                                        "id": 21
+                                    },
+                                    "teamType": "FIRST",
+                                    "shortName": "Spurs",
+                                    "id": 21,
+                                    "altIds": {
+                                        "opta": "t6"
+                                    }
+                                }
+                            }
+                        ],
+                        "replay": false,
+                        "ground": {
+                            "name": "Portman Road",
+                            "city": "Ipswich",
+                            "source": "OPTA",
+                            "id": 66
+                        },
+                        "neutralGround": false,
+                        "status": "U",
+                        "phase": "0",
+                        "fixtureType": "REGULAR",
+                        "extraTime": false,
+                        "shootout": false,
+                        "behindClosedDoors": false,
+                        "id": 116082,
+                        "altIds": {
+                            "opta": "g2444725"
+                        }
+                    },
+                    "ground": {
+                        "name": "Tottenham Hotspur Stadium",
+                        "city": "London",
+                        "capacity": 62850,
+                        "source": "OPTA",
+                        "id": 3921
+                    }
+                },
+                {
+                    "team": {
                         "name": "Crystal Palace",
                         "club": {
                             "name": "Crystal Palace",
@@ -5820,7 +6337,7 @@
                             "opta": "t31"
                         }
                     },
-                    "position": 12,
+                    "position": 13,
                     "startingPosition": 12,
                     "overall": {
                         "played": 25,
@@ -6342,7 +6859,7 @@
                             "opta": "t11"
                         }
                     },
-                    "position": 13,
+                    "position": 14,
                     "startingPosition": 16,
                     "overall": {
                         "played": 25,
@@ -6864,16 +7381,16 @@
                             "opta": "t1"
                         }
                     },
-                    "position": 14,
+                    "position": 15,
                     "startingPosition": 13,
                     "overall": {
-                        "played": 24,
+                        "played": 25,
                         "won": 8,
                         "drawn": 5,
-                        "lost": 11,
+                        "lost": 12,
                         "goalsFor": 28,
-                        "goalsAgainst": 34,
-                        "goalsDifference": -6,
+                        "goalsAgainst": 35,
+                        "goalsDifference": -7,
                         "points": 29
                     },
                     "home": {
@@ -6887,94 +7404,16 @@
                         "points": 16
                     },
                     "away": {
-                        "played": 11,
+                        "played": 12,
                         "won": 3,
                         "drawn": 4,
-                        "lost": 4,
+                        "lost": 5,
                         "goalsFor": 11,
-                        "goalsAgainst": 12,
-                        "goalsDifference": -1,
+                        "goalsAgainst": 13,
+                        "goalsDifference": -2,
                         "points": 13
                     },
                     "form": [
-                        {
-                            "gameweek": {
-                                "id": 18409,
-                                "gameweek": 20
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1736094600000,
-                                "label": "Sun 5 Jan 2025, 16:30 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1736094600000,
-                                "label": "Sun 5 Jan 2025, 16:30 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Liverpool",
-                                        "club": {
-                                            "name": "Liverpool",
-                                            "shortName": "Liverpool",
-                                            "abbr": "LIV",
-                                            "id": 10
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Liverpool",
-                                        "id": 10,
-                                        "altIds": {
-                                            "opta": "t14"
-                                        }
-                                    },
-                                    "score": 2
-                                },
-                                {
-                                    "team": {
-                                        "name": "Manchester United",
-                                        "club": {
-                                            "name": "Manchester United",
-                                            "shortName": "Man Utd",
-                                            "abbr": "MUN",
-                                            "id": 12
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Man Utd",
-                                        "id": 12,
-                                        "altIds": {
-                                            "opta": "t1"
-                                        }
-                                    },
-                                    "score": 2
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Anfield",
-                                "city": "Liverpool",
-                                "source": "OPTA",
-                                "id": 7305
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "D",
-                            "attendance": 60275,
-                            "clock": {
-                                "secs": 5880,
-                                "label": "90 +8'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116022,
-                            "altIds": {
-                                "opta": "g2444665"
-                            }
-                        },
                         {
                             "gameweek": {
                                 "id": 18410,
@@ -7286,38 +7725,116 @@
                             "altIds": {
                                 "opta": "g2444706"
                             }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18414,
+                                "gameweek": 25
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1739723400000,
+                                "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1739723400000,
+                                "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Tottenham Hotspur",
+                                        "club": {
+                                            "name": "Tottenham Hotspur",
+                                            "shortName": "Spurs",
+                                            "abbr": "TOT",
+                                            "id": 21
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Spurs",
+                                        "id": 21,
+                                        "altIds": {
+                                            "opta": "t6"
+                                        }
+                                    },
+                                    "score": 1
+                                },
+                                {
+                                    "team": {
+                                        "name": "Manchester United",
+                                        "club": {
+                                            "name": "Manchester United",
+                                            "shortName": "Man Utd",
+                                            "abbr": "MUN",
+                                            "id": 12
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Man Utd",
+                                        "id": 12,
+                                        "altIds": {
+                                            "opta": "t1"
+                                        }
+                                    },
+                                    "score": 0
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Tottenham Hotspur Stadium",
+                                "city": "London",
+                                "source": "OPTA",
+                                "id": 3921
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 61383,
+                            "clock": {
+                                "secs": 5640,
+                                "label": "90 +4'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116075,
+                            "altIds": {
+                                "opta": "g2444718"
+                            }
                         }
                     ],
                     "next": {
                         "gameweek": {
-                            "id": 18414,
-                            "gameweek": 25
+                            "id": 18415,
+                            "gameweek": 26
                         },
                         "kickoff": {
                             "completeness": 3,
-                            "millis": 1739723400000,
-                            "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            "millis": 1740227400000,
+                            "label": "Sat 22 Feb 2025, 12:30 GMT"
                         },
                         "provisionalKickoff": {
                             "completeness": 3,
-                            "millis": 1739723400000,
-                            "label": "Sun 16 Feb 2025, 16:30 GMT"
+                            "millis": 1740227400000,
+                            "label": "Sat 22 Feb 2025, 12:30 GMT"
                         },
                         "teams": [
                             {
                                 "team": {
-                                    "name": "Tottenham Hotspur",
+                                    "name": "Everton",
                                     "club": {
-                                        "name": "Tottenham Hotspur",
-                                        "shortName": "Spurs",
-                                        "abbr": "TOT",
-                                        "id": 21
+                                        "name": "Everton",
+                                        "shortName": "Everton",
+                                        "abbr": "EVE",
+                                        "id": 7
                                     },
                                     "teamType": "FIRST",
-                                    "shortName": "Spurs",
-                                    "id": 21,
+                                    "shortName": "Everton",
+                                    "id": 7,
                                     "altIds": {
-                                        "opta": "t6"
+                                        "opta": "t11"
                                     }
                                 }
                             },
@@ -7341,10 +7858,10 @@
                         ],
                         "replay": false,
                         "ground": {
-                            "name": "Tottenham Hotspur Stadium",
-                            "city": "London",
+                            "name": "Goodison Park",
+                            "city": "Liverpool",
                             "source": "OPTA",
-                            "id": 3921
+                            "id": 31
                         },
                         "neutralGround": false,
                         "status": "U",
@@ -7353,9 +7870,9 @@
                         "extraTime": false,
                         "shootout": false,
                         "behindClosedDoors": false,
-                        "id": 116075,
+                        "id": 116080,
                         "altIds": {
-                            "opta": "g2444718"
+                            "opta": "g2444723"
                         }
                     },
                     "ground": {
@@ -7368,524 +7885,6 @@
                         },
                         "source": "OPTA",
                         "id": 42
-                    }
-                },
-                {
-                    "team": {
-                        "name": "Tottenham Hotspur",
-                        "club": {
-                            "name": "Tottenham Hotspur",
-                            "shortName": "Spurs",
-                            "abbr": "TOT",
-                            "id": 21
-                        },
-                        "teamType": "FIRST",
-                        "shortName": "Spurs",
-                        "id": 21,
-                        "altIds": {
-                            "opta": "t6"
-                        }
-                    },
-                    "position": 15,
-                    "startingPosition": 14,
-                    "overall": {
-                        "played": 24,
-                        "won": 8,
-                        "drawn": 3,
-                        "lost": 13,
-                        "goalsFor": 48,
-                        "goalsAgainst": 37,
-                        "goalsDifference": 11,
-                        "points": 27
-                    },
-                    "home": {
-                        "played": 12,
-                        "won": 4,
-                        "drawn": 2,
-                        "lost": 6,
-                        "goalsFor": 27,
-                        "goalsAgainst": 23,
-                        "goalsDifference": 4,
-                        "points": 14
-                    },
-                    "away": {
-                        "played": 12,
-                        "won": 4,
-                        "drawn": 1,
-                        "lost": 7,
-                        "goalsFor": 21,
-                        "goalsAgainst": 14,
-                        "goalsDifference": 7,
-                        "points": 13
-                    },
-                    "form": [
-                        {
-                            "gameweek": {
-                                "id": 18409,
-                                "gameweek": 20
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1735993800000,
-                                "label": "Sat 4 Jan 2025, 12:30 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1735993800000,
-                                "label": "Sat 4 Jan 2025, 12:30 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Tottenham Hotspur",
-                                        "club": {
-                                            "name": "Tottenham Hotspur",
-                                            "shortName": "Spurs",
-                                            "abbr": "TOT",
-                                            "id": 21
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Spurs",
-                                        "id": 21,
-                                        "altIds": {
-                                            "opta": "t6"
-                                        }
-                                    },
-                                    "score": 1
-                                },
-                                {
-                                    "team": {
-                                        "name": "Newcastle United",
-                                        "club": {
-                                            "name": "Newcastle United",
-                                            "shortName": "Newcastle",
-                                            "abbr": "NEW",
-                                            "id": 23
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Newcastle",
-                                        "id": 23,
-                                        "altIds": {
-                                            "opta": "t4"
-                                        }
-                                    },
-                                    "score": 2
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Tottenham Hotspur Stadium",
-                                "city": "London",
-                                "source": "OPTA",
-                                "id": 3921
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "A",
-                            "attendance": 61293,
-                            "clock": {
-                                "secs": 6180,
-                                "label": "90 +13'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116025,
-                            "altIds": {
-                                "opta": "g2444668"
-                            }
-                        },
-                        {
-                            "gameweek": {
-                                "id": 18410,
-                                "gameweek": 21
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1736971200000,
-                                "label": "Wed 15 Jan 2025, 20:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1736971200000,
-                                "label": "Wed 15 Jan 2025, 20:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Arsenal",
-                                        "club": {
-                                            "name": "Arsenal",
-                                            "shortName": "Arsenal",
-                                            "abbr": "ARS",
-                                            "id": 1
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Arsenal",
-                                        "id": 1,
-                                        "altIds": {
-                                            "opta": "t3"
-                                        }
-                                    },
-                                    "score": 2
-                                },
-                                {
-                                    "team": {
-                                        "name": "Tottenham Hotspur",
-                                        "club": {
-                                            "name": "Tottenham Hotspur",
-                                            "shortName": "Spurs",
-                                            "abbr": "TOT",
-                                            "id": 21
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Spurs",
-                                        "id": 21,
-                                        "altIds": {
-                                            "opta": "t6"
-                                        }
-                                    },
-                                    "score": 1
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Emirates Stadium",
-                                "city": "London",
-                                "source": "OPTA",
-                                "id": 52
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "H",
-                            "attendance": 60287,
-                            "clock": {
-                                "secs": 5760,
-                                "label": "90 +6'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116027,
-                            "altIds": {
-                                "opta": "g2444670"
-                            }
-                        },
-                        {
-                            "gameweek": {
-                                "id": 18411,
-                                "gameweek": 22
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1737295200000,
-                                "label": "Sun 19 Jan 2025, 14:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1737295200000,
-                                "label": "Sun 19 Jan 2025, 14:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Everton",
-                                        "club": {
-                                            "name": "Everton",
-                                            "shortName": "Everton",
-                                            "abbr": "EVE",
-                                            "id": 7
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Everton",
-                                        "id": 7,
-                                        "altIds": {
-                                            "opta": "t11"
-                                        }
-                                    },
-                                    "score": 3
-                                },
-                                {
-                                    "team": {
-                                        "name": "Tottenham Hotspur",
-                                        "club": {
-                                            "name": "Tottenham Hotspur",
-                                            "shortName": "Spurs",
-                                            "abbr": "TOT",
-                                            "id": 21
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Spurs",
-                                        "id": 21,
-                                        "altIds": {
-                                            "opta": "t6"
-                                        }
-                                    },
-                                    "score": 2
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Goodison Park",
-                                "city": "Liverpool",
-                                "source": "OPTA",
-                                "id": 31
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "H",
-                            "attendance": 39326,
-                            "clock": {
-                                "secs": 5700,
-                                "label": "90 +5'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116040,
-                            "altIds": {
-                                "opta": "g2444683"
-                            }
-                        },
-                        {
-                            "gameweek": {
-                                "id": 18412,
-                                "gameweek": 23
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1737900000000,
-                                "label": "Sun 26 Jan 2025, 14:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1737900000000,
-                                "label": "Sun 26 Jan 2025, 14:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Tottenham Hotspur",
-                                        "club": {
-                                            "name": "Tottenham Hotspur",
-                                            "shortName": "Spurs",
-                                            "abbr": "TOT",
-                                            "id": 21
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Spurs",
-                                        "id": 21,
-                                        "altIds": {
-                                            "opta": "t6"
-                                        }
-                                    },
-                                    "score": 1
-                                },
-                                {
-                                    "team": {
-                                        "name": "Leicester City",
-                                        "club": {
-                                            "name": "Leicester City",
-                                            "shortName": "Leicester",
-                                            "abbr": "LEI",
-                                            "id": 26
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Leicester",
-                                        "id": 26,
-                                        "altIds": {
-                                            "opta": "t13"
-                                        }
-                                    },
-                                    "score": 2
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Tottenham Hotspur Stadium",
-                                "city": "London",
-                                "source": "OPTA",
-                                "id": 3921
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "A",
-                            "attendance": 61295,
-                            "clock": {
-                                "secs": 5940,
-                                "label": "90 +9'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116055,
-                            "altIds": {
-                                "opta": "g2444698"
-                            }
-                        },
-                        {
-                            "gameweek": {
-                                "id": 18413,
-                                "gameweek": 24
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1738504800000,
-                                "label": "Sun 2 Feb 2025, 14:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1738504800000,
-                                "label": "Sun 2 Feb 2025, 14:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Brentford",
-                                        "club": {
-                                            "name": "Brentford",
-                                            "shortName": "Brentford",
-                                            "abbr": "BRE",
-                                            "id": 130
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Brentford",
-                                        "id": 130,
-                                        "altIds": {
-                                            "opta": "t94"
-                                        }
-                                    },
-                                    "score": 0
-                                },
-                                {
-                                    "team": {
-                                        "name": "Tottenham Hotspur",
-                                        "club": {
-                                            "name": "Tottenham Hotspur",
-                                            "shortName": "Spurs",
-                                            "abbr": "TOT",
-                                            "id": 21
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Spurs",
-                                        "id": 21,
-                                        "altIds": {
-                                            "opta": "t6"
-                                        }
-                                    },
-                                    "score": 2
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Gtech Community Stadium",
-                                "city": "Brentford",
-                                "source": "OPTA",
-                                "id": 4003
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "A",
-                            "attendance": 17154,
-                            "clock": {
-                                "secs": 5700,
-                                "label": "90 +5'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116059,
-                            "altIds": {
-                                "opta": "g2444702"
-                            }
-                        }
-                    ],
-                    "next": {
-                        "gameweek": {
-                            "id": 18414,
-                            "gameweek": 25
-                        },
-                        "kickoff": {
-                            "completeness": 3,
-                            "millis": 1739723400000,
-                            "label": "Sun 16 Feb 2025, 16:30 GMT"
-                        },
-                        "provisionalKickoff": {
-                            "completeness": 3,
-                            "millis": 1739723400000,
-                            "label": "Sun 16 Feb 2025, 16:30 GMT"
-                        },
-                        "teams": [
-                            {
-                                "team": {
-                                    "name": "Tottenham Hotspur",
-                                    "club": {
-                                        "name": "Tottenham Hotspur",
-                                        "shortName": "Spurs",
-                                        "abbr": "TOT",
-                                        "id": 21
-                                    },
-                                    "teamType": "FIRST",
-                                    "shortName": "Spurs",
-                                    "id": 21,
-                                    "altIds": {
-                                        "opta": "t6"
-                                    }
-                                }
-                            },
-                            {
-                                "team": {
-                                    "name": "Manchester United",
-                                    "club": {
-                                        "name": "Manchester United",
-                                        "shortName": "Man Utd",
-                                        "abbr": "MUN",
-                                        "id": 12
-                                    },
-                                    "teamType": "FIRST",
-                                    "shortName": "Man Utd",
-                                    "id": 12,
-                                    "altIds": {
-                                        "opta": "t1"
-                                    }
-                                }
-                            }
-                        ],
-                        "replay": false,
-                        "ground": {
-                            "name": "Tottenham Hotspur Stadium",
-                            "city": "London",
-                            "source": "OPTA",
-                            "id": 3921
-                        },
-                        "neutralGround": false,
-                        "status": "U",
-                        "phase": "0",
-                        "fixtureType": "REGULAR",
-                        "extraTime": false,
-                        "shootout": false,
-                        "behindClosedDoors": false,
-                        "id": 116075,
-                        "altIds": {
-                            "opta": "g2444718"
-                        }
-                    },
-                    "ground": {
-                        "name": "Tottenham Hotspur Stadium",
-                        "city": "London",
-                        "capacity": 62850,
-                        "source": "OPTA",
-                        "id": 3921
                     }
                 },
                 {
@@ -8313,6 +8312,7 @@
                             "status": "C",
                             "phase": "F",
                             "outcome": "A",
+                            "attendance": 62467,
                             "clock": {
                                 "secs": 5760,
                                 "label": "90 +6'00"
@@ -8424,13 +8424,13 @@
                     "position": 17,
                     "startingPosition": 17,
                     "overall": {
-                        "played": 24,
+                        "played": 25,
                         "won": 5,
                         "drawn": 4,
-                        "lost": 15,
-                        "goalsFor": 34,
-                        "goalsAgainst": 52,
-                        "goalsDifference": -18,
+                        "lost": 16,
+                        "goalsFor": 35,
+                        "goalsAgainst": 54,
+                        "goalsDifference": -19,
                         "points": 19
                     },
                     "home": {
@@ -8444,94 +8444,16 @@
                         "points": 10
                     },
                     "away": {
-                        "played": 12,
+                        "played": 13,
                         "won": 2,
                         "drawn": 3,
-                        "lost": 7,
-                        "goalsFor": 18,
-                        "goalsAgainst": 28,
-                        "goalsDifference": -10,
+                        "lost": 8,
+                        "goalsFor": 19,
+                        "goalsAgainst": 30,
+                        "goalsDifference": -11,
                         "points": 9
                     },
                     "form": [
-                        {
-                            "gameweek": {
-                                "id": 18409,
-                                "gameweek": 20
-                            },
-                            "kickoff": {
-                                "completeness": 3,
-                                "millis": 1736193600000,
-                                "label": "Mon 6 Jan 2025, 20:00 GMT"
-                            },
-                            "provisionalKickoff": {
-                                "completeness": 3,
-                                "millis": 1736193600000,
-                                "label": "Mon 6 Jan 2025, 20:00 GMT"
-                            },
-                            "teams": [
-                                {
-                                    "team": {
-                                        "name": "Wolverhampton Wanderers",
-                                        "club": {
-                                            "name": "Wolverhampton Wanderers",
-                                            "shortName": "Wolves",
-                                            "abbr": "WOL",
-                                            "id": 38
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Wolves",
-                                        "id": 38,
-                                        "altIds": {
-                                            "opta": "t39"
-                                        }
-                                    },
-                                    "score": 0
-                                },
-                                {
-                                    "team": {
-                                        "name": "Nottingham Forest",
-                                        "club": {
-                                            "name": "Nottingham Forest",
-                                            "shortName": "Nott'm Forest",
-                                            "abbr": "NFO",
-                                            "id": 15
-                                        },
-                                        "teamType": "FIRST",
-                                        "shortName": "Nottm Forest",
-                                        "id": 15,
-                                        "altIds": {
-                                            "opta": "t17"
-                                        }
-                                    },
-                                    "score": 3
-                                }
-                            ],
-                            "replay": false,
-                            "ground": {
-                                "name": "Molineux Stadium",
-                                "city": "Wolverhampton",
-                                "source": "OPTA",
-                                "id": 913
-                            },
-                            "neutralGround": false,
-                            "status": "C",
-                            "phase": "F",
-                            "outcome": "A",
-                            "attendance": 29940,
-                            "clock": {
-                                "secs": 5760,
-                                "label": "90 +6'00"
-                            },
-                            "fixtureType": "REGULAR",
-                            "extraTime": false,
-                            "shootout": false,
-                            "behindClosedDoors": false,
-                            "id": 116026,
-                            "altIds": {
-                                "opta": "g2444669"
-                            }
-                        },
                         {
                             "gameweek": {
                                 "id": 18410,
@@ -8843,41 +8765,118 @@
                             "altIds": {
                                 "opta": "g2444709"
                             }
+                        },
+                        {
+                            "gameweek": {
+                                "id": 18414,
+                                "gameweek": 25
+                            },
+                            "kickoff": {
+                                "completeness": 3,
+                                "millis": 1739714400000,
+                                "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            },
+                            "provisionalKickoff": {
+                                "completeness": 3,
+                                "millis": 1739714400000,
+                                "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            },
+                            "teams": [
+                                {
+                                    "team": {
+                                        "name": "Liverpool",
+                                        "club": {
+                                            "name": "Liverpool",
+                                            "shortName": "Liverpool",
+                                            "abbr": "LIV",
+                                            "id": 10
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Liverpool",
+                                        "id": 10,
+                                        "altIds": {
+                                            "opta": "t14"
+                                        }
+                                    },
+                                    "score": 2
+                                },
+                                {
+                                    "team": {
+                                        "name": "Wolverhampton Wanderers",
+                                        "club": {
+                                            "name": "Wolverhampton Wanderers",
+                                            "shortName": "Wolves",
+                                            "abbr": "WOL",
+                                            "id": 38
+                                        },
+                                        "teamType": "FIRST",
+                                        "shortName": "Wolves",
+                                        "id": 38,
+                                        "altIds": {
+                                            "opta": "t39"
+                                        }
+                                    },
+                                    "score": 1
+                                }
+                            ],
+                            "replay": false,
+                            "ground": {
+                                "name": "Anfield",
+                                "city": "Liverpool",
+                                "source": "OPTA",
+                                "id": 7305
+                            },
+                            "neutralGround": false,
+                            "status": "C",
+                            "phase": "F",
+                            "outcome": "H",
+                            "attendance": 60401,
+                            "clock": {
+                                "secs": 5820,
+                                "label": "90 +7'00"
+                            },
+                            "fixtureType": "REGULAR",
+                            "extraTime": false,
+                            "shootout": false,
+                            "behindClosedDoors": false,
+                            "id": 116072,
+                            "altIds": {
+                                "opta": "g2444715"
+                            }
                         }
                     ],
                     "next": {
                         "gameweek": {
-                            "id": 18414,
-                            "gameweek": 25
+                            "id": 18415,
+                            "gameweek": 26
                         },
                         "kickoff": {
                             "completeness": 3,
-                            "millis": 1739714400000,
-                            "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            "millis": 1740236400000,
+                            "label": "Sat 22 Feb 2025, 15:00 GMT"
                         },
                         "provisionalKickoff": {
                             "completeness": 3,
-                            "millis": 1739714400000,
-                            "label": "Sun 16 Feb 2025, 14:00 GMT"
+                            "millis": 1740236400000,
+                            "label": "Sat 22 Feb 2025, 15:00 GMT"
                         },
                         "teams": [
                             {
                                 "team": {
-                                    "name": "Liverpool",
+                                    "name": "Bournemouth",
                                     "club": {
-                                        "name": "Liverpool",
-                                        "shortName": "Liverpool",
-                                        "abbr": "LIV",
-                                        "id": 10
+                                        "name": "Bournemouth",
+                                        "shortName": "Bournemouth",
+                                        "abbr": "BOU",
+                                        "id": 127
                                     },
                                     "teamType": "FIRST",
-                                    "shortName": "Liverpool",
-                                    "id": 10,
+                                    "shortName": "Bournemouth",
+                                    "id": 127,
                                     "altIds": {
-                                        "opta": "t14"
+                                        "opta": "t91"
                                     }
-                                },
-                                "score": 0
+                                }
                             },
                             {
                                 "team": {
@@ -8894,31 +8893,26 @@
                                     "altIds": {
                                         "opta": "t39"
                                     }
-                                },
-                                "score": 0
+                                }
                             }
                         ],
                         "replay": false,
                         "ground": {
-                            "name": "Anfield",
-                            "city": "Liverpool",
+                            "name": "Vitality Stadium",
+                            "city": "Bournemouth",
                             "source": "OPTA",
-                            "id": 7305
+                            "id": 914
                         },
                         "neutralGround": false,
                         "status": "U",
                         "phase": "0",
-                        "clock": {
-                            "secs": 0,
-                            "label": "00'00"
-                        },
                         "fixtureType": "REGULAR",
                         "extraTime": false,
                         "shootout": false,
                         "behindClosedDoors": false,
-                        "id": 116072,
+                        "id": 116079,
                         "altIds": {
-                            "opta": "g2444715"
+                            "opta": "g2444720"
                         }
                     },
                     "ground": {
