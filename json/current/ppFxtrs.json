@@ -1,18 +1,6 @@
 [
 	{ 
 		"unplanned": [
-			{ 	"ppid": 289,
-				"nwRound": 39,
-				"ogGW": 29,
-				"added": true,
-				"team_h_nm": "NEW",
-				"team_h_id": 15,
-				"team_a_id": 7,
-				"team_a_nm": "CRY",
-				"status": "replanned",
-				"reason": "og: 29: Newcastle plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
-				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
-			}
 		]
 	},
 	{ 
@@ -40,14 +28,26 @@
 				"status": "replanned",
 				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
 				"link": ""
+			},
+			{ 	"ppid": 289,
+				"nwRound": 32,
+				"ogGW": 29,
+				"added": true,
+				"team_h_nm": "NEW",
+				"team_h_id": 15,
+				"team_a_id": 7,
+				"team_a_nm": "CRY",
+				"status": "replanned",
+				"reason": "og: 29: Newcastle plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
+				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
 			}
 		]
 	},
 	{ 
-		"ppRpIds":[ 144, 282 ] 
+		"ppRpIds":[ 144, 282, 289 ]
 	},
 	{ 
-		"ppIds": [ 289 ]
+		"ppIds": []
 	},
 	{ 
 		"evtp-UIB": [
@@ -211,7 +211,7 @@
 					{ 	
 						"title": "FINAL",
 						"gw": 29,
-						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
+						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20 ],
 						"drawn": true,
 						"data": [ 	
 									{"team_h":15, "team_a":12 } 
