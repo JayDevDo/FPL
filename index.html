@@ -169,10 +169,10 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=25 >
+								<form id="eventWndwStartForm" value=26 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=25
+											value=26
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1 >1</option>
@@ -182,8 +182,8 @@
 										<option value=22 >22</option>
 										<option value=23 >23</option>
 										<option value=24 >24</option>
-										<option value=25 active selected>25</option>
-										<option value=26 >26</option>
+										<option value=25 >25</option>
+										<option value=26 active selected>26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
 										<option value=29 >29 IB 4</option>
@@ -222,10 +222,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=6 >
+								<form id="slctdRoundsForm" value=13 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=6
+											value=13
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -233,14 +233,14 @@
 										<option value=3  >3</option>
 										<option value=4  >4</option>
 										<option value=5  >5</option>
-										<option value=6 active selected >6</option>
+										<option value=6  >6</option>
 										<option value=7  >7</option>
 										<option value=8  >8</option>
 										<option value=9  >9</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
 										<option value=12 >12</option>
-										<option value=13 >13</option>
+										<option value=13 active selected >13</option>
 										<option value=14 >14</option>
 										<option value=15 >15</option>
 										<option value=16 >16</option>
@@ -262,10 +262,10 @@
 							<th>Last Round</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(2)" >LOCK</button></td>
 							<td>
-								<form id="eventWndwEndForm" value=29 >
+								<form id="eventWndwEndForm" value=38 >
 									<select name="endRnd"
 											id="endRnd"
-											value=29
+											value=38
 											onchange="setEventWndwEnd(value)" 
 									>
 										<option value=12 >12</option>
@@ -285,7 +285,7 @@
 										<option value=26 >26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
-										<option value=29 active selected >29 IB 4</option>
+										<option value=29 >29 IB 4</option>
 										<option value=30 >30</option>
 										<option value=31 >31</option>
 										<option value=32 >32</option>
@@ -294,7 +294,7 @@
 										<option value=35 >35</option>
 										<option value=36 >36</option>
 										<option value=37 >37</option>
-										<option value=38 >38</option>
+										<option value=38 active selected >38</option>
 										<option value=3 >3 IB 1</option>
 										<option value=6 >6 IB 2</option>
 										<option value=11 >11 IB 3</option>
@@ -386,7 +386,7 @@
 			</div>
 
 
-			<div id="ppOview-cnt" class="grid-item" width=30% class="show-item" >
+			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
 
 				<div id="ppOview">
 	
@@ -863,9 +863,11 @@
 
 							<!-- Gameweek 31  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-07" round="Q-FINAL-1"></th>
 
 							<!-- Gameweek 32  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></th>
 
 							<!-- Gameweek 33  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></th> 
@@ -1037,9 +1039,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -1208,9 +1212,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -1381,9 +1387,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -1550,9 +1558,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -1720,9 +1730,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -1892,9 +1904,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2062,9 +2076,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2233,9 +2249,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2404,9 +2422,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2574,9 +2594,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2745,9 +2767,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -2916,9 +2940,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3084,9 +3110,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3257,9 +3285,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3426,9 +3456,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3596,9 +3628,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3767,9 +3801,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -3937,9 +3973,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -4107,9 +4145,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
@@ -4278,9 +4318,11 @@
 
 							<!-- Gameweek 31  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></td>
 
 							<!-- Gameweek 32  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-14" round="Q-FINAL-2"></td>
 
 							<!-- Gameweek 33  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="33" date="2025-04-19" round="GW 33"></td>
