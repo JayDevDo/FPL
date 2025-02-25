@@ -4,7 +4,7 @@
 
 
 // initial value, will be overwritten 
-let curGW = 26;
+let curGW = 27;
 
 
 /*
@@ -355,6 +355,7 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 	*/
 
 	$( fxtrSpan ).attr( "title", ttlText ) ;
+	$( fxtrSpan ).attr( "tooltip", ttlText ) ;
 
 	if( $(target_td).children(".fxtrspan").length > 0 ){
 		$(target_td).attr("dblgw", true  ).addClass('highlight') ;
