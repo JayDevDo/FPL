@@ -100,13 +100,13 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 9, 10, 13, 14, 15, 16, 20 ] },
-					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 11, 12, 17, 18, 19 ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 9, 10, 13, 16 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20  ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	
 						"title": "FINAL",
 						"gw": 37,
-						"elim": [ 1, 4, 6, 8, 11, 12, 17, 18, 19 ],
+						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -115,7 +115,7 @@
 					{	
 						"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 4, 6, 8, 11, 12, 17, 18, 19 ],
+						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -125,13 +125,15 @@
 					{	
 						"title": "Q-FINAL",
 						"gw": 30,
-						"elim": [ 1, 4, 6, 8, 11, 12, 17, 18, 19 ],
-						"drawn": false,
+						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
+						"drawn": true,
 						"data":	[
-									{"team_h":0, "team_a":0  },
-									{"team_h":0, "team_a":0  },
-									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
-									{"team_h":0, "team_a":0, "oppNmA":"not drawn" }
+									{"team_h": 0, "team_a": 2, "oppNmH":"Preston NE"  },
+									{"team_h": 9, "team_a": 7 },
+									{"team_h": 3, "team_a":13 },
+									{"team_h": 0, "team_a":16, "oppNmH":"Brighton" },
+									{"team_h": 0, "team_a":10, "oppNmH":"Brighton" },
+									{"team_h": 5, "team_a": 0, "oppNmA":"Forest or Ipswitch"  }
 						]
 					},
 					{	
@@ -356,7 +358,7 @@
 					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Liverpool-PSG", "cup": "Champions Lg" },
 					{ "team_h":12, 	"team_a": 0, "oppNmA": "Cl Brugge-Aston Villa", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Molde-Legia Warsaw", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "FCSB-Lyo", "cup": "Europa Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "FCSB-Lyon", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Frankfurt-Ajax", "cup": "Europa Lg" }
 				]
 			},
