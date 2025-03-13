@@ -100,13 +100,13 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 9, 10, 13, 16 ] },
-					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20  ] },
+					{ 	"title": "IN", 		"data": [ 2, 3, 5, 7, 9, 13, 16 ] },
+					{	"title": "OUT", 	"data": [ 1, 4, 6, 8, 10, 11, 12, 14, 15, 17, 18, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	
 						"title": "FINAL",
 						"gw": 37,
-						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
+						"elim": [ 1, 4, 6, 8, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0 }
@@ -115,7 +115,7 @@
 					{	
 						"title": "S-FINAL",
 						"gw": 34,
-						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
+						"elim": [ 1, 4, 6, 8, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
 						"drawn": false,
 						"data":	[
 									{"team_h":0, "team_a":0, "oppNmH":"not drawn" },
@@ -125,15 +125,13 @@
 					{	
 						"title": "Q-FINAL",
 						"gw": 30,
-						"elim": [ 1, 4, 6, 8, 11, 12, 14, 15, 17, 18, 19, 20 ],
+						"elim": [ 1, 4, 6, 8, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
 						"drawn": true,
 						"data":	[
 									{"team_h": 0, "team_a": 2, "oppNmH":"Preston NE"  },
 									{"team_h": 9, "team_a": 7 },
 									{"team_h": 3, "team_a":13 },
-									{"team_h": 0, "team_a":16, "oppNmH":"Brighton" },
-									{"team_h": 0, "team_a":10, "oppNmH":"Brighton" },
-									{"team_h": 5, "team_a": 0, "oppNmA":"Forest or Ipswitch"  }
+									{"team_h": 5, "team_a":16  }
 						]
 					},
 					{	
@@ -305,10 +303,10 @@
 	{
 		"evtp-ECL":[
 			{ 	
-				"title": "IN", 		"data": [ 1, 2, 6, 12, 14, 18 ]
+				"title": "IN", 		"data": [ 1, 2, 6, 14, 18 ]
 			},
 			{	
-				"title": "OUT", 	"data": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ]
+				"title": "OUT", 	"data": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
 			},
 			{ 	
 				"title": "evntTp", 	"data": "evtp-ECL" 
@@ -316,7 +314,7 @@
 			{ 
 				"title": "FINAL",
 				"gw": 38,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": false,
 				"data": [ 	
 							{"team_h":0, "team_a":0 , "oppNmH": "", "oppNmA": "", "cup": "Conference Lg" }
@@ -325,12 +323,12 @@
 			{
 				"title": "S-FINAL 2",
 				"gw": 35,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
-				"drawn": false,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
+				"drawn": true,
 				"data": [
-					{ "team_h": 0, 	"team_a": 1, "oppNmH": "PSG-LIV-AVL-Brugge", "cup": "Champions Lg" },
-					{ "team_h": 2, 	"team_a": 0, "oppNmA": "..Madrid-PSV-ARS", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a":12, "oppNmH": "..Madrid-PSV-ARS", "cup": "Champions Lg" },
+					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
+					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid-ARS", "cup": "Champions Lg" },
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "awaiting draw", "cup": "Conference Lg" },
 					{ "team_h":14, 	"team_a": 0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
 				]
@@ -338,12 +336,12 @@
 			{
 				"title": "S-FINAL 1",
 				"gw": 34,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
-				"drawn": false,
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
+				"drawn": true,
 				"data": [
-					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-LIV-AVL-Brugge", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "..Madrid-PSV-ARS", "cup": "Champions Lg" },
-					{ "team_h":12, 	"team_a": 0, "oppNmA": "..Madrid-PSV-ARS", "cup": "Champions Lg" },
+					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
+					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid-ARS", "cup": "Champions Lg" },
+					{ "team_h": 0, 	"team_a": 6, "oppNmH": "awaiting draw", "cup": "Conference Lg" },
 					{ "team_h":14, 	"team_a": 0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
 				]
@@ -351,13 +349,12 @@
 			{
 				"title": "Q-FINAL 2",
 				"gw": 32,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [
-					{ "team_h": 1, 	"team_a": 0, "oppNmA": ".. Madrid", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Liverpool-PSG", "cup": "Champions Lg" },
-					{ "team_h":12, 	"team_a": 0, "oppNmA": "Cl Brugge-Aston Villa", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Molde-Legia Warsaw", "cup": "Conference Lg" },
+					{ "team_h": 0, 	"team_a": 1, "oppNmH": "Real Madrid", "cup": "Champions Lg" },
+					{ "team_h": 2, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Molde-Legia Warsaw", "cup": "Conference Lg" },
 					{ "team_h":14, 	"team_a": 0, "oppNmA": "FCSB-Lyon", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Frankfurt-Ajax", "cup": "Europa Lg" }
 				]
@@ -365,12 +362,11 @@
 			{
 				"title": "Q-FINAL 1",
 				"gw": 31,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [
-					{ "team_h": 1, 	"team_a": 0, "oppNmA": ".. Madrid", "cup": "Champions Lg" },
-					{ "team_h": 2, 	"team_a": 0, "oppNmA": "Liverpool-PSG", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a":12, "oppNmH": "Cl Brugge-Aston Villa", "cup": "Champions Lg" },
+					{ "team_h": 1, 	"team_a": 0, "oppNmA": "Real Madrid", "cup": "Champions Lg" },
+					{ "team_h": 0, 	"team_a": 2, "oppNmH": "PSG", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Molde-Legia Warsaw", "cup": "Conference Lg" },
 					{ "team_h": 0, 	"team_a":14, "oppNmH": "FCSB-Lyon", "cup": "Europa Lg" },
 					{ "team_h": 0, 	"team_a":18, "oppNmH": "Frankfurt-Ajax", "cup": "Europa Lg" }
@@ -386,8 +382,8 @@
 					{ "team_h": 2, 	"team_a": 0, "oppNmA": "Club Brugge", "cup": "Champions Lg" },
 					{ "team_h":12, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Copenhagen", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "Real Sociedad", "cup": "Europa Lg" 			},
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "AZ Alkmaar", "cup": "Europa Lg" 		}
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Real Sociedad", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "AZ Alkmaar", "cup": "Europa Lg" }
 				]
 			},
 			{
