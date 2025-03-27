@@ -354,9 +354,9 @@
 				"data": [
 					{ "team_h": 0, 	"team_a": 1, "oppNmH": "Real Madrid", "cup": "Champions Lg" },
 					{ "team_h": 2, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
-					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Molde-Legia Warsaw", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "FCSB-Lyon", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Frankfurt-Ajax", "cup": "Europa Lg" }
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Legia Warszawa", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Lyon", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Eintracht Frankfurt", "cup": "Europa Lg" }
 				]
 			},
 			{
@@ -367,9 +367,9 @@
 				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "Real Madrid", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 2, "oppNmH": "PSG", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Molde-Legia Warsaw", "cup": "Conference Lg" },
-					{ "team_h": 0, 	"team_a":14, "oppNmH": "FCSB-Lyon", "cup": "Europa Lg" },
-					{ "team_h": 0, 	"team_a":18, "oppNmH": "Frankfurt-Ajax", "cup": "Europa Lg" }
+					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Legia Warszawa", "cup": "Conference Lg" },
+					{ "team_h": 0, 	"team_a":14, "oppNmH": "Lyon", "cup": "Europa Lg" },
+					{ "team_h": 0, 	"team_a":18, "oppNmH": "Eintracht Frankfurt", "cup": "Europa Lg" }
 				]
 			},
 			{
