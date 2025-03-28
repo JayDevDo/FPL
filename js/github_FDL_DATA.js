@@ -817,13 +817,13 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 				tempArr[ ogw ]['gw'] = ogw ;
 				tempArr[ ogw ]['loc']= "H" ;
 				tempArr[ ogw ]['df'] = fxtr.team_a_difficulty ;
-				tempArr[ ogw ]['opp'] = fxtr.team_a_nm
+				tempArr[ ogw ]['opp'] = FPLTeamsFull[fxtr.team_a].shortNm 
 			}else if( parseInt(fxtr.team_a) == tmId ){
 				// console.log("fxtr.id", fxtr.id, "gw", ogw, "team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ,"team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty  ) ;
 				tempArr[ ogw ]['gw'] = ogw ;
 				tempArr[ ogw ]['loc']= "A" ;
 				tempArr[ ogw ]['df'] = fxtr.team_h_difficulty ;
-				tempArr[ ogw ]['opp'] = fxtr.team_h_nm
+				tempArr[ ogw ]['opp'] = FPLTeamsFull[fxtr.team_h].shortNm 
 			}
 		}
 	}
@@ -852,6 +852,8 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 		retArr[1] = curGWDF['df'];
 	}
 	// console.log("retArr: ", retArr ) ;
+	if( retArr[0]==0 ){ retArr[0]=FPLTeamsFull[tmId].fplDF[0]  }
+	if( retArr[1]==0 ){ retArr[1]=FPLTeamsFull[tmId].fplDF[1]  }
 	return retArr ;
 }
 
