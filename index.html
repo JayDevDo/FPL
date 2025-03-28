@@ -50,7 +50,6 @@
 
 		</nav>
 
-
 		<div class="grid-container" visible=false>
 
 			<div id="sttngs-cnt" class="grid-item" width=30% class="hide-item">
@@ -145,6 +144,66 @@
 
 			</div>
 
+			<div id="eventTypes-cnt" class="grid-item" width=30% >
+
+				<form id="eventTypes" name="eventTypes" >
+
+					<fieldset id="evntTpsCont" onchange="eventTypeSelectionChanged()">
+						<legend>Select visible competitions:</legend>
+
+						<div>
+							<input type="checkbox" id="evtp-EPL" name="evtp-EPL" enabled="false" checked  />
+							<label for="evtp-EPL">Premier League</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-FAC" name="evtp-FAC" enabled="false" unchecked />
+							<label for="evtp-FAC">FA Cup</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-EFL" name="evtp-EFL" enabled="false" unchecked />
+							<label for="evtp-EFL">Caraboa Cup (EFL)</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-UIB" name="evtp-UIB" enabled="false" unchecked />
+							<label for="evtp-UIB">Uefa Int'l break (UIB)</label>
+						</div>
+
+						<div>
+							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" enabled="false" checked />
+							<label for="evtp-ECL">UEFA Cups:</label>
+								<ul id="evtp-ECL-ul" style="padding-left: 35%;">
+									<li>
+										<span>Champions Lg</span>
+									</li>
+									<li>
+										<span>Europa Lg</span>
+									</li>
+									<li>
+										<span>Conference Lg</span>
+									</li>
+								</ul>
+						</div>
+
+					</fieldset>
+
+					</form>
+
+					<!--   
+						complete team row including all league rounds as columns
+						leagues: 
+							EPL, 
+							FA Cup,
+							EFL (carabao) Cup, 
+							UEFA Champions Lg., 
+							UEFA Europa Lg.,
+							UEFA Conference Lg.,
+							UEFA/FIFA int'l Quals
+					-->
+
+			</div>
 
 			<div id="evw-cnt" class="grid-item" width=30% class="hide-item" >
 
@@ -323,69 +382,6 @@
 				
 			</div>
 
-
-			<div id="eventTypes-cnt" class="grid-item" width=30% >
-
-				<form id="eventTypes" name="eventTypes" >
-
-					<fieldset id="evntTpsCont" onchange="eventTypeSelectionChanged()">
-						<legend>Select visible competitions:</legend>
-
-						<div>
-							<input type="checkbox" id="evtp-EPL" name="evtp-EPL" enabled="false" checked  />
-							<label for="evtp-EPL">Premier League</label>
-						</div>
-
-						<div>
-							<input type="checkbox" id="evtp-FAC" name="evtp-FAC" enabled="false" unchecked />
-							<label for="evtp-FAC">FA Cup</label>
-						</div>
-
-						<div>
-							<input type="checkbox" id="evtp-EFL" name="evtp-EFL" enabled="false" unchecked />
-							<label for="evtp-EFL">Caraboa Cup (EFL)</label>
-						</div>
-
-						<div>
-							<input type="checkbox" id="evtp-UIB" name="evtp-UIB" enabled="false" unchecked />
-							<label for="evtp-UIB">Uefa Int'l break (UIB)</label>
-						</div>
-
-						<div>
-							<input type="checkbox" id="evtp-ECL" name="evtp-ECL" enabled="false" checked />
-							<label for="evtp-ECL">UEFA Cups:</label>
-								<ul id="evtp-ECL-ul" style="padding-left: 35%;">
-									<li>
-										<span>Champions Lg</span>
-									</li>
-									<li>
-										<span>Europa Lg</span>
-									</li>
-									<li>
-										<span>Conference Lg</span>
-									</li>
-								</ul>
-						</div>
-
-					</fieldset>
-
-					</form>
-
-					<!--   
-						complete team row including all league rounds as columns
-						leagues: 
-							EPL, 
-							FA Cup,
-							EFL (carabao) Cup, 
-							UEFA Champions Lg., 
-							UEFA Europa Lg.,
-							UEFA Conference Lg.,
-							UEFA/FIFA int'l Quals
-					-->
-
-			</div>
-
-
 			<div id="ppOview-cnt" class="grid-item" width=30% class="hide-item" >
 
 				<div id="ppOview">
@@ -410,7 +406,6 @@
 				</div>
 
 			</div>
-
 
 			<div id="teamDFCnt" class="grid-item" class="hide-item" width=60%>
 				<table style="border: 2px solid limegreen;">
@@ -698,10 +693,8 @@
 
 			</div>
 
-
 			<div id="info-cnt_2" class="grid-item" width=auto >
 			</div>
-
 
 			<div id="fxtrs-cnt" class="grid-item" class="show-item" width=60%>
 
