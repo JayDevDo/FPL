@@ -327,10 +327,10 @@
 				"drawn": true,
 				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid-ARS", "cup": "Champions Lg" },
-					{ "team_h": 6, 	"team_a": 0, "oppNmA": "awaiting draw", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
+					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid- ARS", "cup": "Champions Lg" },
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
 				]
 			},
 			{
@@ -340,10 +340,10 @@
 				"drawn": true,
 				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid-ARS", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 6, "oppNmH": "awaiting draw", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "AZ Alkmaar-Galatasaray", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Midtjylland-Real Sociedad", "cup": "Europa Lg" }
+					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid- ARS", "cup": "Champions Lg" },
+					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
 				]
 			},
 			{
