@@ -1,43 +1,6 @@
 [
 	{ 
-		"unplanned": [
-			{ 	"ppid": 331,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "ARS",
-				"team_h_id": 1,
-				"team_a_id": 7,
-				"team_a_nm": "CRY",
-				"status": "postponed",
-				"reason": "og: 34: FA Cup Semi Final for CRY",
-				"link": ""
-			},
-			{ 	"ppid": 336,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "MNC",
-				"team_h_id": 13,
-				"team_a_id": 2,
-				"team_a_nm": "AVL",
-				"status": "postponed",
-				"reason": "og: 34: FA Cup Semi Final for AVL AND MNC",
-				"link": ""
-			},
-			{ 	"ppid": 338,
-				"nwRound": 39,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "NFO",
-				"team_h_id": 16,
-				"team_a_id": 4,
-				"team_a_nm": "BRE",
-				"status": "postponed",
-				"reason": "og: 34: FA Cup Semi Final for NFO",
-				"link": ""
-			}
-		]
+		"unplanned": [	]
 	},
 	{ 
 		"re-planned": [
@@ -76,11 +39,47 @@
 				"status": "replanned",
 				"reason": "og: 29: Newcastle plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
 				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
+			},
+			{  	"ppid": 331,
+				"nwRound": 33,
+				"ogGW": 34,
+				"added": true,
+				"team_h_nm": "ARS",
+				"team_h_id": 1,
+				"team_a_id": 7,
+				"team_a_nm": "CRY",
+				"status": "replanned",
+				"reason": "og: 34: FA Cup Semi Final for CRY",
+				"link": ""
+			},
+			{	"ppid": 336,
+				"nwRound": 33,
+				"ogGW": 34,
+				"added": true,
+				"team_h_nm": "MNC",
+				"team_h_id": 13,
+				"team_a_id": 2,
+				"team_a_nm": "AVL",
+				"status": "replanned",
+				"reason": "og: 34: FA Cup Semi Final for AVL AND MNC",
+				"link": ""
+			},
+			{	"ppid": 338,
+				"nwRound": 34,
+				"ogGW": 34,
+				"added": true,
+				"team_h_nm": "NFO",
+				"team_h_id": 16,
+				"team_a_id": 4,
+				"team_a_nm": "BRE",
+				"status": "replanned",
+				"reason": "og: 34: FA Cup Semi Final for NFO. Postponed to Thursday in same GW34.",
+				"link": ""
 			}
 		]
 	},
 	{ 
-		"ppRpIds":[ 144, 282, 289 ]
+		"ppRpIds":[ 144, 282, 289, 331, 336, 338 ]
 	},
 	{ 
 		"ppIds": []
