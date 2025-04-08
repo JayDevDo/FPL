@@ -4,7 +4,7 @@
 
 
 // initial value, will be overwritten 
-let curGW = 31;
+let curGW = 32;
 
 
 /*
