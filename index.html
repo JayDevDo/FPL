@@ -856,7 +856,7 @@
 
 							<!-- Gameweek 31  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="31" date="2025-04-05" round="GW 31"></th> 
-							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="32" date="2025-04-07" round="Q-FINAL-1"></th>
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="31" date="2025-04-07" round="Q-FINAL-1"></th>
 
 							<!-- Gameweek 32  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="32" date="2025-04-12" round="GW 32"></th> 
@@ -4402,38 +4402,42 @@
 		<link 	rel="stylesheet" type="text/css" href="fpl.css" >
 		<script src="js/github_FDL_CONSTANTS.js"></script>
 		<script src="js/github_FDL_DATA.js"></script>
-		<script src="js/github_FDL_UI.js"></script>
+		<script defer src="js/github_FDL_UI.js"></script>
 
 		<!-- script type="text/javascript">showEventWindow(2,"HTML init");</script -->
 		<script defer type="text/javascript">
 
-			console.log("HTML init -> togglePPdisplay(true, 'HTML init')" )  ;
-			togglePPdisplay(false,"HTML init") ;
+			//console.log("HTML init -> togglePPdisplay(true, 'HTML init')" )  ;
+			//togglePPdisplay(false,"HTML init") ;
 
-			console.log("HTML init -> toggleReplanned(0)" )  ;
-			toggleReplanned(0) ;
+			//console.log("HTML init -> toggleReplanned(0)" )  ;
+			//toggleReplanned(0) ;
 
-			console.log("\nHTML init -> showEventWindow(2, 'HTML init')")  ;
-		 	showEventWindow(2, "HTML init") ;
+			//console.log("\nHTML init -> toggleStrengthContainer -1st" )  ;
+			//toggleStrengthContainer() ;
 
-			console.log("\nHTML init -> toggleStrengthContainer -1st" )  ;
-			toggleStrengthContainer() ;
+			//console.log("\nHTML init -> toggleStrengthContainer -2nd" )  ;
+			//toggleStrengthContainer() ;
 
-			console.log("\nHTML init -> toggleStrengthContainer -2nd" )  ;
-			toggleStrengthContainer() ;
-
-			console.log("\nHTML init -> toggleDeadline -1st" )  ;
-			toggleDeadline() ;
-
-			console.log("\nHTML init -> toggleDeadline -2nd" )  ;
-			toggleDeadline() ;
+			//console.log("\nHTML init -> toggleDeadline -2nd" )  ;
+			//toggleDeadline() ;
 
 			$(document).ready(
 				()=>{
 					console.log("\nHTML init -> document = ready") ;
 					$("#splash").hide() ;
 					// openCheck(splashDialog);
+
 					setFPLdfToGW( curGW ) ;
+
+					console.log("\nHTML init -> showEventWindow(2, 'HTML init')")  ;
+					showEventWindow(2, "HTML init") ;
+
+					console.log("\nHTML init -> toggleDeadline -1st" )  ;
+					toggleDeadline() ;
+					console.log("\nHTML init -> toggleDeadline -2nd" )  ;
+					toggleDeadline() ;
+
 					console.log("\nHTML init -> getTeamTableDifference" ) ;
 					getTeamTableDifference( 11, 1 ) ;
 				}
