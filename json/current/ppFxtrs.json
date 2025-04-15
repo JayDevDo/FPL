@@ -387,11 +387,11 @@
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [
-					{ "team_h": 0, 	"team_a": 1, "oppNmH": "Real Madrid", "cup": "Champions Lg" },
-					{ "team_h": 2, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
-					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Legia Warszawa", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "Lyon", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Eintracht Frankfurt", "cup": "Europa Lg" }
+					{ "team_h": 0, 	"team_a": 1, "oppNmH": "Real Madrid A (0-3)", "cup": "Champions Lg" },
+					{ "team_h": 2, 	"team_a": 0, "oppNmA": "PSG H (1-3)", "cup": "Champions Lg" },
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Legia Warszawa H (3-0)", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Lyon H (2-2)", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Eintracht Frankfurt A (1-1)", "cup": "Europa Lg" }
 				]
 			},
 			{
