@@ -216,7 +216,7 @@ getTeamTableData = async ()=> {
 
 				let tmTableResponse = JSON.parse( tmTblXhttp.responseText ) ; 
 				currentTeamTable = tmTableResponse ;
-				// console.log("currentTeamTable", tmTableResponse ) ;
+				console.log("currentTeamTable", tmTableResponse ) ;
 				myTmTblResolve( tmTableResponse ) ; 
 			}
 

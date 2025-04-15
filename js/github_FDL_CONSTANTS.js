@@ -700,7 +700,7 @@ let FPLTeamsFull = [
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Southampton",
 		altNm: "Saints",
-		manName: "Ivan Jurić",
+		manName: "Rusk/Lallana",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
