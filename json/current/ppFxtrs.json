@@ -338,10 +338,10 @@
 	{
 		"evtp-ECL":[
 			{ 	
-				"title": "IN", 		"data": [ 1, 2, 6, 14, 18 ]
+				"title": "IN", 		"data": [ 1, 6, 14, 18 ]
 			},
 			{	
-				"title": "OUT", 	"data": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
+				"title": "OUT", 	"data": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
 			},
 			{ 	
 				"title": "evntTp", 	"data": "evtp-ECL" 
@@ -349,7 +349,7 @@
 			{ 
 				"title": "FINAL",
 				"gw": 38,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": false,
 				"data": [ 	
 							{"team_h":0, "team_a":0 , "oppNmH": "", "oppNmA": "", "cup": "Conference Lg" }
@@ -358,11 +358,10 @@
 			{
 				"title": "S-FINAL 2",
 				"gw": 35,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [
-					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid- ARS", "cup": "Champions Lg" },
+					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
 					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
 					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
@@ -371,11 +370,10 @@
 			{
 				"title": "S-FINAL 1",
 				"gw": 34,
-				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
+				"elim": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
 				"data": [
-					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG-AVL", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 2, "oppNmH": "Real Madrid- ARS", "cup": "Champions Lg" },
+					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
 					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
 					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
