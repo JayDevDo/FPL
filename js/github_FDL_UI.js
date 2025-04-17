@@ -852,27 +852,17 @@ toggleSettings = ()=>{
 	We get the index of the team in fixturedata, the ranking table uses pulse_id wich is available in FPLTeamsFULL
 */
 getTeamTableDifference = ( mngrTm = 1, oppTm = 20 ) =>{
-	// console.log("currentTeamTable[0]", currentTeamTable[0].length ) ;
-	curTmTable 		= currentTeamTable['tables'][0]['entries'];
+	// console.log("gamesOverview.teamTableArr.length", gamesOverview.teamTableArr.length ) ;
+	
+	let curTmTable = [] ;
+	if( gamesOverview.teamTableArr.length > 0 ){ curTmTable = gamesOverview.teamTableArr ; } ;
 	let mngrTmName 	= FPLTeamsFull[mngrTm]['longNm'].toUpperCase() ;
 	let mngrTmPlsId = FPLTeamsFull[mngrTm]['pulse_id'] ;
 	let mngrName 	= FPLTeamsFull[mngrTm]['manName'] ;
-
 	let oppTmName 	= FPLTeamsFull[oppTm]['longNm'].toUpperCase() ;
 	let oppTmPlsId 	= FPLTeamsFull[oppTm]['pulse_id'] ;
 	let oppMngrName = FPLTeamsFull[oppTm]['manName'] ;
-	/* 
-	console.log(
-		"currentTeamTable",
-		"--mngrTm: ", 	mngrTm, 
-		"--mngrTmName: ",mngrTmName, 
-		"--mngrName: ", mngrName,
-		"--oppTm: ", 	oppTm, 
-		"--oppTmName: ",oppTmName
-	) ;
-	*/
-
-	let retValArr 	= 	{
+	let retValArr 	= {
 		"manTm": 	mngrTm,
 		"manTmRank": 20,
 		"manTmNm": 	mngrTmName,
@@ -882,8 +872,19 @@ getTeamTableDifference = ( mngrTm = 1, oppTm = 20 ) =>{
 		"oppTmName": oppTmName,
 		"oppMngrName": oppMngrName,
 		"rankingDistance": 0,
-		"tableBonusActive": false } ;
+		"tableBonusActive": false 
+	} ;
 
+	/* 
+	*	console.log(
+	*		"currentTeamTable",
+	*		"--mngrTm: ", 	mngrTm, 
+	*		"--mngrTmName: ",mngrTmName, 
+	*		"--mngrName: ", mngrName,
+	*		"--oppTm: ", 	oppTm, 
+	*		"--oppTmName: ",oppTmName
+		) ;
+	*/
 	// console.log("retValArr: ", retValArr )
 	let ttb = 0 ;
 
@@ -894,16 +895,15 @@ getTeamTableDifference = ( mngrTm = 1, oppTm = 20 ) =>{
 
 		if( parseInt( rnkTmPlsId ) == parseInt( mngrTmPlsId ) ){
 			retValArr['manTmRank'] = ttb+1 ;
-
 		}else if( parseInt( rnkTmPlsId ) == parseInt( oppTmPlsId ) ){
 			retValArr['oppTmRank'] = ttb+1 ;
-
 		}
 		// else{ console.log("neither mngrTm nor oppTm") }
 	}
-
+	
 	retValArr['rankingDistance'] =  retValArr['manTmRank'] - retValArr['oppTmRank'] ;
 	retValArr['tableBonusActive'] = ( retValArr['rankingDistance'] >= 5 )? true:false ;
+
 	// console.log("retValArr: ", retValArr ) ;
 	return retValArr ;
 }

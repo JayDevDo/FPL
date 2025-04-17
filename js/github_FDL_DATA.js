@@ -594,32 +594,31 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 				"text", cellText,
 				"cupCelltd len", cupCelltd.length,
 				"cupCelltd SHOULD BE 1 CELL", $(cupCelltd)
-			) ;		
+			) ;
 		}
 	*/
 }
 
 handleCups = ( cupData )=>{
-	/* handleCups: 	Adds cup fixtures to team rows at the column of the cup 				
+	/* handleCups: 	Adds cup fixtures to team rows at the column of the cup 
 					From json data it loops through a given cup(event type) in REVERSE
 					Each cup data entry holds cup related variables in keys 0,1,2
 					--	Event type EPL is handled in handleFixtures earlier in the script as it's obligatory
-					--	Event type UIB (International Breaks) is hard coded because 
-						the program doesn't keep track of those fixtures.
+					--	Event type UIB (International Breaks) is hard coded because the program doesn't keep track of those fixtures.
 					--	For the moment all European cups are aggregated under evtp-ECL.
 	*/
 
 	/*
-		cupData contains teams still involved 	('IN','contenders')		at index 0
+		cupData contains teams still involved 	('IN','contenders') at index 0
 		cupData contains teams eliminated 		('OUT')		at index 1
-		cupData contains eventType data 		('evntTp') 	at index 2		
+		cupData contains eventType data 		('evntTp') 	at index 2
 	*/
 
 	/*
 		cupData contains cup final data 		(L 2 h+a)	at index 3
 		cupData contains cup semi-final data 	(L 4 h+a) 	at index 4
 		cupData contains cup Q-final data		(L 8 h+a) 	at index 5
-		cupData contains etc								at index +1 	
+		cupData contains etc								at index +1
 	*/
 
 	let cdl 	 = cupData.length ; 
@@ -902,7 +901,7 @@ allPromise.then(
 		let ppGames = values[1] ; 
 		let fxtrs 	= values[2] ;
 		let tmTbl 	= values[3] ;
-		// let mngrData= values[3] ;
+		// let mngrData= values[4] ;
 
 		/*
 				myPPResolve( [ 	
@@ -926,12 +925,15 @@ allPromise.then(
 		// Step 4 : Add data from fxtrs to FPLTeamsFull.	( 	FXTR LOOP 	)	-hisDF
 		// Step 5 : Add data from FPLTeamsFull to fxtrs.	( 	FXTR LOOP 	)	-FPL-DF -strengths 
 		console.log( "tmTbl['tables'][0][1]:", tmTbl['tables'][0]['gameWeek'] )
-		// Set the curGW at the earliest possibility
-
+		
+		gamesOverview.teamTableArr = tmTbl['tables'][0]['entries'] ;
+		console.log( "teamTableArr:", gamesOverview.teamTableArr.length ) ;
+		
 		// EVENT LOOP START
-		// Add dates + rounds for cups in fxtr table th
+		// Add dates + rounds for cups in fxtr table <th>
 		console.log( getCI(), "allPromise.then(values) event loop START" ) ; 
 
+		// Set the curGW at the earliest possibility
 		curGW = getCurGW( events ) ;
 		console.log( getCI(), "allPromise.then(values) curGw(events)", curGW ) ; 
 		$("#curRound").text("GW: " + curGW.toString() ) ;

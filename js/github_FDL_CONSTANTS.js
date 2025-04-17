@@ -62,6 +62,7 @@ let gamesOverview = {
 		iBreaksShow: true,
 		teamTableWk: 0,
 		teamTableDt: "2025-01-01 20h00",
+		teamTableArr: [],
 		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
 		selectedTeamId: 12,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
