@@ -362,9 +362,9 @@
 				"drawn": true,
 				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
-					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
+					{ "team_h": 6, 	"team_a": 0, "oppNmA": "Djurgarden", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Athletic Bilbao", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo-Glimt", "cup": "Europa Lg" }
 				]
 			},
 			{
@@ -374,9 +374,9 @@
 				"drawn": true,
 				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
-					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Djurgarden- Rapid Wien", "cup": "Conference Lg" },
-					{ "team_h":14, 	"team_a": 0, "oppNmA": "Rangers- Athletic Bilbao", "cup": "Europa Lg" },
-					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo/Glimt- Lazio", "cup": "Europa Lg" }
+					{ "team_h": 0, 	"team_a": 6, "oppNmH": "Djurgarden", "cup": "Conference Lg" },
+					{ "team_h":14, 	"team_a": 0, "oppNmA": "Athletic Bilbao", "cup": "Europa Lg" },
+					{ "team_h":18, 	"team_a": 0, "oppNmA": "Bodo-Glimt", "cup": "Europa Lg" }
 				]
 			},
 			{
