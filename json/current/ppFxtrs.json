@@ -135,23 +135,23 @@
 
 	{
 		"evtp-FAC": [
-					{ 	"title": "IN", 		"data": [ 2, 7, 13, 16 ] },
-					{	"title": "OUT", 	"data": [ 1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20 ] },
+					{ 	"title": "IN", 		"data": [ 7, 13 ] },
+					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 					{	
 						"title": "FINAL",
 						"gw": 37,
-						"elim": [ 1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
-						"drawn": false,
+						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20 ],
+						"drawn": true,
 						"data":	[
-									{"team_h":0, "team_a":0 }
+									{"team_h":7, "team_a":13 }
 					 			]
 					},
 					{	
 						"title": "S-FINAL",
 						"gw": 34,
 						"elim": [ 1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
-						"drawn": false,
+						"drawn": true,
 						"data":	[
 									{"team_h":16, "team_a":13 },
 									{"team_h": 7, "team_a": 2 }
