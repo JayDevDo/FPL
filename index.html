@@ -157,7 +157,7 @@
 						</div>
 
 						<div>
-							<input type="checkbox" id="evtp-FAC" name="evtp-FAC" enabled="false" unchecked />
+							<input type="checkbox" id="evtp-FAC" name="evtp-FAC" enabled="true" checked />
 							<label for="evtp-FAC">FA Cup</label>
 						</div>
 
@@ -228,10 +228,10 @@
 								<button class="evwndwTgl" enabled=false onclick="toggleLocks(0)" >LOCK</button>
 							</td>
 							<td>
-								<form id="eventWndwStartForm" value=35 >
+								<form id="eventWndwStartForm" value=36 >
 									<select name="strtRnd"
 											id="strtRnd"
-											value=35
+											value=36
 											onchange="setEventWndwStart(value)"
 									>
 										<option value=1 >1</option>
@@ -251,8 +251,8 @@
 										<option value=32 >32</option>
 										<option value=33 >33</option>
 										<option value=34 >34</option>
-										<option value=35 active selected>35</option>
-										<option value=36 >36</option>
+										<option value=35 >35</option>
+										<option value=36 active selected >36</option>
 										<option value=37 >37</option>
 										<option value=38 >38</option>
 										<option value=4  >4 IB 1</option>
@@ -281,16 +281,16 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=4 >
+								<form id="slctdRoundsForm" value=3 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=4
+											value=3
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
 										<option value=2  >2</option>
-										<option value=3  >3</option>
-										<option value=4 active selected >4</option>
+										<option value=3 active selected >3</option>
+										<option value=4  >4</option>
 										<option value=5  >5</option>
 										<option value=6  >6</option>
 										<option value=7  >7</option>
@@ -880,10 +880,11 @@
 							<!-- Gameweek 37  -->
 							<th class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></th> 
 							<th class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></th>
 
 							<!-- Gameweek 38  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></th> 
-							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></th> 
+							<th class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></th>
 
 							<!-- Gameweek 39 (postponed)  -->
 
@@ -987,7 +988,6 @@
 							<td class="evtTeamBlock evtp-EFL cupCntndr" evrnd="20" date="2025-01-06" round="S-FINAL 1"></td>	
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="20" date="2025-01-11" round="3rd Rnd (FA-L64)"></td>
 
-
 							<!-- Gameweek 21  -->
 							<td class="evtTeamBlock evtp-EPL afc" evrnd="21" date="2025-01-14" round="GW 21"></td>
 
@@ -1058,10 +1058,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1233,10 +1234,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1410,10 +1412,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1583,10 +1586,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1757,10 +1761,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -1933,10 +1938,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2107,10 +2113,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2282,10 +2289,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2457,10 +2465,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2631,10 +2640,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2806,10 +2816,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -2981,10 +2992,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3153,10 +3165,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3330,10 +3343,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3503,10 +3517,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3677,10 +3692,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -3852,10 +3868,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -4026,10 +4043,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -4200,10 +4218,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
@@ -4375,10 +4394,11 @@
 							<!-- Gameweek 37  -->
 							<td class="evtTeamBlock evtp-FAC cupCntndr" evrnd="37" date="2025-05-17" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EPL" evrnd="37" date="2025-05-18" round="GW 37"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="37" date="2025-05-21" round="Europa Lg final"></td>
 
 							<!-- Gameweek 38  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2025-05-25" round="GW 38"></td>
-							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-06-14" round="ECL-Final"></td>
+							<td class="evtTeamBlock evtp-ECL cupCntndr" evrnd="38" date="2025-05-28" round="UEFA finals"></td>
 
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
