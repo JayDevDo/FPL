@@ -34,9 +34,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 34,
-		currentRnd: 35,
-		evWndw: { 'direction': 1 , 'start': 35, 'rounds': 4, 'end': 38 },
+		finishedRounds: 35,
+		currentRnd: 36,
+		evWndw: { 'direction': 1 , 'start': 36, 'rounds': 3, 'end': 38 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
