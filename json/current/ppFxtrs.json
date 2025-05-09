@@ -338,22 +338,21 @@
 	{
 		"evtp-ECL":[
 			{ 	
-				"title": "IN", "data": [ 1, 6, 14, 18 ]
+				"title": "IN", "data": [ 6, 14, 18 ]
 			},
 			{	
-				"title": "OUT", "data": [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
+				"title": "OUT", "data": [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
 			},
 			{ 	
 				"title": "evntTp", "data": "evtp-ECL" 
 			},
 			{ 
-				"title": "UEFA finals",
+				"title": "UEFA final",
 				"gw": 38,
-				"elim": [  2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+				"elim": [  1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
 				"drawn": true,
 				"data": [ 	
-							{"team_h":0, "team_a":1, "oppNmH": "Inter Milan", "oppNmA": "PSG-ARS", "cup": "Champions Lg final" },
-							{"team_h":6, "team_a":0, "oppNmA": "Fiorentina -Betis", "cup": "Conference Lg final" }
+							{"team_h":6, "team_a":0, "oppNmA": "Betis", "cup": "Conference Lg final" }
 				]
 			},
 			{ 
