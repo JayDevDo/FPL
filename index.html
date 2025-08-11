@@ -156,12 +156,12 @@
 
 						<div>
 							<input type="checkbox" id="evtp-EPL" name="evtp-EPL" enabled="false" checked  />
-							<label for="evtp-EPL">Premier League</label>
+							<label for="evtp-EPL" class="evtp-EPL">Premier League</label>
 						</div>
 
 						<div>
 							<input type="checkbox" id="evtp-UIB" name="evtp-UIB" enabled="true" unchecked />
-							<label for="evtp-UIB">Uefa Int'l break (UIB)</label>
+							<label for="evtp-UIB" class="evtp-UIB">Uefa Int'l break (UIB)</label>
 						</div>
 
 						<div>
@@ -174,27 +174,27 @@
 
 							<div>
 								<input type="checkbox" id="evtp-FAC" name="evtp-FAC" enabled="true" unchecked />
-								<label for="evtp-FAC">FAC - FA Cup </label>
+								<label for="evtp-FAC" class="evtp-FAC">FAC - FA Cup </label>
 							</div>
 
 							<div>
 								<input type="checkbox" id="evtp-EFL" name="evtp-EFL" enabled="true" unchecked />
-								<label for="evtp-EFL">EFL - Caraboa Cup </label>
+								<label for="evtp-EFL" class="evtp-EFL">EFL - Caraboa Cup </label>
 							</div>
 
 							<div>
 								<input type="checkbox" id="evtp-EHL" name="evtp-EHL" enabled="true" unchecked />
-								<label for="evtp-EHL">EHL - Uefa Champions Lg </label>
+								<label for="evtp-EHL" class="evtp-EHL">EHL - Uefa Champions Lg </label>
 							</div>
 
 							<div>
 								<input type="checkbox" id="evtp-EUL" name="evtp-EUL" enabled="true" unchecked />
-								<label for="evtp-EUL">EUL - Uefa Europa Lg </label>
+								<label for="evtp-EUL"  class="evtp-EUL">EUL - Uefa Europa Lg </label>
 							</div>
 
 							<div>
 								<input type="checkbox" id="evtp-EOL" name="evtp-EOL" enabled="true" unchecked />
-								<label for="evtp-EOL">EOL - Uefa Conference Lg </label>
+								<label for="evtp-EOL"  class="evtp-EOL">EOL - Uefa Conference Lg </label>
 							</div>
 
 						</fieldset>
@@ -234,7 +234,7 @@
 									>
 										<option value=1 active selected >1</option>
 										<option value=2  >2</option>
-										<option value=3  >3</option>
+										<option value=3  >3 </option>
 										<option value=4  >4 IB 1</option>
 										<option value=5  >5</option>
 										<option value=6  >6</option>
@@ -260,7 +260,7 @@
 										<option value=26 >26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
-										<option value=29 >29 IB 4</option>
+										<option value=29 >29</option>
 										<option value=30 >30</option>
 										<option value=31 >31</option>
 										<option value=32 >32</option>
@@ -279,10 +279,10 @@
 							<th># of Rounds</th>
 							<td><button class="evwndwTgl" enabled=false onclick="toggleLocks(1)" >LOCK</button></td>
 							<td>
-								<form id="slctdRoundsForm" value=8 >
+								<form id="slctdRoundsForm" value=7 >
 									<select name="slctdRounds"
 											id="slctdRounds"
-											value=8
+											value=7
 											onchange="setRndsToShow(value)"
 									>
 										<option value=1  >1</option>
@@ -291,8 +291,8 @@
 										<option value=4  >4</option>
 										<option value=5  >5</option>
 										<option value=6  >6</option>
-										<option value=7  >7</option>
-										<option value=8 active selected >8</option>
+										<option value=7 active selected >7</option>
+										<option value=8  >8</option>
 										<option value=9  >9</option>
 										<option value=10 >10</option>
 										<option value=11 >11</option>
@@ -322,7 +322,7 @@
 								<form id="eventWndwEndForm" value=8 >
 									<select name="endRnd"
 											id="endRnd"
-											value=8
+											value=7
 											onchange="setEventWndwEnd(value)"
 									>
 										<option value=1 >1</option>
@@ -330,9 +330,9 @@
 										<option value=3 >3 IB 1</option>
 										<option value=4 >4</option>
 										<option value=5 >5</option>
-										<option value=6 >6 IB 2</option>
-										<option value=7 >7</option>
-										<option value=8 active selected >8</option>
+										<option value=6 >6 </option>
+										<option value=7 active selected>7 IB 2</option>
+										<option value=8 >8</option>
 										<option value=9 >9</option>
 										<option value=10 >10</option>
 										<option value=11 >11 IB 3</option>
@@ -353,7 +353,7 @@
 										<option value=26 >26</option>
 										<option value=27 >27</option>
 										<option value=28 >28</option>
-										<option value=29 >29 IB 4</option>
+										<option value=29 >29</option>
 										<option value=30 >30</option>
 										<option value=31 >31</option>
 										<option value=32 >32</option>
@@ -836,6 +836,7 @@
 							<th class="evtTeamBlock evtp-EPL" evrnd="22" date="2026-01-17" round="GW 22"></th>
 							<th class="evtTeamBlock evtp-EHL" evrnd="22" date="2026-01-20" round="Match day 7"></th>
 							<th class="evtTeamBlock evtp-EUL" evrnd="22" date="2026-01-22" round="Match day 7"></th>
+
 							<!-- Gameweek 23  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="23" date="2026-01-24" round="GW 23"></th>
 							<th class="evtTeamBlock evtp-EHL" evrnd="23" date="2026-01-28" round="Match day 8"></th>
@@ -870,6 +871,7 @@
 							<th class="evtTeamBlock evtp-EHL" evrnd="29" date="2026-03-10" round="L16-1"></th>
 							<th class="evtTeamBlock evtp-EUL" evrnd="29" date="2026-03-12" round="L16-1"></th>
 							<th class="evtTeamBlock evtp-EOL" evrnd="29" date="2026-03-12" round="L16-1"></th>
+
 
 							<!-- Gameweek 30  -->
 							<th class="evtTeamBlock evtp-EPL" evrnd="30" date="2026-03-14" round="GW 30"></th>
@@ -1018,19 +1020,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -1146,7 +1144,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -1225,19 +1222,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -1335,6 +1328,7 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="38" date="2026-05-24" round="GW 38"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="38" date="2026-05-27" round="FINAL"></td>
 							<td class="evtTeamBlock evtp-EHL" evrnd="38" date="2026-05-30" round="FINAL"></td>
+
 							<!-- Gameweek 39 (postponed)  -->
 							<td class="ppgame" evrnd="39">
 								<div class="fxtrPPcount"></div>
@@ -1353,7 +1347,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -1432,19 +1425,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -1558,7 +1547,6 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -1637,19 +1625,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -1764,7 +1748,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -1843,19 +1826,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -1972,7 +1951,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -2051,19 +2029,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -2180,7 +2154,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -2259,19 +2232,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -2387,7 +2356,6 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -2466,19 +2434,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -2595,7 +2559,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -2674,19 +2637,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -2803,7 +2762,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -2882,19 +2840,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -3011,7 +2965,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -3090,19 +3043,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -3219,7 +3168,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -3298,19 +3246,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -3424,8 +3368,6 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
-
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -3504,19 +3446,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -3633,7 +3571,6 @@
 							</th>
 
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -3712,19 +3649,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -3840,7 +3773,6 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -3919,19 +3851,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -4125,19 +4053,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -4253,6 +4177,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -4331,19 +4256,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -4459,7 +4380,6 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
-
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -4538,19 +4458,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -4666,6 +4582,7 @@
 								<div class="tm-idc greenLight" > </div>
 							</th>
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -4744,19 +4661,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
@@ -4873,6 +4786,7 @@
 							</th>
 
 							<th class="dfc">100</th>
+
 							<!-- Gameweek 01  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="1" date="2025-08-15" round="GW 01"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="1" date="2025-08-21" round="Prelim-1"></td>
@@ -4951,19 +4865,15 @@
 							<td class="evtTeamBlock evtp-EPL" evrnd="16" date="2025-12-13" round="GW 16"></td>
 							<td class="evtTeamBlock evtp-EFL" evrnd="16" date="2025-12-15" round="Q-FINAL"></td>
 							<td class="evtTeamBlock evtp-EOL" evrnd="16" date="2025-12-18" round="Match day 6"></td>
-							<!-- Gameweek 16 EFL cup QF -->
 
 							<!-- Gameweek 17  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="17" date="2025-12-20" round="GW 17"></td>
-							<!-- No midweek as gw 18 is during christmas -->
 
 							<!-- Gameweek 18  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="18" date="2025-12-27" round="GW 18"></td>
-							<!-- No midweek as gw 19 is midweek -->
 
 							<!-- Gameweek 19  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="19" date="2025-12-30" round="GW 19"></td>
-							<!-- No midweek as gw 20 is midweek -->
 
 							<!-- Gameweek 20  -->
 							<td class="evtTeamBlock evtp-EPL" evrnd="20" date="2026-01-03" round="GW 20"></td>
