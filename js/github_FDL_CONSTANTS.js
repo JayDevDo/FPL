@@ -14,6 +14,15 @@ let allStatsData = [];
 
 let currentTeamTable = [] ;
 
+let cupDataAll = {
+	'evtp-FAC': [],
+	'evtp-EFL': [],
+	'evtp-EHL': [],
+	'evtp-EUL': [],
+	'evtp-EOL': [],
+	'evtp-UIB': []	
+};
+
 let linearScale = d3.scaleLinear()
   .domain( [1000, 1400] )
   .range( [ "#FFCCFF", "#CC00CC" ] );
@@ -26,7 +35,7 @@ Light: #FFFF33
 [purple]
 Dark: 	#CC00CC
 Light: 	#FFCCFF
-*/  
+*/
 
 let callIndexer = 0 ;
 getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
@@ -36,7 +45,7 @@ let gamesOverview = {
 		fixedColumns: 3,
 		finishedRounds: 35,
 		currentRnd: 36,
-		evWndw: { 'direction': 1 , 'start': 36, 'rounds': 3, 'end': 38 },
+		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 8, 'end': 8 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -61,23 +70,55 @@ let gamesOverview = {
 		iBreaks: [],
 		iBreaksShow: true,
 		teamTableWk: 0,
-		teamTableDt: "2025-01-01 20h00",
+		teamTableDt: "2026-01-01 20h00",
 		teamTableArr: [],
-		evTypes: [ "evtp-EFL", "evtp-FAC", "evtp-ECL" ], /* "evtp-EPL","evtp-EUL",	"evtp-CLE",	"evtp-UIB" */
+		evTypes: [ "evtp-FAC", "evtp-EFL", "evtp-EHL", "evtp-EUL", "evtp-EOL", "evtp-UIB"  ], 
+		/* 
+			"evtp-EPL",
+			"evtp-UIB"
+		*/
+		euroElite: [
+			1,  	2,		7, 
+			8, 		12, 	13, 
+			15, 	16,  	18
+		],
+		/* [1, 7, 12, 13, 15, 18] = champios lg.  [16]= conference lg.  [2,8]=europa lg */
 		selectedTeamId: 12,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
+		midWeeksUsed: [
+			[], /* gw 0 no used. followed by 38 real gameweeks */
+			[],[],[],[],[],			[],[],[],[],[],
+			[],[],[],[],[],			[],[],[],[],[],
+			[],[],[],[],[],			[],[],[],[],[],
+			[],[],[],[],[],			[],[],[],
+			 /* after 38 real gameweeks, gw 39 for postponed */
+			[],
+		],
 		sort: 1 ,
 		fontSize: 10,
-		manId: 856045
+		manId: 986725
+}
+/* 
+24/25: 856045
+25/26: 986725
+
+*/
+getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	}
+getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	}
+getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	}
+
+
+midWeekHasCup = (gw)=>{
+	let hasCup = ( gamesOverview.midWeeksUsed[gw].length > 0 );
+	console.log(
+		"CONSTANTS | start midWeekHasCup ", gw, 
+		"length:",gamesOverview.midWeeksUsed[gw].length,
+		"hasCup:", hasCup 
+	);
 }
 
-getEventWndwStart 	= ()=>{ return parseInt( gamesOverview.evWndw['start'] ) ; 	} 
-getRndsToShow 		= ()=>{ return parseInt( gamesOverview.evWndw['rounds'] ) ;	} 
-getEventWndwEnd  	= ()=>{ return parseInt( gamesOverview.evWndw['end'] ) ; 	} 
-
-
 hasUserStore = ()=>{
-	let hasLS = false ; 
+	let hasLS = false ;
 	try{
 		if( JSON.parse( localStorage.usrdf ) ){ hasLS = true; }else{ hasLS = false; }
 		// console.log("hasUserStore: hasLS=", hasLS, JSON.parse( localStorage.usrdf ) ) ;
@@ -96,29 +137,29 @@ setUserDF = ()=>{
 	let lclStrgArr = [] ;
 	let h_df = $("#df_home > td[df]").get() ;
 	let a_df = $("#df_away > td[df]").get() ;
-	
+
 	if( h_df.length == a_df.length ){
 
 		$.each(
 			h_df,
 			(i,t)=>{
-				FPLTeamsFull[ 
-					parseInt( $( t ).attr( 'tmId' ) )].usrDF = [ 
-						parseInt($( h_df[i] ).attr( 'df' )), 
-						parseInt($( a_df[i] ).attr( 'df' )) 
-					] ; 
+				FPLTeamsFull[
+					parseInt( $( t ).attr( 'tmId' ) )].usrDF = [
+						parseInt($( h_df[i] ).attr( 'df' )),
+						parseInt($( a_df[i] ).attr( 'df' ))
+					] ;
 				lclStrgArr.push(
-					{ 
-						'tmid': parseInt( $( t ).attr( 'tmId' ) ), 
+					{
+						'tmid': parseInt( $( t ).attr( 'tmId' ) ),
 						'h': parseInt( $( h_df[i] ).attr( 'df' ) ),
-						'a': parseInt( $( a_df[i] ).attr( 'df' ) )				
+						'a': parseInt( $( a_df[i] ).attr( 'df' ) )
 					}
-				) ; 
-		}) ; 
+				) ;
+		}) ;
 
 		gamesOverview.dfSource.user = true ;
-		gamesOverview.dfSource.loaded[1] = true ; 
-		setIndicator( "usr-df-Ldd-idc", "green") ; 
+		gamesOverview.dfSource.loaded[1] = true ;
+		setIndicator( "usr-df-Ldd-idc", "green") ;
 	}else{
 		console.log("something went wrong !") ;
 	}
@@ -136,12 +177,12 @@ delUserDF = ()=>{
 
 
 loadUserDF = ()=>{
-	// Load values from the localstorage arrays into FPLTeamsFull, DFcontainer and fixtures 
+	// Load values from the localstorage arrays into FPLTeamsFull, DFcontainer and fixtures
 	// localStorage.usrdf = JSON.stringify( lclStrgArr ) ;
-	let storedH = [] ; 
-	let storedA = [] ; 
+	let storedH = [] ;
+	let storedA = [] ;
 
-	if( localStorage.usrdf ){ 
+	if( localStorage.usrdf ){
 
 		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
 		// console.log( "loadUserDF: localStorage exists. =", JSON.parse( localStorage.usrdf ) ) ;
@@ -162,41 +203,41 @@ loadUserDF = ()=>{
 			// Update DF container attribs + text
 			// Update fixture DF's
 			// Update FPLTeamsFull[x]['usrDF'] = [homevalue, awayvalue ]
-			teamHval = parseInt( storedH[t]['h'] ) ;  
-			teamAval = parseInt( storedH[t]['a'] ) ;  
+			teamHval = parseInt( storedH[t]['h'] ) ;
+			teamAval = parseInt( storedH[t]['a'] ) ;
 
-			// console.log("loadUserDF: ", FPLTeamsFull[t+1].shortNm, "newDF H: : ",  teamHval, "newDF A: : ",  teamAval ) ; 
+			// console.log("loadUserDF: ", FPLTeamsFull[t+1].shortNm, "newDF H: : ",  teamHval, "newDF A: : ",  teamAval ) ;
 
 			FPLTeamsFull[t+1]['usrDF'] = [ teamHval, teamAval ] ;
 
-			$("#df_home td[tmid="+ (t+1) + "]").attr( "df", teamHval) ; 
-			$("#df_home td[tmid="+ (t+1) + "]").text( teamHval.toString() ) ; 
+			$("#df_home td[tmid="+ (t+1) + "]").attr( "df", teamHval) ;
+			$("#df_home td[tmid="+ (t+1) + "]").text( teamHval.toString() ) ;
 
-			let hteamOpps = $(".fxtrspan[teamid_h="+ (t+1) + "][loc='A']").get() ; 
-			// console.log("hteamOpps=", hteamOpps.length , teamHval.toString() ) ; 
+			let hteamOpps = $(".fxtrspan[teamid_h="+ (t+1) + "][loc='A']").get() ;
+			// console.log("hteamOpps=", hteamOpps.length , teamHval.toString() ) ;
 			$.each(
 				hteamOpps,
 				(index, oppFxtr)=>{
-					let hText = [ FPLTeamsFull[t+1].shortNm, " A (", teamHval.toString(), ")" ].join("") ; 
-					$(oppFxtr).addClass("customDF") ; 
-					$(oppFxtr).text( hText ) ; 
-					$(oppFxtr).attr( "df", teamHval) ; 
-			}) ; 
+					let hText = [ FPLTeamsFull[t+1].shortNm, " A (", teamHval.toString(), ")" ].join("") ;
+					$(oppFxtr).addClass("customDF") ;
+					$(oppFxtr).text( hText ) ;
+					$(oppFxtr).attr( "df", teamHval) ;
+			}) ;
 
 
-			$("#df_away td[tmid="+ (t+1) + "]").attr( "df", teamAval) ; 
-			$("#df_away td[tmid="+ (t+1) + "]").text( teamAval.toString() ) ; 
+			$("#df_away td[tmid="+ (t+1) + "]").attr( "df", teamAval) ;
+			$("#df_away td[tmid="+ (t+1) + "]").text( teamAval.toString() ) ;
 
-			let ateamOpps = $(".fxtrspan[teamid_a="+ (t+1) + "][loc='H']").get() ; 	
-			// console.log("ateamOpps=", ateamOpps.length ) ; 
+			let ateamOpps = $(".fxtrspan[teamid_a="+ (t+1) + "][loc='H']").get() ;
+			// console.log("ateamOpps=", ateamOpps.length ) ;
 			$.each(
 				ateamOpps,
 				(index, oppFxtr)=>{
-					let aText = [ FPLTeamsFull[t+1].shortNm, " H (", teamAval.toString(), ")" ].join("") ; 
-					$(oppFxtr).addClass("customDF") ; 
-					$(oppFxtr).text( aText ) ; 
-					$(oppFxtr).attr( "df", teamAval) ; 
-			}) ; 
+					let aText = [ FPLTeamsFull[t+1].shortNm, " H (", teamAval.toString(), ")" ].join("") ;
+					$(oppFxtr).addClass("customDF") ;
+					$(oppFxtr).text( aText ) ;
+					$(oppFxtr).attr( "df", teamAval) ;
+			}) ;
 
 		}
 
@@ -209,8 +250,8 @@ loadUserDF = ()=>{
 }
 
 loadFPLDF = (gw=gamesOverview.currentRnd)=>{
-	/* 
-		Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] situated below into the DFcontainer and fixtures. 
+	/*
+		Load values from the CONSTANTS FPLTeamsFull[x]['fplDF'][ h, a ] situated below into the DFcontainer and fixtures.
 		These are/were the values set by the developer of this at the start of the season.
 		To load the most recent values, run update_FPLDF(Gameweek).
 
@@ -224,36 +265,36 @@ loadFPLDF = (gw=gamesOverview.currentRnd)=>{
 			// Update DF container attribs + text
 			// Update fixture DF's
 			// Update FPLTeamsFull[x]['usrDF'] = [homevalue, awayvalue ]
-			teamHval = parseInt( FPLTeamsFull[t]['fplDF'][0] ) ;  
-			teamAval = parseInt( FPLTeamsFull[t]['fplDF'][1] ) ;  
+			teamHval = parseInt( FPLTeamsFull[t]['fplDF'][0] ) ;
+			teamAval = parseInt( FPLTeamsFull[t]['fplDF'][1] ) ;
 
-			$("#df_home td[tmid="+ (t) + "]").attr( "df", teamHval) ; 
-			$("#df_home td[tmid="+ (t) + "]").text( teamHval.toString() ) ; 
+			$("#df_home td[tmid="+ (t) + "]").attr( "df", teamHval) ;
+			$("#df_home td[tmid="+ (t) + "]").text( teamHval.toString() ) ;
 
-			let hteamOpps = $(".fxtrspan[teamid_h="+ t + "][loc='A']").get() ; 
+			let hteamOpps = $(".fxtrspan[teamid_h="+ t + "][loc='A']").get() ;
 			$.each(
 				hteamOpps,
 				(index, oppFxtr)=>{
-					let hText = [ FPLTeamsFull[t].shortNm, " A (", teamHval.toString(), ")" ].join("") ; 
-					$(oppFxtr).removeClass("customDF") ; 
-					$(oppFxtr).text( hText ) ; 
-					$(oppFxtr).attr( "df", teamHval) ; 
-			}) ; 
+					let hText = [ FPLTeamsFull[t].shortNm, " A (", teamHval.toString(), ")" ].join("") ;
+					$(oppFxtr).removeClass("customDF") ;
+					$(oppFxtr).text( hText ) ;
+					$(oppFxtr).attr( "df", teamHval) ;
+			}) ;
 
 
-			$("#df_away td[tmid="+ t + "]").attr( "df", teamAval ) ; 
-			$("#df_away td[tmid="+ t + "]").text( teamAval.toString() ) ; 
+			$("#df_away td[tmid="+ t + "]").attr( "df", teamAval ) ;
+			$("#df_away td[tmid="+ t + "]").text( teamAval.toString() ) ;
 
-			let ateamOpps = $(".fxtrspan[teamid_a="+ t + "][loc='H']").get() ; 	
-			// console.log("ateamOpps=", ateamOpps.length ) ; 
+			let ateamOpps = $(".fxtrspan[teamid_a="+ t + "][loc='H']").get() ;
+			// console.log("ateamOpps=", ateamOpps.length ) ;
 			$.each(
 				ateamOpps,
 				(index, oppFxtr)=>{
-					let aText = [ FPLTeamsFull[t].shortNm, " H (", teamAval.toString(), ")" ].join("") ; 
-					$(oppFxtr).removeClass("customDF") ; 
-					$(oppFxtr).text( aText ) ; 
-					$(oppFxtr).attr( "df", teamAval) ; 
-			}) ; 
+					let aText = [ FPLTeamsFull[t].shortNm, " H (", teamAval.toString(), ")" ].join("") ;
+					$(oppFxtr).removeClass("customDF") ;
+					$(oppFxtr).text( aText ) ;
+					$(oppFxtr).attr( "df", teamAval) ;
+			}) ;
 
 		}
 
@@ -270,56 +311,56 @@ loadFPLDF = (gw=gamesOverview.currentRnd)=>{
 		//It stops as soon as all teams have been attributed a home- and away DF.
 		//Then it loops through all teams applying the new values.
 		let newFPL_DF_H = [ 0,
-												0, 0, 0, 0, 0, 
 												0, 0, 0, 0, 0,
 												0, 0, 0, 0, 0,
-												0, 0, 0, 0, 5 
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 5
 											] ;
 		let newFPL_DF_A = [ 0,
-												0, 0, 0, 0, 0, 
 												0, 0, 0, 0, 0,
 												0, 0, 0, 0, 0,
-												0, 0, 0, 0, 5 
+												0, 0, 0, 0, 0,
+												0, 0, 0, 0, 5
 											] ;
 
 		let staticEventsExists = false ;
 
-		const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ; 
-		const allDone 	= ()=>{  return (( newFPL_DF_H.lastIndexOf(0) == 0 ) && ( newFPL_DF_A.lastIndexOf(0) == 0 )) } ; 
+		const teamDone 	= ( tmId )=>{ return ( (newFPL_DF_H[tmId] != 0) && (newFPL_DF_A[tmId] != 0) ) } ;
+		const allDone 	= ()=>{  return (( newFPL_DF_H.lastIndexOf(0) == 0 ) && ( newFPL_DF_A.lastIndexOf(0) == 0 )) } ;
 
-		const updateTm 	= ( tmId, loc, df )=>{ 
-			if( loc == "H" ){ 
+		const updateTm 	= ( tmId, loc, df )=>{
+			if( loc == "H" ){
 				newFPL_DF_H[tmId] = df ;
 			}else{
 				newFPL_DF_A[tmId] = df ;
 			}
 		}
 
-		const setAll = (df)=>{ 
-			for( let t=1; t<21; t++ ){ 
-				newFPL_DF_H[t] = df; 
-				newFPL_DF_A[t] = df; 
-			} 
+		const setAll = (df)=>{
+			for( let t=1; t<21; t++ ){
+				newFPL_DF_H[t] = df;
+				newFPL_DF_A[t] = df;
+			}
 		}
 
-		console.log( 
-			getCI(), 
-			"update_FPLDF gw: ", gw , 
+		console.log(
+			getCI(),
+			"update_FPLDF gw: ", gw ,
 			"\nlen(newFPL_DF_H): ", newFPL_DF_H.length ,
 			"\tlen(newFPL_DF_A): ", newFPL_DF_A.length ,
 			"\ntest allDone (should be false): ", allDone() ,
 		//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
-			"\ttest teamDone(1)(should be false): ", teamDone(1) , 
-			"\ttest teamDone(0)(should be false): ", teamDone(0) , 
-			"\ttest teamDone(20)(should be true): ", teamDone(20) , 
+			"\ttest teamDone(1)(should be false): ", teamDone(1) ,
+			"\ttest teamDone(0)(should be false): ", teamDone(0) ,
+			"\ttest teamDone(20)(should be true): ", teamDone(20) ,
 			"\ntest settingAll(3)", setAll(3) ,
 		//	"\nH lastIdx: ", newFPL_DF_H.lastIndexOf(0), "\tA lastIdx: ",  newFPL_DF_A.lastIndexOf(0),
 			"\ntest allDone(should be true): ", allDone() ,
-			"\ntest teamDone(0)(should be false): ", teamDone(0) 
+			"\ntest teamDone(0)(should be false): ", teamDone(0)
 		) ;
 		let tst_allDone = false;
 		let tst_tmDone 	= false;
-		
+
 		while( !tst_allDone ){
 			console.log("While-Loop for tst_allDone; still false -> ", tst_allDone ) ;
 
@@ -359,15 +400,15 @@ setIndicator = (indctr,color)=>{
 
 resetIndics = ()=>{
 	$.each(
-		[ 
+		[
 			"fxtrsLdd-idc", 	// 	Indicator for getFixtureData()
 			"ppsLdd-idc", 		// 	Indicator for getPostponedData() / buidPPContainer()
-			"epl-df-Ldd-idc", 	// 	epl-df-Ldd-idc 	Indicator for allPromise --> TEAM LOOP  
+			"epl-df-Ldd-idc", 	// 	epl-df-Ldd-idc 	Indicator for allPromise --> TEAM LOOP
 			"usr-df-Ldd-idc", 	// 	usr-df-Ldd-idc 	Indicator for loadUserDF()
-			"epl-ha-Ldd-idc", 	// 	epl-ha-Ldd-idc 	Indicator for allPromise --> TEAM LOOP 
-			"df-Ldd-idc" 		// 	df-Ldd-idc 		Indicator for allPromise --> FXTRS LOOP 
+			"epl-ha-Ldd-idc", 	// 	epl-ha-Ldd-idc 	Indicator for allPromise --> TEAM LOOP
+			"df-Ldd-idc" 		// 	df-Ldd-idc 		Indicator for allPromise --> FXTRS LOOP
 		],
-		function(idc){ 		
+		function(idc){
 			setIndicator(idc, "orange") ;
 		}
 	);
@@ -377,12 +418,12 @@ resetIndics = ()=>{
 tmFilterReset = ()=>{
 	gamesOverview.teamFilter =[ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ] ;
 	$( "#slctdTeams" ).val( "a" ) ;
-	let tmIndics = $("#eventTable > tr > div.tm-idc").get() ; 
-	
+	let tmIndics = $("#eventTable > tr > div.tm-idc").get() ;
+
 	$.each(
 		tmIndics ,
 		( index, indic )=>{
-			
+
 			console.log("tmFilterReset i:", index, "indic: ", indic ) ;
 			$( indic ).addClass( "yellowLight" ) ;
 		}
@@ -405,12 +446,12 @@ openPPInfo = ( fxtrId )=>{
 
 	let ppArray = gamesOverview.postponedGames ;
 	let ppLink = "" ;
-	
-	for( let p=0; p<ppArray.length; p++ ){		
-		
+
+	for( let p=0; p<ppArray.length; p++ ){
+
 		ppLink = ppArray[p].link ;
 
-		if( parseInt( ppArray[p].ppid ) == parseInt( fxtrId ) ){ 	
+		if( parseInt( ppArray[p].ppid ) == parseInt( fxtrId ) ){
 			console.log( "opening postponement info for fxtrId", fxtrId, "link:", ppLink  ) ;
  		}
 	}
@@ -438,11 +479,11 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "ARS",
 		id: 1,
-		fplDF: [ 5, 5 ] , 	/* [HOME,AWAY] */
-		usrDF: [ 4, 4 ] , 
+		fplDF: [ 4, 4 ] , 	/* [HOME,AWAY] */
+		usrDF: [ 5, 5 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ] ,
-		longNm: "Arsenal",	
+		longNm: "Arsenal",
 		altNm: "Gunners",
 		manName: "Mikel Arteta",
 		players: [],
@@ -454,8 +495,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "AVL",
 		id: 2,
-		fplDF: [ 4, 3 ] , 	
-		usrDF: [ 3, 3 ] , 	
+		fplDF: [ 4, 3 ] ,
+		usrDF: [ 3, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Aston Villa",
@@ -468,10 +509,26 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "BOU",
+	{   shortNm: "BUR",
 		id: 3,
-		fplDF: [ 2, 2 ] , 
-		usrDF: [ 3, 2 ] , 
+		fplDF: [ 2, 2 ] ,
+		usrDF: [ 1, 1 ] ,
+		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
+		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
+		longNm: "Burnley",
+		altNm: "Clarets",
+		manName: "Scott Parker",
+		players: [],
+		strength: [
+			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
+			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
+		],
+		ppgames: []
+	},	
+	{   shortNm: "BOU",
+		id: 4,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Bournemouth",
@@ -485,14 +542,14 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "BRE",
-		id: 4,
-		fplDF: [ 2, 2 ] , 	
-		usrDF: [ 3, 2 ] , 
+		id: 5,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Brentford",
 		altNm: "Bees",
-		manName: "Thomas Frank",
+		manName: "Keith ",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -501,9 +558,9 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "BHA",
-		id: 5,
-		fplDF: [ 2, 2 ] ,
-		usrDF: [ 3, 3 ] , 
+		id: 6,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Brighton",
@@ -516,10 +573,11 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
+
 	{   shortNm: "CHE",
-		id: 6,
+		id: 7,
 		fplDF: [ 4, 3 ] ,
-		usrDF: [ 4, 3 ] ,
+		usrDF: [ 4, 4 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Chelsea",
@@ -533,9 +591,9 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "CRY",
-		id: 7,
-		fplDF: [ 2, 2 ] , 
-		usrDF: [ 3, 2 ] , 
+		id: 8,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Crystal Palace",
@@ -549,9 +607,9 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "EVE",
-		id: 8,
-		fplDF: [ 2, 2 ] ,
-		usrDF: [ 2, 2 ] , 
+		id: 9,
+		fplDF: [ 3, 2 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Everton",
@@ -565,9 +623,9 @@ let FPLTeamsFull = [
 		ppgames: []
 	},
 	{   shortNm: "FUL",
-		id: 9,
-		fplDF: [ 3, 2 ] , 
-		usrDF: [ 3, 2 ] , 
+		id: 10,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Fulham",
@@ -580,31 +638,15 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "IPS",
-		id: 10,
-		fplDF: [ 2, 2 ] ,
-		usrDF: [ 1, 1 ] , 
-		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		longNm: "Ipswich",
-		altNm: "blues",
-		manName: "Kieran McKenna",
-		players: [],
-		strength: [
-			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
-			{ 'loc': "A", 'overall': 0, 'attack': 0, 'defence': 0 }
-		],
-		ppgames: []
-	},
-	{   shortNm: "LEI",
+	{   shortNm: "LEE",
 		id: 11,
 		fplDF: [ 2, 2 ] ,
 		usrDF: [ 1, 1 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		longNm: "Leicester",
-		altNm: "Tractor Boys",
-		manName: "Ruud v Nistelrooij",
+		longNm: "Leeds",
+		altNm: "Lillywhites",
+		manName: "Daniel Farke",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -614,8 +656,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "LIV",
 		id: 12,
-		fplDF: [ 5, 5 ] , 
-		usrDF: [ 5, 5 ] , 
+		fplDF: [ 5, 4 ] ,
+		usrDF: [ 5, 5 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Liverpool",
@@ -631,8 +673,8 @@ let FPLTeamsFull = [
 
 	{   shortNm: "MNC",
 		id: 13,
-		fplDF: [ 5, 5 ] ,
-		usrDF: [ 5, 4 ] , 
+		fplDF: [ 4, 4 ] ,
+		usrDF: [ 5, 5 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Man city",
@@ -663,8 +705,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "NEW",
 		id: 15,
-		fplDF: [ 3, 3 ] ,
-		usrDF: [ 4, 3 ] , 
+		fplDF: [ 4, 3 ] ,
+		usrDF: [ 3, 3 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Newcastle",
@@ -679,8 +721,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "NFO",
 		id: 16,
-		fplDF: [ 2, 2 ] , 
-		usrDF: [ 3, 2 ] , 
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 3, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Nott-m Forest",
@@ -693,15 +735,15 @@ let FPLTeamsFull = [
 		],
 		ppgames: []
 	},
-	{   shortNm: "SOU",
+	{   shortNm: "SUN",
 		id: 17,
 		fplDF: [ 2, 2 ] ,
 		usrDF: [ 1, 1 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
-		longNm: "Southampton",
-		altNm: "Saints",
-		manName: "Rusk/Lallana",
+		longNm: "Sunderland",
+		altNm: "Black Cats",
+		manName: "Le Bris",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -711,13 +753,13 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "TOT",
 		id: 18,
-		fplDF: [ 4, 3 ] ,
-		usrDF: [ 4, 3 ] ,
+		fplDF: [ 3, 3 ] ,
+		usrDF: [ 3, 3 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Tottenham",
 		altNm: "Spurs",
-		manName: "Big Ange",
+		manName: "Thomas Frank",
 		players: [],
 		strength: [
 			{ 'loc': "H", 'overall': 0, 'attack': 0, 'defence': 0 },
@@ -728,7 +770,7 @@ let FPLTeamsFull = [
 	{   shortNm: "WHU",
 		id: 19,
 		fplDF: [ 2, 2 ] ,
-		usrDF: [ 2, 2 ] , 
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "West Ham",
@@ -743,8 +785,8 @@ let FPLTeamsFull = [
 	},
 	{   shortNm: "WOL",
 		id: 20,
-		fplDF: [ 2, 2 ] ,
-		usrDF: [ 2, 2 ] , 
+		fplDF: [ 3, 2 ] ,
+		usrDF: [ 2, 2 ] ,
 		ownDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		oppDFhis: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ,
 		longNm: "Wanderers",
@@ -760,16 +802,16 @@ let FPLTeamsFull = [
 ];
 
 
-let celebTeams = [ 
-	{	
+let celebTeams = [
+	{
 		"tmId": 3510574,
-		"tmNn": "DeporStevoLaCrosmuña", 
+		"tmNn": "DeporStevoLaCrosmuña",
 		"clbNm": "Steve Crossman",
 		"url": "https://fantasy.premierleague.com/api/entry/3510574/"
-	}, 
+	},
 	{
 		"tmId": 30954,
-		"tmNn": "The little fellas**", 
+		"tmNn": "The little fellas**",
 		"clbNm": "Alistair Bruce-Ball",
 		"url": "https://fantasy.premierleague.com/api/entry/30954/"
 	},
@@ -826,6 +868,6 @@ console.log(
 );
 
 
-/*	
-	"allStatsData", allStatsData.length, 
+/*
+	"allStatsData", allStatsData.length,
 */

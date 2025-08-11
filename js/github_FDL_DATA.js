@@ -1,18 +1,11 @@
-
-
 // let allStatsData = []; has moved to FPLConstants
-
-
 // initial value, will be overwritten 
-let curGW = 35;
-
+let curGW = 1;
 
 /*
-##########################################################################################################################
-  
+################################################################################################################
 	ASYNCS: 
-
-##########################################################################################################################
+################################################################################################################
 */
 
 getStaticData = async ()=> {
@@ -21,6 +14,7 @@ getStaticData = async ()=> {
 
 		let staticXhttp = new XMLHttpRequest();
 
+		updateSplash("getting static data") ;
 		staticXhttp.open("GET", "json/current/FPL_Static_current.json", true ) ; 
 		staticXhttp.send() ; 
 
@@ -36,7 +30,8 @@ getStaticData = async ()=> {
 		} 
 
 	});
-
+		
+	updateSplash("finished getting static data") ;
 	return await staticPrms ;
 
 };
@@ -60,6 +55,7 @@ getPostponedData = async ()=> {
 
 		let postpXhttp = new XMLHttpRequest();
 
+		updateSplash("getting postponed data") ;
 		postpXhttp.open("GET", "json/current/ppFxtrs.json" , true ) ; 
 		postpXhttp.send() ; 
 
@@ -122,6 +118,7 @@ getPostponedData = async ()=> {
 
 	});
 
+	updateSplash("finished getting postponed data") ;
 	return await postpndPrms ;
 
 }
@@ -134,6 +131,7 @@ getFixtureData = async ()=> {
 
 		let fxtrXhttp = new XMLHttpRequest();
 		/* "json/current/FPL_Events_current.json" */
+		updateSplash("getting fixtures data") ;	
 		fxtrXhttp.open("GET", "json/current/FPL_Events_current.json", true ) ; 
 		fxtrXhttp.send();
 
@@ -154,80 +152,46 @@ getFixtureData = async ()=> {
 
 	});
 
+	updateSplash("finished getting fixtures data") ;	
 	return await fxtrPrms ;
 
 }
 
+getCupData = async (cupId)=> {
+	/* 
+	Cup order = 
+		0: 	FA Cup 				( evtp-FAC )
+		1: 	EFL Cup 			( evtp-EFL )
+		2: 	Euro cHampions Lg 	( evtp-EHL )
+		3: 	Euro eUropa Lg 		( evtp-EUL )
+		4: 	Euro cOnference Lg 	( evtp-EOL )
+	*/
+	// console.log("getCupData start ", cupId );
 
-getManagerData = async ()=> {
+	let cupPrms = new Promise( ( myCupResolve )=> {
 
-	let FPLid = 0 ;
+		let cupEvType = "evtp-" + cupId;
+		let jsonFilename = "json/current/CUPS/cup-" + cupId + ".json" ;
+		let cupXhttp = new XMLHttpRequest();
 
-	if( parseInt(gamesOverview.manId) > 0 ){
-		FPLid = gamesOverview.manId
-	}else{
-		FPLid = 856045
-	}
+		cupXhttp.open("GET", jsonFilename, true ) ; 
+		cupXhttp.send() ; 
 
-	let picksPrms = new Promise( ( myPicksResolve )=> {
+		cupXhttp.onreadystatechange = ()=>{
 
-		let picksXhttp = new XMLHttpRequest();
-		// 	https://fantasy.premierleague.com/api/entry/371654/event/18/picks/
-		// console.log("getManagerData url:\t", "https://fantasy.premierleague.com/api/entry/" + str(manId) + "/"  )
-		
-		let urlStr = "https://fantasy.premierleague.com/api/entry/" + FPLid ; 
+			if ( (cupXhttp.readyState == 4) && (cupXhttp.status == 200) ){
 
-		picksXhttp.open("GET", urlStr, true ) ; 
-		picksXhttp.send() ; 
-
-		picksXhttp.onreadystatechange = ()=>{
-
-			if ( ( picksXhttp.readyState == 4) && (picksXhttp.status == 200) ){
-
-				let picksResponse = JSON.parse( picksXhttp.responseText ) ; 
-				picksData = picksResponse ;
-
-				if( picksData["entered_events"] ){
-					// get last entered event ( just length ??)
-				}
-
-				myPicksResolve( picksResponse ) ; 
+				let cupResponse = JSON.parse( cupXhttp.responseText ) ; 
+				// console.log("cupResponse", cupResponse ) ;
+				cupDataAll[cupEvType] = cupResponse ;
+				// console.log("cupDataAll", cupDataAll[cupEvType] ) ;
+				myCupResolve( cupResponse ) ; 
 			}
 		} 
 	});
 
-	return await picksPrms ;
-
-}
-
-
-getTeamTableData = async ()=> {
-
-	let tmTblPrms = new Promise( ( myTmTblResolve )=> {
-
-		let tmTblXhttp = new XMLHttpRequest();
-
-		tmTblXhttp.open("GET", "json/current/FPL_TeamTable_current.json", true ) ; 
-		tmTblXhttp.send() ; 
-
-		tmTblXhttp.onreadystatechange = ()=>{
-
-			if ( (tmTblXhttp.readyState == 4) && (tmTblXhttp.status == 200) ){
-
-				let tmTableResponse = JSON.parse( tmTblXhttp.responseText ) ; 
-				currentTeamTable = tmTableResponse ;
-				console.log("currentTeamTable", tmTableResponse ) ;
-				myTmTblResolve( tmTableResponse ) ; 
-			}
-
-		} 
-
-	});
-
-	return await tmTblPrms ;
-
+	return await cupPrms ;
 };
-
 
 
 /*
@@ -241,7 +205,7 @@ getCurGW = ( allRounds )=>{
 		for(let r=0; r<allRounds.length;r++){ 
 			if( allRounds[r].is_current ){  
 				curGW =  parseInt(allRounds[r].id ) ;
-				// console.log("getCurGW finds: ", curGW, "\tin ", allRounds[r] ) ;
+				console.log("getCurGW finds: ", curGW, "\tin ", allRounds[r] ) ;
 				gamesOverview.currentRnd = curGW ; 
 				return gamesOverview.currentRnd ; 
 			}
@@ -264,7 +228,9 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 	}
 
 	let target_td, target_txt, target_fplDF, target_fcell
-	let mnBonus
+	/* 
+		let mnBonus
+	*/
 	/* target_arr is a html element 'span' */
 	let target_arr = [	"<span", 
 						" teamId_h=" + fxtr.team_h,
@@ -308,7 +274,6 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		target_txt = [ fxtr.team_a_nm, loc, ["(", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ], ")"].join("") ].join(" ") ;
 		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ]   ) ;
 		$(fxtrSpan).text( target_txt ) ;
-		mnBonus = getTeamTableDifference( fxtr.team_h, fxtr.team_a ) ;
 		
    }else{
 		
@@ -325,40 +290,24 @@ updateCellByTmIdRnd = ( fxtr, loc )=>{
 		target_txt = [ fxtr.team_h_nm, loc, ["(", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ] , ")"].join("") ].join(" ") ;
 		$(fxtrSpan).attr( "df", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ]  ) ;
 		$(fxtrSpan).text( target_txt ) ; 
-		mnBonus = getTeamTableDifference( fxtr.team_a, fxtr.team_h ) ;
 	}
 
-	let ttlText = [ "RANK", "TEAM", "MANAGER", "\n",
-					mnBonus.manTmRank,
-					mnBonus.manTmNm,
-					mnBonus.manName, "\n",
-					mnBonus.oppTmRank,
-					mnBonus.oppTmName,
-					mnBonus.oppMngrName, "\n",
-					"difference",
-					mnBonus.rankingDistance,"\n",
-					"tableBonusActive",
-					mnBonus.tableBonusActive
-	].join("\t")
-
-	/* 
-	getTeamTableDifference()
-	replacing title with attack vs defence with manager details for table bonus
-	[
+	let ttlText = 	[
 		"fxtr.id:", fxtr.id, 
 		"homeDF[gw]:", FPLTeamsFull[ fxtr.team_h ].ownDFhis[ lclRound ],
 		"awayDF[gw]:", FPLTeamsFull[ fxtr.team_a ].ownDFhis[ lclRound ],
 		"\nHome attack v Away defence:", ( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence']).toString(), 
 		"\nHome defence v Away attack:", ( FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack']).toString(), 
 		"\nHvA diff:",(( FPLTeamsFull[fxtr.team_h].strength[0]['attack']-FPLTeamsFull[fxtr.team_a].strength[1]['defence'])+(FPLTeamsFull[fxtr.team_h].strength[0]['defence']-FPLTeamsFull[fxtr.team_a].strength[1]['attack'])).toString(),
-		].join("\t") ;
-	*/
+	].join("\t") ;
 
 	$( fxtrSpan ).attr( "title", ttlText ) ;
 	$( fxtrSpan ).attr( "tooltip", ttlText ) ;
-	if(mnBonus.tableBonusActive){
-		$( fxtrSpan ).addClass( "tblBnsActive") ;		
-	}
+	/* 
+		if(mnBonus.tableBonusActive){
+			$( fxtrSpan ).addClass( "tblBnsActive") ;		
+		}
+	*/
 
 	if( $(target_td).children(".fxtrspan").length > 0 ){
 		$(target_td).attr("dblgw", true  ).addClass('highlight') ;
@@ -471,14 +420,14 @@ buidPPContainer = ( treatedPPData )=>{
 	
 	/* FPLTeamsFull[t].ppgames has been updated before getPostponedData was resolved */
 	for(let t=1; t<21; t++){ 
-		$("#teamDFCnt tr.pp_count td[tmId=" + t +"]").text( FPLTeamsFull[t].ppgames.length ); 
+		$("#teamDF-cnt tr.pp_count td[tmId=" + t +"]").text( FPLTeamsFull[t].ppgames.length ); 
 	}
 
 }
 
 setDFTeam = (tmId, df )=>{
 	/*
-		Updates the DF table in #teamDFCnt at initial load. Once all fixtures are loaded df's are updatedfrom current gameweek backwards.
+		Updates the DF table in #teamDF-cnt at initial load. Once all fixtures are loaded df's are updatedfrom current gameweek backwards.
 	*/
 	let tmDFCritH = "#df_home td[tmId="+tmId+"]" ;
 	let tmDFCritA = "#df_away td[tmId="+tmId+"]" ;
@@ -572,7 +521,9 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 		$( cupCelltd ).removeClass("cupElim") ; 
 		$( cupCelltd ).removeClass("cupCntndr") ; 
 
-		if( cellText == "Elim" || cellText == "Exempt" ){ 
+		$( cupTie_jq ).addClass( evtClass ) ; 
+
+		if( cellText == "Elim" || cellText == "DNQ" ){ 
 			$( cupCelltd ).addClass( "cupElim" ) ; 
 			$( cupTie_jq ).addClass( "cupElim" ) ;
 		}else{
@@ -625,6 +576,8 @@ handleCups = ( cupData )=>{
 	let cntndrs  = cupData[0]["data"] ;
 	let elims 	 = cupData[1]["data"] ;
 	let whichCup = cupData[2]["data"] ;
+	// let cupWeeks = cupData['GAMEWEEKS']["data"] ;
+	let cupWeeks = cupData[3]["data"] ;
 
 	/*
 	console.log(
@@ -635,6 +588,16 @@ handleCups = ( cupData )=>{
 	) ;
 	*/
 
+	// First loop thru teams that didn't qualify for this cup
+	for ( let tmDNQ in elims ){
+
+		for (gw in cupWeeks){
+			// console.log("handleCups DNQ | cup: ", whichCup, "tm: ", elims[tmDNQ], "gameweek:", cupWeeks[gw] );
+			updateCupCell( elims[tmDNQ], cupWeeks[gw], whichCup, "DNQ" ) ;
+		}
+	}
+
+	// Looping backwards, excluding first 3 entries teams IN, OUT and eventTp
 	for( let ck = (cdl-1);  ck > 2 ; ck--){
 		
 		let pastGW = ( cupData[ck]["gw"] < curGW ) ;
@@ -654,9 +617,19 @@ handleCups = ( cupData )=>{
 		) ;
 		*/
 
-		for ( let elmntd = 0; elmntd < cupData[ck]["elim"].length; elmntd++ ){
-			updateCupCell( cupData[ck]["elim"][elmntd], cupData[ck]["gw"], whichCup, "Elim" ) ;
+		for( tmOut in cupData[ck]["elim"] ){
+			cupTmId = cupData[ck]["elim"][ tmOut ];
+			/* 
+				console.log("team OUT: ", cupTmId , whichCup, FPLTeamsFull[cupTmId].shortNm );
+			*/
+			updateCupCell( cupTmId, cupData[ck]["gw"], whichCup, "Elim" ) ;
 		}
+
+		/* 
+			for ( let elmntd = 0; elmntd < cupData[ck]["elim"].length; elmntd++ ){
+				updateCupCell( cupData[ck]["elim"][elmntd], cupData[ck]["gw"], whichCup, "Elim" ) ;
+			}
+		*/
 
 		if( cupDrawn ){
 
@@ -691,9 +664,11 @@ handleCups = ( cupData )=>{
 					let evTpEFL = tmpArr[6]['evtp-EFL'] ;
 					let evTpFAC = tmpArr[5]['evtp-FAC'] ;
 					let evTpECL = tmpArr[7]["evtp-ECL"] ;
+
+					if( whichCup == "evtp-FACdebuggingabove" ){
 				*/
 
-				if( whichCup == "evtp-FACdebuggingabove" ){
+				if( whichCup == "REMOVE_FOR_DEBUG evtp-EFL" ){
 					console.log( 
 						getCI(), 
 						"handleCups ", cupData[ck]["title"],
@@ -853,7 +828,8 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 	// console.log("retArr: ", retArr ) ;
 	if( retArr[0]==0 ){ retArr[0]=FPLTeamsFull[tmId].fplDF[0]  }
 	if( retArr[1]==0 ){ retArr[1]=FPLTeamsFull[tmId].fplDF[1]  }
-	return retArr ;
+	// return retArr ;
+	return [  FPLTeamsFull[tmId].fplDF[0], FPLTeamsFull[tmId].fplDF[1] ]	
 }
 
 
@@ -863,22 +839,36 @@ setFPLdfToGW = (gw=gamesOverview.currentRnd)=>{
 	}
 }
 
-
-setTeamTableInfo = ()=>{
-	console.log("teamTableWk", gamesOverview.teamTableWk ) ;
-	console.log("teamTableDt", gamesOverview.teamTableDt.split(",")[0] ) ;
-	let ttTmArr = gamesOverview.teamTableDt.split(",") ;
-	let ttmArrDt = ttTmArr[0].split(" ")
-	let ttmArrTm = ttTmArr[1]
-
-	$("#tmTblGW").text( "GW: " + gamesOverview.teamTableWk + " --> " ) ;
-	$("#tmTblDt").text( "" + ttmArrDt[1] + " " + ttmArrDt[0] + " " + ttmArrTm ) ;
+updateSplash = (newtext="initial")=>{
+	// #splashInfo
+	// .splashInfoItem
+	let maxInfos = 8 ;
+	let siiCrit = "#splashInfo.splashInfoItem" ;
+	let siiArr 	= $( siiCrit ).get() ;
+	console.log("updateSplash | siiArr.length:", siiArr.length ) ;
+	while ( siiArr.length >= maxInfos ){
+		console.log("updateSplash | popping -1", siiArr[-1] );
+		siiArr.pop(-1);
+		siiArr 	= $( siiCrit ).get() ;
+	}
+	$("#splashInfo").append( "<span class='splashInfoItem' >" + newtext + "</span>" );
 }
 
 /*
 #####################
 #	 DATA READY		#
 #####################
+values order:
+ 0: getStaticData()
+ 1: getPostponedData
+ 2: getFixtureData
+ 3: getCupData("FAC")
+ 4: getCupData("EFL")
+ 5: getCupData("EHL")
+ 6: getCupData("EUL")
+ 7: getCupData("EOL")
+ 8: getCupData("UIB")
+ 9: NOT USED-> Managerdata
 */
 
 const allPromise = 	Promise.all( 
@@ -886,7 +876,12 @@ const allPromise = 	Promise.all(
 							getStaticData(), 
 							getPostponedData(), 
 							getFixtureData(),
-							getTeamTableData() // , getManagerData()
+							getCupData("FAC"), 
+							getCupData("EFL"), 
+							getCupData("EHL"),
+							getCupData("EUL"),
+							getCupData("EOL"),
+							getCupData("UIB")
 						] 
 					) ; 
 
@@ -900,52 +895,44 @@ allPromise.then(
 		let teams 	= values[0]['teams'] ; 
 		let ppGames = values[1] ; 
 		let fxtrs 	= values[2] ;
-		let tmTbl 	= values[3] ;
-		// let mngrData= values[4] ;
+		console.log( 
+			getCI(), 
+			"values: events: ", events.length, 
+			"teams:", teams.length, 
+			"UNplanned:", ppGames[0].length, 
+			"REplanned:", ppGames[1].length, 
+			"fxtrs:", fxtrs.length 
+		) ; 
 
-		/*
-				myPPResolve( [ 	
-					gamesOverview.postponedGames, 
-					gamesOverview.replannedGames , 
-					iBreaks, 
-					evTpEFL, 
-					evTpFAC,
-					evTpECL 
-				]) ; 
-		*/
-		// console.log("mngrTm:" , mngrData ) ;
+		let cup_FAC 	= values[3] ; 
+		let cup_EFL 	= values[4] ; 
+		let cup_EHL 	= values[5] ;
+		let cup_EUL 	= values[6] ;
+		let cup_EOL 	= values[7] ;
+		let cup_UIB 	= values[8] ;
 
-		let iBreaks = ppGames[2] ;
-		let eflCup 	= ppGames[3] ; 
-		let faCup 	= ppGames[4] ; 
-		let uefa 	= ppGames[5] ;
-
-		console.log( getCI(), "values: events: ", events.length, "teams:", teams.length, "ppGames[0]:", ppGames[0].length, "ppGames[1]:", ppGames[1].length, "fxtrs:", fxtrs.length ) ; 
 		// Step 2 : Add data from ppGames to fxtrs. 		( 	FXTR LOOP 	)	-origGw, -reason, -newGW(39), -postponed(true/false) 
 		// Step 4 : Add data from fxtrs to FPLTeamsFull.	( 	FXTR LOOP 	)	-hisDF
 		// Step 5 : Add data from FPLTeamsFull to fxtrs.	( 	FXTR LOOP 	)	-FPL-DF -strengths 
-		console.log( "tmTbl['tables'][0][1]:", tmTbl['tables'][0]['gameWeek'] )
 		
-		gamesOverview.teamTableArr = tmTbl['tables'][0]['entries'] ;
-		console.log( "teamTableArr:", gamesOverview.teamTableArr.length ) ;
-		
-		// EVENT LOOP START
-		// Add dates + rounds for cups in fxtr table <th>
-		console.log( getCI(), "allPromise.then(values) event loop START" ) ; 
+		/* 
+			console.log( "tmTbl['tables'][0][1]:", tmTbl['tables'][0]['gameWeek'] )
+			gamesOverview.teamTableArr = tmTbl['tables'][0]['entries'] ;
+			console.log( "teamTableArr:", gamesOverview.teamTableArr.length ) ;
+		*/
 
 		// Set the curGW at the earliest possibility
 		curGW = getCurGW( events ) ;
 		console.log( getCI(), "allPromise.then(values) curGw(events)", curGW ) ; 
 		$("#curRound").text("GW: " + curGW.toString() ) ;
 
+		console.log( getCI(), "allPromise.then(values) events --> updateDeadlines" ) ; 
 		updateDeadlines(events) ;
-		console.log( getCI(), "allPromise.then(values) event loop END" ) ; 
-
-		// EVENT LOOP END
 
 		// TEAM LOOP START 
-
-		for (let t=0; t<teams.length; t++){
+		// old: for (let t=0; t<teams.length; t++){
+		// new: for( t in teams ){ 
+		for( t in teams ){ 			
 			// 2 sources for 1 array:
 			// FPL data
 			let fpl_tm 		= teams[t] 		;
@@ -955,11 +942,12 @@ allPromise.then(
 			let jtf_tm 		= FPLTeamsFull[fpl_tmId] ; 
 			let jtf_tmId 	= jtf_tm.id ; 
 
-			console.log("static team = ", teams[t]['pulse_id'] ) ;
+			// console.log("static team = ", teams[t]['pulse_id'] ) ;
+			// Maybe we'll need pulseId at a later stage
 			jtf_tm['pulse_id'] = teams[t]['pulse_id'] ;
 
 			// STEP 0
-			// I don't agree with the short names of the Machester teams. 13 = City, 14 = Utd.
+			// I don't agree with the short names of the Manchester teams. 13 = City, 14 = Utd.
 			if( fpl_tmId == 13 ){
 				teams[t].short_name = "MNC"
 			}else if( fpl_tmId == 14 ){
@@ -975,6 +963,7 @@ allPromise.then(
 			jtf_tm.strength[1]['overall'] 	= parseInt( ( fpl_tm.strength_attack_away + fpl_tm.strength_defence_away ) / 2 ) ;  
 			jtf_tm.strength[1]['attack'] 	= parseInt( fpl_tm.strength_attack_away ) ;  
 			jtf_tm.strength[1]['defence'] 	= parseInt( fpl_tm.strength_defence_away ) ;  
+			// FPL provides tm_strength but isn't really used. Adding it anyway
 			jtf_tm.staticTmStrength 		= fpl_tm.strength ;
 
 			// STEP 2
@@ -988,7 +977,6 @@ allPromise.then(
 			setDFTableStrength( "tr_str_a_d", fpl_tmId, jtf_tm.strength[1]['defence']  ) ; 
 	
 			setDFTeam( fpl_tmId, FPLTeamsFull[fpl_tmId]["fplDF"] ) ;
-
 		} 
 
 		gamesOverview.dfSource.loaded[0] = true ; 
@@ -999,8 +987,6 @@ allPromise.then(
 		// TEAM LOOP END 
 
 		console.log(getCI(), "allPromise.then(values) after TEAM LOOP -> hasUserStore", hasUserStore() ) ; 
-
-
 		if( hasUserStore() ){ setIndicator("usr-df-Ldd-idc", "orange") ; }
 
 		// PPgames START 
@@ -1090,32 +1076,27 @@ allPromise.then(
 		// FXTRS (EPL) LOOP END
 		setIndicator("df-Ldd-idc", "green") ; 
 
-		// CUP FIXTURES LOOP START
-		for( cup in gamesOverview.evTypes){
-			console.log("cup in gamesOverview.evTypes:", gamesOverview.evTypes[cup] ) ;
-		}
-
-		console.log( getCI(), "CUP FIXTURES LOOP START iBreaks", iBreaks.length, "EFL", eflCup.length, "FAC", faCup.length ) ;
-		
-		//console.log("starting handleCups( eflCup )" ) ;
-		handleCups( eflCup ,"evtp-EFL") ; 
-		
-		//console.log("starting handleCups( faCup )" ) ;
-		handleCups( faCup ,"evtp-FAC") ; 
-		
-		//console.log("starting handleCups( Uefa )" ) ;
-		handleCups( uefa ,"evtp-ECL") ; 
-
 		setFPLdfToGW( curGW ) ;
+
+		// CUP FIXTURES LOOP START
+		console.log( 
+			getCI(), 
+			"---CUPS---\N",
+			"cup_FAC", cup_FAC.length, 
+			"cup_EFL", cup_EFL.length, 
+			"cup_EHL", cup_EHL.length, 
+			"cup_EUL", cup_EUL.length, 
+			"cup_EOL", cup_EOL.length, 
+			"cup_UIB", cup_UIB.length
+		) ; 
+
+		for ( cupAllDataItem in cupDataAll ){ 
+			console.log("allCupsPrms.then | cupAllDataItem: ", cupAllDataItem, " starting handleCups length: ", cupDataAll[cupAllDataItem].length  ) ;
+			handleCups( cupDataAll[cupAllDataItem], cupAllDataItem ) ; 
+		}
 
 		loadFPLDF() ;
 
-		console.log( "tmTbl| --tables[0].gameweek:", 	tmTbl['tables'][0]['gameWeek'] ) ;
-		console.log( "tmTbl| --tables[0].timestamp:", 	tmTbl['timestamp']['label'] ) ;
-		gamesOverview.teamTableWk = tmTbl['tables'][0]['gameWeek']
-		gamesOverview.teamTableDt = tmTbl['timestamp']['label']
-		setTeamTableInfo()
-		
 		// CUP FIXTURES LOOP END
 		$("#pulser").remove() ;
 	}

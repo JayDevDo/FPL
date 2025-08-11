@@ -109,22 +109,22 @@ showEventWindow = (l,f)=>{
 			
 				case 0: 
 					// start round has changed while direction = 1 
-					evWndw['end']	=	parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
+					evWndw['end'] = parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				case 1: 
 					// # of rounds has changed while direction = 1 
-					evWndw['end']	=	parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
+					evWndw['end'] = parseInt( parseInt( evWndw['start'] ) + parseInt( evWndw['rounds'] ) - 1 ) ;
 					break;
 
 				case 2:
 					// end round has changed while direction = 1 
 					if( lockId == 1 ){
 						// Rounds are locked so change start 
-						evWndw['start']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['rounds'] ) - 1 ) ;
+						evWndw['start'] = parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['rounds'] ) - 1 ) ;
 					}else{
 						// End is locked so change rounds (direction should not be 1 ! )
-						evWndw['rounds']= parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['start'] ) + 1 ) ;
+						evWndw['rounds'] = parseInt( parseInt( evWndw['end'] ) - parseInt( evWndw['start'] ) + 1 ) ;
 					}
 					break;
 
@@ -155,16 +155,11 @@ showEventWindow = (l,f)=>{
 			}
 
 		}else{
-
 			// console.log( getCI(), "showEventWindow --> direction should be 1 or -1. not:\t", direction );	
-
 		}
 
-
 	}else{ 
-
 		// console.log(  getCI(), "called by", f,"\tshowEventWindow (not locked)","\t-lockId", lockId , "\t-direction ", direction, "\nevw ", evWndw )
-
 		switch( l ){
 			case 0: 
 				// No lock start round has changed 
@@ -255,60 +250,95 @@ showEventClmn = (rnd)=>{
 
 
 
-showEventType = (evtClass)=>{
+showEventType = ( evtClass )=>{
 	let critTD = "td." + evtClass ;
 	let critTH = "th." + evtClass ;
 	let evTypeCells  = $(critTD).get() ;
 	let evTypeHeads  = $(critTH).get() ;
-	// console.log("showEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
-	$.each( evTypeHeads, function(index, hdr){ $(hdr).removeClass("evtypeHide"); } );
-	$.each( evTypeCells, function(index, cll){ $(cll).removeClass("evtypeHide"); } );
+	// console.log("showEventType: ", evtClass, " evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	$.each( evTypeHeads, function( index, hdr ){ $(hdr).removeClass("evtypeHide"); } );
+	$.each( evTypeCells, function( index, cll ){ $(cll).removeClass("evtypeHide"); } );
 }
 
 
-hideEventType = (evtClass)=>{
+hideEventType = ( evtClass )=>{
 	let critTD = "td." + evtClass ;
 	let critTH = "th." + evtClass ;
 	let evTypeCells  = $(critTD).get() ;
 	let evTypeHeads  = $(critTH).get() ;
-	// console.log("hideEventType: evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
-	$.each( evTypeHeads, function(index, hds){ $(hds).addClass("evtypeHide"); } );
-	$.each( evTypeCells, function(index, cll){ $(cll).addClass("evtypeHide"); } );
+	// console.log("hideEventType: ", evtClass, " evTypeCells:\t", evTypeCells.length , "evTypeHeads:\t", evTypeHeads.length )
+	$.each( evTypeHeads, function( index, hds ){ $(hds).addClass("evtypeHide"); } );
+	$.each( evTypeCells, function( index, cll ){ $(cll).addClass("evtypeHide"); } );
 }
 
+
+eventTypeMidweekChanged = ()=>{
+	let cupTypes = $("#evntTpsCups input").get() ;
+	let showMidweeks = $("#cupMidweek").get() ;
+	/* 
+	console.log(
+		"eventTypeMidweekChanged", cupTypes.length, 
+		"$(showMidweeks).checked ", $(showMidweeks)[0].checked 
+	) ;
+	*/
+	$.each( 
+		cupTypes,
+		function( index, cupType ){ 
+			console.log("eventTypeMidweekChanged | loop cupTypes: ", cupType.id, cupType.checked, "midWeeks:", $(showMidweeks)[0].checked  ) ;
+			
+			if( $(showMidweeks)[0].checked ){
+				if( cupType.checked ){
+					showEventType( cupType.id ) ;
+				}else{
+					hideEventType( cupType.id ) ;
+				}
+
+			}else{
+				hideEventType( cupType.id ) ;
+			}
+
+		}
+	);
+}
 
 
 eventTypeSelectionChanged = ()=>{
 	let evTypes = $("#evntTpsCont input").get() ;
-	// console.log("eventTypeSelectionChanged", evTypes.length )
+	let showMidweeks = $("#cupMidweek").get() ;
+	/*
+	console.log(
+		"eventTypeSelectionChanged", evTypes.length, 
+		"$(showMidweeks).checked ", $(showMidweeks)[0].checked 
+	) ;
+	*/
 
 	$.each( 
 		evTypes,
-		function(index,evtType){ 
+		function( index, evtType ){ 
+
+			// console.log("eventTypeSelectionChanged | evtType: ", evtType ) ; 
 
 			if(evtType.checked){
-
-				if( evtType.id == "evtp-ECL" ){  
-					console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
-					$("#evtp-ECL-ul").show() ; 
+				
+				if( evtType.id == "cupMidweek" ){ 
+					$("#evntTpsCups").show() ; 
+				}else{					
+					showEventType( evtType.id ) ;
 				}
-
-				showEventType( evtType.id ) ;
-
 			}else{
-
-				if( evtType.id == "evtp-ECL" ){  
-					console.log("evtType", evtType.id , evtType.checked , $("#evtp-ECL-ul").length ) ;
-					$("#evtp-ECL-ul").hide() ;
-				}
-
-				hideEventType( evtType.id ) ;	
-
+				if( evtType.id == "cupMidweek" ){ 
+					$("#evntTpsCups").hide() ; 
+				}else{
+					hideEventType( evtType.id ) ; 
+				} ;
 			}
 		}
 	);
 
-	let fxtrHdrs 	= $(".striped th.evtp-EPL").get() ;
+	eventTypeMidweekChanged() ;
+
+	/* With columns being hidden or shown, re-apply striped columns */
+	let fxtrHdrs = $(".striped th.evtp-EPL").get() ;
 
 	$.each(
 		fxtrHdrs,
@@ -317,7 +347,7 @@ eventTypeSelectionChanged = ()=>{
 				$(fxtrHdr).removeClass("unstriped") ;
 				$(fxtrHdr).removeClass("striped") ;
 			}else{
-				(index%2==0)? $(fxtrHdr).addClass("striped"):$(fxtrHdr).addClass("unstriped") ;				
+				(index%2==0)? $(fxtrHdr).addClass("striped"):$(fxtrHdr).addClass("unstriped") ;
 			}
 		}
 	);
@@ -340,18 +370,16 @@ setCustomDF = (loc, tmId)=>{
 
 updateCustomDF = (loc,val)=>{
 	let tmId = $("#popUpDF").attr("tmId") ; 
-	//console.log("shortNm: ", FPLTeamsFull[ tmId ].shortNm, "updateCustomDF: loc: ", loc, "val: ", val ) ; 
+	console.log("shortNm: ", FPLTeamsFull[ tmId ].shortNm, "updateCustomDF: loc: ", loc, "val: ", val ) ; 
 
 	let text = FPLTeamsFull[tmId].shortNm + " " + ((loc=="H")? "A":"H" ) + " (" + val + ")" ; 
 
 	if(loc=="H"){
-
 		crit 	= $(".fxtrspan[teamid_h="+tmId+"][loc='A']") ; 
 		$("#df_home td[tmId=" + tmId + "]").text(val) ;
 		$("#df_home td[tmId=" + tmId + "]").attr("df", val) ;
 	
 	}else{
-	
 		crit 	= $(".fxtrspan[teamid_a="+tmId+"][loc='H']") ; 
 		$("#df_away td[tmId=" + tmId + "]").text(val) ;
 		$("#df_away td[tmId=" + tmId + "]").attr("df", val) ;
@@ -546,8 +574,11 @@ sortByTmNm =()=>{
 nameSort = ( tmA, tmB )=>{
 	let currentSort = parseInt( $( "th.tmNameHdr" ).attr("sort") ) ;
 	let retVal = 0 ; 
-	let A = parseInt( $(tmA).attr('tmId') ) ;
-	let B = parseInt( $(tmB).attr('tmId') ) ;	
+	// let A = parseInt( $(tmA).attr('tmId') ) ;
+	// let B = parseInt( $(tmB).attr('tmId') ) ;	
+	let A = $(tmA).attr('id')  ;
+	let B = $(tmB).attr('id')  ;	
+
 	if (A < B){ retVal = (-1 * currentSort) ; } 
 	if (A > B){ retVal = ( 1 * currentSort) ; } 
 	return retVal ; 
@@ -839,80 +870,8 @@ toggleSettings = ()=>{
 	$("#hdr-tggl-settings").css("backgroundColor",  (gamesOverview.showSttng)? "#53ac00":"#d91a00" );
 }
 
-
 /* 
-
-###### Manager GW rank difference  ######
-
-# https://footballapi.pulselive.com/football/standings?compSeasons=719&altIds=true&detail=2&FOOTBALL_COMPETITION=1&live=true
-# pulse_id == 
-*/
-
-/* 
-	We get the index of the team in fixturedata, the ranking table uses pulse_id wich is available in FPLTeamsFULL
-*/
-getTeamTableDifference = ( mngrTm = 1, oppTm = 20 ) =>{
-	// console.log("gamesOverview.teamTableArr.length", gamesOverview.teamTableArr.length ) ;
-	
-	let curTmTable = [] ;
-	if( gamesOverview.teamTableArr.length > 0 ){ curTmTable = gamesOverview.teamTableArr ; } ;
-	let mngrTmName 	= FPLTeamsFull[mngrTm]['longNm'].toUpperCase() ;
-	let mngrTmPlsId = FPLTeamsFull[mngrTm]['pulse_id'] ;
-	let mngrName 	= FPLTeamsFull[mngrTm]['manName'] ;
-	let oppTmName 	= FPLTeamsFull[oppTm]['longNm'].toUpperCase() ;
-	let oppTmPlsId 	= FPLTeamsFull[oppTm]['pulse_id'] ;
-	let oppMngrName = FPLTeamsFull[oppTm]['manName'] ;
-	let retValArr 	= {
-		"manTm": 	mngrTm,
-		"manTmRank": 20,
-		"manTmNm": 	mngrTmName,
-		"manName": 	mngrName,
-		"oppTm": 	oppTm,
-		"oppTmRank": 20,
-		"oppTmName": oppTmName,
-		"oppMngrName": oppMngrName,
-		"rankingDistance": 0,
-		"tableBonusActive": false 
-	} ;
-
-	/* 
-	*	console.log(
-	*		"currentTeamTable",
-	*		"--mngrTm: ", 	mngrTm, 
-	*		"--mngrTmName: ",mngrTmName, 
-	*		"--mngrName: ", mngrName,
-	*		"--oppTm: ", 	oppTm, 
-	*		"--oppTmName: ",oppTmName
-		) ;
-	*/
-	// console.log("retValArr: ", retValArr )
-	let ttb = 0 ;
-
-	for ( ttb; ttb < curTmTable.length; ttb++ ){
-
-		let rnkTeam 	= curTmTable[ ttb ] ;
-		let rnkTmPlsId 	= rnkTeam['team']['id'] ;
-
-		if( parseInt( rnkTmPlsId ) == parseInt( mngrTmPlsId ) ){
-			retValArr['manTmRank'] = ttb+1 ;
-		}else if( parseInt( rnkTmPlsId ) == parseInt( oppTmPlsId ) ){
-			retValArr['oppTmRank'] = ttb+1 ;
-		}
-		// else{ console.log("neither mngrTm nor oppTm") }
-	}
-	
-	retValArr['rankingDistance'] =  retValArr['manTmRank'] - retValArr['oppTmRank'] ;
-	retValArr['tableBonusActive'] = ( retValArr['rankingDistance'] >= 5 )? true:false ;
-
-	// console.log("retValArr: ", retValArr ) ;
-	return retValArr ;
-}
-
-
-/* 
-
 ###### SUB section togglers  ######
-
 */
 
 toggleDFContainer = (viz)=>{
@@ -922,16 +881,16 @@ toggleDFContainer = (viz)=>{
 		$("#fpl-df-viz").text( "Hide FPL-DF" );
 		$("#usr-df-viz").text( "Hide USR-DF" );
 		$("#df-tggl").text( "HIDE" );
-		$("#teamDFCnt").removeClass( "hide-item" );
-		$("#teamDFCnt").addClass( "show-item" );
+		$("#teamDF-cnt").removeClass( "hide-item" );
+		$("#teamDF-cnt").addClass( "show-item" );
 		$("#hdr-tggl-df-fpl").css("backgroundColor", "#53ac00" );
 		setIndicator("df-Ldd-idc","green")
 	}else{
 		$("#fpl-df-viz").text( "Show FPL-DF" );
 		$("#usr-df-viz").text( "Show USR-DF" );
 		$("#df-tggl").text( "SHOW" );
-		$("#teamDFCnt").removeClass( "show-item" );
-		$("#teamDFCnt").addClass( "hide-item" );
+		$("#teamDF-cnt").removeClass( "show-item" );
+		$("#teamDF-cnt").addClass( "hide-item" );
 		$("#hdr-tggl-df-fpl").css("backgroundColor", "#d91a00");
 		setIndicator("df-Ldd-idc","red")
 	}
@@ -1014,8 +973,7 @@ hasCup = (el, evtype)=>{ return $(el).hasClass(evtype) ; }
 
 showDeadline = (blnSD)=>{	
 
-	let evcps 		= ["evtp-EFL", "evtp-FAC"] ;
-	let allEvCups 	= gamesOverview.evTypes ;
+	let evcps = ["evtp-EFL", "cupMidweek"] ;
 
 	for(let gw=1; gw < 39 ; gw++){
 
