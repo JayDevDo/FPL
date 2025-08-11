@@ -1,90 +1,17 @@
 [
-	{ 
+	{
 		"unplanned": [	]
 	},
-	{ 
-		"re-planned": [
-			{ 	"ppid": 144,
-				"nwRound": 24,
-				"ogGW": 15,
-				"added": true,
-				"team_h_nm": "EVE",
-				"team_h_id": 8,
-				"team_a_id": 12,
-				"team_a_nm": "LIV",
-				"status": "replanned",
-				"reason": "og: 15: Merseyside derby called off because of Storm Darragh. 2025-01-13 16h00: Re-planned",
-				"link": "https://www.bbc.com/sport/football/articles/c4gllz8g5zgo"
-			},
-			{ 	"ppid": 282,
-				"nwRound": 25,
-				"ogGW": 29,
-				"added": true,
-				"team_h_nm": "LIV",
-				"team_h_id": 12,
-				"team_a_id": 2,
-				"team_a_nm": "AVL",
-				"status": "replanned",
-				"reason": "og: 29: Liverpool plays EFL Carabao Cup Final in GW29. 2025-02-06: LIV beats TOT. Re-planned automatic.",
-				"link": ""
-			},
-			{ 	"ppid": 289,
-				"nwRound": 32,
-				"ogGW": 29,
-				"added": true,
-				"team_h_nm": "NEW",
-				"team_h_id": 15,
-				"team_a_id": 7,
-				"team_a_nm": "CRY",
-				"status": "replanned",
-				"reason": "og: 29: Newcastle plays EFL Carabao Cup Final in GW29. 2025-02-05: NEW beats ARS.",
-				"link": "https://www.bbc.com/sport/football/live/c1we9vxz7xdt"
-			},
-			{  	"ppid": 331,
-				"nwRound": 33,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "ARS",
-				"team_h_id": 1,
-				"team_a_id": 7,
-				"team_a_nm": "CRY",
-				"status": "replanned",
-				"reason": "og: 34: FA Cup Semi Final for CRY",
-				"link": ""
-			},
-			{	"ppid": 336,
-				"nwRound": 33,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "MNC",
-				"team_h_id": 13,
-				"team_a_id": 2,
-				"team_a_nm": "AVL",
-				"status": "replanned",
-				"reason": "og: 34: FA Cup Semi Final for AVL AND MNC",
-				"link": ""
-			},
-			{	"ppid": 338,
-				"nwRound": 34,
-				"ogGW": 34,
-				"added": true,
-				"team_h_nm": "NFO",
-				"team_h_id": 16,
-				"team_a_id": 4,
-				"team_a_nm": "BRE",
-				"status": "replanned",
-				"reason": "og: 34: FA Cup Semi Final for NFO. Postponed to Thursday in same GW34.",
-				"link": ""
-			}
-		]
+	{
+		"re-planned": [ ]
 	},
-	{ 
-		"ppRpIds":[ 144, 282, 289, 331, 336, 338 ]
+	{
+		"ppRpIds":[  ]
 	},
-	{ 
+	{
 		"ppIds": []
 	},
-	{ 
+	{
 		"evtp-UIB": [
 			{	"iBreakId": 1,
 				"wkNr": 36,
@@ -138,7 +65,7 @@
 					{ 	"title": "IN", 		"data": [ 7, 13 ] },
 					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-FAC" },
-					{	
+					{
 						"title": "FINAL",
 						"gw": 37,
 						"elim": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20 ],
@@ -147,7 +74,7 @@
 									{"team_h":7, "team_a":13 }
 					 			]
 					},
-					{	
+					{
 						"title": "S-FINAL",
 						"gw": 34,
 						"elim": [ 1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
@@ -157,7 +84,7 @@
 									{"team_h": 7, "team_a": 2 }
 						]
 					},
-					{	
+					{
 						"title": "Q-FINAL",
 						"gw": 30,
 						"elim": [ 1, 4, 6, 8, 10, 11, 12, 14, 15, 17, 18, 19, 20 ],
@@ -169,7 +96,7 @@
 									{"team_h": 5, "team_a":16  }
 						]
 					},
-					{	
+					{
 						"title": "5th Rnd (L16)",
 						"gw": 27,
 						"elim": [ 1, 4, 6, 8, 11, 12, 17, 18, 19 ],
@@ -185,7 +112,7 @@
 									{"team_h":16, "team_a":10 	}
 						]
 					},
-					{	
+					{
 						"title": "4th Rnd (FA-L32)",
 						"gw": 24,
 						"elim": [ 1, 4, 19 ],
@@ -209,7 +136,7 @@
 									{"team_h":0, 	"team_a":16, 	"oppNmH":"Exeter City" }
 						]
 					},
-					{	
+					{
 						"title": "3rd Rnd (FA-L64)",
 						"gw": 20,
 						"elim": [ ],
@@ -243,53 +170,53 @@
 					{ 	"title": "IN", 		"data": [ 12, 15] },
 					{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20 ] },
 					{ 	"title": "evntTp", 	"data": "evtp-EFL" },
-					{ 	
+					{
 						"title": "FINAL",
 						"gw": 29,
 						"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20 ],
 						"drawn": true,
-						"data": [ 	
-									{"team_h":15, "team_a":12 } 
-								] 
+						"data": [
+									{"team_h":15, "team_a":12 }
+								]
 					},
-					{ 	
+					{
 						"title": "S-FINAL 2 ",
 						"gw": 24,
 						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h":15, "team_a":1  },
 									{"team_h":12, "team_a":18 }
 						]
 					},
-					{ 	
+					{
 						"title": "S-FINAL 1",
 						"gw": 20,
 						"elim": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 19, 20 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h": 1, "team_a":15 },
 									{"team_h":18, "team_a":12 }
 							]
 					},
-					{ 	
+					{
 						"title": "Q-FINAL",
 						"gw": 16,
 						"elim": [ 2, 3, 5, 6, 8, 9, 10, 11, 13, 16, 19, 20 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h":18, "team_a":14 },
 									{"team_h":1,  "team_a":7  },
 									{"team_h":15, "team_a":4  },
 									{"team_h":17, "team_a":12 }
 					 	]
 					},
-					{ 	
+					{
 						"title": "L16",
 						"gw": 9,
 						"elim": [ 3, 8, 9, 10, 16, 19, 20 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h":0, 	"team_a":1, "oppNmH":"Preston NE" 	},
 									{"team_h":2, 	"team_a":7	},
 									{"team_h":4, 	"team_a":0, "oppNmA":"Sheffield W." },
@@ -297,15 +224,15 @@
 									{"team_h":15, 	"team_a":6	},
 									{"team_h":14, 	"team_a":11	},
 									{"team_h":17, 	"team_a":0, "oppNmA":"Stoke City"	},
-									{"team_h":18, 	"team_a":13	}									
+									{"team_h":18, 	"team_a":13	}
 					 	]
-					},					
-					{ 	
+					},
+					{
 						"title": "L32B",
 						"gw": 5,
 						"elim": [ 3, 10, 16 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h":1, 	"team_a":0, 	"oppNmA":"Bolton" 		},
 									{"team_h":0, 	"team_a":2, 	"oppNmH":"Wycombe" 		},
 									{"team_h":6, 	"team_a":0, 	"oppNmA":"Barrow" 		},
@@ -316,12 +243,12 @@
 									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn"	}
 					 	]
 					},
-					{ 	
+					{
 						"title": "L32A",
 						"gw": 4,
 						"elim": [ 3, 10, 16 ],
 						"drawn": true,
-						"data": [ 
+						"data": [
 									{"team_h":0, 	"team_a":18, 	"oppNmH":"Coventry" 	},
 									{"team_h":5, 	"team_a":20		},
 									{"team_h":14, 	"team_a":0, 	"oppNmA":"Barnsley" 	},
@@ -331,36 +258,36 @@
 									{"team_h":0, 	"team_a":7, 	"oppNmH":"QPR" 			},
 									{"team_h":0, 	"team_a":0, 	"oppNmA":"not drawn" 	}
 					 	]
-					}				
+					}
 		]
 	},
 
 	{
 		"evtp-ECL":[
-			{ 	
+			{
 				"title": "IN", "data": [ 6, 14, 18 ]
 			},
-			{	
+			{
 				"title": "OUT", "data": [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ]
 			},
-			{ 	
-				"title": "evntTp", "data": "evtp-ECL" 
+			{
+				"title": "evntTp", "data": "evtp-ECL"
 			},
-			{ 
+			{
 				"title": "UEFA final",
 				"gw": 38,
 				"elim": [  1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
 				"drawn": true,
-				"data": [ 	
+				"data": [
 							{"team_h":6, "team_a":0, "oppNmA": "Betis", "cup": "Conference Lg final" }
 				]
 			},
-			{ 
+			{
 				"title": "Europa Lg final",
 				"gw": 37,
 				"elim": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 	
+				"data": [
 							{"team_h":14, "team_a":18, "cup": "Europa Lg final" }
 				]
 			},
@@ -419,7 +346,7 @@
 				"gw": 28,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h": 1, 	"team_a": 0, "oppNmA": "PSV", "cup": "Champions Lg" },
 					{ "team_h": 2, 	"team_a": 0, "oppNmA": "Club Brugge", "cup": "Champions Lg" },
 					{ "team_h":12, 	"team_a": 0, "oppNmA": "PSG", "cup": "Champions Lg" },
@@ -433,7 +360,7 @@
 				"gw": 27,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h": 0, 	"team_a": 1, 	"oppNmH": "PSV", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a": 2, 	"oppNmH": "Club Brugge", "cup": "Champions Lg" },
 					{ "team_h": 0, 	"team_a":12, 	"oppNmH": "PSG", "cup": "Champions Lg" 	},
@@ -447,7 +374,7 @@
 				"gw": 25,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h": 0, 	"team_a": 1, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
 					{ "team_h": 2, 	"team_a": 0, 	"oppNmA": "Bye", "cup": "Champions Lg"	},
 					{ "team_h": 0, 	"team_a":12, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
@@ -462,7 +389,7 @@
 				"gw": 24,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h": 0, 	"team_a": 1, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
 					{ "team_h": 2, 	"team_a": 0, 	"oppNmA": "Bye", "cup": "Champions Lg"	},
 					{ "team_h": 0, 	"team_a":12, 	"oppNmH": "Bye", "cup": "Champions Lg"	},
@@ -473,12 +400,12 @@
 				]
 
 			},
-			{ 	
+			{
 				"title": "ChLg-R8",
 				"gw": 23,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":0, "team_a":1, 	"oppNmH": "Girona", "cup": "Champions Lg"	},
 					{ "team_h":2, "team_a":0, 	"oppNmA": "Celtic", "cup": "Champions Lg"	},
 					{ "team_h":0, "team_a":12, 	"oppNmH": "PSV",	"cup": "Champions Lg"	},
@@ -488,12 +415,12 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R7",
 				"gw": 22,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":1,  "team_a":0, "oppNmA": "Dinamo Zagreb", "cup": "Champions Lg" },
 					{ "team_h":0,  "team_a":2, "oppNmH": "Monaco", "cup": "Champions Lg"	},
 					{ "team_h":12, "team_a":0, "oppNmA": "Lille",	"cup": "Champions Lg"	},
@@ -503,22 +430,22 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "CoLg-R6",
 				"gw": 16,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":6, "team_a":0, 	"oppNmA": "Shamrock Rovers", "cup": "Europa Lg"	}
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R6",
 				"gw": 15,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":1, "team_a":0, 	"oppNmA": "Monaco", 		"cup": "Champions Lg" },
 					{ "team_h":0, "team_a":2, 	"oppNmH": "RB Leipzig", 	"cup": "Champions Lg" },
 					{ "team_h":0, "team_a":12, 	"oppNmH": "Girona",			"cup": "Champions Lg" },
@@ -529,12 +456,12 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R5",
 				"gw": 12,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":0, "team_a":1, 	"oppNmH": "Sporting CP", 	"cup": "Champions Lg" },
 					{ "team_h":2, "team_a":0, 	"oppNmA": "Juventus", 		"cup": "Champions Lg" },
 					{ "team_h":12, "team_a":0, 	"oppNmA": "Real Madrid",	"cup": "Champions Lg" },
@@ -545,24 +472,24 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "EuLg-R4",
 				"gw": 10,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":14, 	"team_a":0, 	"oppNmA": "PAOK FC",	"cup": "Europa Lg" },
 					{ "team_h":0, 	"team_a":18, 	"oppNmH": "Galatasaray","cup": "Europa Lg" },
 					{ "team_h":6, 	"team_a":0, 	"oppNmA": "FC NOAH", 	"cup": "Europa Lg" }
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R4",
 				"gw": 9,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":0, "team_a":1, 	"oppNmH": "Inter Milan", "cup": "Champions Lg"	},
 					{ "team_h":0, "team_a":2, 	"oppNmH": "Brugge", 	"cup": "Champions Lg"	},
 					{ "team_h":12, "team_a":0, 	"oppNmA": "Leverkusen",	"cup": "Champions Lg"	},
@@ -570,12 +497,12 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R3",
 				"gw": 8,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":1, 	"team_a":0, 	"oppNmA": "Shaktar", 		"cup": "Champions Lg" },
 					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bologna", 		"cup": "Champions Lg" },
 					{ "team_h":0, 	"team_a":12, 	"oppNmH": "RB Leipzig",		"cup": "Champions Lg" },
@@ -586,12 +513,12 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R2",
 				"gw": 6,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":1, 	"team_a":0, 	"oppNmA": "PSG", 			"cup": "Champions Lg" },
 					{ "team_h":2, 	"team_a":0, 	"oppNmA": "Bayern Munich", 	"cup": "Champions Lg" },
 					{ "team_h":12, 	"team_a":0, 	"oppNmA": "Bologna",		"cup": "Champions Lg" },
@@ -602,23 +529,23 @@
 				]
 			},
 
-			{ 	
+			{
 				"title": "EuLg-R1",
 				"gw": 5,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":14, "team_a":0, 	"oppNmA": "FC Twente",	"cup": "Europa Lg"	},
 					{ "team_h":18, "team_a":0, 	"oppNmA": "Quarabag", 	"cup": "Europa Lg"	}
 				]
 			},
 
-			{ 	
+			{
 				"title": "ChLg-R1",
 				"gw": 4,
 				"elim": [ 3, 4, 5, 7, 8, 9, 10, 11, 15, 16, 17, 19, 20 ],
 				"drawn": true,
-				"data": [ 
+				"data": [
 					{ "team_h":0, "team_a":1, 	"oppNmH": "Atalanta", 	"cup": "Champions Lg"	},
 					{ "team_h":0, "team_a":2, 	"oppNmH": "Young Boys", "cup": "Champions Lg"	},
 					{ "team_h":0, "team_a":12, 	"oppNmH": "AC Milan",	"cup": "Champions Lg"	},
@@ -630,7 +557,7 @@
 	},
 
 
-	{	"example pp": {	
+	{	"example pp": {
 			"ppid": 144,
 			"nwRound": 39,
 			"ogGW": 15,

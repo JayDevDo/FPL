@@ -1,0 +1,90 @@
+============================================================
+FA cup (FAC) dates:
+------------------------------------------------------------
+// 	Extra Prelim: 	2025-08-02
+//	Prelim: 		2025-08-16
+//	First Quali: 	2025-08-30
+//	Second Quali: 	2025-09-13
+//	Third Quali: 	2025-09-27
+//	Fourth Quali: 	2025-10-11
+
+//	L256: 			2025-11-01 SAT
+//	L128: 			2025-12-06 SAT
+// gw 21 	L64: 		2026-01-10 SAT This is the really fun one, when all the 44 clubs from the Premier League and Championship, the top two tiers, enter and often wind up facing some really small clubs. Sixty-four teams play 32 games.
+// gw 26	L32: 		2026-02-14 SAT
+// gw 29	L16: 		2026-03-07 SAT
+// gw 31	QF: 		2026-04-04 SAT
+// gw 34	SF: 		2026-04-25 SAT
+// gw 37	FINAL: 		2026-05-16 SAT
+
+
+============================================================
+Carabao (EFL) dates:
+------------------------------------------------------------
+// 	Prelim: 2025-08-04 (no FPL teams, and before EPL starts )
+// gw 2 	L64: 	2025-08-25 
+// gw 4		L32-1: 	2025-09-15 
+// gw 5		L32-2: 	2025-09-22 
+// gw 9		L16: 	2025-10-27 
+// gw 16	QF: 	2025-12-15
+// gw 21	SF1: 	2026-01-12 
+// gw 24	SF2: 	2026-02-02
+// gw 31	FINAL: 	2026-03-22
+
+
+============================================================
+Champions league dates:
+------------------------------------------------------------
+// gw 4:  	Matchday 1: September 16-18 2025
+// gw 6: 	Matchday 2: September 30-October 1 2025
+// gw 8: 	Matchday 3: October 21/22 2025
+// gw 10: 	Matchday 4: November 4/5 2025
+// gw 12: 	Matchday 5: November 25/26 2025
+// gw 15: 	Matchday 6: December 9/10 2025
+// gw 22: 	Matchday 7: January 20/21 2026
+// gw 23: 	Matchday 8: January 28 2026
+// gw 26/27: 	Knockout phase play-offs: 17/18 and 24/25 February 2026
+// gw 29/30: 	Round of 16: 10/11 and 17/18 March 2026
+// gw 31/32: 	Quarter-finals: 7/8 and 14/15 April 2026
+// gw 34/35: 	Semi-finals: April 28/29 and May 5/6 2026
+// gw 38: 	Final: May 30 2026 (Budapest)
+
+
+============================================================
+Europa league (EUL) dates:
+------------------------------------------------------------
+Matchday	Date(s)
+// *gw 5: 	1 	24th-25th September 2025
+// *gw 6: 	2	2nd October 2025
+// *gw 8: 	3	23rd October 2025
+// *gw 10: 	4	6th November 2025
+// *gw 12: 	5	27th November 2025
+// *gw 15: 	6	11th December 2025
+// *gw 22: 	7	22nd January 2026
+// *gw 23: 	8	29th January 2026
+
+// gw 26/27: 	19th-26th February 2026 – Knockout phase play-offs
+// gw 28/29: 	12th-19th March 2026 – Round-of-16
+// gw 31/32: 	9th-16th April 2026 – Quarter-finals
+// gw 34/35: 	30th April – 7th May 2026 – Semi-finals
+// gw 37: 	20th May 2026 – Europa League final in Istanbul
+
+
+============================================================
+Conference league dates:
+------------------------------------------------------------
+// gw 0: 	10th July 2025 – Conference League qualifying starts
+// gw 1/2: 	21st-28th August 2025 – Play-off round
+// gw 6: 		matchday 1	2nd October 2025
+// gw 8: 		matchday 2	23rd October 2025
+// gw 10: 		matchday 3	6th November 2025
+// gw 12: 		matchday 4	27th November 2025
+// gw 15: 		matchday 5	11th December 2025
+// gw 16: 		matchday 6	18th December 2025
+// gw 25/27: 	play-offs 	19th-26th February 2026 – Knockout phase 
+
+// gw 28/29: 	L16 	12th-19th March 2026 
+// gw 31/32: 	QF 		9th-16th April 2026
+// gw 34/35: 	SF 		30th April – 7th May 2026
+// gw 38: 		FINAL 	27th May 2026 – Conference Lg Leipzig
+
