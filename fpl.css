@@ -41,6 +41,10 @@ a {
 	background-color: #dddddd;
 }
 
+label{
+	font-size: 12px !important;
+}
+
 table{ border-collapse: collapse; }
 
 td{ padding:0px;text-align: center;}
@@ -63,12 +67,10 @@ span[df="3"]{background-color: #ff8533;color: #000000;}
 span[df="4"]{background-color: #ff005a;color: #000000;}
 span[df="5"]{background-color: #861d46;color: #FFFFFF;}
 
-
 /*  Settings container 				*/
 
 button[enabled = "true"].evwndwTgl{ background-color: red !important; }
 button[enabled = "false"].evwndwTgl{ background-color: lime !important; }
-
 
 .redLight ::after, .redLight ::before { box-sizing: border-box; }
 .redLight {
@@ -134,21 +136,20 @@ button[enabled = "false"].evwndwTgl{ background-color: lime !important; }
 	color:  #000000;
 }
 
-
 /*  Team Difficulty container 		*/
 
 /*  Team Difficulty container strengths */
 
 
-#teamDFCnt tr.pp_count{background-color: #0A1B3C; }
+#teamDF-cnt tr.pp_count{background-color: #0A1B3C; }
 #df_home > th{ font-size: 1.25rem; }
 #df_away > th{ font-size: 1.25rem; }
 
-#teamDFCnt > table > thead{
+#teamDF-cnt > table > thead{
 	border: 5px solid #FFFFFF;
 }
 
-#teamDFCnt > table > tbody > td{
+#teamDF-cnt > table > tbody > td{
 	margin-left: 2px;
 }
 
@@ -181,7 +182,6 @@ td.strengths.s_overall{
 	color: navy;
 }
 
-
 .shaded{
 	opacity: 0.5;
 	text-decoration-line: line-through;
@@ -199,7 +199,6 @@ td.strengths.s_overall{
 	border-right: 3px solid #E61010;
 	background-color: #FFFF66 !important;
 }
-
 
 /*  Team Difficulty container pop up 	*/
 
@@ -236,7 +235,6 @@ getting an error on:
 .striped th:nth-of-type(2){background-color: #185ee6;color: #000000; }
 .striped th:nth-of-type(3){background-color: #185ee6;color: #000000; }
 
-
 /*  Fixtures container fixtures normal (columns gw 01/38) */
 
 #eventTable th.dfc{ background-color: #185ee6; color: #FFFFFF; }
@@ -258,12 +256,36 @@ td > span {
 span[loc="H"]{ font-weight: bold; }
 
 
+#df_home > td[df="1"],
+#df_away > td[df="1"]{ 
+	background-color: #375523;
+	color: #FFFFFF;
+}
 
-td[df="1"]{background-color: #375523;color: #FFFFFF;}
-td[df="2"]{background-color: #00ff86;color: #000000;}
-td[df="3"]{background-color: #ff8533;color: #000000;}
-td[df="4"]{background-color: #ff005a;color: #000000;}
-td[df="5"]{background-color: #861d46;color: #FFFFFF;}
+#df_home > td[df="2"],
+#df_away > td[df="2"]{
+	background-color: #00ff86;
+	color: #000000;
+}
+
+#df_home > td[df="3"],
+#df_away > td[df="3"]{
+	background-color: #ff8533;
+	color: #000000;
+}
+
+#df_home > td[df="4"],
+#df_away > td[df="4"]{
+	background-color: #ff005a;
+	color: #000000;
+}
+
+#df_home > td[df="5"],
+#df_away > td[df="5"]{
+	background-color: #861d46;
+	color: #FFFFFF;
+}
+
 
 .customDF{ border: 2px solid #FFFFFF; }
 
@@ -281,9 +303,6 @@ td > span[ppgame='true']{
 	color: #000000 !important;
 	background: repeating-linear-gradient(-45deg,#FFFFFF,#FFFFFF 5px,#000000 15px,#000000 5px);
 }
-
-
-
 
 
 /*  Fixtures container posponed	fixtures (columns gw 39 )	*/
@@ -340,60 +359,53 @@ div.tm-idc.tmSelected{
 
 
 /* 
-	evTypes: [ "evtp-EPL", "evtp-FAC", "evtp-EFL", "evtp-ECL", "evtp-EUL", "evtp-CLE", "evtp-UIB" ],
+	evTypes: [ "evtp-EPL", "evtp-FAC", "evtp-EFL", "evtp-EHL", "evtp-EUL", "evtp-EOL", "evtp-UIB" ],
 */
 
-th.afc{
-	border: 2px solid red !important;
-}
-
-th.evtp-UIB{
-	background-color: #ff5c33 !important;
-	color: #000000;
-}
-
-th.evtp-EFL{
-	background-color: #ECEF82 !important;
-	color: #000000;
-}
-
-th.evtp-FAC{
-	background-color: #ff8080 !important;
-	color: #000000;
-}
-
-th.evtp-ECL{
-	background-color: #80d4ff !important;
-	color: #000000;
-}
-
-.evtp-UIB{
-	background-color: #ff5c33;
-	color: #000000;
+.evtp-FAC{
+	background-color: #FFFFCC !important;
+	color: #000000 !important;
 }
 
 .evtp-EFL{
-	background-color: #ECEF82 ;
-	color: #000000;
+	background-color: #FFFF99 !important;
+	color: #000000 !important;
 }
 
-.evtp-FAC{
-	background-color: #ff8080 ;
-	color: #000000;
+.evtp-EHL{
+	background-color: #0000CC !important;
+	color: #FFFFFF !important;
 }
 
-.evtp-ECL{
-	background-color: #80d4ff;
-	color: #000000;
+.evtp-EUL{
+	background-color: #2633D9 !important;
+	color: #FFFFFF !important;
 }
 
+.evtp-EOL{
+	background-color: #4C66E6 !important;
+	color: #FFFFFF !important;
+}
+
+.evtp-UIB{
+	background-color: #ff5c33 !important;
+	color: #000000 !important;
+}
+
+/*
+
+*/
 .cupCntndr{
-	background-color: #ffff99;
-	color: #000000;
+	/* 
+		background-color: #ffff99; 
+		color: #000000;
+	*/
 }
 
 td > span.cupCntndr{
-	background-color: #ff8080;
+	/* 
+		background-color: #ff8080;
+	*/
 }
 
 .cupElim{

@@ -2,6 +2,12 @@
 
 /* Spinner ripple */
 
+#splashInfo > span{
+	display: inline-block;
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+
 .loader--ripple {
 	display: inline-block;
 	position: relative;
@@ -15,7 +21,7 @@
 	animation: loader--ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 	border: 24px solid;
 	border-radius: 50%;
-	opacity: 0.75;
+	opacity: 1;
 }
 
 .loader--ripple div:nth-child(2) {animation-delay: -0.5s;}
@@ -33,7 +39,7 @@
 	100% {
 		top: -1px;
 		left: -1px;
-		opacity: 0.33;
+		opacity: 0;
 		height: 75vh;
 		width: 75vh;
 		border-color: #FF0000;
@@ -50,4 +56,5 @@
 }
 
 .section--red .loader--ripple div { border-color: #FFFFFF;}
+
 
