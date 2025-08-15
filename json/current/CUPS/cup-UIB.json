@@ -1,0 +1,36 @@
+[
+	{ 	"title": "IN", 		"data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+	{	"title": "DNQ", 	"data": [] },
+	{ 	"title": "evntTp", 	"data": "evtp-UIB" },
+	{ 	"title": "GAMEWEEKS", "data": [ 3, 7, 11] },	
+	{	"iBreakId": 1,
+		"prevGW": 3,
+		"prevGWDate": "2025-08-29",
+		"firstGamedate": "2025-09-04",
+		"lastGamedate": "2025-09-04",
+		"nextGW": 4,
+		"nextGWDate": "2025-09-13",
+		"brkDuration": 2,
+		"brkTitle": "IntlBreak 1"
+	},
+	{	"iBreakId": 2,
+		"prevGW": 7,
+		"prevGWDate": "2025-10-04",
+		"firstGamedate": "2025-10-09",
+		"lastGamedate": "2025-10-13",
+		"nextGW": 8,
+		"nextGWDate": "2025-10-18",
+		"brkDuration": 2,
+		"brkTitle": "IntlBreak 2"
+	},
+	{	"iBreakId": 3,
+		"prevGW": 11,
+		"prevGWDate": "2025-11-08",
+		"firstGamedate": "2025-11-14",
+		"lastGamedate": "2025-11-18",
+		"nextGW": 12,
+		"nextGWDate": "2025-11-22",
+		"brkDuration": 2,
+		"brkTitle": "IntlBreak 3"
+	}
+]

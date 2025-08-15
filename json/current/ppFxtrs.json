@@ -1,0 +1,41 @@
+[
+	{
+		"unplanned": []
+	},
+	{
+		"re-planned": []
+	},
+	{
+		"ppRpIds":[]
+	},
+	{
+		"ppIds": []
+	},
+	{	"example pp": {
+			"ppid": 144,
+			"nwRound": 39,
+			"ogGW": 15,
+			"added": false,
+			"team_h_nm": "EVE",
+			"team_h_id": 8,
+			"team_a_id": 12,
+			"team_a_nm": "LIV",
+			"status": "postponed",
+			"reason": "og: 15: Storm Darragh made play impossible.",
+			"link": "https://www.bbc.com/sport/football"
+		},
+		"example replanned":{
+			"ppid": 15,
+			"nwRound": 7,
+			"ogGW": 2,
+			"added": false,
+			"team_h_nm": "LUT",
+			"team_h_id": 12,
+			"team_a_id": 6,
+			"team_a_nm": "BUR",
+			"status": "replanned",
+			"reason": "og = 2: Luton not ready for Home game",
+			"link": "https://www.bbc.com/sport/football"
+		}
+	}
+]

@@ -1,0 +1,178 @@
+[
+	{ 	"title": "IN", 		"data": [ 8 ] },
+	{	"title": "OUT", 	"data": [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ] },
+	{ 	"title": "evntTp", 	"data": "evtp-EOL" },
+	{ 	"title": "GAMEWEEKS", "data": [  1,  2, 6,  8, 10, 12, 15,16, 26, 27, 29, 30,31, 32, 34, 35, 38	] },
+	{
+		"title": "FINAL",
+		"gw": 38,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+	 	]
+	},
+	{
+		"title": "SF-2",
+		"gw": 35,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a":0, "oppNmH":"" },
+			{"team_h": 0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "SF-1",
+		"gw": 34,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a":0, "oppNmH":"" },
+			{"team_h": 0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "QF-2",
+		"gw": 32,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a":0, "oppNmH":"" },
+			{"team_h": 0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "QF-1",
+		"gw": 31,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a":0, "oppNmH":"" },
+			{"team_h": 0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "L16-2",
+		"gw": 30,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+		]
+	},
+	{
+		"title": "L16-1",
+		"gw": 29,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+		]
+	},
+	{
+		"title": "PlayOffs 2",
+		"gw": 27,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+		]
+	},
+	{
+		"title": "PlayOffs 1",
+		"gw": 26,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+		]
+	},
+	{
+		"title": "Match day 6",
+		"gw": 16,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 5",
+		"gw": 15,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 4",
+		"gw": 12,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 3",
+		"gw": 10,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 2",
+		"gw": 8,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 1",
+		"gw": 6,
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},
+	{
+		"title": "Prelim-2",
+		"gw": 2,
+		"elim": [],
+		"drawn": true,
+		"data":	[
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"Fredrikstad" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	},	
+	{
+		"title": "Prelim-1",
+		"gw": 1,
+		"elim": [],
+		"drawn": true,
+		"data":	[
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Fredrikstad" },
+			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+		]
+	}
+]
+
+
+
