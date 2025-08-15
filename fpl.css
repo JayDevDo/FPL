@@ -70,7 +70,7 @@ span[df="5"]{background-color: #861d46;color: #FFFFFF;}
 /*  Settings container 				*/
 
 button[enabled = "true"].evwndwTgl{ background-color: red !important; }
-button[enabled = "false"].evwndwTgl{ background-color: lime !important; }
+button[enabled = "false"].evwndwTgl{ background-color: lime !important; color: black; }
 
 .redLight ::after, .redLight ::before { box-sizing: border-box; }
 .redLight {
