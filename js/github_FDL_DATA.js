@@ -1,6 +1,6 @@
 // let allStatsData = []; has moved to FPLConstants
 // initial value, will be overwritten 
-let curGW = 1;
+let curGW = 2;
 
 /*
 ################################################################################################################
@@ -525,6 +525,10 @@ updateCupCell = (tmId, gw, evtClass, cellText )=>{
 		$( cupCelltd ).removeClass("cupCntndr") ; 
 
 		$( cupTie_jq ).addClass( evtClass ) ; 
+
+		if ( cellText in [ "bye", "BYE"] ){
+			$( cupTie_jq ).addClass( 'drawBye' ) ; 
+		}
 
 		if( cellText == "Elim" || cellText == "DNQ" ){ 
 			$( cupCelltd ).addClass( "cupElim" ) ; 
