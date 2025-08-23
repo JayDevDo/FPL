@@ -425,6 +425,11 @@ td > span.cupCntndr{
 	color: #FFFFFF !important;	
 }
 
+.drawBye{
+	background-color: #DADADA !important;
+	color: #FFFFFF !important;		
+}
+
 .tblBnsActive{
 	border: 3px solid yellow !important;
 }
