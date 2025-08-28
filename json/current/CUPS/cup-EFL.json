@@ -1,12 +1,12 @@
 [		
-	{ 	"title": "IN", 		"data": [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20 ] },
+	{ 	"title": "IN", 		"data": [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 18, 20 ] },
 	{	"title": "OUT", 	"data": [] },
 	{ 	"title": "evntTp", 	"data": "evtp-EFL" },
 	{ 	"title": "GAMEWEEKS", "data": [ 2, 4, 5, 9, 16, 21, 24, 31 ] },
 	{
 		"title": "FINAL",
 		"gw": 31,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": false,
 		"data":	[
 					{"team_h":0, "team_a":0, "oppNmA":"TBD" }
@@ -15,7 +15,7 @@
 	{
 		"title": "SF-2",
 		"gw": 24,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0, "team_a":0, "oppNmA":"TBD" },
@@ -25,7 +25,7 @@
 	{
 		"title": "SF-1",
 		"gw": 21,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0, "team_a":0, "oppNmA":"TBD" },
@@ -35,7 +35,7 @@
 	{
 		"title": "QF",
 		"gw": 16,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0, "team_a":0, "oppNmA":"TBD" },
@@ -47,7 +47,7 @@
 	{
 		"title": "L16",
 		"gw": 9,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
@@ -63,53 +63,30 @@
 	{
 		"title": "L32-2",
 		"gw": 5,
-		"elim": [ 4, 11, 17, 19 ],
-		"drawn": false,
+		"elim": [ 4, 11, 14, 17, 19 ],
+		"drawn": true,
 		"data":	[
-					{"team_h": 1,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 2,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 3,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 4,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 5,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 6,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 7,  "team_a":8, 	"oppNmA":"TBD" },
-					{"team_h": 8,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 9,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":10,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":11,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":12,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":13,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":14,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":15,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":16,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":17,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":18,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":19,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":20,  "team_a":0, 	"oppNmA":"TBD" }
+					{"team_h": 0, "team_a":1, 	"oppNmH":"port Vale" },
+					{"team_h": 0,  "team_a":7, 	"oppNmH":"Lincoln City" },
+					{"team_h":12, "team_a":0, 	"oppNmA":"Southampton" },
+					{"team_h":0,  "team_a":13, 	"oppNmH":"Huddersfield" },
+					{"team_h":15, "team_a":0, 	"oppNmA":"Bradford City" },
+					{"team_h":18, "team_a":0, 	"oppNmA":"Doncaster Rovers" }
 		]
 	},
 	{
 		"title": "L32-1",
 		"gw": 4,
-		"elim": [ 4, 11, 17, 19 ],
+		"elim": [ 4, 11, 14, 17, 19 ],
 		"drawn": true,
 		"data":	[
-					{"team_h": 1,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 2,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 3,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 5,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 6,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 7,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 8,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 9,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":10,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":12,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":13,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":14,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":15,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":16,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":18,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h":20,  "team_a":0, 	"oppNmA":"TBD" }
+					{"team_h": 5, "team_a":2 },
+					{"team_h": 3,  "team_a":0, 	"oppNmA":"Cardiff" },
+					{"team_h": 0,  "team_a":6, 	"oppNmH":"Barnsley" },
+					{"team_h": 8,  "team_a":0, 	"oppNmA":"Millwall" },
+					{"team_h":10,  "team_a":0, 	"oppNmA":"Cambridge Utd" },
+					{"team_h":0,  "team_a":16, 	"oppNmH":"Swansea City" },
+					{"team_h":20,  "team_a":9 }
 		]
 	},
 	{
