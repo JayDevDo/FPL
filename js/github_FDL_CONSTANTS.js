@@ -45,7 +45,7 @@ let gamesOverview = {
 		fixedColumns: 3,
 		finishedRounds: 35,
 		currentRnd: 36,
-		evWndw: { 'direction': 1 , 'start': 1, 'rounds': 7, 'end': 7 },
+		evWndw: { 'direction': 1 , 'start': 3, 'rounds': 5, 'end': 7 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
