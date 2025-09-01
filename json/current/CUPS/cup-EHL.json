@@ -124,98 +124,98 @@
 		"title": "Match day 8",
 		"gw": 23,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 1,	"team_a":0, "oppNmA":"Kairat Almaty" },
+			{ "team_h": 0,	"team_a":7, "oppNmH":"Napoli" },
+			{ "team_h": 12,	"team_a":0, "oppNmA":"Qarabag" },
+			{ "team_h": 13,	"team_a":0,	"oppNmA":"Galatasaray" },
+			{ "team_h": 0,	"team_a":15,"oppNmH":"PSG" },
+			{ "team_h": 0,	"team_a":18,"oppNmH":"Eintracht Frankfurt" }
 		]
 	},
 	{
 		"title": "Match day 7",
 		"gw": 22,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 0,  "team_a":1,	"oppNmH":"Inter Milan" },
+			{ "team_h": 0,  "team_a":7,	"oppNmH":"Pafos" },
+			{ "team_h": 0,  "team_a":12,"oppNmH":"Marseille"},
+			{ "team_h": 0,	"team_a":13,"oppNmH":"Bodo/Glimt" },
+			{ "team_h": 15,	"team_a":0,	"oppNmA":"PSV" },
+			{ "team_h": 18,	"team_a":0,	"oppNmA":"Borussia Dortmund" }
 		]
 	},
 	{
 		"title": "Match day 6",
 		"gw": 15,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 0,	"team_a":1,	"oppNmH":"Club Brugge"},
+			{ "team_h": 0,	"team_a":7,	"oppNmH":"Atalanta"},
+			{ "team_h": 0,	"team_a":12,"oppNmH":"Inter Milan" },
+			{ "team_h": 0,	"team_a":13,"oppNmH":"Real Madrid" },
+			{ "team_h": 0,	"team_a":15,"oppNmH":"Bayer Leverkusen" },
+			{ "team_h": 18,	"team_a":0,	"oppNmA":"Slavia Prague" }
 		]
 	},
 	{
 		"title": "Match day 5",
 		"gw": 12,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 1,	"team_a":0, "oppNmA":"Bayern Munich"},
+			{ "team_h": 7,	"team_a":0,	"oppNmA":"Barcelona"},
+			{ "team_h": 12,	"team_a":0, "oppNmA":"PSV Eindhoven" },
+			{ "team_h": 13,	"team_a":0, "oppNmA":"Bayer Leverkusen"},
+			{ "team_h": 0,	"team_a":15,"oppNmH":"Marseille" },
+			{ "team_h": 0,	"team_a":18,"oppNmH":"PSG" }
 		]
 	},
 	{
 		"title": "Match day 4",
 		"gw": 10,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 0,	"team_a":1,	"oppNmH":"Slavia Prague"},
+			{ "team_h": 7,	"team_a":0, "oppNmA":"Qarabag" },
+			{ "team_h": 12,	"team_a":0, "oppNmA":"Real Madrid" },
+			{ "team_h": 13,	"team_a":0, "oppNmA":"Borussia Dortmund" },
+			{ "team_h": 15,	"team_a":0, "oppNmA":"Athletic Bilbao" },
+			{ "team_h": 18,	"team_a":0, "oppNmA":"Copenhagen" }
 		]
 	},
 	{
 		"title": "Match day 3",
 		"gw": 8,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 1,	"team_a":0, "oppNmA":"Atletico Madrid"},
+			{ "team_h": 7,	"team_a":0,	"oppNmA":"Ajax" },
+			{ "team_h": 0,	"team_a":12,"oppNmH":"Eintracht Frankfurt" },
+			{ "team_h": 0,	"team_a":13,"oppNmH":"Villarreal" },
+			{ "team_h": 15,	"team_a":0, "oppNmA":"Benfica" },
+			{ "team_h": 0,	"team_a":18,"oppNmH":"Monaco" }
 		]
 	},
 	{
 		"title": "Match day 2",
 		"gw": 6,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{ "team_h": 1,  "team_a":0, "oppNmA":"Olympiacos" },
+			{ "team_h": 7,	"team_a":0, "oppNmA":"Benfica" },
+			{ "team_h": 0,	"team_a":12,"oppNmH":"Galatasaray" },
+			{ "team_h": 0,  "team_a":13,"oppNmH":"Monaco"},
+			{ "team_h": 0,	"team_a":15,"oppNmH":"Union SG" },
+			{ "team_h": 0,	"team_a":18,"oppNmH":"Bodo/Glimt" }		
 		]
 	},
 	{
@@ -224,13 +224,14 @@
 		"elim": [  ],
 		"drawn": true,
 		"data":	[
-			{ "team_h":  1,  "team_a":0, "oppNmA":"TBD" },
-			{ "team_h":  7,  "team_a":0, "oppNmA":"TBD" },
-			{ "team_h": 12,  "team_a":0, "oppNmA":"TBD" },
-			{ "team_h": 13,  "team_a":0, "oppNmA":"TBD" },
-			{ "team_h": 15,  "team_a":0, "oppNmA":"TBD" },
-			{ "team_h": 18,  "team_a":0, "oppNmA":"TBD" }
+			{ "team_h":  0,  "team_a":1, "oppNmH":"Athletic Bilbao" },
+			{ "team_h":  0,  "team_a":7, "oppNmH":"Bayern Munich" },
+			{ "team_h": 12,  "team_a":0, "oppNmA":"Atletico Madrid" },
+			{ "team_h": 13,  "team_a":0, "oppNmA":"Napoli" },
+			{ "team_h": 15,  "team_a":0, "oppNmA":"Barcelona" },
+			{ "team_h": 18,  "team_a":0, "oppNmA":"Villarreal" }
 		]
 	}
 
 ]
+

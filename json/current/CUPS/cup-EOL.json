@@ -18,7 +18,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" },
 			{"team_h": 0, "team_a":0, "oppNmH":"" }
 		]
 	},
@@ -28,7 +27,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" },
 			{"team_h": 0, "team_a":0, "oppNmH":"" }
 		]
 	},
@@ -38,7 +36,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" },
 			{"team_h": 0, "team_a":0, "oppNmH":"" }
 		]
 	},
@@ -48,7 +45,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" },
 			{"team_h": 0, "team_a":0, "oppNmH":"" }
 		]
 	},
@@ -58,7 +54,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
 			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
 		]
 	},
@@ -68,7 +63,6 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
 			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
 		]
 	},
@@ -76,9 +70,8 @@
 		"title": "PlayOffs 2",
 		"gw": 27,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
 			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
 		]
 	},
@@ -86,9 +79,8 @@
 		"title": "PlayOffs 1",
 		"gw": 26,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
 			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
 		]
 	},
@@ -96,60 +88,54 @@
 		"title": "Match day 6",
 		"gw": 16,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"KuPS" }
 		]
 	},
 	{
 		"title": "Match day 5",
 		"gw": 15,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Shelbourne" }
 		]
 	},
 	{
 		"title": "Match day 4",
 		"gw": 12,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Strasbourg" }
 		]
 	},
 	{
 		"title": "Match day 3",
 		"gw": 10,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"AZ Alkmaar" }
 		]
 	},
 	{
 		"title": "Match day 2",
 		"gw": 8,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"AEK Larnaca" }
 		]
 	},
 	{
 		"title": "Match day 1",
 		"gw": 6,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Dyn. Kyiv" }
 		]
 	},
 	{
@@ -158,8 +144,7 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{"team_h": 8,  "team_a":0, 	"oppNmA":"Fredrikstad" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"Fredrikstad" }
 		]
 	},	
 	{
@@ -168,8 +153,7 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":8, 	"oppNmH":"Fredrikstad" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Fredrikstad" }
 		]
 	}
 ]

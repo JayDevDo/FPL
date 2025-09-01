@@ -96,70 +96,70 @@
 		"title": "Matchday 8",
 		"gw": 23,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 2,  "team_a": 0, 	"oppNmA":"FC Salzburg" },
+			{ "team_h":16,	"team_a": 0,	"oppNmA":"Ferencvaros" }
 		]
 	},
 	{
 		"title": "Matchday 7",
 		"gw": 22,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 0,  "team_a": 2, 	"oppNmH":"Fenerbahce" },
+			{ "team_h": 0,	"team_a":16,	"oppNmH":"SC Braga" }
 		]
 	},
 	{
 		"title": "Matchday 6",
 		"gw": 15,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 0,	"team_a": 2,	"oppNmH":"Basel" },
+			{ "team_h": 0,	"team_a":16,	"oppNmH":"FC Utrecht" }
 		]
 	},
 	{
 		"title": "Matchday 5",
 		"gw": 12,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 2,	"team_a": 0,	"oppNmA":"Young Boys" },
+			{ "team_h":16,	"team_a": 0,	"oppNmA":"Malmo FF" }
 		]
 	},
 	{
 		"title": "Matchday 4",
 		"gw": 10,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 2,	"team_a": 0,	"oppNmA":"Maccabi Tel Aviv" },
+			{ "team_h": 0,	"team_a":16,	"oppNmH":"Sturm Graz" }
 		]
 	},
 	{
 		"title": "Matchday 3",
 		"gw": 8,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 0,	"team_a": 2,	"oppNmH":"GA Eagles" },
+			{ "team_h": 16,	"team_a": 0,	"oppNmA":"FC Porto" }
 		]
 	},
 	{
 		"title": "Matchday 2",
 		"gw": 6,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 0,	"team_a": 2,	"oppNmH":"Feyenoord" },
+			{ "team_h": 16,	"team_a": 0,	"oppNmA":"FC Midtjylland" }
 		]
 	},
 	{
@@ -168,8 +168,8 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{"team_h": 2,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 16, "team_a":0, 	"oppNmA":"TBD" }
+			{ "team_h": 2,	"team_a": 0,	"oppNmA":"Bologna" },
+			{ "team_h": 0,	"team_a":16,	"oppNmH":"Real Betis" }
 		]
 	}
 ]
