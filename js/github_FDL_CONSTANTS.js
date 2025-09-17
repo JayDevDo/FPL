@@ -43,9 +43,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 35,
-		currentRnd: 36,
-		evWndw: { 'direction': 1 , 'start': 4, 'rounds': 6, 'end': 11 },
+		finishedRounds: 4,
+		currentRnd: 5,
+		evWndw: { 'direction': 1 , 'start': 5, 'rounds': 5, 'end': 11 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -77,23 +77,9 @@ let gamesOverview = {
 			"evtp-EPL",
 			"evtp-UIB"
 		*/
-		euroElite: [
-			1,  	2,		7, 
-			8, 		12, 	13, 
-			15, 	16,  	18
-		],
-		/* [1, 7, 12, 13, 15, 18] = champios lg.  [16]= conference lg.  [2,8]=europa lg */
 		selectedTeamId: 12,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
-		midWeeksUsed: [
-			[], /* gw 0 no used. followed by 38 real gameweeks */
-			[],[],[],[],[],			[],[],[],[],[],
-			[],[],[],[],[],			[],[],[],[],[],
-			[],[],[],[],[],			[],[],[],[],[],
-			[],[],[],[],[],			[],[],[],
-			 /* after 38 real gameweeks, gw 39 for postponed */
-			[],
-		],
+
 		sort: 1 ,
 		fontSize: 10,
 		manId: 986725

@@ -1,6 +1,6 @@
 // let allStatsData = []; has moved to FPLConstants
 // initial value, will be overwritten 
-let curGW = 4;
+let curGW = 5;
 
 /*
 ################################################################################################################
@@ -818,7 +818,7 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 		// console.log("tempArr[",g,"]", tempArr[g] )
 		if ( tempArr[g]['loc'] != curGWDF['loc'] ){
 			otherGWDF = tempArr[g];
-			console.log("found other GW:", tempArr[g])
+			// console.log("found other GW:", tempArr[g])
 			break ;
 		}
 	}
