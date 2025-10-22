@@ -43,9 +43,9 @@ getCI = ()=>{ callIndexer++; return callIndexer.toString() ; }
 
 let gamesOverview = {
 		fixedColumns: 3,
-		finishedRounds: 7,
-		currentRnd: 8,
-		evWndw: { 'direction': 1 , 'start': 8, 'rounds': 4, 'end': 11 },
+		finishedRounds: 8,
+		currentRnd: 9,
+		evWndw: { 'direction': 1 , 'start': 9, 'rounds': 6, 'end': 14 },
 		locks: [ false, false, false ],
 		locked: false,
 		dfDisplay: {
@@ -79,7 +79,6 @@ let gamesOverview = {
 		*/
 		selectedTeamId: 12,
 		teamFilter: [ true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true , true ],
-
 		sort: 1 ,
 		fontSize: 10,
 		manId: 986725
