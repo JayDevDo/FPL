@@ -1,6 +1,6 @@
 // let allStatsData = []; has moved to FPLConstants
 // initial value, will be overwritten 
-let curGW = 20;
+let curGW = 22;
 
 /*
 ################################################################################################################
