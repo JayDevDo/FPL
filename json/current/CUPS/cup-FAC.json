@@ -56,18 +56,18 @@
 		"elim": [ 4, 8, 9, 14, 16, 18 ],
 		"drawn": true,
 		"data":	[
-					{"team_h": 2,  "team_a":15 },
-					{"team_h":12,  "team_a": 6 },
-					{"team_h": 1,  "team_a": 0, "oppNmA":"Wigan" },
-					{"team_h": 3,  "team_a": 0, "oppNmA":"Mansfield Town" },
-					{"team_h":13,  "team_a": 0, "oppNmA":"Salford/Swindon" },
-					{"team_h": 0,  "team_a": 5, "oppNmH":"Macclesfield" },
-					{"team_h": 0,  "team_a": 7, "oppNmH":"Hull City" },
-					{"team_h": 0,  "team_a":10, "oppNmH":"Stoke City" },
-					{"team_h": 0,  "team_a":11, "oppNmH":"Birmingham" },
-					{"team_h": 0,  "team_a":17, "oppNmH":"Oxford United" },
-					{"team_h": 0,  "team_a":19, "oppNmH":"Burton Albion" },
-					{"team_h": 0,  "team_a":20, "oppNmH":"Grimsby Town" }		
+					{"team_h":2, "team_a":15 },
+					{"team_h":12, "team_a":6 },
+					{"team_h":1, "team_a":0, "oppNmA":"Wigan" },
+					{"team_h":3, "team_a":0, "oppNmA":"Mansfield Town" },
+					{"team_h":13, "team_a":0, "oppNmA":"Salford-Swindon" },
+					{"team_h":0, "team_a":5, "oppNmH":"Macclesfield" },
+					{"team_h":0, "team_a":7, "oppNmH":"Hull City" },
+					{"team_h":0, "team_a":10, "oppNmH":"Stoke City" },
+					{"team_h":0, "team_a":11, "oppNmH":"Birmingham" },
+					{"team_h":0, "team_a":17, "oppNmH":"Oxford United" },
+					{"team_h":0, "team_a":19, "oppNmH":"Burton Albion" },
+					{"team_h":0, "team_a":20, "oppNmH":"Grimsby Town" }		
 		]
 	},
 	{
