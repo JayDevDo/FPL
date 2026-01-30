@@ -58,8 +58,8 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h": 0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h": 2, "team_a":0, "oppNmA":"TBD" },
+			{"team_h": 0, "team_a":0, "oppNmA":"TBD ?" }
 		]
 	},
 	{
@@ -68,28 +68,28 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{"team_h": 0,  "team_a":2, 	"oppNmH":"TBD" },
+			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD ?" }
 		]
 	},
 	{
 		"title": "PlayOffs 2",
 		"gw": 27,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{"team_h": 2,  "team_a": 0, "oppNmA":"Bye" },
+			{"team_h":16,  "team_a": 0, "oppNmA":"Fenerbahce" }
 		]
 	},
 	{
 		"title": "PlayOffs 1",
 		"gw": 26,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+			{"team_h": 2,  "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 0,  "team_a":16, "oppNmH":"Fenerbahce" }
 		]
 	},
 	{
@@ -98,8 +98,8 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{ "team_h": 2,  "team_a": 0, 	"oppNmA":"FC Salzburg" },
-			{ "team_h":16,	"team_a": 0,	"oppNmA":"Ferencvaros" }
+			{ "team_h": 2,  "team_a": 0, "oppNmA":"FC Salzburg" },
+			{ "team_h":16,	"team_a": 0, "oppNmA":"Ferencvaros" }
 		]
 	},
 	{

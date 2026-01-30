@@ -62,14 +62,12 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{ "team_h": 1, "team_a":0, "oppNmA":"TBD" },
+			{ "team_h": 7, "team_a":0, "oppNmA":"TBD" },
+			{ "team_h":12, "team_a":0, "oppNmA":"TBD" },
+			{ "team_h":13, "team_a":0, "oppNmA":"TBD" },
+			{ "team_h":15, "team_a":0, "oppNmA":"TBD ?" },
+			{ "team_h":18, "team_a":0, "oppNmA":"TBD" }
 		]
 	},
 	{
@@ -78,46 +76,40 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{ "team_h": 0,	"team_a": 1, "oppNmH":"TBD" },
+			{ "team_h": 0,	"team_a": 7, "oppNmH":"TBD" },
+			{ "team_h": 0,	"team_a":12, "oppNmH":"TBD" },
+			{ "team_h": 0,	"team_a":13, "oppNmH":"TBD" },
+			{ "team_h": 0,	"team_a":15, "oppNmH":"TBD ?" },
+			{ "team_h": 0,	"team_a":18, "oppNmH":"TBD" }
 		]
 	},
 	{
 		"title": "PlayOffs 2",
 		"gw": 27,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{ "team_h": 1, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h": 7, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h":12, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h":13, "team_a": 0,	"oppNmA":"Bye" },
+			{ "team_h":15, "team_a": 0, "oppNmA":"Qarabag" },
+			{ "team_h":18, "team_a": 0, "oppNmA":"Bye" }
 		]
 	},
 	{
 		"title": "PlayOffs 1",
 		"gw": 26,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmH":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" },
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{ "team_h": 1, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h": 7, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h":12, "team_a": 0, "oppNmA":"Bye" },
+			{ "team_h":13, "team_a": 0,	"oppNmA":"Bye" },
+			{ "team_h": 0, "team_a":15, "oppNmH":"Qarabag" },
+			{ "team_h":18, "team_a": 0, "oppNmA":"Bye" }
 		]
 	},
 	{

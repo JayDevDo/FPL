@@ -72,7 +72,7 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{"team_h": 8,  "team_a":0, 	"oppNmA":"Zrinjski Mostar" }
 		]
 	},
 	{
@@ -81,7 +81,7 @@
 		"elim": [],
 		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"Zrinjski Mostar" }
 		]
 	},
 	{
