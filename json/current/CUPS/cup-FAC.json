@@ -1,12 +1,12 @@
 [
-	{ 	"title": "IN", 		"data": [ 1, 2, 3, 5, 6, 7, 10, 11, 12, 13, 15, 17, 19, 20 ] },
+	{ 	"title": "IN", 		"data": [ 1, 5, 7, 10, 11, 12, 13, 15, 17, 19, 20 ] },
 	{	"title": "DNQ", 	"data": [] },
 	{ 	"title": "evntTp", 	"data": "evtp-FAC" },
 	{ 	"title": "GAMEWEEKS", "data": [ 21, 26, 29, 31, 34, 37 ] },	
 	{
 		"title": "FINAL",
 		"gw": 37,
-		"elim": [ 4, 8, 9, 14, 16, 18 ],
+		"elim": [ 2, 3, 4, 6, 8, 9, 14, 16, 18 ],
 		"drawn": false,
 		"data":	[
 					{"team_h":0, "team_a":0, "oppNmH":"TBD" }
@@ -15,7 +15,7 @@
 	{
 		"title": "SF",
 		"gw": 34,
-		"elim": [ 4, 8, 9, 14, 16, 18 ],
+		"elim": [ 2, 3, 4, 6, 8, 9, 14, 16, 18 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0, "team_a":0, "oppNmH":"TBD" },
@@ -25,7 +25,7 @@
 	{
 		"title": "QF",
 		"gw": 31,
-		"elim": [ 4, 8, 9, 14, 16, 18 ],
+		"elim": [ 2, 3, 4, 6, 8, 9, 14, 16, 18 ],
 		"drawn": false,
 		"data":	[
 					{"team_h": 0, "team_a":0, "oppNmH":"TBD" },
@@ -37,17 +37,17 @@
 	{
 		"title": "L16",
 		"gw": 29,
-		"elim": [ 4, 8, 9, 14, 16, 18 ],
-		"drawn": false,
+		"elim": [ 2, 3, 4, 6, 8, 9, 14, 16, 18 ],
+		"drawn": true,
 		"data":	[
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmH":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" },
-					{"team_h": 0,  "team_a":0, 	"oppNmA":"TBD" }
+					{"team_h": 0,  "team_a": 1, 	"oppNmH":"Mansfield Town" },
+					{"team_h":10,  "team_a": 0, 	"oppNmA":"Southampton" },
+					{"team_h":11,  "team_a": 0, 	"oppNmA":"Norwich" },
+					{"team_h":15,  "team_a":13  	},
+					{"team_h": 0,  "team_a":17, 	"oppNmH":"Port Vale/Bristol" },
+					{"team_h":20,  "team_a":12 		},
+					{"team_h":19,  "team_a": 5		},
+					{"team_h": 0,  "team_a": 7, 	"oppNmH":"Wrexham" }
 		]
 	},
 	{
@@ -56,18 +56,18 @@
 		"elim": [ 4, 8, 9, 14, 16, 18 ],
 		"drawn": true,
 		"data":	[
-					{"team_h":2, "team_a":15 },
-					{"team_h":12, "team_a":6 },
-					{"team_h":1, "team_a":0, "oppNmA":"Wigan" },
-					{"team_h":3, "team_a":0, "oppNmA":"Mansfield Town" },
-					{"team_h":13, "team_a":0, "oppNmA":"Salford-Swindon" },
-					{"team_h":0, "team_a":5, "oppNmH":"Macclesfield" },
-					{"team_h":0, "team_a":7, "oppNmH":"Hull City" },
-					{"team_h":0, "team_a":10, "oppNmH":"Stoke City" },
-					{"team_h":0, "team_a":11, "oppNmH":"Birmingham" },
-					{"team_h":0, "team_a":17, "oppNmH":"Oxford United" },
-					{"team_h":0, "team_a":19, "oppNmH":"Burton Albion" },
-					{"team_h":0, "team_a":20, "oppNmH":"Grimsby Town" }		
+					{"team_h": 2,  "team_a":15 },
+					{"team_h":12,  "team_a": 6 },
+					{"team_h": 1,  "team_a": 0, "oppNmA":"Wigan" },
+					{"team_h": 3,  "team_a": 0, "oppNmA":"Mansfield Town" },
+					{"team_h":13,  "team_a": 0, "oppNmA":"Salford/Swindon" },
+					{"team_h": 0,  "team_a": 5, "oppNmH":"Macclesfield" },
+					{"team_h": 0,  "team_a": 7, "oppNmH":"Hull City" },
+					{"team_h": 0,  "team_a":10, "oppNmH":"Stoke City" },
+					{"team_h": 0,  "team_a":11, "oppNmH":"Birmingham" },
+					{"team_h": 0,  "team_a":17, "oppNmH":"Oxford United" },
+					{"team_h": 0,  "team_a":19, "oppNmH":"Burton Albion" },
+					{"team_h": 0,  "team_a":20, "oppNmH":"Grimsby Town" }		
 		]
 	},
 	{
