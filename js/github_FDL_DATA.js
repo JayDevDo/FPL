@@ -1,6 +1,6 @@
 // let allStatsData = []; has moved to FPLConstants
 // initial value, will be overwritten 
-let curGW = 24;
+let curGW = 27;
 
 /*
 ################################################################################################################
@@ -783,15 +783,16 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 	let otherGWDF 	= [] ;
 	let retArr 		= [ 0, 0 ] ;
 
-	// console.log("getTmDfGwLoc| --tempArr:", tempArr.length ) ;
+	console.log("getTmDfGwLoc| --tempArr:", tempArr.length ) ;
 
 	if (fixtureArray.length >0){
 
 		for ( fi = 0; fi < 380; fi++){
 
 			let fxtr = fixtureArray[fi] ;
+			console.log("fxtr: ", fxtr )
 			let ogw = fxtr.event ;
-			if (ogw == 39){ ogw = fxtr.ogGW; }
+			if ( ( ogw == 39 ) || ( ogw == null ) ){ ogw = fxtr.ogGW; }
 
 			if( parseInt(fxtr.team_h) == tmId ){
 				// console.log("fxtr.id", fxtr.id, "gw", ogw, "team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty ,"team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ) ;
@@ -800,7 +801,7 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 				tempArr[ ogw ]['df'] = fxtr.team_a_difficulty ;
 				tempArr[ ogw ]['opp'] = FPLTeamsFull[fxtr.team_a].shortNm 
 			}else if( parseInt(fxtr.team_a) == tmId ){
-				// console.log("fxtr.id", fxtr.id, "gw", ogw, "team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ,"team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty  ) ;
+				console.log("fxtr.id", fxtr.id, "gw", ogw, "team A", fxtr.team_a_nm, "tmA_df", fxtr.team_h_difficulty ,"team H", fxtr.team_h_nm, "tmH_df", fxtr.team_a_difficulty  ) ;
 				tempArr[ ogw ]['gw'] = ogw ;
 				tempArr[ ogw ]['loc']= "A" ;
 				tempArr[ ogw ]['df'] = fxtr.team_h_difficulty ;
