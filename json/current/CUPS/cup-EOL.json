@@ -7,63 +7,63 @@
 		"title": "FINAL",
 		"gw": 38,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":8, "oppNmH":"TBD" }
 	 	]
 	},
 	{
 		"title": "SF-2",
 		"gw": 35,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" }
+			{"team_a": 0, "team_h": 8, "oppNmA":"S. Donetsk - AZ Alkmaar" }
 		]
 	},
 	{
 		"title": "SF-1",
 		"gw": 34,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" }
+			{"team_h": 0, "team_a": 8, "oppNmH":"S. Donetsk - AZ Alkmaar" }
 		]
 	},
 	{
 		"title": "QF-2",
 		"gw": 32,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" }
+			{"team_h": 0, "team_a": 8, "oppNmH": "Fiorentina" }
 		]
 	},
 	{
 		"title": "QF-1",
 		"gw": 31,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0, "team_a":0, "oppNmH":"" }
+			{"team_h": 8, "team_a": 0, "oppNmA": "Fiorentina" }
 		]
 	},
 	{
 		"title": "L16-2",
 		"gw": 30,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{"team_h": 0,  "team_a":8, 	"oppNmH":"AEK Larnaca" }
 		]
 	},
 	{
 		"title": "L16-1",
 		"gw": 29,
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h": 0,  "team_a":0, 	"oppNmA":"" }
+			{"team_h": 8,  "team_a": 0, "oppNmA":"AEK Larnaca" }
 		]
 	},
 	{
