@@ -1,4 +1,4 @@
-FPL 25/26
+FPL 26/27
 
 Fantasy Premier League team calendar. Choose which rounds to show, how many rounds to show, change difficulty per team for future fixtures.
 
@@ -9,5 +9,7 @@ Added during 23/24 season: -> Fix 'hidden table' showing/hiding and refreshing c
 Added during 24/25 season: -> ToDo: Getting Xg info per fixture and visualise. -> gameweek selection of strong attacks vs weak defenses from player/team expected goals (against). -> Incorporated team table for manager bonus display.
 
 Added during 25/26 season: -> Seperated cups in separate json files. Also all european cups FA cup and EFL cup sepearation in table and eventType choices. -> ToDo: Getting Xg info per fixture and visualise. -> ToDo: gameweek selection of strong attacks vs weak defenses from player/team expected goals (against). -> Removed team table for manager bonus display.
+
+26/27. Nothing new except lay out order and table being built from events/fixtures. Not thru html-skeleton-placeholders.
 
 view on: https://jaydevdo.github.io/FPL/index.html
