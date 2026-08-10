@@ -17,7 +17,6 @@ body{background-color: #121212;color: #FFFFF2; }
 .notModal{ display: none; }
 
 
-
 li {
 	display: block;
 	list-style-type: square;
@@ -182,24 +181,6 @@ td.strengths.s_overall{
 	color: navy;
 }
 
-.shaded{
-	opacity: 0.5;
-	text-decoration-line: line-through;
-	/*	color: red;	*/	
-	border-left: initial;
-	border-right: initial;
-	background-color: initial;
-}
-
-.unshaded{
-	opacity: 1;
-	text-decoration-line: initial;
-	/*	color: green;	*/
-	border-left: 3px solid #E61010;
-	border-right: 3px solid #E61010;
-	background-color: #FFFF66 !important;
-}
-
 /*  Team Difficulty container pop up 	*/
 
 #popUpDF{
@@ -286,7 +267,6 @@ span[loc="H"]{ font-weight: bold; }
 	color: #FFFFFF;
 }
 
-
 .customDF{ border: 2px solid #FFFFFF; }
 
 
@@ -344,6 +324,36 @@ div.tm-idc.tmSelected{
 	content: "Show";
 }
 
+/* Highlighting */
+
+.shaded{
+	opacity: 0.5;
+	text-decoration-line: line-through;
+	/*	color: red;	*/	
+	border-left: initial;
+	border-right: initial;
+	background-color: #001122;
+}
+
+.notHL{
+	opacity: 0.25;
+	text-decoration-line: line-through;
+	/*	color: red;	*/	
+	border-left: initial;
+	border-right: initial;
+	background-color: #001122;
+}
+
+.unshaded{
+	opacity: 1;
+	text-decoration-line: initial;
+	/*	color: green;	*/
+	border-left: 3px solid #E61010;
+	border-right: 3px solid #E61010;
+	background-color: #FFFF66 !important;
+}
+
+
 /*  animations 	*/
 .evHighLite{
 	animation-name: selectedborder;
@@ -360,7 +370,6 @@ div.tm-idc.tmSelected{
 
 /* 
 	evTypes: [ "evtp-EPL", "evtp-FAC", "evtp-EFL", "evtp-EHL", "evtp-EUL", "evtp-EOL", "evtp-UIB" ],
-
 
 	.striped{ 	background-color: #f2f2f2; 	color: #000000; }
 	.unstriped{ background-color: #808080; }
@@ -404,6 +413,18 @@ label.evtp-EPL{
 	color: #000000 !important;
 }
 
+
+/* Default cup state: empty cup cells display DNQ without adding a span. */
+#eventTable td.evtp-FAC:empty::before,
+#eventTable td.evtp-EFL:empty::before,
+#eventTable td.evtp-EHL:empty::before,
+#eventTable td.evtp-EUL:empty::before,
+#eventTable td.evtp-EOL:empty::before{
+	content: "DNQ";
+	display: block;
+	text-align: center;
+}
+
 /*
 
 */
@@ -432,4 +453,18 @@ td > span.cupCntndr{
 
 .tblBnsActive{
 	border: 3px solid yellow !important;
+}
+
+.thHiglighted{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+#eventTypes td {
+	text-align: left;
+	vertical-align: top;
+}
+
+#eventTypes fieldset {
+	text-align: left;
 }
