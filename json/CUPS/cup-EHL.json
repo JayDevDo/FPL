@@ -1,0 +1,228 @@
+[
+	{ "title": "IN", "data": [ 1, 2, 14, 15, 16 ] },
+	{ "title": "OUT", "data": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20 ] },
+	{ "title": "evntTp", "data": "evtp-EHL" },
+	{ "title": "GAMEWEEKS", "data": [ 3, 6, 7, 9, 11, 14, 21, 22, 25, 26, 28, 29, 30, 31, 33, 34, 38 ] },
+	{
+		"title": "FINAL Champions Lg",
+		"gw": 38,
+		"date": "2027-06-05",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+	 	]
+	},
+	{
+		"title": "SF2",
+		"gw": 34,
+		"date": "2027-05-04",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "SF1",
+		"gw": 33,
+		"date": "2027-04-27",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "QF2",
+		"gw": 31,
+		"date": "2027-04-13",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "QF1",
+		"gw": 30,
+		"date": "2027-04-06",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "L16-2",
+		"gw": 29,
+		"date": "2027-03-16",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "L16-1",
+		"gw": 28,
+		"date": "2027-03-09",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "PlayOffs 2",
+		"gw": 26,
+		"date": "2027-02-23",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "PlayOffs 1",
+		"gw": 25,
+		"date": "2027-02-16",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 8",
+		"gw": 22,
+		"date": "2027-01-27",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 7",
+		"gw": 21,
+		"date": "2027-01-19",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 6",
+		"gw": 14,
+		"date": "2026-12-08",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 5",
+		"gw": 11,
+		"date": "2026-11-24",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 4",
+		"gw": 9,
+		"date": "2026-11-03",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 3",
+		"gw": 7,
+		"date": "2026-10-20",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 2",
+		"gw": 6,
+		"date": "2026-10-13",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	},
+	{
+		"title": "Match day 1",
+		"gw": 3,
+		"date": "2026-09-08",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" },
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
+	}
+]

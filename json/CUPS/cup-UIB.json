@@ -1,0 +1,16 @@
+[		
+	{ 	"title": "IN", 		"data": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ] },
+	{	"title": "OUT", 	"data": [] },
+	{ 	"title": "evntTp", 	"data": "evtp-UIB" },
+	{ 	"title": "GAMEWEEKS", "data": [ 5, 6, 10, 11, 30, 31 ] },
+
+	{ "title": "UIB 1", "gw": 5,  "date": "2026-09-24", "elim": [], "drawn": true, "data": [] },
+	{ "title": "UIB 1", "gw": 6,  "date": "2026-10-06", "elim": [], "drawn": true, "data": [] },
+
+	{ "title": "UIB 2", "gw": 10, "date": "2026-11-12", "elim": [], "drawn": true, "data": [] },
+	{ "title": "UIB 2", "gw": 11, "date": "2026-11-17", "elim": [], "drawn": true, "data": [] },
+
+	{ "title": "UIB 3", "gw": 30, "date": "2027-03-25", "elim": [], "drawn": true, "data": [] },
+	{ "title": "UIB 3", "gw": 30, "date": "2027-03-30", "elim": [], "drawn": true, "data": [] }
+
+]

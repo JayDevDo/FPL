@@ -1,0 +1,133 @@
+[		
+	{ 	"title": "IN", 		"data": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ] },
+	{	"title": "OUT", 	"data": [] },
+	{ 	"title": "evntTp", 	"data": "evtp-EFL" },
+	{ 	"title": "GAMEWEEKS", "data": [ 1, 3, 4, 8, 15, 20, 23, 30 ] },
+	{
+		"title": "FINAL",
+		"gw": 30,
+		"date": "2027-03-21",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h":0, "team_a":0 }
+	 	]
+	},
+	{
+		"title": "SF-2",
+		"gw": 23,
+		"date": "2027-02-01",
+		"elim": [ ],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "SF-1",
+		"gw": 20,
+		"date": "2027-01-11",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "QF",
+		"gw": 15,
+		"date": "2026-12-14",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "L16",
+		"gw": 8,
+		"date": "2026-10-26",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "L32-2",
+		"gw": 4,
+		"date": "2026-09-14",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "L32-1",
+		"gw": 3,
+		"date": "2026-09-07",
+		"elim": [],
+		"drawn": false,
+		"data":	[
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 },
+			{"team_h": 0, "team_a": 0 }
+		]
+	},
+	{
+		"title": "L64",
+		"gw": 1,
+		"date": "2026-08-24",
+		"elim": [],
+		"drawn": true,
+		"data": [
+			{"team_h": 1, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 2, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 3, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h": 5, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h": 8, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":11, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":13, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":14, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h":15, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h":16, "team_a": 0, "oppNmA":"Bye" },
+			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":18, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
+			{"team_h":20, "team_a": 0, "oppNmA":"Bye" }
+		]
+	}
+]

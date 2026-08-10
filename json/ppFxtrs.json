@@ -1,0 +1,42 @@
+[
+	{
+		"unplanned": []
+	},
+	{
+		"re-planned": []
+	},
+	{
+		"ppRpIds":[]
+	},
+	{
+		"ppIds": []
+	},
+	{	
+		"example pp": { 	
+			"ppid": 307,
+			"nwRound": 36,
+			"ogGW": 31,
+			"added": true,
+			"team_h_nm": "MNC",
+	        "team_h_id": 13,
+	        "team_a_id": 8,
+			"team_a_nm": "CRY",
+			"status": "postponed",
+			"reason": "og: 31: Man City in Carabao Cup Final",
+			"link": "https://fantasy.premierleague.com/fixtures/fdr"
+		},
+		"example replanned":{
+			"ppid": 310,
+			"nwRound": 26,
+			"ogGW": 31,
+			"added": true,
+			"team_h_nm": "WOL",
+			"team_h_id": 20,
+			"team_a_id": 1,
+			"team_a_nm": "ARS",
+			"status": "replanned",
+			"reason": "og: 31: Arsenal in Carabao Cup Final",
+			"link": "https://fantasy.premierleague.com/fixtures/fdr"
+		}
+	}
+]
