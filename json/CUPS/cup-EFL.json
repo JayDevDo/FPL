@@ -124,7 +124,7 @@
 			{"team_h":15, "team_a": 0, "oppNmA":"Bye" },
 			{"team_h":16, "team_a": 0, "oppNmA":"Bye" },
 			{"team_h":17, "team_a": 0, "oppNmA":"West Bromwich Albion" },
-			{"team_h":18, "team_a": 13,},
+			{"team_h":18, "team_a": 13 },
 			{"team_h":19, "team_a": 0, "oppNmA":"Charlton Athletic" },
 			{"team_h":20, "team_a": 0, "oppNmA":"Bye" }
 		]
