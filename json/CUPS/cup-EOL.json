@@ -98,9 +98,9 @@
 		"gw": 15,
 		"date": "2026-12-17",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":5, "oppNmH":"Panathinaikos" }
 		]
 	},
 	{
@@ -108,9 +108,9 @@
 		"gw": 14,
 		"date": "2026-12-10",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":5, "team_a":0, "oppNmA":"Monaco" }
 		]
 	},
 	{
@@ -118,9 +118,9 @@
 		"gw": 11,
 		"date": "2026-11-26",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":5, "team_a":0, "oppNmA":"Craiova" }
 		]
 	},
 	{
@@ -128,9 +128,9 @@
 		"gw": 9,
 		"date": "2026-11-05",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":5, "oppNmH":"Getafe" }
 		]
 	},
 	{
@@ -138,9 +138,9 @@
 		"gw": 7,
 		"date": "2026-10-22",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":5, "oppNmH":"Jablonec" }
 		]
 	},
 	{
@@ -148,9 +148,9 @@
 		"gw": 6,
 		"date": "2026-10-15",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":5, "team_a":0, "oppNmA":"Zalgiris" }
 		]
 	},
 	{

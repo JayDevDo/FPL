@@ -118,13 +118,13 @@
 		"gw": 22,
 		"date": "2027-01-27",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":1, "team_a":0, "oppNmA":"Sabah" },
+			{"team_h":0, "team_a":2, "oppNmH":"Slavia Praha" },
+			{"team_h":14, "team_a":0, "oppNmA":"Lens" },
+			{"team_h":15, "team_a":0, "oppNmA":"Sporting CP" },
+			{"team_h":0, "team_a":16, "oppNmH":"Villarreal" }
 		]
 	},
 	{
@@ -132,13 +132,13 @@
 		"gw": 21,
 		"date": "2027-01-19",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":1, "oppNmH":"Real Betis" },
+			{"team_h":2, "team_a":0, "oppNmA":"Dortmund" },
+			{"team_h":0, "team_a":14, "oppNmH":"Inter Milan" },
+			{"team_h":0, "team_a":15, "oppNmH":"Lens" },
+			{"team_h":16, "team_a":0, "oppNmA":"Bayern" }
 		]
 	},
 	{
@@ -146,13 +146,13 @@
 		"gw": 14,
 		"date": "2026-12-08",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":1, "team_a":0, "oppNmA":"Real Madrid" },
+			{"team_h":2, "team_a":0, "oppNmA":"PSG" },
+			{"team_h":14, "team_a":0, "oppNmA":"Porto" },
+			{"team_h":0, "team_a":15, "oppNmH":"Barcelona" },
+			{"team_h":16, "team_a":0, "oppNmA":"Leipzig" }
 		]
 	},
 	{
@@ -160,13 +160,13 @@
 		"gw": 11,
 		"date": "2026-11-24",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":1, "team_a":0, "oppNmA":"Dortmund" },
+			{"team_h":0, "team_a":2, "oppNmH":"Galatasaray" },
+			{"team_h":0, "team_a":14, "oppNmH":"Club Brugge" },
+			{"team_h":15, "team_a":0, "oppNmA":"Napoli" },
+			{"team_h":0, "team_a":16, "oppNmH":"Sporting CP" }
 		]
 	},
 	{
@@ -174,13 +174,13 @@
 		"gw": 9,
 		"date": "2026-11-03",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":1, "oppNmH":"Slavia Praha" },
+			{"team_h":0, "team_a":2, "oppNmH":"Barcelona" },
+			{"team_h":0, "team_a":14, "oppNmH":"Fenerbahce" },
+			{"team_h":0, "team_a":15, "oppNmH":"Leipzig" },
+			{"team_h":16, "team_a":0, "oppNmA":"Roma" }
 		]
 	},
 	{
@@ -188,13 +188,13 @@
 		"gw": 7,
 		"date": "2026-10-20",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":1, "oppNmH":"Bayern" },
+			{"team_h":2, "team_a":0, "oppNmA":"Viking" },
+			{"team_h":14, "team_a":0, "oppNmA":"Villarreal" },
+			{"team_h":15, "team_a":0, "oppNmA":"AEK Athens" },
+			{"team_h":0, "team_a":16, "oppNmH":"Como" }
 		]
 	},
 	{
@@ -202,13 +202,13 @@
 		"gw": 6,
 		"date": "2026-10-13",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":1, "team_a":0, "oppNmA":"Lille" },
+			{"team_h":2, "team_a":0, "oppNmA":"Fenerbahce" },
+			{"team_h":0, "team_a":14, "oppNmH":"LASK" },
+			{"team_h":15, "team_a":0, "oppNmA":"PSG" },
+			{"team_h":0, "team_a":16, "oppNmH":"Atletico Madrid" }
 		]
 	},
 	{
@@ -216,13 +216,13 @@
 		"gw": 3,
 		"date": "2026-09-08",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" },
-			{"team_h":0, "team_a":0, "oppNmH":"" }
+			{"team_h":0, "team_a":1, "oppNmH":"Napoli" },
+			{"team_h":0, "team_a":2, "oppNmH":"Club Brugge" },
+			{"team_h":14, "team_a":0, "oppNmA":"Atletico Madrid" },
+			{"team_h":0, "team_a":15, "oppNmH":"Porto" },
+			{"team_h":16, "team_a":0, "oppNmA":"Sabah" }
 		]
 	}
 ]

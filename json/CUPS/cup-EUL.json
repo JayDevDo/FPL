@@ -1,6 +1,6 @@
 [
 	{ "title": "IN", "data": [ 3, 8, 20 ] },
-	{ "title": "OUT", "data": [ 1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] },
+	{ "title": "OUT", "data": [ 1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] },
 	{ "title": "evntTp", "data": "evtp-EUL" },
 	{ "title": "GAMEWEEKS", "data": [ 4, 6, 7, 9, 11, 14, 21, 22, 25, 26, 28, 29, 30, 31, 33, 34, 37 ] },
 	{
@@ -10,8 +10,8 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
-	 	]
+			{"team_h":0, "team_a":0, "oppNmH":"" }
+		]
 	},
 	{
 		"title": "SF-2",
@@ -20,8 +20,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -31,8 +30,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -42,9 +40,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -54,9 +50,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -66,9 +60,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -78,9 +70,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -90,9 +80,7 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
@@ -102,106 +90,103 @@
 		"elim": [],
 		"drawn": false,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":0, "oppNmH":"" }
 		]
 	},
 	{
-		"title": "Matchday 8",
+		"title": "Match day 8",
 		"gw": 22,
 		"date": "2027-01-28",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":3, "team_a":0, "oppNmA":"H. Beer-Sheva" },
+			{"team_h":0, "team_a":8, "oppNmH":"Salzburg" },
+			{"team_h":20, "team_a":0, "oppNmA":"Levski Sofia" }
 		]
 	},
 	{
-		"title": "Matchday 7",
+		"title": "Match day 7",
 		"gw": 21,
 		"date": "2027-01-21",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":3, "oppNmH":"Lillestrom" },
+			{"team_h":8, "team_a":0, "oppNmA":"Sparta Praha" },
+			{"team_h":0, "team_a":20, "oppNmH":"Anderlecht" }
 		]
 	},
 	{
-		"title": "Matchday 6",
+		"title": "Match day 6",
 		"gw": 14,
 		"date": "2026-12-10",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":3, "team_a":0, "oppNmA":"Viktoria Plzen" },
+			{"team_h":0, "team_a":8, "oppNmH":"Jagiellonia" },
+			{"team_h":0, "team_a":20, "oppNmH":"AC Milan" }
 		]
 	},
 	{
-		"title": "Matchday 5",
+		"title": "Match day 5",
 		"gw": 11,
 		"date": "2026-11-26",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":3, "oppNmH":"Celta" },
+			{"team_h":8, "team_a":0, "oppNmA":"Real Sociedad" },
+			{"team_h":20, "team_a":0, "oppNmA":"Jagiellonia" }
 		]
 	},
 	{
-		"title": "Matchday 4",
+		"title": "Match day 4",
 		"gw": 9,
 		"date": "2026-11-05",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":3, "oppNmH":"Sparta Praha" },
+			{"team_h":8, "team_a":0, "oppNmA":"Hoffenheim" },
+			{"team_h":20, "team_a":0, "oppNmA":"GNK Dinamo" }
 		]
 	},
 	{
-		"title": "Matchday 3",
+		"title": "Match day 3",
 		"gw": 7,
 		"date": "2026-10-22",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":3, "team_a":0, "oppNmA":"AC Milan" },
+			{"team_h":0, "team_a":8, "oppNmH":"Besiktas" },
+			{"team_h":0, "team_a":20, "oppNmH":"Lech Poznan" }
 		]
 	},
 	{
-		"title": "Matchday 2",
+		"title": "Match day 2",
 		"gw": 6,
 		"date": "2026-10-15",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":3, "team_a":0, "oppNmA":"Sturm Graz" },
+			{"team_h":0, "team_a":8, "oppNmH":"Lyon" },
+			{"team_h":0, "team_a":20, "oppNmH":"Torreense" }
 		]
 	},
 	{
-		"title": "Matchday 1",
+		"title": "Match day 1",
 		"gw": 4,
-		"date": "2026-09-16",
+		"date": "2026-09-17",
 		"elim": [],
-		"drawn": false,
+		"drawn": true,
 		"data":	[
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" },
-			{"team_h":0, "team_a":0, "oppNmA":"TBD" }
+			{"team_h":0, "team_a":3, "oppNmH":"Real Sociedad" },
+			{"team_h":8, "team_a":0, "oppNmA":"Lech Poznan" },
+			{"team_h":20, "team_a":0, "oppNmA":"AZ Alkmaar" }
 		]
 	}
 ]
-
