@@ -15,6 +15,7 @@ let allStatsData = [];
 let currentTeamTable = [] ;
 
 let cupDataAll = {};
+let uefaCupTypes = [ "evtp-EHL", "evtp-EUL", "evtp-EOL" ] ;
 /* {
 	'evtp-FAC': [],
 	'evtp-EFL': [],

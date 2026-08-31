@@ -284,24 +284,58 @@ eventTypeMidweekChanged = ()=>{
 		"$(showMidweeks).checked ", $(showMidweeks)[0].checked 
 	) ;
 	*/
-	$.each( 
+	let showUefa = false ;
+
+	$.each(
 		cupTypes,
-		function( index, cupType ){ 
+		function( index, cupType ){
 			// console.log("eventTypeMidweekChanged | loop cupTypes: ", cupType.id, cupType.checked, "midWeeks:", $(showMidweeks)[0].checked  ) ;
-			
-			if( $(showMidweeks)[0].checked ){
-				if( cupType.checked ){
-					showEventType( cupType.id ) ;
+
+			if( uefaCupTypes.includes(cupType.id) ){
+				let uefaSpans = $("#eventTable td.evtp-UEFA > span." + cupType.id) ;
+
+				if( $(showMidweeks)[0].checked && cupType.checked ){
+					$(uefaSpans).removeClass("evtypeHide") ;
+					showUefa = true ;
+				}else{
+					$(uefaSpans).addClass("evtypeHide") ;
+				}
+			}else{
+				if( $(showMidweeks)[0].checked ){
+					if( cupType.checked ){
+						showEventType( cupType.id ) ;
+					}else{
+						hideEventType( cupType.id ) ;
+					}
 				}else{
 					hideEventType( cupType.id ) ;
 				}
-
-			}else{
-				hideEventType( cupType.id ) ;
 			}
 
 		}
 	);
+
+	if( $(showMidweeks)[0].checked && showUefa ){
+		showEventType("evtp-UEFA") ;
+	}else{
+		hideEventType("evtp-UEFA") ;
+	}
+
+	$("#eventTable td.evtp-UEFA").each(
+		function(){
+			let uefaCell = $(this) ;
+			let visibleSpans = uefaCell.children("span.fxtrspan").not(".evtypeHide") ;
+
+			uefaCell.removeClass("cupElim") ;
+			uefaCell.removeClass("cupCntndr") ;
+
+			if( visibleSpans.filter(".cupCntndr").length > 0 ){
+				uefaCell.addClass("cupCntndr") ;
+			}else if( visibleSpans.filter(".cupElim").length > 0 ){
+				uefaCell.addClass("cupElim") ;
+			}
+		}
+	) ;
 }
 
 
@@ -997,9 +1031,12 @@ showDeadline = (blnSD)=>{
 			// console.log( "showDeadline gw: ", gw, " has ", evType[1].split("-")[1], " as class #2. And ", $(fxtrHdr).attr("round"), " as round" ) ;
 
 			$(fxtrHdr).empty() ; 
-			hdrTxtStr 	= [	"<span>", $(fxtrHdr).attr("round"),	"</span><br>" ].join("") ;
+			let roundTitle = $(fxtrHdr).attr("round") ;
+			let eventTitle = evType[1].split("-")[1] ;
+
+			hdrTxtStr 	= [	"<span>", roundTitle,	"</span><br>" ].join("") ;
 			hdrDateStr 	= [ "<span>", $(fxtrHdr).attr("date"),	"</span><br>" ].join("") ;
- 			hdrCupStr	= [	"<span>", evType[1].split("-")[1], "</span>" ].join("") ;
+ 			hdrCupStr	= roundTitle == eventTitle ? "" : [ "<span>", eventTitle, "</span>" ].join("") ;
 
 			let newHdrCup 	= $(hdrCupStr) 	;
 			let newHdrTxt 	= $(hdrTxtStr) 	;
@@ -1058,4 +1095,3 @@ toggleReplanned = (i)=>{
 }
 
 clspuDF =()=>{ $("#popUpDF").hide() ; }
-

@@ -486,11 +486,18 @@ isFPL = ( tmNr )=>{
 
 updateCupCell = ( tmId, gw, evtClass, roundTitle, cellText )=>{
 
-	let cupCelltd = $( "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + evtClass )
-		.filter(
+	let isUefa = uefaCupTypes.includes(evtClass) ;
+	let cellEvtClass = isUefa ? "evtp-UEFA" : evtClass ;
+
+	let cupCelltd = $( "#eventTable tr[tmId=" + tmId + "] td[evrnd='" + gw + "']." + cellEvtClass ) ;
+
+	if( !isUefa ){
+		cupCelltd = cupCelltd.filter(
 			function(){ return $(this).attr("round") == roundTitle ; }
-		)
-		.get() ;
+		) ;
+	}
+
+	cupCelltd = cupCelltd.get() ;
 
 	if( evtClass == "nocheck" ){
 		console.log(
@@ -516,6 +523,8 @@ updateCupCell = ( tmId, gw, evtClass, roundTitle, cellText )=>{
 							].join("") ;
 
 		let cupTie_jq = $( cupTieArr ) ;
+
+		$( cupTie_jq ).attr("round", roundTitle) ;
 
 		$( cupCelltd ).removeClass("cupElim") ;
 		$( cupCelltd ).removeClass("cupCntndr") ;
@@ -673,7 +682,7 @@ getTmDfGwLoc = (tmId, gw=gamesOverview.currentRnd)=>{
 
 	for( g = (gw-1); g > 0; g--){
 		// console.log("tempArr[",g,"]", tempArr[g] )
-		if ( tempArr[g]['loc'] != curGWDF['loc'] ){
+		if( tempArr[g]['loc'] != curGWDF['loc'] ){
 			otherGWDF = tempArr[g];
 			// console.log("found other GW:", tempArr[g])
 			break ;
@@ -711,6 +720,7 @@ buildHeaders = ( events )=>{
 
 	for( let event of events ){
 		let gw = parseInt( event["id"] ) ;
+		let uefaDate = null ;
 		let gwHeaders = [{
 				"eventType": "evtp-EPL",
 				"evrnd": gw,
@@ -727,6 +737,11 @@ buildHeaders = ( events )=>{
 
 				if( cupGW == 39 || cupGW != gw ){ continue ; }
 
+				if( uefaCupTypes.includes(cupEventType) ){
+					if( uefaDate == null || new Date(cupRound["date"]) < new Date(uefaDate) ){ uefaDate = cupRound["date"] ; }
+					continue ;
+				}
+
 				gwHeaders.push({
 					"eventType": cupEventType,
 					"evrnd": cupGW,
@@ -736,7 +751,16 @@ buildHeaders = ( events )=>{
 			}
 		}
 
-		// EPL, cups and UIB items assigned to this GW are ordered together by date.
+		if( uefaDate != null ){
+			gwHeaders.push({
+				"eventType": "evtp-UEFA",
+				"evrnd": gw,
+				"date": uefaDate,
+				"round": "UEFA"
+			}) ;
+		}
+
+		// EPL, cups, UEFA and UIB items assigned to this GW are ordered together by date.
 		gwHeaders.sort(( a, b )=>{ return new Date(a["date"]) - new Date(b["date"]) ; }) ;
 
 		for( let headerData of gwHeaders ){
