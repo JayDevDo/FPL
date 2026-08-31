@@ -413,21 +413,20 @@ label.evtp-EPL{
 	color: #000000 !important;
 }
 
+.evtp-UEFA{
+	background-color: #0000CC !important;
+	color: #FFFFFF !important;
+}
 
 /* Default cup state: empty cup cells display DNQ without adding a span. */
 #eventTable td.evtp-FAC:empty::before,
 #eventTable td.evtp-EFL:empty::before,
-#eventTable td.evtp-EHL:empty::before,
-#eventTable td.evtp-EUL:empty::before,
-#eventTable td.evtp-EOL:empty::before{
+#eventTable td.evtp-UEFA:empty::before{
 	content: "DNQ";
 	display: block;
 	text-align: center;
 }
 
-/*
-
-*/
 .cupCntndr{
 	/* 
 		background-color: #ffff99; 
