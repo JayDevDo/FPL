@@ -1,4 +1,4 @@
-[		
+[
 	{ 	"title": "IN", 		"data": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ] },
 	{	"title": "OUT", 	"data": [] },
 	{ 	"title": "evntTp", 	"data": "evtp-EFL" },
@@ -7,7 +7,7 @@
 		"title": "FINAL",
 		"gw": 30,
 		"date": "2027-03-21",
-		"elim": [ 11, 13, 18 ],
+		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
 		"data":	[
 			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
@@ -16,16 +16,12 @@
 			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":16, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
 	 	]
 	},
@@ -33,7 +29,7 @@
 		"title": "SF-2",
 		"gw": 23,
 		"date": "2027-02-01",
-		"elim": [ 11, 13, 18 ],
+		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
 		"data":	[
 			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
@@ -42,16 +38,12 @@
 			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":16, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
 		]
 	},
@@ -59,7 +51,7 @@
 		"title": "SF-1",
 		"gw": 20,
 		"date": "2027-01-11",
-		"elim": [ 11, 13, 18 ],
+		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
 		"data":	[
 			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
@@ -68,16 +60,12 @@
 			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":16, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
 		]
 	},
@@ -85,7 +73,7 @@
 		"title": "QF",
 		"gw": 15,
 		"date": "2026-12-14",
-		"elim": [ 11, 13, 18 ],
+		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
 		"data":	[
 			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
@@ -94,16 +82,12 @@
 			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":16, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
 		]
 	},
@@ -111,27 +95,17 @@
 		"title": "L16",
 		"gw": 8,
 		"date": "2026-10-26",
-		"elim": [ 11, 13, 18 ],
+		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
 		"data":	[
-			{"team_h": 0, "team_a": 0, "oppNmA":"Bradford" },
-			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 2, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 3, "team_a": 0, "oppNmA":"win" },
-			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 6, "team_a": 0, "oppNmA":"win" },
-			{"team_h": 7, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 8, "team_a": 0, "oppNmA":"win" },
-			{"team_h": 9, "team_a": 0, "oppNmA":"win" },
-			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":12, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":16, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":17, "team_a": 0, "oppNmA":"win" },
-			{"team_h":19, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":20, "team_a": 0, "oppNmA":"win" }
+			{"team_h": 0, "team_a": 1, "oppNmH":"Fleetwood Town" },
+			{"team_h":15, "team_a": 5, "oppNmH":"Norwich City" },
+			{"team_h": 9, "team_a":17 },
+			{"team_h":20, "team_a": 4 },
+			{"team_h":14, "team_a": 6 },
+			{"team_h": 0, "team_a": 0, "oppNmH":"Bradford City", "oppNmA":"Peterborough United" },
+			{"team_h":10, "team_a": 8 },
+			{"team_h": 3, "team_a": 2 }
 		]
 	},
 	{
@@ -188,7 +162,7 @@
 			{"team_h":15, "team_a": 0, "oppNmA":"Bye" },
 			{"team_h":16, "team_a": 0, "oppNmA":"Bye" },
 			{"team_h":17, "team_a": 0, "oppNmA":"West Bromwich Albion" },
-			{"team_h":18, "team_a": 13 },
+			{"team_h":18, "team_a":13 },
 			{"team_h":19, "team_a": 0, "oppNmA":"Charlton Athletic" },
 			{"team_h":20, "team_a": 0, "oppNmA":"Bye" }
 		]
