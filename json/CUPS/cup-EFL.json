@@ -1,46 +1,34 @@
 [
-	{ 	"title": "IN", 		"data": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ] },
-	{	"title": "OUT", 	"data": [] },
-	{ 	"title": "evntTp", 	"data": "evtp-EFL" },
-	{ 	"title": "GAMEWEEKS", "data": [ 1, 3, 4, 8, 15, 20, 23, 30 ] },
+	{ "title": "IN", "data": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ] },
+	{ "title": "OUT", "data": [] },
+	{ "title": "evntTp", "data": "evtp-EFL" },
+	{ "title": "GAMEWEEKS", "data": [ 1, 3, 4, 8, 15, 20, 23, 30 ] },
 	{
 		"title": "FINAL",
 		"gw": 30,
 		"date": "2027-03-21",
-		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
-		"data":	[
-			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 2, "team_a": 0, "oppNmA":"TBD" },
+		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
-	 	]
+		]
 	},
 	{
 		"title": "SF-2",
 		"gw": 23,
 		"date": "2027-02-01",
-		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
-		"data":	[
-			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 2, "team_a": 0, "oppNmA":"TBD" },
+		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
@@ -51,18 +39,12 @@
 		"title": "SF-1",
 		"gw": 20,
 		"date": "2027-01-11",
-		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
-		"data":	[
-			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 2, "team_a": 0, "oppNmA":"TBD" },
+		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
 			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
@@ -73,22 +55,14 @@
 		"title": "QF",
 		"gw": 15,
 		"date": "2026-12-14",
-		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
-		"data":	[
-			{"team_h": 1, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 2, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 4, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 5, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 6, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 8, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h": 9, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":10, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":14, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":15, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":17, "team_a": 0, "oppNmA":"TBD" },
-			{"team_h":20, "team_a": 0, "oppNmA":"TBD" }
+		"data": [
+			{"team_h": 0, "team_a": 9, "oppNmH":"Fleetwood Town" },
+			{"team_h": 0, "team_a":17, "oppNmH":"Fleetwood Town" },
+			{"team_h":15, "team_a": 0, "oppNmA":"Bradford City" },
+			{"team_h": 8, "team_a":20 },			
+			{"team_h":14, "team_a": 3 }
 		]
 	},
 	{
@@ -97,9 +71,9 @@
 		"date": "2026-10-26",
 		"elim": [ 7, 11, 12, 13, 16, 18, 19 ],
 		"drawn": true,
-		"data":	[
+		"data": [
 			{"team_h": 0, "team_a": 1, "oppNmH":"Fleetwood Town" },
-			{"team_h":15, "team_a": 5, "oppNmH":"Norwich City" },
+			{"team_h":15, "team_a": 5 },
 			{"team_h": 9, "team_a":17 },
 			{"team_h":20, "team_a": 4 },
 			{"team_h":14, "team_a": 6 },
@@ -114,7 +88,7 @@
 		"date": "2026-09-15",
 		"elim": [ 11, 13, 18 ],
 		"drawn": true,
-		"data":	[
+		"data": [
 			{"team_h": 0, "team_a":10, "oppNmH":"West Ham" },
 			{"team_h":12, "team_a": 1 },
 			{"team_h": 0, "team_a": 4, "oppNmH":"Reading" },
@@ -130,7 +104,7 @@
 		"date": "2026-09-08",
 		"elim": [18],
 		"drawn": true,
-		"data":	[
+		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"Lincoln City" },
 			{"team_h": 8, "team_a": 0, "oppNmA":"Middlesbrough" },
 			{"team_h":20, "team_a":11 },
