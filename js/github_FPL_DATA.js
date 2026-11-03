@@ -1,7 +1,7 @@
 // github_FPL_DATA2.js
 // let allStatsData = []; has moved to FPLConstants
 // initial value, will be overwritten 
-let curGW = 6;
+let curGW = 10;
 
 /*
 ################################################################################################################
