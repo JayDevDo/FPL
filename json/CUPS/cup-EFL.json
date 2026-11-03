@@ -7,7 +7,7 @@
 		"title": "FINAL",
 		"gw": 30,
 		"date": "2027-03-21",
-		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 17, 18, 19 ],
 		"drawn": true,
 		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
@@ -23,7 +23,7 @@
 		"title": "SF-2",
 		"gw": 23,
 		"date": "2027-02-01",
-		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 17, 18, 19 ],
 		"drawn": true,
 		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
@@ -39,7 +39,7 @@
 		"title": "SF-1",
 		"gw": 20,
 		"date": "2027-01-11",
-		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 17, 18, 19 ],
 		"drawn": true,
 		"data": [
 			{"team_h": 3, "team_a": 0, "oppNmA":"TBD" },
@@ -55,11 +55,10 @@
 		"title": "QF",
 		"gw": 15,
 		"date": "2026-12-14",
-		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 18, 19 ],
+		"elim": [ 1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 16, 17, 18, 19 ],
 		"drawn": true,
 		"data": [
 			{"team_h": 0, "team_a": 9, "oppNmH":"Fleetwood Town" },
-			{"team_h": 0, "team_a":17, "oppNmH":"Fleetwood Town" },
 			{"team_h":15, "team_a": 0, "oppNmA":"Bradford City" },
 			{"team_h": 8, "team_a":20 },			
 			{"team_h":14, "team_a": 3 }
